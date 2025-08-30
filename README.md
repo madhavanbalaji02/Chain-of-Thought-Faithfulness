@@ -2,7 +2,7 @@
 
 Preprint: Tutek, M., Chaleshtori, F. H., Marasović, A., & Belinkov, Y. (2025). Measuring Faithfulness of Chains of Thought by Unlearning Reasoning Steps. [[arXiv]](https://arxiv.org/abs/2502.14829)
 
-![Faithfulness by Unlearning Reasoning Steps](figures/fig1.png "Faithfulness by Unlearning Reasoning Steps")
+![Faithfulness by Unlearning Reasoning Steps](figures/fig1_v2.png "Faithfulness by Unlearning Reasoning Steps")
 
 Codebase is given as-is, instructions pending.
 Main file for running experiments is `unlearn.py`. The NPO method has been adapted from the [original repository](https://github.com/licong-lin/negative-preference-optimization).
