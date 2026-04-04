@@ -1,0 +1,17 @@
+# Requirements for parametric-faithfulness_run (BigRed200 / Python 3.12 venv)
+#
+# transformers: Phi-3-mini-4k-instruct's cached modeling_phi3.py was written
+# for transformers ~4.36 and is incompatible with >=4.39 (DynamicCache API
+# redesign) and >=5.x (generation pipeline overhaul).
+#
+# PRIMARY FIX: load with trust_remote_code=False so transformers uses its
+# built-in phi3 implementation (available since 4.45) instead of the cached
+# file.  See models.py:_patch_phi3_modeling() for the complementary safety-net.
+#
+# The venv on BigRed200 currently runs transformers==5.4.0 — do NOT downgrade,
+# as LLaMA-3.2-3B requires >=4.45 and LLaMA-3-8B requires >=4.40.
+transformers==5.4.0
+
+torch==2.7.1+cu118
+torchaudio==2.7.1+cu118
+torchvision==0.22.1+cu118

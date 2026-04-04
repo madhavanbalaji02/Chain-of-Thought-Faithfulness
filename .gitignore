@@ -3,3 +3,37 @@ __pycache__/*
 # Files too large
 ablation/*
 results/*
+
+# Server utility scripts (contain SSH credentials)
+br200_cmd.py
+br200_run_script.py
+br200_ssh.py
+br200_scp_down.py
+setup_ssh_socket.py
+push_models_reqs.sh
+remote_setup.sh
+
+# Debugging/server-maintenance shell scripts
+check*.sh
+fix_*.sh
+get_phi3*.sh
+resubmit*.sh
+apply_fixes.sh
+fix_and_resubmit.sh
+replace_phi3_model.sh
+read_phi3_attn.sh
+verify_phi3.sh
+
+# Claude internal
+CLAUDE.md
+
+# Python artifacts
+*.pyc
+*.pyo
+.env
+
+# Model checkpoints
+*.bin
+*.pt
+*.safetensors
+venv/

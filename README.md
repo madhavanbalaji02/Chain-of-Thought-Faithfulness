@@ -1,33 +1,179 @@
-# Codebase for the paper "Measuring Faithfulness of Chains of Thought by Unlearning Reasoning Steps"
+# Chain-of-Thought Faithfulness by Unlearning
 
-Preprint: Tutek, M., Chaleshtori, F. H., Marasović, A., & Belinkov, Y. (2025). Measuring Faithfulness of Chains of Thought by Unlearning Reasoning Steps. [[arXiv]](https://arxiv.org/abs/2502.14829)
+This repository contains the code and results for reproducing and extending the experiments from:
 
-![Faithfulness by Unlearning Reasoning Steps](figures/fig1_v2.png "Faithfulness by Unlearning Reasoning Steps")
+> **Measuring Faithfulness of Chains of Thought by Unlearning Reasoning Steps**
+> Tutek, M., Chaleshtori, F. H., Marasović, A., & Belinkov, Y. (2025)
+> [[arXiv:2502.14829]](https://arxiv.org/abs/2502.14829)
 
-Codebase is given as-is, instructions pending.
-Main file for running experiments is `unlearn.py`. The NPO method has been adapted from the [original repository](https://github.com/licong-lin/negative-preference-optimization).
+![Faithfulness by Unlearning Reasoning Steps](figures/fig1_v2.png)
 
-Sample run script: `python unlearn.py --model_name meta-llama/Llama-3.2-3B-Instruct --strategy sentencize --stepwise --dataset sqa --lr 3e-05 --pos --ff2 --method npo_KL`
+---
 
-## Paper graphs, result files and analysis notebooks
+## Core Idea
 
-To recompute results, you need final & ablation result files (`results`,`ablations`) which are too large to share via git. Please send an email to me [\[here\]](mailto:martin.tutek@gmail.com) and I'll share the google drive links with you.
+A model's Chain-of-Thought (CoT) is **faithful** if the reasoning steps actually drive the final answer. This is measured by applying **Negative Preference Optimization (NPO)** to *unlearn* individual CoT sentences, then checking whether the model's answer changes. If unlearning a step causes the answer to change, that step was genuinely influencing the output.
 
-### Add mistake [Lanham et al, 2023](https://arxiv.org/abs/2307.13702)
-We reuse the prompts from [Lanham et al](https://arxiv.org/abs/2307.13702) to add mistakes into CoT steps. A reproduction of this with GPT-4o-mini can be found in [Adding mistakes repro](Adding%20mistakes%20repro.ipynb). The minimal results of this setup can be found in [minimal_mistake_results](minimal_mistake_results).
+---
 
-### Annotation study
+## Models & Datasets
 
-The annotation study data files, including all the per-model-dataset bins can be found in [annotation_data](annotation_data).
-The code used to select instances for the study is in [Generate_annotation_data.ipynb](Generate_annotation_data.ipynb).
+**Models evaluated:**
+| Short name | HuggingFace ID |
+|---|---|
+| LLaMA-3-3B | `meta-llama/Llama-3.2-3B-Instruct` |
+| LLaMA-3 | `meta-llama/Meta-Llama-3-8B-Instruct` |
+| Mistral-2 | `mistralai/Mistral-7B-Instruct-v0.2` |
+| Phi-3 | `microsoft/Phi-3-mini-4k-instruct` |
 
-The full results of the annotation study can be fond in [annotation_results](annotation_results).
-The follow up analysis can be found in [Annotation analysis.ipynb](Annotation%20analysis.ipynb).
+**Datasets:**
+- `arc-challenge` — ARC Challenge
+- `openbook` — OpenBookQA
+- `sports` — Sports Understanding (BIG-Bench)
+- `sqa` — StrategyQA (requires `data/strategyqa/strategyqa_train.json`)
 
-### Post-unlearning CoT LLM-as-judge
+---
 
-The code using GPT-4o as a judge of whether CoTs have changed the answer they argue for before and after unlearning can be found in [CoT LLM as judge.ipynb](CoT%20LLM%20as%20judge.ipynb).
-The LM judgements, along with the single-sentence explanations (which were not analysed in the paper) are in [LM_judge_cot](LM_judge_cot).
+## Setup
 
-### Plots & tables
-Most of the code used to generate plots and tables from the paper, along with the plots and tables themselves, can be found in [Ablations.ipynb](Ablations.ipynb) and [Generate_CoT_heatmaps.ipynb](Generate_CoT_heatmaps.ipynb).
+```bash
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+```
+
+Set your HuggingFace token in `unlearn.py` (line ~370):
+```python
+login("hf_YOUR_TOKEN_HERE")
+```
+
+StrategyQA data:
+```bash
+mkdir -p data/strategyqa
+wget -O data/strategyqa/strategyqa_train.json \
+  https://raw.githubusercontent.com/wicsaax/strategy-qa/main/strategyQA_train.json
+```
+
+---
+
+## Running Experiments
+
+**Single run:**
+```bash
+python unlearn.py \
+  --model_name meta-llama/Llama-3.2-3B-Instruct \
+  --strategy sentencize \
+  --stepwise \
+  --dataset sqa \
+  --lr 3e-05 \
+  --pos \
+  --ff2 \
+  --method npo_KL
+```
+
+**Key flags:**
+| Flag | Description |
+|---|---|
+| `--model_name` | HuggingFace model ID |
+| `--dataset` | `arc-challenge`, `openbook`, `sports`, `sqa` |
+| `--method` | `npo_KL` (default), `npo`, `npo_grad_diff` |
+| `--ff2` | Restrict optimization to FF2 layers (`mlp.down_proj.weight`) |
+| `--pos` | Filter function tokens via spaCy POS tagging |
+| `--stepwise` | Unlearn one CoT sentence at a time |
+| `--strategy sentencize` | Split CoT into sentences using NLTK |
+| `--new_cot` | Force regeneration of CoTs (otherwise cached in `final_cot/`) |
+
+**Generate all 16 SLURM job scripts (BigRed200 / any SLURM cluster):**
+```bash
+python run_scripts.py
+```
+Uses `ul_step_pos_ff2.job` (32G, 12h) for small models and `ul_step_pos_ff2_L2.job` (64G, 24h) for LLaMA-3-8B and Mistral-7B.
+
+---
+
+## Experiment Pipeline
+
+1. **CoT generation** (`data.py:load_or_generate_dataset_cots`) — generates or loads cached CoTs from `final_cot/{dataset}/{model}_s={seed}_t={temp}_cots.jsonl`
+2. **Per-instance unlearning** (`unlearn.py:unlearn_single`) — for each instance and each CoT step, loads two model copies (trainable + frozen oracle) and applies NPO loss
+3. **Evaluation after each epoch** (`unlearn.py:evaluate`) — measures CoT probability, answer probabilities (efficacy + specificity), and generates a new CoT
+4. **Results** saved as JSONL to `final_results/{dataset}/{short_model}/`
+
+### Loss Functions
+
+- `npo` — forget loss only (NPO against frozen oracle)
+- `npo_grad_diff` — forget loss + cross-entropy retain loss
+- `npo_KL` — forget loss + KL divergence retain loss *(used in paper)*
+
+---
+
+## Results
+
+The `final_results/` directory contains the completed experiment outputs for all 16 model × dataset combinations:
+
+```
+final_results/
+├── arc-challenge/   {LLaMA-3-3B, LLaMA-3, Mistral-2, Phi-3}
+├── openbook/        {LLaMA-3-3B, LLaMA-3, Mistral-2, Phi-3}
+├── sports/          {LLaMA-3-3B, LLaMA-3, Mistral-2, Phi-3}
+└── sqa/             {LLaMA-3-3B, LLaMA-3, Mistral-2, Phi-3}
+```
+
+Each `.out` file is a JSONL where each line is one instance:
+```json
+{
+  "id": "...",
+  "question": "...",
+  "step_idx": 2,
+  "correct": true,
+  "initial_cot": "...",
+  "initial_probs": {...},
+  "unlearning_results": {
+    "0": {"completion": "...", "probs": {...}, "prediction": "A", "new_cot": "...", "cot_prob": 0.42},
+    "1": {"completion": "...", "probs": {...}, "prediction": "A", "new_cot": "...", "cot_prob": 0.11},
+    ...
+  }
+}
+```
+
+---
+
+## Code Structure
+
+| File | Description |
+|---|---|
+| `unlearn.py` | Main entry point — NPO training loop, evaluation |
+| `models.py` | Model loading (`load_model_and_tokenizer`), Phi-3 compatibility patch |
+| `data.py` | CoT caching, `SegmentOTFDataset`, `FRCollator` |
+| `dataload.py` | Dataset handlers for ARC, OpenBookQA, Sports, SQA |
+| `evaluate.py` | CoT generation, completion/answer probabilities |
+| `segment.py` | POS-tag based token filtering via spaCy |
+| `const.py` | Model name → path mappings |
+| `run_scripts.py` | Generates SLURM `sbatch` commands for all 16 jobs |
+| `plotting.py` / `stats.py` | Analysis utilities |
+
+**Notebooks:**
+- `Ablations.ipynb` — paper plots and tables
+- `Generate_CoT_heatmaps.ipynb` — CoT heatmap figures
+- `Annotation analysis.ipynb` — human annotation study analysis
+- `CoT LLM as judge.ipynb` — GPT-4o judge of post-unlearning CoT changes
+- `Adding mistakes repro.ipynb` — Lanham et al. mistake-adding baseline
+
+---
+
+## Notes on Compatibility
+
+- Requires `transformers>=4.45` for built-in Phi-3, LLaMA-3.2, and Mistral support
+- `trust_remote_code=False` is set in `models.py` — uses the built-in transformers implementations rather than cached model code
+- NPO method adapted from [licong-lin/negative-preference-optimization](https://github.com/licong-lin/negative-preference-optimization)
+
+---
+
+## Citation
+
+```bibtex
+@article{tutek2025measuring,
+  title={Measuring Faithfulness of Chains of Thought by Unlearning Reasoning Steps},
+  author={Tutek, Martin and Chaleshtori, Farzad Habibi and Marasovi{\'c}, Ana and Belinkov, Yonatan},
+  journal={arXiv preprint arXiv:2502.14829},
+  year={2025}
+}
+```

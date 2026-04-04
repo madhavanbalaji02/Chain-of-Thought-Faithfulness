@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH -p gpu
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --gpus=1
+#SBATCH --mem=32G
+#SBATCH --time=12:00:00
+#SBATCH --output=slurm-%x-%j.out
+
+echo "Starting job on $(hostname)"
+echo "Arguments: model=$1, dataset=$2, lr=$3, method=$4"
+
+# Source the virtual env if it exists
+if [ -f "venv/bin/activate" ]; then
+    source venv/bin/activate
+fi
+
+python unlearn.py --model_name $1 --strategy sentencize --stepwise --dataset $2 --lr $3 --pos --ff2 --method $4
+
+echo "Job completed."
