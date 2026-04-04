@@ -55,6 +55,12 @@ wget -O data/strategyqa/strategyqa_train.json \
 
 ---
 
+## Compute
+
+All 16 experiments (4 models × 4 datasets) were trained on **BigRed 200**, Indiana University's high-performance computing cluster. Each job ran on an NVIDIA A100 GPU (40GB VRAM) via SLURM — small models (Phi-3, LLaMA-3-3B) on a single GPU with 32GB RAM, and large models (LLaMA-3-8B, Mistral-7B) on 2 GPUs with 64GB RAM.
+
+---
+
 ## Running Experiments
 
 **Single run:**
