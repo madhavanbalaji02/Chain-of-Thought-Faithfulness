@@ -113,6 +113,42 @@ Uses `ul_step_pos_ff2.job` (32G, 12h) for small models and `ul_step_pos_ff2_L2.j
 
 ## Results
 
+All 16 experiments completed on BigRed 200. Settings: `npo_KL`, `--stepwise`, `--ff2`, `--pos`, `lr=3e-05`, `rs=1001`.
+
+### Faithfulness (%) — % of instances where unlearning a CoT step caused a prediction flip
+
+| Model | ARC-Challenge | OpenBookQA | Sports | StrategyQA | Avg |
+|---|:---:|:---:|:---:|:---:|:---:|
+| LLaMA-3-8B | 62.50 | 56.92 | 61.82 | 59.56 | **60.2** |
+| LLaMA-3-3B | 36.00 | 51.50 | 34.30 | 50.28 | **43.0** |
+| Mistral-7B  | 78.39 | 75.27 | 63.49 | 70.68 | **72.0** |
+| Phi-3       |  4.31 |  5.42 | 25.00 |  6.52 | **10.3** |
+
+### Efficacy / Specificity
+
+| Model | Dataset | Efficacy | Specificity |
+|---|---|:---:|:---:|
+| LLaMA-3-8B | ARC-Challenge | 82.3 | 83.9 |
+| LLaMA-3-8B | OpenBookQA    | 82.4 | 76.2 |
+| LLaMA-3-8B | Sports        | 82.2 | 55.7 |
+| LLaMA-3-8B | StrategyQA    | 82.2 | 72.1 |
+| LLaMA-3-3B | ARC-Challenge | 69.6 | 92.0 |
+| LLaMA-3-3B | OpenBookQA    | 71.5 | 90.9 |
+| LLaMA-3-3B | Sports        | 65.3 | 80.1 |
+| LLaMA-3-3B | StrategyQA    | 70.7 | 85.5 |
+| Mistral-7B  | ARC-Challenge | 82.8 | 56.4 |
+| Mistral-7B  | OpenBookQA    | 82.8 | 48.2 |
+| Mistral-7B  | Sports        | 82.8 | 48.7 |
+| Mistral-7B  | StrategyQA    | 82.9 | 49.0 |
+| Phi-3       | ARC-Challenge | 11.3 | 100.0 |
+| Phi-3       | OpenBookQA    | 13.2 | 100.0 |
+| Phi-3       | Sports        | 21.0 | 98.5  |
+| Phi-3       | StrategyQA    | 15.5 | 99.7  |
+
+**Efficacy–Faithfulness correlation: Pearson r = 0.937 (p < 0.0001)** — replicating the paper's central finding.
+
+> **Note on LR:** This run used `lr=3e-05` for all models. The original paper calibrates per-model LRs (e.g. Phi-3 uses `1e-04`, Mistral uses `5e-06`). Results for LLaMA-3-3B (whose best LR is `3e-05`) are directly comparable; Phi-3 and Mistral numbers are affected by the LR mismatch. See [`REPRODUCTION_REPORT.md`](REPRODUCTION_REPORT.md) for the full analysis.
+
 The `final_results/` directory contains the completed experiment outputs for all 16 model × dataset combinations:
 
 ```
