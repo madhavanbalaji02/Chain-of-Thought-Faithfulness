@@ -1,0 +1,17 @@
+Dataset,Model,N,Faith+Correct%,Faith+Wrong%,Unfaith+Correct%,Unfaith+Wrong%,Faith|Correct%,Faith|Wrong%
+ARC-Challenge,LLaMA-3-8B,200,53.5,9.0,34.0,3.5,61.1,72.0
+ARC-Challenge,LLaMA-3-3B,181,29.8,5.5,57.5,7.2,34.2,43.5
+ARC-Challenge,Mistral-7B,199,63.8,14.6,16.1,5.5,79.9,72.5
+ARC-Challenge,Phi-3,209,3.8,0.5,89.5,6.2,4.1,7.1
+OpenBookQA,LLaMA-3-8B,195,43.1,13.8,36.9,6.2,53.8,69.2
+OpenBookQA,LLaMA-3-3B,175,42.3,9.1,41.1,7.4,50.7,55.2
+OpenBookQA,Mistral-7B,186,63.4,11.8,18.8,5.9,77.1,66.7
+OpenBookQA,Phi-3,203,3.4,2.0,86.2,8.4,3.8,19.0
+Sports,LLaMA-3-8B,166,50.6,10.8,29.5,9.0,63.2,54.5
+Sports,LLaMA-3-3B,174,17.8,16.1,36.2,29.9,33.0,35.0
+Sports,Mistral-7B,190,48.9,14.2,27.9,8.9,63.7,61.4
+Sports,Phi-3,165,20.0,4.8,60.0,15.2,25.0,24.2
+StrategyQA,LLaMA-3-8B,183,42.1,17.5,32.8,7.7,56.2,69.6
+StrategyQA,LLaMA-3-3B,179,33.0,17.3,34.6,15.1,48.8,53.4
+StrategyQA,Mistral-7B,191,48.2,22.5,20.4,8.9,70.2,71.7
+StrategyQA,Phi-3,184,3.3,3.3,67.4,26.1,4.6,11.1

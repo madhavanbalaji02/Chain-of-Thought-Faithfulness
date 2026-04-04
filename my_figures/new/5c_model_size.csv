@@ -1,0 +1,5 @@
+Dataset,LLaMA-3-3B_Faith%,LLaMA-3-8B_Faith%,Delta_pp
+ARC-Challenge,35.36,62.50,+27.14
+OpenBookQA,51.43,56.92,+5.49
+Sports,33.91,61.45,+27.54
+StrategyQA,50.28,59.56,+9.28

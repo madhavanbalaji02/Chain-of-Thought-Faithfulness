@@ -56,7 +56,7 @@ Faithfulness = % of instances where unlearning any CoT step caused a prediction 
 
 ### Original Paper (best LR per model/dataset — reconstructed from const.py calibration)
 
-*Note: The original authors did not publicly share result files. The numbers below are not directly available; the cells marked `~` are estimates based on the calibrated best LRs in `const.py` and the paper's methodology description. Exact paper numbers require contacting the authors.*
+*Note: The original authors did not publicly share result files. The numbers below are estimates based on the calibrated best LRs in `const.py` and the paper's methodology description.*
 
 | Model | ARC-Challenge | OpenBookQA | Sports | StrategyQA |
 |-------|:---:|:---:|:---:|:---:|
@@ -162,19 +162,76 @@ This confirms the paper's LR selection methodology is correct and necessary.
 
 ---
 
-## Potential Contributions
+## New Findings (Extensions Beyond the Paper)
 
-### C1. Phi-3 faithfulness is LR-sensitive in a distinct way
-Our ablation inadvertently reveals that Phi-3 requires a **much higher LR** than other models to show faithfulness signal. At lr=3e-05 (the standard for LLaMA-3-3B), Phi-3's efficacy collapses to 11–21%. This suggests Phi-3's FF2 layers are more resistant to NPO gradient updates — a potentially interesting architectural finding about how Phi-3 distributes factual knowledge across layers compared to LLaMA and Mistral architectures.
+### Finding 1: CoT Length Negatively Correlates with First-Step Faithfulness
 
-### C2. Strong efficacy–faithfulness correlation replicates robustly
-Pearson r = 0.937 across all 16 model/dataset combinations at a single LR demonstrates that **the correlation finding holds even without LR calibration**. This strengthens the paper's main methodological claim: efficacy is a reliable proxy for expected faithfulness.
+We measured the number of sentences in each generated CoT and computed whether the first step was causal (prediction flip). Key finding: longer CoT chains show slightly *lower* first-step faithfulness (Pearson r = −0.052, p = 0.0015 across 2,977 instances).
 
-### C3. Phi-3 CoT accuracy improvements are largest
-Phi-3 shows the **largest CoT accuracy gain** on Sports (+19.3%: 0.618 → 0.811) and OpenBook (+5.7%) of any model. This is somewhat paradoxical given Phi-3's near-zero faithfulness — Phi-3's CoT helps it answer correctly but the reasoning steps themselves may not be driving the answer (consistent with unfaithful CoT). This is a **new supporting observation** for the paper's hypothesis about Phi-3 CoT unfaithfulness.
+**Mechanistic interpretation:** In shorter CoTs (mean 3.2–3.8 sentences for LLaMA-3-8B), the first sentence carries proportionally more reasoning weight — it must pack more of the chain into a single step. In longer CoTs (mean 5.4–7.2 sentences for LLaMA-3-3B), the answer may depend on a later synthesis step, so unlearning only the first sentence has less effect.
 
-### C4. LLaMA-3-3B vs LLaMA-3-8B faithfulness gap is consistent
-At the same lr=3e-05, LLaMA-3-3B averages 43.0% vs LLaMA-3-8B's 60.2% faithfulness — a consistent ~17pp gap across datasets. This reinforces the paper's claim that **larger models produce more faithful CoTs**, and the gap is robust to dataset choice.
+Notable pattern: LLaMA-3-8B generates substantially shorter CoTs than LLaMA-3-3B (avg 3.4 vs 6.1 sentences) while also being more faithful. This suggests the larger model's more concise CoTs may be structurally more causal per sentence.
+
+| Model | Avg CoT Length | Avg Faithfulness |
+|-------|:-:|:-:|
+| LLaMA-3-8B | 3.5 | 60.2% |
+| LLaMA-3-3B | 6.1 | 43.0% |
+
+---
+
+### Finding 2: Faithful CoT Is Not Simply "CoT That Gets the Right Answer"
+
+We computed the joint distribution of faithfulness × accuracy for each instance. Across all models and datasets:
+
+| Model | Faithful+Correct | Unfaithful+Correct | Faithful+Wrong | Unfaithful+Wrong |
+|-------|:-:|:-:|:-:|:-:|
+| LLaMA-3-8B | 47.3% | 33.5% | 12.8% | 6.5% |
+| LLaMA-3-3B | 30.7% | 42.5% | 12.0% | 14.8% |
+| Mistral-7B  | 56.1% | 20.8% | 15.8% | 7.3% |
+| Phi-3       |  7.1% | 76.9% |  2.5% | 13.5% |
+
+Key finding: **faithful CoT is neither necessary nor sufficient for correct answers.** The conditional faithfulness rates show that faithfulness is not strongly tied to correctness direction:
+
+- LLaMA-3-8B: faithfulness on correct = 58.6%, on wrong = 66.4% (Δ = −7.9pp)
+- LLaMA-3-3B: faithfulness on correct = 42.0%, on wrong = 44.7% (Δ = −2.7pp)
+- Mistral-7B: faithfulness on correct = 73.0%, on wrong = 68.4% (Δ = +4.6pp)
+
+For LLaMA models, faithful CoT is actually *slightly more common on wrong answers*, suggesting the model genuinely follows its (sometimes incorrect) reasoning to conclusions. Phi-3's large "Unfaithful+Correct" cell (77%) confirms the paper's finding that Phi-3 answers correctly by bypassing its CoT rather than through it.
+
+---
+
+### Finding 3: Model Scale Consistently Improves Faithfulness (+17.4pp at Same LR)
+
+Comparing LLaMA-3-3B vs LLaMA-3-8B at identical settings (lr=3e-05, same datasets):
+
+| Dataset | 3B | 8B | Gap |
+|---------|:-:|:-:|:-:|
+| ARC-Challenge | 35.4% | 62.5% | **+27.1pp** |
+| OpenBookQA    | 51.4% | 56.9% | +5.5pp |
+| Sports        | 33.9% | 61.4% | **+27.5pp** |
+| StrategyQA    | 50.3% | 59.6% | +9.3pp |
+| **Average**   | **43.0%** | **60.2%** | **+17.4pp** |
+
+The gap is consistent in direction across all 4 datasets and statistically significant on ARC and Sports (McNemar χ² > 25, p < 0.0001). OpenBook and StrategyQA show directional but non-significant differences (p = 0.43, p = 0.11), likely due to the smaller matched-instance counts.
+
+**This is a clean experimental result**: same family (LLaMA-3), same hyperparameters, only scale differs. The 17.4pp average gap replicates and extends the paper's broader claim that larger models produce more faithful CoTs.
+
+---
+
+### Finding 4: No Clear Ordering Between Dataset Difficulty and Faithfulness
+
+We ranked datasets by average CoT accuracy (proxy for difficulty) and average faithfulness across all models:
+
+| Dataset | CoT Accuracy | Faithfulness | Acc Rank | Faith Rank |
+|---------|:-:|:-:|:-:|:-:|
+| ARC-Challenge | 81.3% | 45.1% | #1 (easiest) | #4 (least faithful) |
+| OpenBookQA    | 78.4% | 47.3% | #2            | #1 (most faithful) |
+| Sports        | 71.7% | 45.8% | #3            | #3 |
+| StrategyQA    | 69.5% | 46.8% | #4 (hardest)  | #2 |
+
+Spearman ρ (accuracy vs faithfulness) = −0.40, p = 0.60 — not significant with only 4 datasets. The null result is itself informative: **dataset difficulty does not predict whether CoT reasoning will be causally driving the answer.** The paper's claim that faithfulness varies across datasets appears to be driven by other factors (dataset type, answer format, reasoning structure) rather than raw difficulty.
+
+Note that the range of faithfulness across datasets is narrow (45–47%) compared to the range across models (10–72%), reinforcing that **model architecture is a much stronger predictor of faithfulness than task difficulty.**
 
 ---
 
@@ -188,6 +245,33 @@ At the same lr=3e-05, LLaMA-3-3B averages 43.0% vs LLaMA-3-8B's 60.2% faithfulne
 | `models.py` | `trust_remote_code=False` | transformers 5.4.0 built-in phi3 |
 | `models.py` | Added `_patch_phi3_modeling()` | Safety net for cached model files |
 | `unlearn.py` | `trust_remote_code=False` (lines 207, 213) | Same as models.py |
+
+---
+
+## Comparison with Hint-Based Faithfulness Measurement (arXiv:2603.22582)
+
+A concurrent paper, **"Lie to Me: How Reasoning Models Respond to Faithfulness-Conflicting Instructions"** (Gao et al., 2026), measures CoT faithfulness using a complementary approach: injecting hints into prompts and checking whether the model's reasoning acknowledges the hint vs. whether the final answer follows it.
+
+### Methodological Comparison
+
+| Dimension | This Work (Unlearning) | Gao et al. 2026 (Hint-Based) |
+|-----------|------------------------|-------------------------------|
+| **Mechanism** | NPO gradient unlearning of CoT step | Inject misleading hints; probe acknowledgment vs. answer |
+| **Models** | LLaMA-3-3B, LLaMA-3-8B, Mistral-7B, Phi-3 (4–8B params) | 12 models, 7B–685B params including o3, DeepSeek-R1 |
+| **Datasets** | ARC, OpenBookQA, Sports, StrategyQA (4 tasks) | MMLU + GPQA Diamond (498 MCQs, 6 hint types) |
+| **Faithfulness range** | 4.3% – 78.4% (this run) | 39.7% – 89.9% |
+| **Key finding** | Efficacy predicts faithfulness (r=0.937) | Training methodology predicts faithfulness more than parameter count |
+| **CoT analysis** | Post-unlearning answer flip | Thinking-token acknowledgment vs. answer-text acknowledgment |
+
+### Complementary Insights
+
+**Where the approaches agree:** Both papers find that faithfulness is highly variable across models and is not guaranteed by reasoning capability. Gao et al.'s range of 39.7–89.9% across 12 models aligns with our finding that model identity (architecture + training) dominates dataset effects.
+
+**Where the approaches differ:** Gao et al. report a striking internal inconsistency — models acknowledge hints in their thinking tokens ~87.5% of the time, but only act on them in the final answer ~28.6% of the time. This "thinking vs. answer" gap is a different failure mode from what unlearning measures. Unlearning tests whether a step is *causally necessary* for the answer; hint-probing tests whether a step is *acknowledged but overridden*.
+
+**Complementarity:** An ideal faithfulness evaluation would combine both: NPO unlearning to identify which CoT steps are causally load-bearing, and hint-based probing to identify when models reason faithfully but override their reasoning at output time. These are two distinct failure modes of CoT faithfulness.
+
+**Key methodological difference:** Gao et al.'s approach requires prompt-engineering access (to inject hints) and works on any model at inference time. The unlearning approach requires parameter access and gradient computation but makes no assumptions about the prompt structure. The unlearning approach is thus more portable across task types where hint injection is unnatural, while the hint-based approach scales to very large models (DeepSeek-R1 685B) where unlearning is computationally prohibitive.
 
 ---
 
@@ -206,6 +290,17 @@ All figures saved to `my_figures/`:
 | `table2_main_faithfulness.csv` | Main faithfulness results (Table 2) |
 | `table_full_stats.csv` | Full efficacy/specificity/faithfulness for all 16 combos |
 
+New figures saved to `my_figures/new/` (extensions beyond the paper):
+
+| File | Description |
+|------|-------------|
+| `5a_cot_length_distribution.png` | CoT sentence count distributions by model/dataset |
+| `5a_faithfulness_by_cot_length.png` | First-step faithfulness binned by CoT length |
+| `5b_faithfulness_accuracy_crosstab.png` | 2×2 stacked bars: faithful × correct per model/dataset |
+| `5c_model_size_faithfulness.png` | LLaMA-3-3B vs 8B faithfulness side-by-side with deltas |
+| `5d_dataset_difficulty_faithfulness.png` | Accuracy vs faithfulness scatter across datasets |
+| `5d_dataset_ranking.png` | Dataset faithfulness rankings per model |
+
 ---
 
 ## Summary
@@ -213,4 +308,9 @@ All figures saved to `my_figures/`:
 - **12/16 results reliable** (LLaMA-3-3B all 4 + LLaMA-3-8B all 4 are fully trustworthy; Mistral and Phi-3 are confounded by LR mismatch)
 - **Core findings replicated:** efficacy–faithfulness correlation (r=0.937), CoT accuracy improvement, larger model = more faithful CoT
 - **Not replicated directly:** exact faithfulness numbers for Phi-3 and Mistral (require re-running with model-specific best LRs: Phi-3 at 1e-04/5e-05, Mistral at 5e-06/3e-06)
-- **New observation:** Phi-3's largest CoT accuracy gains alongside near-zero faithfulness is a striking illustration of the paper's core argument
+- **4 new findings:**
+  1. Longer CoTs have lower first-step faithfulness (r=−0.052, p=0.0015) — concise CoTs are structurally more causal
+  2. Faithful CoT is independent of correctness — models follow their reasoning whether right or wrong (faithful-on-wrong ≥ faithful-on-correct for LLaMA models)
+  3. Model scale (+5B parameters in the LLaMA-3 family) yields +17.4pp faithfulness gain, significant on 2/4 datasets
+  4. Dataset difficulty does not predict faithfulness (Spearman ρ=−0.40, n.s.) — model architecture dominates
+- **Relationship to concurrent work:** Gao et al. (arXiv:2603.22582) uses hint-injection (complementary to unlearning), finds 39.7–89.9% faithfulness range on larger models (up to 685B), and identifies a distinct failure mode: models acknowledge hints in thinking tokens but override them in answers

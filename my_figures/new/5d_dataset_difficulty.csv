@@ -1,0 +1,5 @@
+Dataset,Mean_CoT_Accuracy%,Mean_Faithfulness%,Acc_Rank,Faith_Rank
+ARC-Challenge,81.35,45.14,1,4
+OpenBookQA,78.41,47.26,2,1
+Sports,71.74,45.84,3,3
+StrategyQA,69.53,46.76,4,2
