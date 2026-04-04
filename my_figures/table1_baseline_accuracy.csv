@@ -1,0 +1,17 @@
+Model,Dataset,NoCoT_Accuracy,CoT_Accuracy
+LLaMA-3-8B,ARC-Challenge,0.8174,0.8348
+LLaMA-3-8B,OpenBookQA,0.7043,0.7739
+LLaMA-3-8B,Sports,0.6798,0.7544
+LLaMA-3-8B,StrategyQA,0.6739,0.7217
+LLaMA-3-3B,ARC-Challenge,0.7304,0.7696
+LLaMA-3-3B,OpenBookQA,0.6783,0.7652
+LLaMA-3-3B,Sports,0.4912,0.5702
+LLaMA-3-3B,StrategyQA,0.6087,0.6652
+Mistral-2,ARC-Challenge,0.7174,0.7826
+Mistral-2,OpenBookQA,0.7391,0.7391
+Mistral-2,Sports,0.7105,0.7325
+Mistral-2,StrategyQA,0.6157,0.6943
+Phi-3,ARC-Challenge,0.9087,0.8739
+Phi-3,OpenBookQA,0.8043,0.8609
+Phi-3,Sports,0.6184,0.8114
+Phi-3,StrategyQA,0.6304,0.7000

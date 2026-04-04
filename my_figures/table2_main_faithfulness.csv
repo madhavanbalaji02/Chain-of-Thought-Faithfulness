@@ -1,0 +1,5 @@
+Model,ARC-Challenge,OpenBookQA,Sports,StrategyQA
+LLaMA-3-8B,62.50,56.92,61.82,59.56
+LLaMA-3-3B,36.00,51.50,34.30,50.28
+Mistral-2,78.39,75.27,63.49,70.68
+Phi-3,4.31,5.42,25.00,6.52
