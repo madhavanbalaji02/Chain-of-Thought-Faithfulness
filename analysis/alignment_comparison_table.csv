@@ -1,0 +1,4 @@
+condition,n,binary_faithful_rate,binary_faithful_n,mean_delta_p,std_delta_p,pct_positive_dp
+baseline,50,43.0,21,0.113,0.41,60.5
+high_quality,50,0.0,0,0.0,0.0,0.0
+low_quality,50,0.0,0,0.0,0.0,0.0
