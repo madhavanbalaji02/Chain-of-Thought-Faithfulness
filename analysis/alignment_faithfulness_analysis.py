@@ -260,3 +260,141 @@ if placeholder:
     print("\n[NOTE] Figure contains placeholder values. Slot in real results")
     print("       by placing results.jsonl files in finetuned_results/*/")
     print("       and re-running this script.")
+
+# ──────────────────────────────────────────────
+# Write final_results_summary.json for fill_results.py
+# ──────────────────────────────────────────────
+# Extract per-condition stats under flat keys understood by paper.tex \RESULT{} macros.
+bs = all_stats['baseline']
+hq = all_stats['high_quality']
+lq = all_stats['low_quality']
+
+# Statistical tests (already computed above; re-derive for JSON output)
+from scipy.stats import ttest_ind as _ttest, chi2 as _chi2
+
+def _mcnemar(b_list, c_list):
+    n = min(len(b_list), len(c_list))
+    b0c1 = sum(1 for b, c in zip(b_list[:n], c_list[:n]) if b == 0 and c == 1)
+    b1c0 = sum(1 for b, c in zip(b_list[:n], c_list[:n]) if b == 1 and c == 0)
+    if b0c1 + b1c0 > 0:
+        chi2_val = (abs(b0c1 - b1c0) - 1) ** 2 / (b0c1 + b1c0)
+        p_val = 1 - _chi2.cdf(chi2_val, df=1)
+    else:
+        chi2_val, p_val = 0.0, 1.0
+    return round(chi2_val, 3), round(p_val, 4)
+
+def _welch(a_list, b_list):
+    t, p = _ttest(a_list, b_list, equal_var=False)
+    return round(float(t), 3), round(float(p), 4)
+
+hq_chi2, hq_p_mc   = _mcnemar(bs['binary_faithful_list'], hq['binary_faithful_list'])
+lq_chi2, lq_p_mc   = _mcnemar(bs['binary_faithful_list'], lq['binary_faithful_list'])
+hq_t,    hq_p_t    = _welch(bs['delta_p_list'], hq['delta_p_list'])
+lq_t,    lq_p_t    = _welch(bs['delta_p_list'], lq['delta_p_list'])
+
+def _sig(p): return 'significant' if p < 0.05 else 'not significant'
+
+# Subcritical faithfulness: instances with delta_p > 0 but no flip in baseline
+subcrit_dp_pos  = sum(1 for d in bs['delta_p_list'] if d > 0)
+subcrit_no_flip = sum(1 for d, f in zip(bs['delta_p_list'], bs['binary_faithful_list'])
+                      if d > 0 and f == 0)
+subcrit_pct = round(subcrit_no_flip / subcrit_dp_pos * 100, 1) if subcrit_dp_pos > 0 else 0.0
+
+# Paradox verdict (placeholder-aware)
+if placeholder:
+    paradox_verdict          = 'PENDING (awaiting BigRed200 results)'
+    paradox_direction        = 'PENDING'
+    paradox_verdict_extended = 'are pending (placeholder values used throughout)'
+    conclusion_finding       = 'PENDING'
+    conclusion_paradox       = 'PENDING'
+elif hq['mean_delta_p'] < bs['mean_delta_p']:
+    paradox_verdict          = 'support'
+    paradox_direction        = ('high-quality fine-tuning reduced mean $\\Delta p$ '
+                                f'from {bs["mean_delta_p"]:.4f} to {hq["mean_delta_p"]:.4f}')
+    paradox_verdict_extended = ('provide preliminary evidence for the alignment-faithfulness '
+                                'paradox: high-quality CoT fine-tuning is associated with '
+                                'reduced parametric faithfulness on held-out instances')
+    conclusion_finding       = ('show that high-quality CoT fine-tuning reduces continuous '
+                                f'faithfulness ($\\Delta p$: {bs["mean_delta_p"]:.4f} '
+                                f'$\\rightarrow$ {hq["mean_delta_p"]:.4f})')
+    conclusion_paradox       = ('receives empirical support, though the small sample size '
+                                '($N=50$) limits confidence in the effect size')
+else:
+    paradox_verdict          = 'do not support'
+    paradox_direction        = ('high-quality fine-tuning did not reduce mean $\\Delta p$ '
+                                f'({bs["mean_delta_p"]:.4f} $\\rightarrow$ {hq["mean_delta_p"]:.4f})')
+    paradox_verdict_extended = ('do not support the alignment-faithfulness paradox within '
+                                'this experimental budget; parametric faithfulness was not '
+                                'significantly altered by CoT quality fine-tuning')
+    conclusion_finding       = ('do not confirm the alignment-faithfulness paradox within '
+                                'this experimental budget; no significant difference in '
+                                'continuous faithfulness was detected')
+    conclusion_paradox       = ('is not supported by these results, suggesting that LoRA '
+                                'fine-tuning at this scale does not substantially alter '
+                                'parametric faithfulness')
+
+summary_json = {
+    # ── Condition-level stats ──
+    'n_test_instances':             bs['n'],
+    'baseline_binary_faith_pct':    round(bs['binary_faithful_rate'], 1),
+    'baseline_mean_delta_p':        round(bs['mean_delta_p'], 4),
+    'baseline_pct_positive_dp':     round(bs['pct_positive_dp'], 1),
+    'hq_binary_faith_pct':          round(hq['binary_faithful_rate'], 1),
+    'hq_mean_delta_p':              round(hq['mean_delta_p'], 4),
+    'hq_pct_positive_dp':           round(hq['pct_positive_dp'], 1),
+    'lq_binary_faith_pct':          round(lq['binary_faithful_rate'], 1),
+    'lq_mean_delta_p':              round(lq['mean_delta_p'], 4),
+    'lq_pct_positive_dp':           round(lq['pct_positive_dp'], 1),
+    # ── Split sizes (filled by make_finetune_splits.py output; placeholders here) ──
+    'n_scored':                     'PENDING',
+    'n_high_quality':               'PENDING',
+    'n_low_quality':                'PENDING',
+    # ── Quality score distribution (filled after score_cot_quality.py) ──
+    'score_mean':                   'PENDING',
+    'score_std':                    'PENDING',
+    'score_min':                    'PENDING',
+    'score_max':                    'PENDING',
+    'score_shape':                  'PENDING',
+    'shapiro_p':                    'PENDING',
+    'hq_mean_score':                'PENDING',
+    'lq_mean_score':                'PENDING',
+    'score_split_gap':              'PENDING',
+    'score_split_gap_pct':          'PENDING',
+    'n_rescore':                    'PENDING',
+    'cronbach_alpha':               'PENDING',
+    # ── Statistical tests ──
+    'hq_mcnemar_chi2':              hq_chi2,
+    'hq_mcnemar_p':                 hq_p_mc,
+    'hq_mcnemar_sig':               f'({_sig(hq_p_mc)})',
+    'hq_t_stat':                    hq_t,
+    'hq_t_p':                       hq_p_t,
+    'hq_t_sig':                     f'({_sig(hq_p_t)})',
+    'lq_mcnemar_chi2':              lq_chi2,
+    'lq_mcnemar_p':                 lq_p_mc,
+    'lq_mcnemar_sig':               f'({_sig(lq_p_mc)})',
+    'lq_t_stat':                    lq_t,
+    'lq_t_p':                       lq_p_t,
+    'lq_t_sig':                     f'({_sig(lq_p_t)})',
+    # ── Subcritical faithfulness ──
+    'subcritical_undercounting_pct': subcrit_pct,
+    'subcritical_highest_condition': 'PENDING',
+    'subcritical_highest_pct':       'PENDING',
+    'subcritical_lowest_condition':  'PENDING',
+    'subcritical_lowest_pct':        'PENDING',
+    'subcritical_interpretation':    'PENDING',
+    # ── Trajectory / per-epoch ──
+    'trajectory_shape':              'PENDING',
+    'trajectory_interpretation':     'PENDING',
+    # ── Paradox verdict ──
+    'paradox_verdict':               paradox_verdict,
+    'paradox_direction':             paradox_direction,
+    'paradox_verdict_extended':      paradox_verdict_extended,
+    'conclusion_finding':            conclusion_finding,
+    'conclusion_paradox_status':     conclusion_paradox,
+}
+
+OUT_JSON = 'analysis/final_results_summary.json'
+import json as _json
+with open(OUT_JSON, 'w', encoding='utf-8') as _f:
+    _json.dump(summary_json, _f, indent=2, ensure_ascii=False)
+print(f"Saved: {OUT_JSON}")
