@@ -9,7 +9,11 @@ models = {
 
 datasets = ['arc-challenge', 'openbook', 'sports', 'sqa'] # 'aqua',
 
-lrs = [5e-5, 3e-5, 5e-6]
+# NOTE: All 16 paper experiments used a single fixed lr=3e-05. A per-model LR
+# sweep (lrs below) was planned but never run in this reproduction. The optimal
+# per-model LRs from const.py are: LLaMA-3-8B 1e-05, LLaMA-3-3B 3e-05,
+# Mistral-7B 5e-06, Phi-3 1e-04 (arc/openbook) / 5e-05 (sports/sqa).
+# lrs = [5e-5, 3e-5, 5e-6]  # kept for reference; not used
 
 model_to_short = {
   'microsoft/Phi-3-mini-4k-instruct': 'Phi-3',
@@ -34,7 +38,7 @@ for dataset in datasets:
     print("-"*30)
     print(f"{dataset} => {model}")
     print("-"*30)
-    for lr in [3e-5]: # lrs
+    for lr in [3e-5]:  # single fixed LR; see comment above
       mod = model_to_short[model]
       script = big_script if big else small_script
       print(script_template.format(

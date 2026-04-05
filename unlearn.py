@@ -202,15 +202,15 @@ def evaluate(model, tokenizer, DH, target, specificity_split, step_idx):
 def unlearn_single(model_id, tokenizer, args, target, step_idx, cots_train, cots_verify, dh, instance_idx):
 
     # Load models and dataset, fresh every time
-    model = CLM.from_pretrained(model_id, 
+    model = CLM.from_pretrained(model_id,
                                 torch_dtype=torch.bfloat16,
-                                trust_remote_code=True,
+                                trust_remote_code=False,
                                 device_map="auto"
                                 )
     # Oracle model is frozen
     oracle_model = CLM.from_pretrained(model_id,
                                         torch_dtype=torch.bfloat16,
-                                        trust_remote_code=True, 
+                                        trust_remote_code=False,
                                         device_map="auto")
     device = model.device
     collator = FRCollator(tokenizer, device=device)
@@ -349,6 +349,7 @@ def make_parser():
     parser.add_argument('--lr', type=float, default=5e-5,
                         help="Learning rate for NPO")
     parser.add_argument('--new_cot', action='store_true', help="Force generation of a fresh batch of CoTs.")
+    parser.add_argument('--atomic', action='store_true', help="Use atomic CoT statements (loads from atomic_cot/ instead of final_cot/).")
     parser.add_argument('--pos', action='store_true', help="Filter out function tokens in unlearning.")
     parser.add_argument('--ff2', action='store_true', help="Optimize only the ff2 layers")
     parser.add_argument('--ablation', action='store_true', help="Run on subsample of instances, change logging dir.")

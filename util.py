@@ -41,7 +41,7 @@ def load_best_full_lrs(path_root, type="sentencize", method='npo_KL', rs=1001, f
             k = f"{dataset}_{model}"
             lr = dataset_model_best_lr[dataset][model] # best_model_dataset_lr[k]
 
-            floc = f'{path_root}/{dataset}/{model}/{method}_{type}_s=True_lr={lr}_rs={rs}_pos={pos}_ff2={ff2}.out'
+            floc = f'{path_root}/{dataset}/{model}/{method}_{type}_s=False_lr={lr}_rs={rs}_pos={pos}_ff2={ff2}.out'
     
             per_instance_results = load_results(floc)
 

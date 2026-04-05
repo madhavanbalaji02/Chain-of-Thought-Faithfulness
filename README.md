@@ -94,6 +94,8 @@ python run_scripts.py
 ```
 Uses `ul_step_pos_ff2.job` (32G, 12h) for small models and `ul_step_pos_ff2_L2.job` (64G, 24h) for LLaMA-3-8B and Mistral-7B.
 
+> **Note on learning rates:** All 16 experiments in this reproduction used a **single fixed `lr=3e-05`** for all models. The `run_scripts.py` file contains a commented-out `lrs = [5e-5, 3e-5, 5e-6]` list (a planned sweep that was never run). The original paper calibrated per-model LRs; this reproduction did not. Results for models where 3e-05 is not the optimal LR (Phi-3, Mistral-7B, LLaMA-3-8B) are affected — see `REPRODUCTION_REPORT.md` for details.
+
 ---
 
 ## Experiment Pipeline
