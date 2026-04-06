@@ -2,7 +2,7 @@
 
 **Date discovered:** April 6, 2026
 **Discovered by:** Madhavan Balaji
-**Institution:** Indiana University, Bloomington
+**Institution:** Indiana University Indianapolis
 **Advisor:** Professor Hyeju Jang
 
 ## Core Finding
