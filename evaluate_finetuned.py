@@ -77,6 +77,7 @@ def load_model(model_name, adapter_path=None):
         print(f"Merging LoRA adapter from: {adapter_path}")
         model = PeftModel.from_pretrained(model, adapter_path)
         model = model.merge_and_unload()   # merge weights, remove adapter overhead
+        model.requires_grad_(True)         # re-enable grads frozen by PeftModel
         print("Adapter merged.")
 
     model.eval()
