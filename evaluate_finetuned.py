@@ -74,6 +74,18 @@ def load_model(model_name, adapter_path=None):
 
     if adapter_path and os.path.exists(adapter_path):
         from peft import PeftModel
+        # Fix: PEFT sometimes saves target_modules as a set; convert to sorted list
+        # before loading to avoid "unhashable type: 'set'" errors
+        _cfg_path = os.path.join(adapter_path, 'adapter_config.json')
+        if os.path.exists(_cfg_path):
+            import json as _json
+            with open(_cfg_path, 'r') as _f:
+                _cfg = _json.load(_f)
+            if 'target_modules' in _cfg and not isinstance(_cfg['target_modules'], list):
+                _cfg['target_modules'] = sorted(list(_cfg['target_modules']))
+                with open(_cfg_path, 'w') as _f:
+                    _json.dump(_cfg, _f, indent=2)
+                print(f"Fixed target_modules type in {_cfg_path}")
         print(f"Merging LoRA adapter from: {adapter_path}")
         model = PeftModel.from_pretrained(model, adapter_path)
         model = model.merge_and_unload()   # merge weights, remove adapter overhead
