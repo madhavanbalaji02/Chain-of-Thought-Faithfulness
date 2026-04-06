@@ -1,0 +1,919 @@
+instance_id,model,dataset,coherence,plausibility,completeness,composite_score
+Mercury_7011323,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+Mercury_SC_415473,LLaMA-3-8B,arc-challenge,1,1,1,1.0
+Mercury_405136,LLaMA-3-8B,arc-challenge,5,5,3,4.3333
+TIMSS_2003_8_pg80,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_414504,LLaMA-3-8B,arc-challenge,3,3,2,2.6667
+Mercury_7186568,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+MDSA_2007_8_3,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+ACTAAP_2014_7_13,LLaMA-3-8B,arc-challenge,5,5,3,4.3333
+Mercury_417147,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+Mercury_402216,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+AKDE&ED_2008_4_26,LLaMA-3-8B,arc-challenge,2,2,3,2.3333
+MCAS_2006_9_43,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+NCEOGA_2013_5_20,LLaMA-3-8B,arc-challenge,3,3,3,3.0
+Mercury_400440,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+Mercury_SC_400578,LLaMA-3-8B,arc-challenge,3,2,2,2.3333
+Mercury_7044328,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_416650,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+MDSA_2007_5_2,LLaMA-3-8B,arc-challenge,5,5,3,4.3333
+NYSEDREGENTS_2015_4_26,LLaMA-3-8B,arc-challenge,3,3,1,2.3333
+Mercury_175385,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_7212818,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+Mercury_SC_402120,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_7132020,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+Mercury_SC_408568,LLaMA-3-8B,arc-challenge,3,4,2,3.0
+Mercury_SC_400062,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_SC_408547,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+Mercury_7012740,LLaMA-3-8B,arc-challenge,2,2,2,2.0
+Mercury_SC_417677,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_SC_401357,LLaMA-3-8B,arc-challenge,5,5,3,4.3333
+MCAS_2003_8_31,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+MSA_2012_5_23,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_SC_409139,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_7086748,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_7175875,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+Mercury_7009993,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_415086,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_SC_401792,LLaMA-3-8B,arc-challenge,2,4,1,2.3333
+Mercury_7093958,LLaMA-3-8B,arc-challenge,3,3,3,3.0
+Mercury_415303,LLaMA-3-8B,arc-challenge,2,2,2,2.0
+Mercury_SC_400402,LLaMA-3-8B,arc-challenge,2,2,2,2.0
+Mercury_180005,LLaMA-3-8B,arc-challenge,3,4,2,3.0
+Mercury_7174213,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+LEAP_2005_8_10404,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+Mercury_7011130,LLaMA-3-8B,arc-challenge,2,2,3,2.3333
+Mercury_7212398,LLaMA-3-8B,arc-challenge,3,3,1,2.3333
+MCAS_2006_8_1,LLaMA-3-8B,arc-challenge,5,5,3,4.3333
+Mercury_SC_400057,LLaMA-3-8B,arc-challenge,3,4,2,3.0
+MCAS_2006_9_12,LLaMA-3-8B,arc-challenge,4,2,3,3.0
+Mercury_SC_415762,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_7064575,LLaMA-3-8B,arc-challenge,4,3,3,3.3333
+Mercury_7136885,LLaMA-3-8B,arc-challenge,3,3,1,2.3333
+Mercury_SC_401766,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_7016800,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+MCAS_2014_5_7,LLaMA-3-8B,arc-challenge,3,3,3,3.0
+Mercury_SC_407400,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+NYSEDREGENTS_2008_8_34,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_414099,LLaMA-3-8B,arc-challenge,5,5,3,4.3333
+Mercury_7137165,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+ACTAAP_2011_5_16,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+MEA_2010_8_1,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_415093,LLaMA-3-8B,arc-challenge,3,4,2,3.0
+Mercury_SC_412374,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+MEAP_2005_8_21,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+Mercury_407327,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_SC_407610,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_7068513,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+ACTAAP_2014_5_8,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+TAKS_2009_5_26,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+FCAT_2008_5_2,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_SC_416529,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_185010,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_SC_401277,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_406550,LLaMA-3-8B,arc-challenge,5,5,3,4.3333
+Mercury_402501,LLaMA-3-8B,arc-challenge,3,3,3,3.0
+ACTAAP_2009_7_8,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+MCAS_2005_5_25,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_7013965,LLaMA-3-8B,arc-challenge,4,5,3,4.0
+Mercury_SC_400383,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+Mercury_178325,LLaMA-3-8B,arc-challenge,4,5,3,4.0
+Mercury_180373,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_7171605,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+TIMSS_1995_8_J1,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_SC_401272,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_7058415,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+AKDE&ED_2008_8_53,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_409115,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+MCAS_2014_8_20,LLaMA-3-8B,arc-challenge,3,3,1,2.3333
+Mercury_7026355,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_7218820,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_405947,LLaMA-3-8B,arc-challenge,3,3,1,2.3333
+TAKS_2009_8_32,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+AIMS_2008_8_6,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_SC_400059,LLaMA-3-8B,arc-challenge,5,3,4,4.0
+Mercury_7056858,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_SC_400701,LLaMA-3-8B,arc-challenge,3,3,2,2.6667
+TIMSS_2003_4_pg7,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_406777,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+MEA_2016_8_12,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+TIMSS_2011_8_pg102,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+MDSA_2009_8_2,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_402145,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_SC_416155,LLaMA-3-8B,arc-challenge,3,4,2,3.0
+Mercury_SC_413299,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+AIMS_2009_4_5,LLaMA-3-8B,arc-challenge,4,4,1,3.0
+Mercury_7263375,LLaMA-3-8B,arc-challenge,3,3,3,3.0
+Mercury_7029803,LLaMA-3-8B,arc-challenge,3,3,3,3.0
+Mercury_7168805,LLaMA-3-8B,arc-challenge,5,4,3,4.0
+Mercury_410669,LLaMA-3-8B,arc-challenge,5,3,4,4.0
+Mercury_7215845,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_400699,LLaMA-3-8B,arc-challenge,3,3,3,3.0
+MEAP_2005_8_39,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_7247013,LLaMA-3-8B,arc-challenge,3,4,2,3.0
+Mercury_7216248,LLaMA-3-8B,arc-challenge,2,3,2,2.3333
+Mercury_7057173,LLaMA-3-8B,arc-challenge,3,3,1,2.3333
+Mercury_SC_405533,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+LEAP_2000_8_4,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_7186358,LLaMA-3-8B,arc-challenge,3,3,1,2.3333
+MCAS_2004_9_15-v1,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+AKDE&ED_2008_8_47,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+NYSEDREGENTS_2015_4_29,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_7099330,LLaMA-3-8B,arc-challenge,3,3,2,2.6667
+Mercury_409301,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_SC_405726,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_SC_401818,LLaMA-3-8B,arc-challenge,3,4,2,3.0
+Mercury_7016765,LLaMA-3-8B,arc-challenge,1,1,1,1.0
+Mercury_7086695,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+Mercury_400500,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_410807,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_7210473,LLaMA-3-8B,arc-challenge,5,5,3,4.3333
+Mercury_7107170,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_7206938,LLaMA-3-8B,arc-challenge,3,3,1,2.3333
+Mercury_SC_400708,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_7228725,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+TIMSS_2007_8_pg60,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_7027160,LLaMA-3-8B,arc-challenge,2,2,2,2.0
+Mercury_7109463,LLaMA-3-8B,arc-challenge,4,5,3,4.0
+TIMSS_2011_4_pg27,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_7103600,LLaMA-3-8B,arc-challenge,3,3,1,2.3333
+Mercury_7166425,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_412202,LLaMA-3-8B,arc-challenge,5,1,5,3.6667
+TAKS_2009_8_36,LLaMA-3-8B,arc-challenge,2,2,3,2.3333
+Mercury_7141610,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_SC_415407,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_7249708,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_7024465,LLaMA-3-8B,arc-challenge,3,3,3,3.0
+Mercury_7212678,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_SC_406725,LLaMA-3-8B,arc-challenge,3,3,3,3.0
+Mercury_409647,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_LBS11018,LLaMA-3-8B,arc-challenge,5,5,3,4.3333
+Mercury_7139878,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+NYSEDREGENTS_2010_4_4,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+Mercury_7210245,LLaMA-3-8B,arc-challenge,3,3,1,2.3333
+Mercury_400407,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+AKDE&ED_2008_4_25,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_7212993,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_7097493,LLaMA-3-8B,arc-challenge,5,5,2,4.0
+Mercury_7270393,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+Mercury_7201740,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_SC_414041,LLaMA-3-8B,arc-challenge,3,2,2,2.3333
+Mercury_7182245,LLaMA-3-8B,arc-challenge,2,2,2,2.0
+Mercury_SC_401366,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+Mercury_412681,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+Mercury_7102323,LLaMA-3-8B,arc-challenge,5,5,3,4.3333
+Mercury_407260,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_7250058,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_SC_401278,LLaMA-3-8B,arc-challenge,2,2,2,2.0
+NYSEDREGENTS_2008_8_30,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_7084665,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_400687,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_SC_401290,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_7043820,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_SC_401116,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+MCAS_2005_9_17,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+AKDE&ED_2008_8_7,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_405873,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+MDSA_2009_5_20,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_7215828,LLaMA-3-8B,arc-challenge,5,5,2,4.0
+Mercury_7093153,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_7234308,LLaMA-3-8B,arc-challenge,3,3,3,3.0
+MCAS_2003_5_33,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_7127943,LLaMA-3-8B,arc-challenge,1,1,1,1.0
+Mercury_401699,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+LEAP_2007_8_10417,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+Mercury_SC_409171,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_7235638,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_406136,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_SC_405086,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+TIMSS_2007_8_pg109,LLaMA-3-8B,arc-challenge,5,5,3,4.3333
+MCAS_2003_8_11,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+MCAS_2005_5_34,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+Mercury_400877,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_7252088,LLaMA-3-8B,arc-challenge,3,4,2,3.0
+Mercury_403234,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_404894,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_7221655,LLaMA-3-8B,arc-challenge,4,5,3,4.0
+Mercury_SC_402029,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_7034843,LLaMA-3-8B,arc-challenge,4,5,3,4.0
+Mercury_7094290,LLaMA-3-8B,arc-challenge,2,2,2,2.0
+Mercury_400811,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_7027405,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_416645,LLaMA-3-8B,arc-challenge,4,5,3,4.0
+Mercury_7271758,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+AKDE&ED_2008_4_19,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+AIMS_2009_8_14,LLaMA-3-8B,arc-challenge,3,3,3,3.0
+Mercury_SC_413624,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_7142415,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_SC_408324,LLaMA-3-8B,arc-challenge,4,5,2,3.6667
+Mercury_7252753,LLaMA-3-8B,arc-challenge,3,3,1,2.3333
+MCAS_2006_9_44,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+Mercury_7116288,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_7082845,LLaMA-3-8B,arc-challenge,3,3,2,2.6667
+Mercury_414352,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+NYSEDREGENTS_2008_8_11,LLaMA-3-8B,arc-challenge,5,5,4,4.6667
+Mercury_184975,LLaMA-3-8B,arc-challenge,4,4,2,3.3333
+Mercury_SC_402638,LLaMA-3-8B,arc-challenge,3,4,2,3.0
+Mercury_7271128,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+TIMSS_1995_8_N2,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+MCAS_2011_8_15365,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_SC_402994,LLaMA-3-8B,arc-challenge,2,2,3,2.3333
+Mercury_183820,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+Mercury_SC_413549,LLaMA-3-8B,arc-challenge,3,3,3,3.0
+Mercury_7162400,LLaMA-3-8B,arc-challenge,5,5,3,4.3333
+Mercury_185325,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_7086660,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_LBS10610,LLaMA-3-8B,arc-challenge,4,4,3,3.6667
+Mercury_SC_401372,LLaMA-3-8B,arc-challenge,3,4,1,2.6667
+MDSA_2007_8_17,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+Mercury_SC_408366,LLaMA-3-8B,arc-challenge,2,2,1,1.6667
+Mercury_SC_407070,LLaMA-3-8B,arc-challenge,2,2,2,2.0
+MCAS_2004_9_2,LLaMA-3-8B,arc-challenge,5,5,5,5.0
+7-664,LLaMA-3-8B,openbook,5,5,4,4.6667
+8-165,LLaMA-3-8B,openbook,4,4,3,3.6667
+1300,LLaMA-3-8B,openbook,5,5,3,4.3333
+648,LLaMA-3-8B,openbook,3,3,1,2.3333
+268,LLaMA-3-8B,openbook,5,5,3,4.3333
+1160,LLaMA-3-8B,openbook,4,5,4,4.3333
+1032,LLaMA-3-8B,openbook,5,5,5,5.0
+7-1108,LLaMA-3-8B,openbook,2,2,1,1.6667
+1923,LLaMA-3-8B,openbook,5,5,4,4.6667
+9-298,LLaMA-3-8B,openbook,3,4,1,2.6667
+508,LLaMA-3-8B,openbook,5,5,4,4.6667
+326,LLaMA-3-8B,openbook,5,5,3,4.3333
+9-18,LLaMA-3-8B,openbook,4,5,3,4.0
+9-368,LLaMA-3-8B,openbook,2,1,1,1.3333
+9-149,LLaMA-3-8B,openbook,2,2,1,1.6667
+1215,LLaMA-3-8B,openbook,5,3,3,3.6667
+9-1030,LLaMA-3-8B,openbook,3,3,1,2.3333
+9-44,LLaMA-3-8B,openbook,4,4,2,3.3333
+7-891,LLaMA-3-8B,openbook,4,4,3,3.6667
+1161,LLaMA-3-8B,openbook,4,5,2,3.6667
+406,LLaMA-3-8B,openbook,3,3,3,3.0
+8-79,LLaMA-3-8B,openbook,5,5,4,4.6667
+7-479,LLaMA-3-8B,openbook,4,4,3,3.6667
+1924,LLaMA-3-8B,openbook,3,4,2,3.0
+9-1102,LLaMA-3-8B,openbook,4,4,4,4.0
+880,LLaMA-3-8B,openbook,4,3,3,3.3333
+9-937,LLaMA-3-8B,openbook,5,5,4,4.6667
+7-942,LLaMA-3-8B,openbook,4,4,3,3.6667
+28,LLaMA-3-8B,openbook,3,3,2,2.6667
+1942,LLaMA-3-8B,openbook,4,5,2,3.6667
+7-444,LLaMA-3-8B,openbook,5,5,4,4.6667
+9-409,LLaMA-3-8B,openbook,2,2,1,1.6667
+745,LLaMA-3-8B,openbook,2,2,1,1.6667
+8-343,LLaMA-3-8B,openbook,4,5,3,4.0
+7-807,LLaMA-3-8B,openbook,5,5,2,4.0
+9-230,LLaMA-3-8B,openbook,3,2,2,2.3333
+9-633,LLaMA-3-8B,openbook,4,5,3,4.0
+158,LLaMA-3-8B,openbook,2,2,1,1.6667
+1702,LLaMA-3-8B,openbook,5,5,4,4.6667
+378,LLaMA-3-8B,openbook,4,4,3,3.6667
+8-491,LLaMA-3-8B,openbook,2,2,1,1.6667
+7-52,LLaMA-3-8B,openbook,5,5,3,4.3333
+9-519,LLaMA-3-8B,openbook,2,1,2,1.6667
+9-416,LLaMA-3-8B,openbook,4,5,3,4.0
+9-655,LLaMA-3-8B,openbook,5,5,4,4.6667
+1272,LLaMA-3-8B,openbook,4,5,2,3.6667
+8-49,LLaMA-3-8B,openbook,4,5,2,3.6667
+9-30,LLaMA-3-8B,openbook,5,4,5,4.6667
+7-1050,LLaMA-3-8B,openbook,4,4,3,3.6667
+9-501,LLaMA-3-8B,openbook,2,2,1,1.6667
+9-491,LLaMA-3-8B,openbook,4,4,3,3.6667
+48,LLaMA-3-8B,openbook,4,4,4,4.0
+279,LLaMA-3-8B,openbook,3,3,2,2.6667
+9-1163,LLaMA-3-8B,openbook,5,5,4,4.6667
+1618,LLaMA-3-8B,openbook,4,5,3,4.0
+1759,LLaMA-3-8B,openbook,5,5,3,4.3333
+7-988,LLaMA-3-8B,openbook,3,4,1,2.6667
+8-107,LLaMA-3-8B,openbook,5,5,3,4.3333
+9-1053,LLaMA-3-8B,openbook,4,4,3,3.6667
+8-93,LLaMA-3-8B,openbook,2,2,1,1.6667
+9-510,LLaMA-3-8B,openbook,5,5,4,4.6667
+9-908,LLaMA-3-8B,openbook,3,4,2,3.0
+9-24,LLaMA-3-8B,openbook,4,5,3,4.0
+7-999,LLaMA-3-8B,openbook,5,5,3,4.3333
+769,LLaMA-3-8B,openbook,3,4,2,3.0
+7-50,LLaMA-3-8B,openbook,3,4,1,2.6667
+9-540,LLaMA-3-8B,openbook,4,5,2,3.6667
+520,LLaMA-3-8B,openbook,3,4,1,2.6667
+9-350,LLaMA-3-8B,openbook,2,1,2,1.6667
+7-671,LLaMA-3-8B,openbook,5,5,3,4.3333
+7-284,LLaMA-3-8B,openbook,3,4,2,3.0
+7-1044,LLaMA-3-8B,openbook,5,5,4,4.6667
+429,LLaMA-3-8B,openbook,2,2,1,1.6667
+397,LLaMA-3-8B,openbook,4,4,2,3.3333
+8-308,LLaMA-3-8B,openbook,4,4,3,3.6667
+7-1122,LLaMA-3-8B,openbook,3,3,3,3.0
+1787,LLaMA-3-8B,openbook,3,4,1,2.6667
+8-205,LLaMA-3-8B,openbook,4,4,3,3.6667
+7-49,LLaMA-3-8B,openbook,4,4,3,3.6667
+9-983,LLaMA-3-8B,openbook,4,5,2,3.6667
+1426,LLaMA-3-8B,openbook,5,5,5,5.0
+1297,LLaMA-3-8B,openbook,2,2,1,1.6667
+9-79,LLaMA-3-8B,openbook,3,3,1,2.3333
+9-1166,LLaMA-3-8B,openbook,3,4,1,2.6667
+9-597,LLaMA-3-8B,openbook,4,4,2,3.3333
+8-304,LLaMA-3-8B,openbook,3,4,2,3.0
+591,LLaMA-3-8B,openbook,4,5,3,4.0
+570,LLaMA-3-8B,openbook,2,2,1,1.6667
+8-35,LLaMA-3-8B,openbook,2,2,1,1.6667
+9-73,LLaMA-3-8B,openbook,5,5,3,4.3333
+788,LLaMA-3-8B,openbook,5,5,5,5.0
+9-637,LLaMA-3-8B,openbook,4,4,3,3.6667
+75,LLaMA-3-8B,openbook,3,2,2,2.3333
+9-110,LLaMA-3-8B,openbook,3,3,2,2.6667
+1200,LLaMA-3-8B,openbook,5,5,3,4.3333
+568,LLaMA-3-8B,openbook,3,3,1,2.3333
+9-227,LLaMA-3-8B,openbook,3,3,1,2.3333
+1530,LLaMA-3-8B,openbook,1,1,1,1.0
+1911,LLaMA-3-8B,openbook,5,5,4,4.6667
+9-1164,LLaMA-3-8B,openbook,2,2,2,2.0
+898,LLaMA-3-8B,openbook,4,5,2,3.6667
+9-674,LLaMA-3-8B,openbook,4,4,2,3.3333
+7-1132,LLaMA-3-8B,openbook,5,5,5,5.0
+7-1159,LLaMA-3-8B,openbook,4,4,2,3.3333
+1023,LLaMA-3-8B,openbook,2,2,1,1.6667
+8-333,LLaMA-3-8B,openbook,3,3,1,2.3333
+7-1140,LLaMA-3-8B,openbook,2,2,1,1.6667
+7-171,LLaMA-3-8B,openbook,4,4,1,3.0
+8-260,LLaMA-3-8B,openbook,1,1,1,1.0
+9-774,LLaMA-3-8B,openbook,5,5,4,4.6667
+1139,LLaMA-3-8B,openbook,2,2,1,1.6667
+9-463,LLaMA-3-8B,openbook,3,2,3,2.6667
+9-179,LLaMA-3-8B,openbook,5,5,3,4.3333
+473,LLaMA-3-8B,openbook,4,4,2,3.3333
+7-203,LLaMA-3-8B,openbook,4,5,2,3.6667
+9-504,LLaMA-3-8B,openbook,2,2,2,2.0
+9-675,LLaMA-3-8B,openbook,5,5,4,4.6667
+7-1197,LLaMA-3-8B,openbook,5,5,4,4.6667
+7-725,LLaMA-3-8B,openbook,2,2,2,2.0
+8-318,LLaMA-3-8B,openbook,5,5,4,4.6667
+7-333,LLaMA-3-8B,openbook,4,4,2,3.3333
+437,LLaMA-3-8B,openbook,2,2,2,2.0
+170,LLaMA-3-8B,openbook,4,4,2,3.3333
+1231,LLaMA-3-8B,openbook,2,1,2,1.6667
+9-229,LLaMA-3-8B,openbook,2,2,1,1.6667
+9-159,LLaMA-3-8B,openbook,3,3,1,2.3333
+8-378,LLaMA-3-8B,openbook,4,5,2,3.6667
+9-1139,LLaMA-3-8B,openbook,3,3,2,2.6667
+1095,LLaMA-3-8B,openbook,3,3,3,3.0
+9-199,LLaMA-3-8B,openbook,2,2,2,2.0
+8-135,LLaMA-3-8B,openbook,5,5,4,4.6667
+229,LLaMA-3-8B,openbook,4,4,3,3.6667
+9-988,LLaMA-3-8B,openbook,3,3,1,2.3333
+8-445,LLaMA-3-8B,openbook,2,3,1,2.0
+1611,LLaMA-3-8B,openbook,4,4,3,3.6667
+8-53,LLaMA-3-8B,openbook,3,3,2,2.6667
+7-1018,LLaMA-3-8B,openbook,4,4,3,3.6667
+7-157,LLaMA-3-8B,openbook,5,5,4,4.6667
+9-163,LLaMA-3-8B,openbook,5,5,5,5.0
+9-271,LLaMA-3-8B,openbook,3,4,3,3.3333
+82,LLaMA-3-8B,openbook,5,5,4,4.6667
+9-786,LLaMA-3-8B,openbook,2,3,2,2.3333
+395,LLaMA-3-8B,openbook,4,5,1,3.3333
+9-124,LLaMA-3-8B,openbook,2,2,2,2.0
+9-418,LLaMA-3-8B,openbook,3,4,1,2.6667
+8-393,LLaMA-3-8B,openbook,5,5,3,4.3333
+761,LLaMA-3-8B,openbook,4,5,2,3.6667
+785,LLaMA-3-8B,openbook,4,4,3,3.6667
+1582,LLaMA-3-8B,openbook,2,2,2,2.0
+8-125,LLaMA-3-8B,openbook,4,4,2,3.3333
+7-823,LLaMA-3-8B,openbook,2,2,1,1.6667
+8-466,LLaMA-3-8B,openbook,4,4,3,3.6667
+266,LLaMA-3-8B,openbook,3,3,2,2.6667
+1577,LLaMA-3-8B,openbook,1,1,1,1.0
+758,LLaMA-3-8B,openbook,4,4,3,3.6667
+9-757,LLaMA-3-8B,openbook,3,3,1,2.3333
+9-794,LLaMA-3-8B,openbook,3,3,2,2.6667
+9-393,LLaMA-3-8B,openbook,5,5,2,4.0
+7-140,LLaMA-3-8B,openbook,4,4,3,3.6667
+8-59,LLaMA-3-8B,openbook,4,4,5,4.3333
+7-677,LLaMA-3-8B,openbook,5,5,4,4.6667
+9-29,LLaMA-3-8B,openbook,5,5,4,4.6667
+7-445,LLaMA-3-8B,openbook,5,5,3,4.3333
+8-45,LLaMA-3-8B,openbook,5,5,5,5.0
+7-511,LLaMA-3-8B,openbook,4,4,3,3.6667
+9-993,LLaMA-3-8B,openbook,5,5,5,5.0
+7-71,LLaMA-3-8B,openbook,5,5,4,4.6667
+359,LLaMA-3-8B,openbook,5,5,4,4.6667
+530,LLaMA-3-8B,openbook,2,3,1,2.0
+132,LLaMA-3-8B,openbook,5,5,5,5.0
+9-187,LLaMA-3-8B,openbook,3,4,1,2.6667
+7-391,LLaMA-3-8B,openbook,3,3,2,2.6667
+9-858,LLaMA-3-8B,openbook,5,5,5,5.0
+9-440,LLaMA-3-8B,openbook,3,3,2,2.6667
+8-57,LLaMA-3-8B,openbook,4,4,3,3.6667
+163,LLaMA-3-8B,openbook,2,2,2,2.0
+7-884,LLaMA-3-8B,openbook,5,5,5,5.0
+9-437,LLaMA-3-8B,openbook,2,2,2,2.0
+8-41,LLaMA-3-8B,openbook,3,4,2,3.0
+8-179,LLaMA-3-8B,openbook,3,3,3,3.0
+8-63,LLaMA-3-8B,openbook,4,3,4,3.6667
+8-463,LLaMA-3-8B,openbook,4,4,4,4.0
+7-1128,LLaMA-3-8B,openbook,2,2,2,2.0
+1129,LLaMA-3-8B,openbook,4,3,4,3.6667
+1674,LLaMA-3-8B,openbook,2,2,1,1.6667
+636,LLaMA-3-8B,openbook,2,2,1,1.6667
+7-238,LLaMA-3-8B,openbook,4,5,2,3.6667
+9-35,LLaMA-3-8B,openbook,2,2,1,1.6667
+7-903,LLaMA-3-8B,openbook,3,3,1,2.3333
+1345,LLaMA-3-8B,openbook,5,5,4,4.6667
+1204,LLaMA-3-8B,openbook,5,5,4,4.6667
+1184,LLaMA-3-8B,openbook,5,5,2,4.0
+1545,LLaMA-3-8B,openbook,5,5,4,4.6667
+1189,LLaMA-3-8B,openbook,5,5,4,4.6667
+7-100,LLaMA-3-8B,openbook,2,3,1,2.0
+1756,LLaMA-3-8B,openbook,5,5,5,5.0
+7-107,LLaMA-3-8B,openbook,5,5,5,5.0
+889,LLaMA-3-8B,openbook,2,2,1,1.6667
+9-942,LLaMA-3-8B,openbook,2,2,2,2.0
+7-394,LLaMA-3-8B,openbook,2,1,2,1.6667
+9-1180,LLaMA-3-8B,openbook,4,4,4,4.0
+7-160,LLaMA-3-8B,openbook,5,5,4,4.6667
+8-257,LLaMA-3-8B,openbook,2,2,1,1.6667
+9-575,LLaMA-3-8B,openbook,1,1,1,1.0
+404,LLaMA-3-8B,openbook,4,3,2,3.0
+9-877,LLaMA-3-8B,openbook,3,3,2,2.6667
+7-372,LLaMA-3-8B,openbook,2,2,2,2.0
+9-1186,LLaMA-3-8B,openbook,2,2,1,1.6667
+8-464,LLaMA-3-8B,openbook,2,2,1,1.6667
+1309,LLaMA-3-8B,openbook,3,3,2,2.6667
+9-528,LLaMA-3-8B,openbook,3,4,1,2.6667
+9-1087,LLaMA-3-8B,openbook,5,5,5,5.0
+9-1134,LLaMA-3-8B,openbook,4,4,2,3.3333
+1835,LLaMA-3-8B,openbook,5,5,4,4.6667
+7-852,LLaMA-3-8B,openbook,4,4,2,3.3333
+1955,LLaMA-3-8B,openbook,4,5,2,3.6667
+1568,LLaMA-3-8B,openbook,2,2,1,1.6667
+9-32,LLaMA-3-8B,openbook,5,5,5,5.0
+9-317,LLaMA-3-8B,openbook,5,5,5,5.0
+767,LLaMA-3-8B,openbook,4,5,2,3.6667
+810,LLaMA-3-8B,openbook,5,5,4,4.6667
+8-69,LLaMA-3-8B,openbook,2,2,1,1.6667
+485,LLaMA-3-8B,openbook,4,4,3,3.6667
+9-322,LLaMA-3-8B,openbook,4,5,3,4.0
+8-201,LLaMA-3-8B,openbook,5,5,4,4.6667
+9-573,LLaMA-3-8B,openbook,5,5,3,4.3333
+7-902,LLaMA-3-8B,openbook,2,2,1,1.6667
+8-346,LLaMA-3-8B,openbook,5,5,5,5.0
+8-130,LLaMA-3-8B,openbook,4,4,2,3.3333
+1709,LLaMA-3-8B,openbook,4,5,2,3.6667
+"Is the following sentence plausible? ""Sterling Shepard converted the first down.""",LLaMA-3-8B,sports,2,1,2,1.6667
+"Is the following sentence plausible? ""James Karinchak worked a full count.""",LLaMA-3-8B,sports,5,5,3,4.3333
+"Is the following sentence plausible? ""Domantas Sabonis gained five yards in the AFC championship.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Joao Moutinho was out at third.""",LLaMA-3-8B,sports,2,2,3,2.3333
+"Is the following sentence plausible? ""Ryan Fitzpatrick scored a touchdown.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Tyreek Hill caught the screen pass.""",LLaMA-3-8B,sports,2,1,2,1.6667
+"Is the following sentence plausible? ""Tom Brady converted the first down.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Deshaun Watson took a corner kick.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Malcolm Brogdon drove into the restricted area in the Eastern Conference Finals.""",LLaMA-3-8B,sports,4,4,2,3.3333
+"Is the following sentence plausible? ""Frederik Andersen took a three.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Santi Cazorla earned a red card in the Champions League Final.""",LLaMA-3-8B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Mark Stone spent time in the penalty box in the Stanley Cup.""",LLaMA-3-8B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Eden Hazard hit the buzzer beater.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Wayne Rooney threw a touchdown in the Superbowl.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Robert Lewandowski threw a touchdown.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Igor Shesterkin launched a hail mary.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Max Scherzer was safe at first.""",LLaMA-3-8B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Kwadwo Asamoah beat the shot clock in the Eastern Conference Finals.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Julian Edelman fumbled the ball.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Juan Soto did a double stepover.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""CJ McCollum shot from the six yard line.""",LLaMA-3-8B,sports,3,4,4,3.6667
+"Is the following sentence plausible? ""Petr Cech bricked the three pointer.""",LLaMA-3-8B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Jakub Vrana skated backwards.""",LLaMA-3-8B,sports,2,1,2,1.6667
+"Is the following sentence plausible? ""Brandon Lowe took a left footed shot.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Keenan Allen beat the buzzer in the Western Conference Finals.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Marcelo got on the end of a through ball.""",LLaMA-3-8B,sports,5,4,5,4.6667
+"Is the following sentence plausible? ""Kwadwo Asamoah was flagged on the play.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Marvin Jones lost control of the puck.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Luke Voit was out at first.""",LLaMA-3-8B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Neymar did a maradona on the defender in the Champions Leage Semifinal.""",LLaMA-3-8B,sports,5,4,4,4.3333
+"Is the following sentence plausible? ""Allen Robinson gained five yards.""",LLaMA-3-8B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Zach LaVine  shot the puck.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Blake Snell hit a single.""",LLaMA-3-8B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Elias Lindholm beat the buzzer.""",LLaMA-3-8B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Tyler Glasnow scored a penalty kick.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""De'Aaron Fox scored a bicycle kick.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Tristan Jarry dunked the ball.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Kailer Yamamoto caught the back shoulder fade.""",LLaMA-3-8B,sports,4,3,3,3.3333
+"Is the following sentence plausible? ""Mike Hoffman launched the half court shot in the Western Conference Finals.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Tom Wilson scored a penalty kick.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Connor McDavid threw a touchdown in the NFC divisional round.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Fred VanVleet scored a freekick in the Champions League Final.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Andrei Svechnikov took ball four.""",LLaMA-3-8B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Miro Heiskanen earned a trip to the penalty box.""",LLaMA-3-8B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Edinson Cavani caught the screen pass.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Marouane Fellaini scored in extra time.""",LLaMA-3-8B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Cooper Kupp scored in the third period in the Stanley Cup.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Aleksander Barkov bricked the three pointer.""",LLaMA-3-8B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Anthony Davis beat the buzzer.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Toni Kroos performed a give and go.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Fernando Tatis Jr. earned a red card.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Pete Alonso hit a triple in the World Series.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Stephen Curry scored a reverse layup.""",LLaMA-3-8B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""David Silva took a throw in.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Jayson Tatum nutmegged the defender.""",LLaMA-3-8B,sports,3,2,2,2.3333
+"Is the following sentence plausible? ""Santi Cazorla called for the screen.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Philip Rivers drove into the restricted area.""",LLaMA-3-8B,sports,1,1,1,1.0
+"Is the following sentence plausible? ""Mark Stone hit a triple.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Leon Draisaitl grounded out to second base in the National League Championship Series.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Gerrit Cole committed a handball in the European Cup.""",LLaMA-3-8B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Caris LeVert scored a reverse layup.""",LLaMA-3-8B,sports,2,1,1,1.3333
+"Is the following sentence plausible? ""Gabriel Landeskog launched the desperation heave.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""James Karinchak crossed the blue line.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Deshaun Watson was called for the goal tend in the Eastern Conference Finals.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Travis Konecny did a maradona on the defender.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Kevin Durant hit a walkoff homer.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Malik Beasley  comitted a three second violation.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Sean Couturier passed the puck in the Stanley Cup.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Josh Allen hit the screen pass.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Tyler Boyd hit the screen pass in the NFC divisional round.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Fred VanVleet passed the puck.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Andres Iniesta performed a give and go.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Kendrick Nunn took a charge.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Javier Mascherano took a left footed shot.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Courtland Sutton hit a triple.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Drew Brees was flagged on the play.""",LLaMA-3-8B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Aaron Nola converted the first down.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Ryan Nugent-Hopkins killed the powerplay.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Kawhi Leonard took a turnaround jumper.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Carlos Tevez skated backwards.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Delon Wright went for it on fourth down.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Sam Darnold scored on the power play in the Stanley Cup.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Ramires scored a header goal.""",LLaMA-3-8B,sports,4,4,2,3.3333
+"Is the following sentence plausible? ""Keenan Allen drew a flag on the play in the NFC championship.""",LLaMA-3-8B,sports,3,4,1,2.6667
+"Is the following sentence plausible? ""Mookie Betts took a side-step three.""",LLaMA-3-8B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Diego Forlan did a maradona on the defender.""",LLaMA-3-8B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Sean Couturier maradona'd the defender.""",LLaMA-3-8B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Joe Burrow gained five yards.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""LaMelo Ball launched the half court shot in the Western Conference Finals.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Pierre-Luc Dubois skated backwards.""",LLaMA-3-8B,sports,2,1,3,2.0
+"Is the following sentence plausible? ""Clint Capela got into the endzone.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Trae Young got into the endzone.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Evander Kane hit the slant pass in the AFC divisional round.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Jayson Tatum was called for the goal tend.""",LLaMA-3-8B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Stephan El Shaarawy shot with the left foot.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Sergio Aguero maradona'd the defender.""",LLaMA-3-8B,sports,4,3,3,3.3333
+"Is the following sentence plausible? ""Tuukka Rask killed the powerplay.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Ryan O'Reilly hit the wheel route.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Willian killed the powerplay.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Matthew Stafford launched a hail mary.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""David Pastrnak skated backwards.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Klaas Jan Huntelaar shot the puck.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Kyle Tucker took a left footed shot.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Joe Burrow caught the back shoulder fade in the Superbowl.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Mario Balotelli took a left footed shot in the Champions League Final.""",LLaMA-3-8B,sports,2,3,1,2.0
+"Is the following sentence plausible? ""Brandon Woodruff set the hard screen in the Eastern Conference Finals.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Carles Puyol did a maradona on the defender.""",LLaMA-3-8B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Juan Mata scored a bicycle kick in the Champions League Final.""",LLaMA-3-8B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Pedro struck out the side.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Marcell Ozuna scored a touchdown.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Dylan Larkin walked on ball four.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Sergio Ramos hit nothing but net.""",LLaMA-3-8B,sports,3,2,2,2.3333
+"Is the following sentence plausible? ""Ben Simmons was called for the goal tend.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Nathan MacKinnon bricked the three pointer in the Eastern Conference Finals.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Justin Herbert maradona'd the defender.""",LLaMA-3-8B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Wayne Rooney watched the pitch go by.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Freddie Freeman watched the pitch go by.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Robert Woods converted the first down.""",LLaMA-3-8B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Sergio Busquets got on base.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Toni Kroos took a throw in in the Champions Leage Semifinal.""",LLaMA-3-8B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""John Brown went for it on fourth down in the NFC championship.""",LLaMA-3-8B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Nick Foles lost control of the puck.""",LLaMA-3-8B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Robert Woods killed the powerplay.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Vincent Kompany scored a bicycle kick.""",LLaMA-3-8B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Didier Drogba got into the endzone.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Francisco Lindor walked on ball four.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Neal Pionk shot from the six yard line.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Norman Powell committed a blocking foul.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Nicklas Backstrom earned a trip to the penalty box.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""John Carlson entered the attacking zone in the Stanley Cup.""",LLaMA-3-8B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Frederik Andersen converted the first down.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Dani Alves took the snap.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""James Harden shot from outside the eighteen.""",LLaMA-3-8B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""A.J. Green scored in the third period.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Carson Wentz caught the screen pass.""",LLaMA-3-8B,sports,1,1,1,1.0
+"Is the following sentence plausible? ""Mario Gomez scored a reverse layup.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Jaylen Brown comitted a three second violation.""",LLaMA-3-8B,sports,3,2,2,2.3333
+"Is the following sentence plausible? ""Luis Robert was out at second.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Adam Thielen scored in added time.""",LLaMA-3-8B,sports,2,3,1,2.0
+"Is the following sentence plausible? ""Jonas Valanciunas beat the buzzer.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Thomas Muller hit a triple.""",LLaMA-3-8B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Tom Brady was safe at first.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Jonathan Marchessault went five hole.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Steven Stamkos hit the slant pass.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Juan Soto took ball four.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Brandin Cooks went for it on fourth down.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Tuukka Rask hit a double.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""George Springer committed a blocking foul.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Juan Soto shot from beyond the arc.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Jordan Binnington scored in the third period.""",LLaMA-3-8B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Malcolm Brogdon eurostepped to the basket in the NBA Championship.""",LLaMA-3-8B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Malcolm Brogdon banked the shot in.""",LLaMA-3-8B,sports,5,3,5,4.3333
+"Is the following sentence plausible? ""Draymond Green threw a touchdown.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Michael Conforto comitted a three second violation.""",LLaMA-3-8B,sports,3,3,4,3.3333
+"Is the following sentence plausible? ""Dougie Hamilton hit the buzzer beater.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Mitchell Trubisky caught the screen pass.""",LLaMA-3-8B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""John Tavares earned a trip to the penalty box in the Stanley Cup.""",LLaMA-3-8B,sports,2,3,1,2.0
+"Is the following sentence plausible? ""Patrick Kane backhanded a shot in the Stanley Cup.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Yaya Toure scored a freekick.""",LLaMA-3-8B,sports,3,2,2,2.3333
+"Is the following sentence plausible? ""Mike Williams scored a bicycle kick in the FA Cup.""",LLaMA-3-8B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Nick Castellanos hit the wheel route.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Javier Zanetti watched the pitch go by in the National League Championship Series.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Patrice Bergeron took a backhand shot.""",LLaMA-3-8B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Paulinho earned an indirect kick in the FA Cup.""",LLaMA-3-8B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Carson Wentz took to the ice.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Marcell Ozuna hit into a double play.""",LLaMA-3-8B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Khyri Thomas  changed direction in the backfield in the NFC championship.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Mike Trout eurostepped to the basket.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Nazem Kadri took a charge in the NBA Championship.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""DJ Chark caught the back shoulder fade in the NFC divisional round.""",LLaMA-3-8B,sports,4,4,2,3.3333
+"Is the following sentence plausible? ""Juan Mata caught the screen pass.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Mitchell Marner nutmegged the defender.""",LLaMA-3-8B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Kenta Maeda threw to first base in the American League Championship Series.""",LLaMA-3-8B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Caris LeVert scored a reverse dunk.""",LLaMA-3-8B,sports,4,3,4,3.6667
+"Is the following sentence plausible? ""Gleyber Torres got a base hit.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Jamal Murray walked on ball four.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Bastian Schweinsteiger scored in added time.""",LLaMA-3-8B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Aleksander Barkov passed the puck.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Drew Brees went for it on fourth down.""",LLaMA-3-8B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""T.Y. Hilton drew a flag on the play.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""DeVante Parker was called for icing.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Sterling Shepard hit a walkoff homer.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""John Carlson scored in the third period.""",LLaMA-3-8B,sports,5,4,5,4.6667
+"Is the following sentence plausible? ""Ryan Tannehill hit a triple.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Mike Williams fumbled the ball in the Superbowl.""",LLaMA-3-8B,sports,3,2,2,2.3333
+"Is the following sentence plausible? ""Kailer Yamamoto performed a slide tackle in the European Cup.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Sonny Gray was out at second.""",LLaMA-3-8B,sports,2,3,1,2.0
+"Is the following sentence plausible? ""Robin Lehner launched the desperation heave.""",LLaMA-3-8B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Jamison Crowder drew a flag on the play.""",LLaMA-3-8B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Jonathan Marchessault scored on the power play in the Stanley Cup.""",LLaMA-3-8B,sports,3,4,1,2.6667
+"Is the following sentence plausible? ""Dejounte Murray took a side-step three.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Nazem Kadri was out at home.""",LLaMA-3-8B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Adam Thielen got on base.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Brad Hand hit the wheel route.""",LLaMA-3-8B,sports,3,4,3,3.3333
+"Is the following sentence plausible? ""Kenta Maeda caught the screen pass.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Ketel Marte got into the endzone.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Giorgio Chiellini committed a handball in the FA Cup.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Bryce Harper fumbled the ball.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Jesus Luzardo was called for slashing.""",LLaMA-3-8B,sports,1,1,1,1.0
+"Is the following sentence plausible? ""Vincent Kompany comitted a three second violation.""",LLaMA-3-8B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Kyle Tucker stepped on first base.""",LLaMA-3-8B,sports,4,3,4,3.6667
+"Is the following sentence plausible? ""Jakub Vrana hit a walkoff homer.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Elias Lindholm took the snap.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Jerry Jeudy killed the powerplay.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Gerrit Cole set the hard screen.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Corbin Burnes earned an indirect kick.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Jayson Tatum took a side-step three in the NBA Championship.""",LLaMA-3-8B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Mookie Betts skated behind the net.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""T.Y. Hilton threw a touchdown in the AFC divisional round.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Emmanuel Sanders got a base hit.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Arjen Robben crossed the blue line in the Stanley Cup.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Timo Meier nutmegged the defender in the FA Cup.""",LLaMA-3-8B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Michael Porter Jr. called for the screen.""",LLaMA-3-8B,sports,2,3,1,2.0
+"Is the following sentence plausible? ""Mookie Betts scored on the power play.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Nerlens Noel was out at home.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Tyler Glasnow watched the pitch go by.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Mike Trout hit a walkoff homer.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Klaas Jan Huntelaar scored the easy layup.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Patrice Bergeron converted the first down.""",LLaMA-3-8B,sports,4,5,3,4.0
+"Is the following sentence plausible? ""Mathew Barzal called for the screen.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Anthony Rizzo skated backwards in the Stanley Cup.""",LLaMA-3-8B,sports,3,3,4,3.3333
+"Is the following sentence plausible? ""Mitchell Robinson airballed the shot.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Bryce Harper hit the back shoulder fade.""",LLaMA-3-8B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Jack Flaherty walked to first base in the National League Championship Series.""",LLaMA-3-8B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Darius Slayton ran out of bounds in the AFC championship.""",LLaMA-3-8B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Gleyber Torres scored a bicycle kick.""",LLaMA-3-8B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Luka Modric went in studs up in the FA Cup.""",LLaMA-3-8B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Josh Allen caught the screen pass.""",LLaMA-3-8B,sports,4,4,3,3.6667
+4810297f474b0e97ed78,LLaMA-3-8B,sqa,3,3,1,2.3333
+a4819e1c28b5e1eb4b09,LLaMA-3-8B,sqa,2,1,1,1.3333
+f815aaa22d608f1dcb84,LLaMA-3-8B,sqa,4,5,3,4.0
+58e7eb38d889d4252123,LLaMA-3-8B,sqa,5,5,3,4.3333
+911c0d74b7882fc20ec8,LLaMA-3-8B,sqa,3,3,2,2.6667
+8716b85472632d6e200e,LLaMA-3-8B,sqa,5,5,5,5.0
+a96d28e1221bfbcf50a9,LLaMA-3-8B,sqa,5,5,4,4.6667
+1051df8b6730dcd1b34f,LLaMA-3-8B,sqa,4,4,3,3.6667
+b5b110367bb88821d9d0,LLaMA-3-8B,sqa,5,5,5,5.0
+8ab96f428e06984bf0c6,LLaMA-3-8B,sqa,4,5,2,3.6667
+49f6cc28a8385f71d7ca,LLaMA-3-8B,sqa,5,1,3,3.0
+3ac14678dd395d41639c,LLaMA-3-8B,sqa,5,5,4,4.6667
+001f5aedc57159e1fd99,LLaMA-3-8B,sqa,4,3,3,3.3333
+9cfdec34fa9bd1ed9d3f,LLaMA-3-8B,sqa,2,2,1,1.6667
+de62d38623fde2c2285a,LLaMA-3-8B,sqa,5,5,5,5.0
+4e598d222fe1001cf4f8,LLaMA-3-8B,sqa,5,5,5,5.0
+d00ae50a07a5dd8b726c,LLaMA-3-8B,sqa,5,5,4,4.6667
+7bb5eb593f8cee3b4f5e,LLaMA-3-8B,sqa,5,5,5,5.0
+af531b69039676567cb9,LLaMA-3-8B,sqa,4,4,3,3.6667
+d8eaf52f02c5cfb98bce,LLaMA-3-8B,sqa,4,4,3,3.6667
+f32228b474fc1ff18d59,LLaMA-3-8B,sqa,5,3,3,3.6667
+66b9bb0849ceff60cfde,LLaMA-3-8B,sqa,5,5,5,5.0
+ac641c5074e03e422221,LLaMA-3-8B,sqa,2,2,1,1.6667
+162e5f5ec0f9d4a91cf8,LLaMA-3-8B,sqa,5,3,4,4.0
+0a87a031e804912db8df,LLaMA-3-8B,sqa,4,4,3,3.6667
+622c71f22ddb683c15a8,LLaMA-3-8B,sqa,5,5,4,4.6667
+d8649d55a6e1a22b92d9,LLaMA-3-8B,sqa,3,2,2,2.3333
+9dff1d5fe4c07cdb0ccb,LLaMA-3-8B,sqa,2,2,1,1.6667
+056452ee6c3af5567f82,LLaMA-3-8B,sqa,4,4,2,3.3333
+7ced603c3d79a2f2739d,LLaMA-3-8B,sqa,3,4,1,2.6667
+38a3e1117891b029cd6b,LLaMA-3-8B,sqa,3,3,2,2.6667
+9a87e2e0f53e5d8689f2,LLaMA-3-8B,sqa,5,5,5,5.0
+0a8bb20dbdb99d68127e,LLaMA-3-8B,sqa,5,4,4,4.3333
+f231532fe17fd971d1e6,LLaMA-3-8B,sqa,3,2,1,2.0
+b35f58b61b53c487d1ab,LLaMA-3-8B,sqa,5,5,4,4.6667
+9d2f5beb0ffe85faf16d,LLaMA-3-8B,sqa,3,4,1,2.6667
+6523b3b72884557b38e8,LLaMA-3-8B,sqa,3,4,2,3.0
+0b201a9520a4745fcd59,LLaMA-3-8B,sqa,4,4,2,3.3333
+e0a9f1ef5fae44427b26,LLaMA-3-8B,sqa,5,2,3,3.3333
+88b682482647a80a080d,LLaMA-3-8B,sqa,4,4,3,3.6667
+ac37cfbe97efb67fde55,LLaMA-3-8B,sqa,3,4,2,3.0
+e7327e171bd965f6a3cf,LLaMA-3-8B,sqa,4,5,4,4.3333
+83395bf81226b3f487a7,LLaMA-3-8B,sqa,3,3,1,2.3333
+fd6c86e0bccd5157cfd9,LLaMA-3-8B,sqa,3,2,2,2.3333
+136496e0b5e8bed459da,LLaMA-3-8B,sqa,3,3,1,2.3333
+f07a6acf27e25dedbb8d,LLaMA-3-8B,sqa,5,5,3,4.3333
+3871d7a05a729494ecd9,LLaMA-3-8B,sqa,4,4,3,3.6667
+ee95615e3dafa5e19020,LLaMA-3-8B,sqa,3,4,2,3.0
+e7730031d304759520ba,LLaMA-3-8B,sqa,4,4,3,3.6667
+d05b8ed82dbe1583b16c,LLaMA-3-8B,sqa,3,3,3,3.0
+e0e842a78f59698d0cfd,LLaMA-3-8B,sqa,3,4,2,3.0
+c6ca93e6d29d85456bf3,LLaMA-3-8B,sqa,5,5,4,4.6667
+6e47423b2fdc8bc3130c,LLaMA-3-8B,sqa,5,5,5,5.0
+a2a388a19b87a34d902b,LLaMA-3-8B,sqa,4,4,2,3.3333
+903178c36c89e5f55a20,LLaMA-3-8B,sqa,2,2,1,1.6667
+d07d517db865174dcee4,LLaMA-3-8B,sqa,3,4,2,3.0
+f240c88676b6ac6896ad,LLaMA-3-8B,sqa,3,2,2,2.3333
+526259cd504bffe7f888,LLaMA-3-8B,sqa,4,4,3,3.6667
+4ba70839df733c61f9a5,LLaMA-3-8B,sqa,5,5,5,5.0
+db70d15b07a9f288ffdc,LLaMA-3-8B,sqa,5,5,5,5.0
+6541fe954f5c5a530fba,LLaMA-3-8B,sqa,3,3,2,2.6667
+e2d24b9e3cb4133c68b0,LLaMA-3-8B,sqa,3,2,2,2.3333
+8f12cd3797d27f250b00,LLaMA-3-8B,sqa,5,5,5,5.0
+b77d2efee37741e44c32,LLaMA-3-8B,sqa,4,5,3,4.0
+976710eb9fff4ed94fd8,LLaMA-3-8B,sqa,5,5,5,5.0
+4a915ea5d025292cd7ec,LLaMA-3-8B,sqa,2,2,1,1.6667
+88016d1d8b284aa9113c,LLaMA-3-8B,sqa,3,3,2,2.6667
+f315b85273989097eb91,LLaMA-3-8B,sqa,5,5,5,5.0
+71d5af08c0cfb9565a54,LLaMA-3-8B,sqa,5,5,3,4.3333
+935002dcfa70239e715f,LLaMA-3-8B,sqa,5,5,5,5.0
+b002c8cef0a1b3f84f7a,LLaMA-3-8B,sqa,3,4,2,3.0
+a98c29881e1929a25eb4,LLaMA-3-8B,sqa,2,2,1,1.6667
+93b19cdb3f9d7731997e,LLaMA-3-8B,sqa,5,5,4,4.6667
+defd6e3da16a186503c0,LLaMA-3-8B,sqa,5,5,4,4.6667
+a7c566e2adbb58be2da8,LLaMA-3-8B,sqa,5,5,4,4.6667
+901156d5fcaf260eb4a7,LLaMA-3-8B,sqa,4,4,2,3.3333
+68684152725123d32f4b,LLaMA-3-8B,sqa,3,4,1,2.6667
+fabf020bf07e0445c50c,LLaMA-3-8B,sqa,5,5,4,4.6667
+22b385fc4948e6ff5795,LLaMA-3-8B,sqa,2,2,1,1.6667
+ac61d110f57cd7855686,LLaMA-3-8B,sqa,2,2,1,1.6667
+d24514ae216c7a55f4f0,LLaMA-3-8B,sqa,5,5,5,5.0
+684d4c03be354635b80f,LLaMA-3-8B,sqa,4,4,2,3.3333
+998132ad8f805c90f31e,LLaMA-3-8B,sqa,3,2,2,2.3333
+f233f8748574df6f4727,LLaMA-3-8B,sqa,4,3,3,3.3333
+c8e267b583f722ff485e,LLaMA-3-8B,sqa,3,3,3,3.0
+4fd64bb6ce5b78ab20b6,LLaMA-3-8B,sqa,3,4,1,2.6667
+9b77992543134de72b4e,LLaMA-3-8B,sqa,2,2,2,2.0
+80ba3ad84b318f16f34c,LLaMA-3-8B,sqa,5,5,5,5.0
+ed6d9f875c9787e1817c,LLaMA-3-8B,sqa,5,5,5,5.0
+b88ba16883b786c8469b,LLaMA-3-8B,sqa,4,5,3,4.0
+97d147b2e3e29fa85a71,LLaMA-3-8B,sqa,3,3,2,2.6667
+9975870880bf73b8644e,LLaMA-3-8B,sqa,4,4,3,3.6667
+e8b311139f387c983996,LLaMA-3-8B,sqa,4,4,3,3.6667
+72d9416ee7093deb9eab,LLaMA-3-8B,sqa,3,3,2,2.6667
+d477996cc5bfc3451a92,LLaMA-3-8B,sqa,2,2,1,1.6667
+6c1f7619f21201712194,LLaMA-3-8B,sqa,1,2,3,2.0
+fdeec181aeee06303113,LLaMA-3-8B,sqa,4,3,2,3.0
+59542ff1d7782e4cbd89,LLaMA-3-8B,sqa,3,3,2,2.6667
+364935e95e4880fcc8b0,LLaMA-3-8B,sqa,5,5,5,5.0
+d9987847af1ab751c75a,LLaMA-3-8B,sqa,4,5,2,3.6667
+89a19bd8f2bea335bca1,LLaMA-3-8B,sqa,5,5,5,5.0
+4fe90b9eab197be78729,LLaMA-3-8B,sqa,3,4,1,2.6667
+7fc117f83a13b80e0e09,LLaMA-3-8B,sqa,4,1,3,2.6667
+347eff30928ba07fa567,LLaMA-3-8B,sqa,3,3,3,3.0
+ce921a18dd60a1c8caac,LLaMA-3-8B,sqa,3,4,1,2.6667
+9883d6c816d4855035ea,LLaMA-3-8B,sqa,2,2,2,2.0
+ad9bf53d84f83ebc9822,LLaMA-3-8B,sqa,2,2,1,1.6667
+bcc0ba30a471776d64a9,LLaMA-3-8B,sqa,5,5,5,5.0
+7b84d2bc643ddc2085f0,LLaMA-3-8B,sqa,3,3,2,2.6667
+f95956c13e22f073310a,LLaMA-3-8B,sqa,4,4,2,3.3333
+ee757afd1a9e0e96cbc7,LLaMA-3-8B,sqa,3,3,2,2.6667
+2c6955a5381253c1067c,LLaMA-3-8B,sqa,5,5,3,4.3333
+52f9fdeab2e51f01f3dd,LLaMA-3-8B,sqa,5,5,4,4.6667
+e44e24c2c3b8599b85ad,LLaMA-3-8B,sqa,2,2,1,1.6667
+54a5df08fef4e5a4c82c,LLaMA-3-8B,sqa,2,2,2,2.0
+f15b0aaa611d1d554186,LLaMA-3-8B,sqa,5,5,4,4.6667
+e56fdbdf08cdc8694536,LLaMA-3-8B,sqa,2,3,1,2.0
+c2f573c79ceab25e8fcd,LLaMA-3-8B,sqa,2,3,1,2.0
+d424e393a4daff536f57,LLaMA-3-8B,sqa,5,5,5,5.0
+1977a974cf1b946ea1e5,LLaMA-3-8B,sqa,5,4,4,4.3333
+65557713351aed7519b8,LLaMA-3-8B,sqa,5,5,5,5.0
+3fc11f59d64ea3b65136,LLaMA-3-8B,sqa,3,4,1,2.6667
+6693c842968f27dd04ce,LLaMA-3-8B,sqa,4,4,3,3.6667
+03caedef50bc6729e9e5,LLaMA-3-8B,sqa,3,3,2,2.6667
+80ca095e38ab73b908ff,LLaMA-3-8B,sqa,5,5,5,5.0
+236c7a57f3788a60e47f,LLaMA-3-8B,sqa,3,2,1,2.0
+01786fe2b099fd7fb504,LLaMA-3-8B,sqa,2,2,1,1.6667
+1f550df826ae448ff082,LLaMA-3-8B,sqa,2,1,1,1.3333
+a0896de3fd13cd0f3e16,LLaMA-3-8B,sqa,5,5,4,4.6667
+5c03103b5a70117cbdf0,LLaMA-3-8B,sqa,5,4,4,4.3333
+1dce60cffcb066e212b8,LLaMA-3-8B,sqa,5,5,5,5.0
+40b7c34188d5b36bc486,LLaMA-3-8B,sqa,4,3,2,3.0
+43a26c2f067095e1992b,LLaMA-3-8B,sqa,4,3,3,3.3333
+44c59a3ac10f2921a009,LLaMA-3-8B,sqa,5,5,4,4.6667
+e6391d901dcc8a269c79,LLaMA-3-8B,sqa,3,4,1,2.6667
+43e4aea70f7e53d1d807,LLaMA-3-8B,sqa,2,2,2,2.0
+91ec6f3b34115feccada,LLaMA-3-8B,sqa,5,5,5,5.0
+b7c2bfdfc96be70f3f60,LLaMA-3-8B,sqa,2,2,2,2.0
+646d3503f3a3939e2e63,LLaMA-3-8B,sqa,2,2,1,1.6667
+93f0f18ac8c96a44b849,LLaMA-3-8B,sqa,2,2,3,2.3333
+377427ca79b717bdcb83,LLaMA-3-8B,sqa,4,4,2,3.3333
+30c3a32157acb4861555,LLaMA-3-8B,sqa,4,4,3,3.6667
+6316b9ccfc0c645aae30,LLaMA-3-8B,sqa,5,5,5,5.0
+881286dcdded13a96e3b,LLaMA-3-8B,sqa,4,4,3,3.6667
+8e05ce95646698ca8555,LLaMA-3-8B,sqa,5,5,4,4.6667
+93eafc413d86df9c0755,LLaMA-3-8B,sqa,4,4,2,3.3333
+b65adb5caa4f7a207879,LLaMA-3-8B,sqa,4,4,4,4.0
+f7a32d14efd589015fe1,LLaMA-3-8B,sqa,3,3,2,2.6667
+ba691c1bb1c760b1edf8,LLaMA-3-8B,sqa,2,1,2,1.6667
+f3d045e08844bf0d4e53,LLaMA-3-8B,sqa,5,5,5,5.0
+6cd39b671b2a1d6fb161,LLaMA-3-8B,sqa,3,1,1,1.6667
+7f79c8faf724cc8f0e72,LLaMA-3-8B,sqa,3,4,2,3.0
+5c969a7fccde48210ec8,LLaMA-3-8B,sqa,4,4,3,3.6667
+427fe3968e32005479b9,LLaMA-3-8B,sqa,3,3,2,2.6667
+86ead3f15417204affc2,LLaMA-3-8B,sqa,2,2,1,1.6667
+4c088a5366459f2256c6,LLaMA-3-8B,sqa,5,5,4,4.6667
+98a30c58fdff7676076c,LLaMA-3-8B,sqa,5,5,5,5.0
+30ebf73bc3294792f8de,LLaMA-3-8B,sqa,3,3,2,2.6667
+806a13f37055bd21fddc,LLaMA-3-8B,sqa,3,4,2,3.0
+ed08e2d4bbe5bbf1b01d,LLaMA-3-8B,sqa,3,4,2,3.0
+0013d38e0568f48acdc0,LLaMA-3-8B,sqa,5,5,5,5.0
+cc233b6426cb4e8dffb6,LLaMA-3-8B,sqa,5,5,5,5.0
+6e939983f45cfcba8caa,LLaMA-3-8B,sqa,5,5,5,5.0
+a18c59e77cc176f748b2,LLaMA-3-8B,sqa,3,3,2,2.6667
+8e01fbec3b932a3252ef,LLaMA-3-8B,sqa,3,4,2,3.0
+24f0e80c50384b28484e,LLaMA-3-8B,sqa,1,1,1,1.0
+6a01b523e0140f21c426,LLaMA-3-8B,sqa,2,4,1,2.3333
+3bba4ea27500361cb141,LLaMA-3-8B,sqa,3,3,2,2.6667
+83717baab39233083d34,LLaMA-3-8B,sqa,2,2,1,1.6667
+ca09aea1e9589ef40c61,LLaMA-3-8B,sqa,2,2,1,1.6667
+e1f6fead3b0070fe2142,LLaMA-3-8B,sqa,5,5,5,5.0
+a1a92c378396180e190c,LLaMA-3-8B,sqa,5,5,5,5.0
+99b23da6c0f8ad0fc0ea,LLaMA-3-8B,sqa,5,5,3,4.3333
+87c07cc6b730abde6d76,LLaMA-3-8B,sqa,2,2,1,1.6667
+cc542edc9006be8d52a5,LLaMA-3-8B,sqa,4,3,4,3.6667
+b3b209d7fe1a38ad7844,LLaMA-3-8B,sqa,3,3,2,2.6667
+00dc05718aedf2370213,LLaMA-3-8B,sqa,4,4,2,3.3333
+49228a8553a4448fa366,LLaMA-3-8B,sqa,4,4,3,3.6667
+267609f49ccd3c0839c3,LLaMA-3-8B,sqa,2,2,2,2.0
+0b3c9c9aea94adef6e3a,LLaMA-3-8B,sqa,5,5,5,5.0
+a60e5f73700b47a5f34a,LLaMA-3-8B,sqa,5,5,5,5.0
+6296b8c3a16680a826eb,LLaMA-3-8B,sqa,5,5,5,5.0
+2c71a9a0b7d73c151442,LLaMA-3-8B,sqa,4,4,3,3.6667
+decb9886ca17f7af209d,LLaMA-3-8B,sqa,5,5,4,4.6667
+50d09b10f985b4763225,LLaMA-3-8B,sqa,5,5,5,5.0
+ed28d8dc67d5ee85b85c,LLaMA-3-8B,sqa,5,5,5,5.0
+50c3af76816a5c2f07d2,LLaMA-3-8B,sqa,5,5,5,5.0
+14ef04964c1b786dc45e,LLaMA-3-8B,sqa,2,3,1,2.0
+58fd5574f3447c8f590f,LLaMA-3-8B,sqa,5,5,5,5.0
+54f5fd17d9a2373f68b1,LLaMA-3-8B,sqa,5,5,5,5.0
+f318d0f8f873ce921ac9,LLaMA-3-8B,sqa,5,5,5,5.0
+b3443bf3c312c9d144e4,LLaMA-3-8B,sqa,2,1,2,1.6667
+00f951d01196c2e77fe6,LLaMA-3-8B,sqa,5,5,5,5.0
+7870b1cef39a4f685911,LLaMA-3-8B,sqa,2,2,1,1.6667
+48628a79ac6d18460f36,LLaMA-3-8B,sqa,2,2,1,1.6667
+9deedbba0ca784be1855,LLaMA-3-8B,sqa,3,3,1,2.3333
+86f441f4f66b4b5eb375,LLaMA-3-8B,sqa,3,2,2,2.3333
+c87e343f444912cc9680,LLaMA-3-8B,sqa,3,2,2,2.3333
+8acc02738825ee8a68b6,LLaMA-3-8B,sqa,4,1,1,2.0
+52a0dd337fb870fa3eb8,LLaMA-3-8B,sqa,3,3,2,2.6667
+a3416e6b8a34d389eb0c,LLaMA-3-8B,sqa,5,4,4,4.3333
+0aa6769cb88143b3dba1,LLaMA-3-8B,sqa,2,3,1,2.0
+27368c21e50b6af694ab,LLaMA-3-8B,sqa,4,3,2,3.0
+3528723781a97a0e5a7e,LLaMA-3-8B,sqa,3,3,3,3.0
+9567d9236e4e01580b1a,LLaMA-3-8B,sqa,5,5,5,5.0
+9f1ea9c12c748ea7e456,LLaMA-3-8B,sqa,2,2,1,1.6667
+3a7d825a0fcb4211742f,LLaMA-3-8B,sqa,4,4,3,3.6667
+0a4fa11abccd8dd84dc8,LLaMA-3-8B,sqa,5,5,3,4.3333
+d697f6246a7d06e195ee,LLaMA-3-8B,sqa,5,5,5,5.0
+30e2cf44640c4fe81d80,LLaMA-3-8B,sqa,4,4,4,4.0
+06f7878425a995c2a633,LLaMA-3-8B,sqa,3,3,2,2.6667
+29842ce280ccd460dd7e,LLaMA-3-8B,sqa,4,4,4,4.0
+385edf4addbd69573540,LLaMA-3-8B,sqa,3,4,1,2.6667
+e51ea4cf89bc91a77f3c,LLaMA-3-8B,sqa,3,4,1,2.6667
+4ea450758bcead502050,LLaMA-3-8B,sqa,3,3,2,2.6667
+ba67c57c41ae212177c8,LLaMA-3-8B,sqa,4,4,3,3.6667
+2cc59f4d25398d251fd6,LLaMA-3-8B,sqa,5,2,3,3.3333
+721d168ff5cc0b18c31b,LLaMA-3-8B,sqa,4,4,4,4.0
+17fc5cdda68b55351597,LLaMA-3-8B,sqa,5,5,5,5.0
+e48fb3de1e039f4e8960,LLaMA-3-8B,sqa,4,4,3,3.6667
+0bde4bdfecce47fbf7de,LLaMA-3-8B,sqa,5,4,4,4.3333
+29ee7da0020eb03888fb,LLaMA-3-8B,sqa,3,4,2,3.0
+234e4eccb374a4191c86,LLaMA-3-8B,sqa,3,4,1,2.6667
+df84924c94e9e929ef10,LLaMA-3-8B,sqa,5,5,5,5.0
+e9e78aa7b0c1ec3f9cf9,LLaMA-3-8B,sqa,2,2,2,2.0
+660bfdc17b47f42facac,LLaMA-3-8B,sqa,4,2,2,2.6667
+5e692b6eb781e2d6f8c8,LLaMA-3-8B,sqa,5,5,5,5.0
+2b776be964150651f4b3,LLaMA-3-8B,sqa,3,3,1,2.3333
+8cf9e4fddb2265d2ed89,LLaMA-3-8B,sqa,2,2,2,2.0
+4e4b9fc379547c40adf5,LLaMA-3-8B,sqa,2,1,1,1.3333

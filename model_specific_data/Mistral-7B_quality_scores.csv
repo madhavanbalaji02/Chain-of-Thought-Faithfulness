@@ -1,0 +1,918 @@
+instance_id,model,dataset,coherence,plausibility,completeness,composite_score
+Mercury_7011323,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_SC_415473,Mistral-7B,arc-challenge,2,1,1,1.3333
+Mercury_405136,Mistral-7B,arc-challenge,5,5,5,5.0
+TIMSS_2003_8_pg80,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_414504,Mistral-7B,arc-challenge,3,3,1,2.3333
+Mercury_7186568,Mistral-7B,arc-challenge,5,5,4,4.6667
+MDSA_2007_8_3,Mistral-7B,arc-challenge,3,4,2,3.0
+ACTAAP_2014_7_13,Mistral-7B,arc-challenge,3,4,2,3.0
+Mercury_417147,Mistral-7B,arc-challenge,2,3,1,2.0
+Mercury_402216,Mistral-7B,arc-challenge,5,5,4,4.6667
+AKDE&ED_2008_4_26,Mistral-7B,arc-challenge,2,3,1,2.0
+MCAS_2006_9_43,Mistral-7B,arc-challenge,2,1,3,2.0
+NCEOGA_2013_5_20,Mistral-7B,arc-challenge,2,2,3,2.3333
+Mercury_400440,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_SC_400578,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_7044328,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_416650,Mistral-7B,arc-challenge,2,2,1,1.6667
+MDSA_2007_5_2,Mistral-7B,arc-challenge,5,5,4,4.6667
+NYSEDREGENTS_2015_4_26,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_175385,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_7212818,Mistral-7B,arc-challenge,2,3,1,2.0
+Mercury_SC_402120,Mistral-7B,arc-challenge,2,3,1,2.0
+Mercury_7132020,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_SC_408568,Mistral-7B,arc-challenge,3,4,2,3.0
+Mercury_SC_400062,Mistral-7B,arc-challenge,4,4,2,3.3333
+Mercury_SC_408547,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_7012740,Mistral-7B,arc-challenge,2,3,2,2.3333
+Mercury_SC_417677,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_SC_401357,Mistral-7B,arc-challenge,3,4,1,2.6667
+MCAS_2003_8_31,Mistral-7B,arc-challenge,3,3,2,2.6667
+MSA_2012_5_23,Mistral-7B,arc-challenge,4,5,4,4.3333
+Mercury_SC_409139,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_7086748,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_7175875,Mistral-7B,arc-challenge,2,3,1,2.0
+Mercury_7009993,Mistral-7B,arc-challenge,3,3,2,2.6667
+Mercury_415086,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_SC_401792,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_7093958,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_415303,Mistral-7B,arc-challenge,3,3,1,2.3333
+Mercury_SC_400402,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_180005,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_7174213,Mistral-7B,arc-challenge,4,4,3,3.6667
+LEAP_2005_8_10404,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_7011130,Mistral-7B,arc-challenge,2,2,2,2.0
+Mercury_7212398,Mistral-7B,arc-challenge,2,2,1,1.6667
+MCAS_2006_8_1,Mistral-7B,arc-challenge,5,5,3,4.3333
+Mercury_SC_400057,Mistral-7B,arc-challenge,3,4,1,2.6667
+MCAS_2006_9_12,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_SC_415762,Mistral-7B,arc-challenge,4,4,2,3.3333
+Mercury_7064575,Mistral-7B,arc-challenge,4,4,4,4.0
+Mercury_7136885,Mistral-7B,arc-challenge,4,3,3,3.3333
+Mercury_SC_401766,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_7016800,Mistral-7B,arc-challenge,3,4,2,3.0
+MCAS_2014_5_7,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_SC_407400,Mistral-7B,arc-challenge,2,2,2,2.0
+NYSEDREGENTS_2008_8_34,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_414099,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_7137165,Mistral-7B,arc-challenge,3,3,1,2.3333
+ACTAAP_2011_5_16,Mistral-7B,arc-challenge,5,5,4,4.6667
+MEA_2010_8_1,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_415093,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_SC_412374,Mistral-7B,arc-challenge,3,4,1,2.6667
+MEAP_2005_8_21,Mistral-7B,arc-challenge,4,4,1,3.0
+Mercury_407327,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_SC_407610,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_7068513,Mistral-7B,arc-challenge,3,3,2,2.6667
+ACTAAP_2014_5_8,Mistral-7B,arc-challenge,1,1,1,1.0
+TAKS_2009_5_26,Mistral-7B,arc-challenge,2,2,1,1.6667
+FCAT_2008_5_2,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_SC_416529,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_185010,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_SC_401277,Mistral-7B,arc-challenge,3,4,2,3.0
+Mercury_406550,Mistral-7B,arc-challenge,2,1,2,1.6667
+Mercury_402501,Mistral-7B,arc-challenge,5,5,4,4.6667
+ACTAAP_2009_7_8,Mistral-7B,arc-challenge,3,4,1,2.6667
+MCAS_2005_5_25,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_7013965,Mistral-7B,arc-challenge,1,1,1,1.0
+Mercury_SC_400383,Mistral-7B,arc-challenge,2,3,1,2.0
+Mercury_178325,Mistral-7B,arc-challenge,4,4,2,3.3333
+Mercury_180373,Mistral-7B,arc-challenge,4,5,3,4.0
+Mercury_7171605,Mistral-7B,arc-challenge,3,4,1,2.6667
+TIMSS_1995_8_J1,Mistral-7B,arc-challenge,4,5,3,4.0
+Mercury_SC_401272,Mistral-7B,arc-challenge,4,4,2,3.3333
+Mercury_7058415,Mistral-7B,arc-challenge,2,2,1,1.6667
+AKDE&ED_2008_8_53,Mistral-7B,arc-challenge,3,3,2,2.6667
+Mercury_409115,Mistral-7B,arc-challenge,2,2,2,2.0
+MCAS_2014_8_20,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_7026355,Mistral-7B,arc-challenge,3,4,2,3.0
+Mercury_7218820,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_405947,Mistral-7B,arc-challenge,4,5,3,4.0
+TAKS_2009_8_32,Mistral-7B,arc-challenge,4,4,2,3.3333
+AIMS_2008_8_6,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_SC_400059,Mistral-7B,arc-challenge,4,4,3,3.6667
+Mercury_7056858,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_SC_400701,Mistral-7B,arc-challenge,5,5,4,4.6667
+TIMSS_2003_4_pg7,Mistral-7B,arc-challenge,3,3,1,2.3333
+Mercury_406777,Mistral-7B,arc-challenge,5,5,3,4.3333
+MEA_2016_8_12,Mistral-7B,arc-challenge,3,4,2,3.0
+TIMSS_2011_8_pg102,Mistral-7B,arc-challenge,5,5,4,4.6667
+MDSA_2009_8_2,Mistral-7B,arc-challenge,5,5,1,3.6667
+Mercury_402145,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_SC_416155,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_SC_413299,Mistral-7B,arc-challenge,2,3,1,2.0
+AIMS_2009_4_5,Mistral-7B,arc-challenge,5,3,4,4.0
+Mercury_7263375,Mistral-7B,arc-challenge,3,3,1,2.3333
+Mercury_7029803,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_7168805,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_410669,Mistral-7B,arc-challenge,2,2,2,2.0
+Mercury_7215845,Mistral-7B,arc-challenge,2,2,2,2.0
+Mercury_400699,Mistral-7B,arc-challenge,3,3,2,2.6667
+MEAP_2005_8_39,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_7247013,Mistral-7B,arc-challenge,2,3,1,2.0
+Mercury_7216248,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_7057173,Mistral-7B,arc-challenge,4,4,3,3.6667
+Mercury_SC_405533,Mistral-7B,arc-challenge,5,5,5,5.0
+LEAP_2000_8_4,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_7186358,Mistral-7B,arc-challenge,5,5,4,4.6667
+MCAS_2004_9_15-v1,Mistral-7B,arc-challenge,4,5,3,4.0
+AKDE&ED_2008_8_47,Mistral-7B,arc-challenge,3,3,2,2.6667
+NYSEDREGENTS_2015_4_29,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_7099330,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_409301,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_SC_405726,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_SC_401818,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_7016765,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_7086695,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_400500,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_410807,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_7210473,Mistral-7B,arc-challenge,4,5,3,4.0
+Mercury_7107170,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_7206938,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_SC_400708,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_7228725,Mistral-7B,arc-challenge,4,5,4,4.3333
+TIMSS_2007_8_pg60,Mistral-7B,arc-challenge,3,4,2,3.0
+Mercury_7027160,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_7109463,Mistral-7B,arc-challenge,3,4,1,2.6667
+TIMSS_2011_4_pg27,Mistral-7B,arc-challenge,3,4,2,3.0
+Mercury_7103600,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_7166425,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_412202,Mistral-7B,arc-challenge,3,4,3,3.3333
+TAKS_2009_8_36,Mistral-7B,arc-challenge,2,2,2,2.0
+Mercury_7141610,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_SC_415407,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_7249708,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_7024465,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_7212678,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_SC_406725,Mistral-7B,arc-challenge,3,4,2,3.0
+Mercury_409647,Mistral-7B,arc-challenge,5,5,3,4.3333
+Mercury_LBS11018,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_7139878,Mistral-7B,arc-challenge,2,2,1,1.6667
+NYSEDREGENTS_2010_4_4,Mistral-7B,arc-challenge,5,3,3,3.6667
+Mercury_7210245,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_400407,Mistral-7B,arc-challenge,3,5,2,3.3333
+AKDE&ED_2008_4_25,Mistral-7B,arc-challenge,5,5,3,4.3333
+Mercury_7212993,Mistral-7B,arc-challenge,2,3,1,2.0
+Mercury_7097493,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_7270393,Mistral-7B,arc-challenge,3,2,1,2.0
+Mercury_7201740,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_SC_414041,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_7182245,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_SC_401366,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_412681,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_7102323,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_407260,Mistral-7B,arc-challenge,4,5,2,3.6667
+Mercury_7250058,Mistral-7B,arc-challenge,4,5,3,4.0
+Mercury_SC_401278,Mistral-7B,arc-challenge,5,5,3,4.3333
+NYSEDREGENTS_2008_8_30,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_7084665,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_400687,Mistral-7B,arc-challenge,3,3,2,2.6667
+Mercury_SC_401290,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_7043820,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_SC_401116,Mistral-7B,arc-challenge,3,4,2,3.0
+MCAS_2005_9_17,Mistral-7B,arc-challenge,3,3,2,2.6667
+AKDE&ED_2008_8_7,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_405873,Mistral-7B,arc-challenge,2,2,1,1.6667
+MDSA_2009_5_20,Mistral-7B,arc-challenge,1,1,1,1.0
+Mercury_7215828,Mistral-7B,arc-challenge,3,3,1,2.3333
+Mercury_7093153,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_7234308,Mistral-7B,arc-challenge,4,4,2,3.3333
+MCAS_2003_5_33,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_7127943,Mistral-7B,arc-challenge,4,4,3,3.6667
+Mercury_401699,Mistral-7B,arc-challenge,2,2,3,2.3333
+LEAP_2007_8_10417,Mistral-7B,arc-challenge,5,5,3,4.3333
+Mercury_SC_409171,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_7235638,Mistral-7B,arc-challenge,4,4,3,3.6667
+Mercury_406136,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_SC_405086,Mistral-7B,arc-challenge,3,3,2,2.6667
+TIMSS_2007_8_pg109,Mistral-7B,arc-challenge,5,5,4,4.6667
+MCAS_2003_8_11,Mistral-7B,arc-challenge,5,5,5,5.0
+MCAS_2005_5_34,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_400877,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_7252088,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_403234,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_404894,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_7221655,Mistral-7B,arc-challenge,4,4,3,3.6667
+Mercury_SC_402029,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_7034843,Mistral-7B,arc-challenge,4,4,2,3.3333
+Mercury_7094290,Mistral-7B,arc-challenge,3,4,2,3.0
+Mercury_400811,Mistral-7B,arc-challenge,4,4,3,3.6667
+Mercury_7027405,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_416645,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_7271758,Mistral-7B,arc-challenge,3,4,1,2.6667
+AKDE&ED_2008_4_19,Mistral-7B,arc-challenge,2,3,1,2.0
+AIMS_2009_8_14,Mistral-7B,arc-challenge,1,1,1,1.0
+Mercury_SC_413624,Mistral-7B,arc-challenge,4,4,3,3.6667
+Mercury_7142415,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_SC_408324,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_7252753,Mistral-7B,arc-challenge,4,5,2,3.6667
+MCAS_2006_9_44,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_7116288,Mistral-7B,arc-challenge,4,5,3,4.0
+Mercury_7082845,Mistral-7B,arc-challenge,3,3,2,2.6667
+Mercury_414352,Mistral-7B,arc-challenge,2,2,1,1.6667
+NYSEDREGENTS_2008_8_11,Mistral-7B,arc-challenge,4,4,2,3.3333
+Mercury_184975,Mistral-7B,arc-challenge,2,3,1,2.0
+Mercury_SC_402638,Mistral-7B,arc-challenge,5,5,4,4.6667
+Mercury_7271128,Mistral-7B,arc-challenge,5,5,5,5.0
+TIMSS_1995_8_N2,Mistral-7B,arc-challenge,3,4,1,2.6667
+MCAS_2011_8_15365,Mistral-7B,arc-challenge,1,1,1,1.0
+Mercury_SC_402994,Mistral-7B,arc-challenge,3,3,1,2.3333
+Mercury_183820,Mistral-7B,arc-challenge,3,4,1,2.6667
+Mercury_SC_413549,Mistral-7B,arc-challenge,3,3,3,3.0
+Mercury_7162400,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_185325,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_7086660,Mistral-7B,arc-challenge,3,3,2,2.6667
+Mercury_LBS10610,Mistral-7B,arc-challenge,3,3,1,2.3333
+Mercury_SC_401372,Mistral-7B,arc-challenge,5,5,5,5.0
+MDSA_2007_8_17,Mistral-7B,arc-challenge,5,5,5,5.0
+Mercury_SC_408366,Mistral-7B,arc-challenge,2,2,1,1.6667
+Mercury_SC_407070,Mistral-7B,arc-challenge,2,2,1,1.6667
+MCAS_2004_9_2,Mistral-7B,arc-challenge,5,5,4,4.6667
+7-664,Mistral-7B,openbook,5,5,5,5.0
+8-165,Mistral-7B,openbook,3,4,2,3.0
+1300,Mistral-7B,openbook,4,5,3,4.0
+648,Mistral-7B,openbook,2,3,1,2.0
+268,Mistral-7B,openbook,5,5,5,5.0
+1160,Mistral-7B,openbook,2,2,1,1.6667
+1032,Mistral-7B,openbook,5,5,4,4.6667
+7-1108,Mistral-7B,openbook,3,3,2,2.6667
+1923,Mistral-7B,openbook,5,5,4,4.6667
+9-298,Mistral-7B,openbook,4,4,2,3.3333
+508,Mistral-7B,openbook,4,3,2,3.0
+326,Mistral-7B,openbook,3,4,2,3.0
+9-18,Mistral-7B,openbook,5,5,4,4.6667
+9-368,Mistral-7B,openbook,5,5,5,5.0
+9-149,Mistral-7B,openbook,5,5,5,5.0
+1215,Mistral-7B,openbook,3,3,1,2.3333
+9-1030,Mistral-7B,openbook,2,2,1,1.6667
+9-44,Mistral-7B,openbook,4,5,2,3.6667
+7-891,Mistral-7B,openbook,2,3,1,2.0
+1161,Mistral-7B,openbook,3,4,2,3.0
+406,Mistral-7B,openbook,2,2,1,1.6667
+8-79,Mistral-7B,openbook,4,5,2,3.6667
+7-479,Mistral-7B,openbook,4,5,4,4.3333
+1924,Mistral-7B,openbook,5,4,4,4.3333
+9-1102,Mistral-7B,openbook,4,4,4,4.0
+880,Mistral-7B,openbook,2,2,2,2.0
+9-937,Mistral-7B,openbook,2,3,1,2.0
+7-942,Mistral-7B,openbook,4,5,2,3.6667
+28,Mistral-7B,openbook,3,3,3,3.0
+1942,Mistral-7B,openbook,2,3,1,2.0
+7-444,Mistral-7B,openbook,5,5,3,4.3333
+9-409,Mistral-7B,openbook,2,2,1,1.6667
+745,Mistral-7B,openbook,3,4,1,2.6667
+8-343,Mistral-7B,openbook,2,2,1,1.6667
+7-807,Mistral-7B,openbook,2,2,1,1.6667
+9-230,Mistral-7B,openbook,2,3,1,2.0
+9-633,Mistral-7B,openbook,5,5,4,4.6667
+158,Mistral-7B,openbook,5,5,5,5.0
+1702,Mistral-7B,openbook,4,4,2,3.3333
+378,Mistral-7B,openbook,4,4,2,3.3333
+8-491,Mistral-7B,openbook,3,4,1,2.6667
+7-52,Mistral-7B,openbook,4,4,3,3.6667
+9-519,Mistral-7B,openbook,5,5,4,4.6667
+9-416,Mistral-7B,openbook,3,3,3,3.0
+9-655,Mistral-7B,openbook,3,3,1,2.3333
+1272,Mistral-7B,openbook,3,4,2,3.0
+8-49,Mistral-7B,openbook,5,5,4,4.6667
+9-30,Mistral-7B,openbook,3,4,1,2.6667
+7-1050,Mistral-7B,openbook,2,3,1,2.0
+9-501,Mistral-7B,openbook,3,4,1,2.6667
+9-491,Mistral-7B,openbook,3,3,3,3.0
+48,Mistral-7B,openbook,3,4,1,2.6667
+279,Mistral-7B,openbook,5,5,4,4.6667
+9-1163,Mistral-7B,openbook,2,2,2,2.0
+1618,Mistral-7B,openbook,5,5,4,4.6667
+1759,Mistral-7B,openbook,2,3,1,2.0
+7-988,Mistral-7B,openbook,4,4,2,3.3333
+8-107,Mistral-7B,openbook,4,5,2,3.6667
+9-1053,Mistral-7B,openbook,4,4,3,3.6667
+8-93,Mistral-7B,openbook,2,2,1,1.6667
+9-510,Mistral-7B,openbook,4,4,3,3.6667
+9-908,Mistral-7B,openbook,5,5,4,4.6667
+9-24,Mistral-7B,openbook,2,3,2,2.3333
+7-999,Mistral-7B,openbook,2,3,1,2.0
+769,Mistral-7B,openbook,3,3,3,3.0
+7-50,Mistral-7B,openbook,4,5,2,3.6667
+9-540,Mistral-7B,openbook,3,4,2,3.0
+520,Mistral-7B,openbook,2,3,1,2.0
+9-350,Mistral-7B,openbook,3,3,1,2.3333
+7-671,Mistral-7B,openbook,3,3,1,2.3333
+7-284,Mistral-7B,openbook,5,5,3,4.3333
+7-1044,Mistral-7B,openbook,5,5,5,5.0
+429,Mistral-7B,openbook,3,4,1,2.6667
+397,Mistral-7B,openbook,1,1,2,1.3333
+8-308,Mistral-7B,openbook,2,3,1,2.0
+7-1122,Mistral-7B,openbook,3,4,1,2.6667
+1787,Mistral-7B,openbook,5,5,4,4.6667
+8-205,Mistral-7B,openbook,2,3,1,2.0
+7-49,Mistral-7B,openbook,4,5,3,4.0
+9-983,Mistral-7B,openbook,5,5,4,4.6667
+1426,Mistral-7B,openbook,2,3,1,2.0
+1297,Mistral-7B,openbook,2,2,1,1.6667
+9-79,Mistral-7B,openbook,3,4,2,3.0
+9-1166,Mistral-7B,openbook,4,5,3,4.0
+9-597,Mistral-7B,openbook,3,3,2,2.6667
+8-304,Mistral-7B,openbook,4,5,2,3.6667
+591,Mistral-7B,openbook,5,5,3,4.3333
+570,Mistral-7B,openbook,4,4,3,3.6667
+8-35,Mistral-7B,openbook,3,4,1,2.6667
+9-73,Mistral-7B,openbook,5,5,5,5.0
+788,Mistral-7B,openbook,5,5,5,5.0
+9-637,Mistral-7B,openbook,4,4,2,3.3333
+75,Mistral-7B,openbook,4,4,3,3.6667
+9-110,Mistral-7B,openbook,5,5,4,4.6667
+1200,Mistral-7B,openbook,2,2,1,1.6667
+568,Mistral-7B,openbook,3,3,3,3.0
+9-227,Mistral-7B,openbook,3,3,3,3.0
+1530,Mistral-7B,openbook,3,3,3,3.0
+1911,Mistral-7B,openbook,3,3,3,3.0
+9-1164,Mistral-7B,openbook,3,3,3,3.0
+898,Mistral-7B,openbook,3,3,3,3.0
+9-674,Mistral-7B,openbook,3,3,3,3.0
+7-1132,Mistral-7B,openbook,3,3,3,3.0
+7-1159,Mistral-7B,openbook,3,3,3,3.0
+1023,Mistral-7B,openbook,4,4,3,3.6667
+8-333,Mistral-7B,openbook,2,2,1,1.6667
+7-1140,Mistral-7B,openbook,2,3,1,2.0
+7-171,Mistral-7B,openbook,4,4,2,3.3333
+8-260,Mistral-7B,openbook,1,1,1,1.0
+9-774,Mistral-7B,openbook,5,5,4,4.6667
+1139,Mistral-7B,openbook,5,5,3,4.3333
+9-463,Mistral-7B,openbook,3,3,1,2.3333
+9-179,Mistral-7B,openbook,5,5,4,4.6667
+473,Mistral-7B,openbook,5,5,5,5.0
+7-203,Mistral-7B,openbook,4,5,2,3.6667
+9-504,Mistral-7B,openbook,2,2,1,1.6667
+9-675,Mistral-7B,openbook,4,5,2,3.6667
+7-1197,Mistral-7B,openbook,4,4,3,3.6667
+7-725,Mistral-7B,openbook,2,3,1,2.0
+8-318,Mistral-7B,openbook,3,3,1,2.3333
+7-333,Mistral-7B,openbook,2,3,2,2.3333
+437,Mistral-7B,openbook,3,3,3,3.0
+170,Mistral-7B,openbook,2,3,1,2.0
+1231,Mistral-7B,openbook,2,2,1,1.6667
+9-229,Mistral-7B,openbook,2,2,1,1.6667
+9-159,Mistral-7B,openbook,3,3,1,2.3333
+8-378,Mistral-7B,openbook,5,5,4,4.6667
+9-1139,Mistral-7B,openbook,4,4,3,3.6667
+1095,Mistral-7B,openbook,5,5,5,5.0
+9-199,Mistral-7B,openbook,2,2,1,1.6667
+8-135,Mistral-7B,openbook,5,5,4,4.6667
+229,Mistral-7B,openbook,2,2,1,1.6667
+9-988,Mistral-7B,openbook,2,3,1,2.0
+8-445,Mistral-7B,openbook,3,3,1,2.3333
+1611,Mistral-7B,openbook,4,4,2,3.3333
+8-53,Mistral-7B,openbook,3,4,2,3.0
+7-1018,Mistral-7B,openbook,3,4,1,2.6667
+7-157,Mistral-7B,openbook,4,5,3,4.0
+9-163,Mistral-7B,openbook,4,4,3,3.6667
+9-271,Mistral-7B,openbook,5,5,5,5.0
+82,Mistral-7B,openbook,2,2,1,1.6667
+9-786,Mistral-7B,openbook,2,3,2,2.3333
+395,Mistral-7B,openbook,4,5,2,3.6667
+9-124,Mistral-7B,openbook,2,2,1,1.6667
+9-418,Mistral-7B,openbook,3,4,2,3.0
+8-393,Mistral-7B,openbook,4,5,2,3.6667
+761,Mistral-7B,openbook,4,4,3,3.6667
+785,Mistral-7B,openbook,4,4,3,3.6667
+1582,Mistral-7B,openbook,4,4,2,3.3333
+8-125,Mistral-7B,openbook,4,5,2,3.6667
+7-823,Mistral-7B,openbook,3,3,2,2.6667
+8-466,Mistral-7B,openbook,2,2,2,2.0
+266,Mistral-7B,openbook,4,3,3,3.3333
+1577,Mistral-7B,openbook,3,2,2,2.3333
+758,Mistral-7B,openbook,5,5,5,5.0
+9-757,Mistral-7B,openbook,3,2,2,2.3333
+9-794,Mistral-7B,openbook,4,4,3,3.6667
+9-393,Mistral-7B,openbook,5,3,3,3.6667
+7-140,Mistral-7B,openbook,4,5,3,4.0
+8-59,Mistral-7B,openbook,5,5,5,5.0
+7-677,Mistral-7B,openbook,5,5,5,5.0
+9-29,Mistral-7B,openbook,3,3,3,3.0
+7-445,Mistral-7B,openbook,4,5,2,3.6667
+8-45,Mistral-7B,openbook,5,5,4,4.6667
+7-511,Mistral-7B,openbook,4,4,2,3.3333
+9-993,Mistral-7B,openbook,5,5,5,5.0
+7-71,Mistral-7B,openbook,4,5,2,3.6667
+359,Mistral-7B,openbook,3,4,1,2.6667
+530,Mistral-7B,openbook,5,4,3,4.0
+132,Mistral-7B,openbook,5,5,4,4.6667
+9-187,Mistral-7B,openbook,3,3,3,3.0
+7-391,Mistral-7B,openbook,3,4,2,3.0
+9-858,Mistral-7B,openbook,5,5,4,4.6667
+9-440,Mistral-7B,openbook,3,3,2,2.6667
+8-57,Mistral-7B,openbook,2,3,1,2.0
+163,Mistral-7B,openbook,3,3,2,2.6667
+7-884,Mistral-7B,openbook,4,4,3,3.6667
+9-437,Mistral-7B,openbook,3,4,1,2.6667
+8-41,Mistral-7B,openbook,2,3,1,2.0
+8-179,Mistral-7B,openbook,5,5,3,4.3333
+8-63,Mistral-7B,openbook,2,3,1,2.0
+8-463,Mistral-7B,openbook,5,5,3,4.3333
+7-1128,Mistral-7B,openbook,4,4,3,3.6667
+1129,Mistral-7B,openbook,4,5,2,3.6667
+1674,Mistral-7B,openbook,2,2,2,2.0
+636,Mistral-7B,openbook,3,4,2,3.0
+7-238,Mistral-7B,openbook,4,5,3,4.0
+9-35,Mistral-7B,openbook,2,2,1,1.6667
+7-903,Mistral-7B,openbook,3,4,2,3.0
+1345,Mistral-7B,openbook,5,5,5,5.0
+1204,Mistral-7B,openbook,3,3,3,3.0
+1184,Mistral-7B,openbook,4,4,3,3.6667
+1545,Mistral-7B,openbook,2,2,1,1.6667
+1189,Mistral-7B,openbook,3,4,1,2.6667
+7-100,Mistral-7B,openbook,5,5,5,5.0
+1756,Mistral-7B,openbook,5,5,5,5.0
+7-107,Mistral-7B,openbook,2,2,1,1.6667
+889,Mistral-7B,openbook,2,2,1,1.6667
+9-942,Mistral-7B,openbook,2,2,1,1.6667
+7-394,Mistral-7B,openbook,4,5,2,3.6667
+9-1180,Mistral-7B,openbook,4,5,4,4.3333
+7-160,Mistral-7B,openbook,3,4,3,3.3333
+8-257,Mistral-7B,openbook,3,4,1,2.6667
+9-575,Mistral-7B,openbook,1,1,1,1.0
+404,Mistral-7B,openbook,3,3,1,2.3333
+9-877,Mistral-7B,openbook,4,4,3,3.6667
+7-372,Mistral-7B,openbook,2,2,1,1.6667
+9-1186,Mistral-7B,openbook,3,4,1,2.6667
+8-464,Mistral-7B,openbook,4,4,3,3.6667
+1309,Mistral-7B,openbook,3,3,1,2.3333
+9-528,Mistral-7B,openbook,3,4,1,2.6667
+9-1087,Mistral-7B,openbook,3,3,3,3.0
+9-1134,Mistral-7B,openbook,2,3,1,2.0
+1835,Mistral-7B,openbook,5,5,4,4.6667
+7-852,Mistral-7B,openbook,5,5,3,4.3333
+1955,Mistral-7B,openbook,2,3,1,2.0
+1568,Mistral-7B,openbook,2,2,2,2.0
+9-32,Mistral-7B,openbook,3,4,1,2.6667
+9-317,Mistral-7B,openbook,5,5,5,5.0
+767,Mistral-7B,openbook,4,5,2,3.6667
+810,Mistral-7B,openbook,3,4,2,3.0
+8-69,Mistral-7B,openbook,4,5,2,3.6667
+485,Mistral-7B,openbook,3,3,2,2.6667
+9-322,Mistral-7B,openbook,3,3,2,2.6667
+8-201,Mistral-7B,openbook,3,3,2,2.6667
+9-573,Mistral-7B,openbook,1,1,1,1.0
+7-902,Mistral-7B,openbook,4,4,3,3.6667
+8-346,Mistral-7B,openbook,4,4,2,3.3333
+8-130,Mistral-7B,openbook,3,4,1,2.6667
+1709,Mistral-7B,openbook,5,5,3,4.3333
+"Is the following sentence plausible? ""Sterling Shepard converted the first down.""",Mistral-7B,sports,4,4,2,3.3333
+"Is the following sentence plausible? ""James Karinchak worked a full count.""",Mistral-7B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Domantas Sabonis gained five yards in the AFC championship.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Joao Moutinho was out at third.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Ryan Fitzpatrick scored a touchdown.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Tyreek Hill caught the screen pass.""",Mistral-7B,sports,5,5,3,4.3333
+"Is the following sentence plausible? ""Tom Brady converted the first down.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Deshaun Watson took a corner kick.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Malcolm Brogdon drove into the restricted area in the Eastern Conference Finals.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Frederik Andersen took a three.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Santi Cazorla earned a red card in the Champions League Final.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Mark Stone spent time in the penalty box in the Stanley Cup.""",Mistral-7B,sports,5,5,3,4.3333
+"Is the following sentence plausible? ""Eden Hazard hit the buzzer beater.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Wayne Rooney threw a touchdown in the Superbowl.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Robert Lewandowski threw a touchdown.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Igor Shesterkin launched a hail mary.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Max Scherzer was safe at first.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Kwadwo Asamoah beat the shot clock in the Eastern Conference Finals.""",Mistral-7B,sports,5,5,3,4.3333
+"Is the following sentence plausible? ""Julian Edelman fumbled the ball.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Juan Soto did a double stepover.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""CJ McCollum shot from the six yard line.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Petr Cech bricked the three pointer.""",Mistral-7B,sports,2,1,2,1.6667
+"Is the following sentence plausible? ""Jakub Vrana skated backwards.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Brandon Lowe took a left footed shot.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Keenan Allen beat the buzzer in the Western Conference Finals.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Marcelo got on the end of a through ball.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Kwadwo Asamoah was flagged on the play.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Marvin Jones lost control of the puck.""",Mistral-7B,sports,3,2,1,2.0
+"Is the following sentence plausible? ""Luke Voit was out at first.""",Mistral-7B,sports,4,5,3,4.0
+"Is the following sentence plausible? ""Neymar did a maradona on the defender in the Champions Leage Semifinal.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Allen Robinson gained five yards.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Zach LaVine  shot the puck.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Blake Snell hit a single.""",Mistral-7B,sports,3,2,2,2.3333
+"Is the following sentence plausible? ""Elias Lindholm beat the buzzer.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Tyler Glasnow scored a penalty kick.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""De'Aaron Fox scored a bicycle kick.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Tristan Jarry dunked the ball.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Kailer Yamamoto caught the back shoulder fade.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Mike Hoffman launched the half court shot in the Western Conference Finals.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Tom Wilson scored a penalty kick.""",Mistral-7B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Connor McDavid threw a touchdown in the NFC divisional round.""",Mistral-7B,sports,5,5,3,4.3333
+"Is the following sentence plausible? ""Fred VanVleet scored a freekick in the Champions League Final.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Andrei Svechnikov took ball four.""",Mistral-7B,sports,4,4,2,3.3333
+"Is the following sentence plausible? ""Miro Heiskanen earned a trip to the penalty box.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Edinson Cavani caught the screen pass.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Marouane Fellaini scored in extra time.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Cooper Kupp scored in the third period in the Stanley Cup.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Aleksander Barkov bricked the three pointer.""",Mistral-7B,sports,4,4,4,4.0
+"Is the following sentence plausible? ""Anthony Davis beat the buzzer.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Toni Kroos performed a give and go.""",Mistral-7B,sports,4,4,2,3.3333
+"Is the following sentence plausible? ""Fernando Tatis Jr. earned a red card.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Pete Alonso hit a triple in the World Series.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Stephen Curry scored a reverse layup.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""David Silva took a throw in.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Jayson Tatum nutmegged the defender.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Santi Cazorla called for the screen.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Philip Rivers drove into the restricted area.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Mark Stone hit a triple.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Leon Draisaitl grounded out to second base in the National League Championship Series.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Gerrit Cole committed a handball in the European Cup.""",Mistral-7B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Caris LeVert scored a reverse layup.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Gabriel Landeskog launched the desperation heave.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""James Karinchak crossed the blue line.""",Mistral-7B,sports,4,3,2,3.0
+"Is the following sentence plausible? ""Deshaun Watson was called for the goal tend in the Eastern Conference Finals.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Travis Konecny did a maradona on the defender.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Kevin Durant hit a walkoff homer.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Malik Beasley  comitted a three second violation.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Sean Couturier passed the puck in the Stanley Cup.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Josh Allen hit the screen pass.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Tyler Boyd hit the screen pass in the NFC divisional round.""",Mistral-7B,sports,3,3,1,2.3333
+"Is the following sentence plausible? ""Fred VanVleet passed the puck.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Andres Iniesta performed a give and go.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Kendrick Nunn took a charge.""",Mistral-7B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Javier Mascherano took a left footed shot.""",Mistral-7B,sports,5,3,4,4.0
+"Is the following sentence plausible? ""Courtland Sutton hit a triple.""",Mistral-7B,sports,2,2,3,2.3333
+"Is the following sentence plausible? ""Drew Brees was flagged on the play.""",Mistral-7B,sports,5,4,4,4.3333
+"Is the following sentence plausible? ""Aaron Nola converted the first down.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Ryan Nugent-Hopkins killed the powerplay.""",Mistral-7B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Kawhi Leonard took a turnaround jumper.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Carlos Tevez skated backwards.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Delon Wright went for it on fourth down.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Sam Darnold scored on the power play in the Stanley Cup.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Ramires scored a header goal.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Keenan Allen drew a flag on the play in the NFC championship.""",Mistral-7B,sports,3,3,1,2.3333
+"Is the following sentence plausible? ""Mookie Betts took a side-step three.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Diego Forlan did a maradona on the defender.""",Mistral-7B,sports,2,3,1,2.0
+"Is the following sentence plausible? ""Sean Couturier maradona'd the defender.""",Mistral-7B,sports,4,4,4,4.0
+"Is the following sentence plausible? ""Joe Burrow gained five yards.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""LaMelo Ball launched the half court shot in the Western Conference Finals.""",Mistral-7B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Pierre-Luc Dubois skated backwards.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Clint Capela got into the endzone.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Trae Young got into the endzone.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Evander Kane hit the slant pass in the AFC divisional round.""",Mistral-7B,sports,5,5,3,4.3333
+"Is the following sentence plausible? ""Jayson Tatum was called for the goal tend.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Stephan El Shaarawy shot with the left foot.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Sergio Aguero maradona'd the defender.""",Mistral-7B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Tuukka Rask killed the powerplay.""",Mistral-7B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Ryan O'Reilly hit the wheel route.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Willian killed the powerplay.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Matthew Stafford launched a hail mary.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""David Pastrnak skated backwards.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Klaas Jan Huntelaar shot the puck.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Kyle Tucker took a left footed shot.""",Mistral-7B,sports,3,3,1,2.3333
+"Is the following sentence plausible? ""Joe Burrow caught the back shoulder fade in the Superbowl.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Mario Balotelli took a left footed shot in the Champions League Final.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Brandon Woodruff set the hard screen in the Eastern Conference Finals.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Carles Puyol did a maradona on the defender.""",Mistral-7B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Juan Mata scored a bicycle kick in the Champions League Final.""",Mistral-7B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Pedro struck out the side.""",Mistral-7B,sports,3,3,4,3.3333
+"Is the following sentence plausible? ""Marcell Ozuna scored a touchdown.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Dylan Larkin walked on ball four.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Sergio Ramos hit nothing but net.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Ben Simmons was called for the goal tend.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Nathan MacKinnon bricked the three pointer in the Eastern Conference Finals.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Justin Herbert maradona'd the defender.""",Mistral-7B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Wayne Rooney watched the pitch go by.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Freddie Freeman watched the pitch go by.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Robert Woods converted the first down.""",Mistral-7B,sports,4,5,3,4.0
+"Is the following sentence plausible? ""Sergio Busquets got on base.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Toni Kroos took a throw in in the Champions Leage Semifinal.""",Mistral-7B,sports,3,3,1,2.3333
+"Is the following sentence plausible? ""John Brown went for it on fourth down in the NFC championship.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Nick Foles lost control of the puck.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Robert Woods killed the powerplay.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Vincent Kompany scored a bicycle kick.""",Mistral-7B,sports,5,3,5,4.3333
+"Is the following sentence plausible? ""Didier Drogba got into the endzone.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Francisco Lindor walked on ball four.""",Mistral-7B,sports,5,5,3,4.3333
+"Is the following sentence plausible? ""Neal Pionk shot from the six yard line.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Norman Powell committed a blocking foul.""",Mistral-7B,sports,2,3,1,2.0
+"Is the following sentence plausible? ""Nicklas Backstrom earned a trip to the penalty box.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""John Carlson entered the attacking zone in the Stanley Cup.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Frederik Andersen converted the first down.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Dani Alves took the snap.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""James Harden shot from outside the eighteen.""",Mistral-7B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""A.J. Green scored in the third period.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Carson Wentz caught the screen pass.""",Mistral-7B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Mario Gomez scored a reverse layup.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Jaylen Brown comitted a three second violation.""",Mistral-7B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Luis Robert was out at second.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Adam Thielen scored in added time.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Jonas Valanciunas beat the buzzer.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Thomas Muller hit a triple.""",Mistral-7B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Tom Brady was safe at first.""",Mistral-7B,sports,5,5,3,4.3333
+"Is the following sentence plausible? ""Jonathan Marchessault went five hole.""",Mistral-7B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Steven Stamkos hit the slant pass.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Juan Soto took ball four.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Brandin Cooks went for it on fourth down.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Tuukka Rask hit a double.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""George Springer committed a blocking foul.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Juan Soto shot from beyond the arc.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Jordan Binnington scored in the third period.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Malcolm Brogdon eurostepped to the basket in the NBA Championship.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Malcolm Brogdon banked the shot in.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Draymond Green threw a touchdown.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Michael Conforto comitted a three second violation.""",Mistral-7B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Dougie Hamilton hit the buzzer beater.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Mitchell Trubisky caught the screen pass.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""John Tavares earned a trip to the penalty box in the Stanley Cup.""",Mistral-7B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Patrick Kane backhanded a shot in the Stanley Cup.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Yaya Toure scored a freekick.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Mike Williams scored a bicycle kick in the FA Cup.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Nick Castellanos hit the wheel route.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Javier Zanetti watched the pitch go by in the National League Championship Series.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Patrice Bergeron took a backhand shot.""",Mistral-7B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Paulinho earned an indirect kick in the FA Cup.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Carson Wentz took to the ice.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Marcell Ozuna hit into a double play.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Khyri Thomas  changed direction in the backfield in the NFC championship.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Mike Trout eurostepped to the basket.""",Mistral-7B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Nazem Kadri took a charge in the NBA Championship.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""DJ Chark caught the back shoulder fade in the NFC divisional round.""",Mistral-7B,sports,4,4,2,3.3333
+"Is the following sentence plausible? ""Juan Mata caught the screen pass.""",Mistral-7B,sports,5,5,3,4.3333
+"Is the following sentence plausible? ""Mitchell Marner nutmegged the defender.""",Mistral-7B,sports,3,3,3,3.0
+"Is the following sentence plausible? ""Kenta Maeda threw to first base in the American League Championship Series.""",Mistral-7B,sports,3,3,1,2.3333
+"Is the following sentence plausible? ""Caris LeVert scored a reverse dunk.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Gleyber Torres got a base hit.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Jamal Murray walked on ball four.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Bastian Schweinsteiger scored in added time.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Aleksander Barkov passed the puck.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Drew Brees went for it on fourth down.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""T.Y. Hilton drew a flag on the play.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""DeVante Parker was called for icing.""",Mistral-7B,sports,1,1,1,1.0
+"Is the following sentence plausible? ""Sterling Shepard hit a walkoff homer.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""John Carlson scored in the third period.""",Mistral-7B,sports,3,2,1,2.0
+"Is the following sentence plausible? ""Ryan Tannehill hit a triple.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Mike Williams fumbled the ball in the Superbowl.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Kailer Yamamoto performed a slide tackle in the European Cup.""",Mistral-7B,sports,5,5,4,4.6667
+"Is the following sentence plausible? ""Sonny Gray was out at second.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Robin Lehner launched the desperation heave.""",Mistral-7B,sports,2,1,1,1.3333
+"Is the following sentence plausible? ""Jamison Crowder drew a flag on the play.""",Mistral-7B,sports,5,5,3,4.3333
+"Is the following sentence plausible? ""Jonathan Marchessault scored on the power play in the Stanley Cup.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Dejounte Murray took a side-step three.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Nazem Kadri was out at home.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Adam Thielen got on base.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Brad Hand hit the wheel route.""",Mistral-7B,sports,3,4,2,3.0
+"Is the following sentence plausible? ""Kenta Maeda caught the screen pass.""",Mistral-7B,sports,5,5,3,4.3333
+"Is the following sentence plausible? ""Ketel Marte got into the endzone.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Giorgio Chiellini committed a handball in the FA Cup.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Bryce Harper fumbled the ball.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Jesus Luzardo was called for slashing.""",Mistral-7B,sports,2,2,1,1.6667
+"Is the following sentence plausible? ""Vincent Kompany comitted a three second violation.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Kyle Tucker stepped on first base.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Jakub Vrana hit a walkoff homer.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Elias Lindholm took the snap.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Jerry Jeudy killed the powerplay.""",Mistral-7B,sports,3,3,1,2.3333
+"Is the following sentence plausible? ""Gerrit Cole set the hard screen.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Corbin Burnes earned an indirect kick.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Jayson Tatum took a side-step three in the NBA Championship.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Mookie Betts skated behind the net.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""T.Y. Hilton threw a touchdown in the AFC divisional round.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Emmanuel Sanders got a base hit.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Arjen Robben crossed the blue line in the Stanley Cup.""",Mistral-7B,sports,4,5,3,4.0
+"Is the following sentence plausible? ""Timo Meier nutmegged the defender in the FA Cup.""",Mistral-7B,sports,5,1,3,3.0
+"Is the following sentence plausible? ""Michael Porter Jr. called for the screen.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Mookie Betts scored on the power play.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Nerlens Noel was out at home.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Tyler Glasnow watched the pitch go by.""",Mistral-7B,sports,3,3,2,2.6667
+"Is the following sentence plausible? ""Mike Trout hit a walkoff homer.""",Mistral-7B,sports,4,4,3,3.6667
+"Is the following sentence plausible? ""Klaas Jan Huntelaar scored the easy layup.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Patrice Bergeron converted the first down.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Mathew Barzal called for the screen.""",Mistral-7B,sports,4,3,3,3.3333
+"Is the following sentence plausible? ""Anthony Rizzo skated backwards in the Stanley Cup.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Mitchell Robinson airballed the shot.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Bryce Harper hit the back shoulder fade.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Jack Flaherty walked to first base in the National League Championship Series.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Darius Slayton ran out of bounds in the AFC championship.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Gleyber Torres scored a bicycle kick.""",Mistral-7B,sports,5,5,5,5.0
+"Is the following sentence plausible? ""Luka Modric went in studs up in the FA Cup.""",Mistral-7B,sports,2,2,2,2.0
+"Is the following sentence plausible? ""Josh Allen caught the screen pass.""",Mistral-7B,sports,4,4,3,3.6667
+4810297f474b0e97ed78,Mistral-7B,sqa,2,2,2,2.0
+a4819e1c28b5e1eb4b09,Mistral-7B,sqa,2,2,2,2.0
+f815aaa22d608f1dcb84,Mistral-7B,sqa,5,5,3,4.3333
+58e7eb38d889d4252123,Mistral-7B,sqa,4,5,2,3.6667
+911c0d74b7882fc20ec8,Mistral-7B,sqa,4,4,3,3.6667
+8716b85472632d6e200e,Mistral-7B,sqa,5,5,5,5.0
+a96d28e1221bfbcf50a9,Mistral-7B,sqa,5,5,4,4.6667
+1051df8b6730dcd1b34f,Mistral-7B,sqa,4,5,3,4.0
+b5b110367bb88821d9d0,Mistral-7B,sqa,2,2,2,2.0
+8ab96f428e06984bf0c6,Mistral-7B,sqa,4,3,3,3.3333
+49f6cc28a8385f71d7ca,Mistral-7B,sqa,4,4,3,3.6667
+3ac14678dd395d41639c,Mistral-7B,sqa,5,5,4,4.6667
+001f5aedc57159e1fd99,Mistral-7B,sqa,3,2,2,2.3333
+9cfdec34fa9bd1ed9d3f,Mistral-7B,sqa,3,2,1,2.0
+de62d38623fde2c2285a,Mistral-7B,sqa,3,4,2,3.0
+4e598d222fe1001cf4f8,Mistral-7B,sqa,4,3,2,3.0
+d00ae50a07a5dd8b726c,Mistral-7B,sqa,4,4,3,3.6667
+7bb5eb593f8cee3b4f5e,Mistral-7B,sqa,5,5,5,5.0
+af531b69039676567cb9,Mistral-7B,sqa,5,5,3,4.3333
+d8eaf52f02c5cfb98bce,Mistral-7B,sqa,4,5,2,3.6667
+f32228b474fc1ff18d59,Mistral-7B,sqa,2,1,1,1.3333
+66b9bb0849ceff60cfde,Mistral-7B,sqa,5,5,5,5.0
+ac641c5074e03e422221,Mistral-7B,sqa,2,2,1,1.6667
+162e5f5ec0f9d4a91cf8,Mistral-7B,sqa,5,5,5,5.0
+0a87a031e804912db8df,Mistral-7B,sqa,4,4,2,3.3333
+622c71f22ddb683c15a8,Mistral-7B,sqa,5,5,4,4.6667
+d8649d55a6e1a22b92d9,Mistral-7B,sqa,3,3,1,2.3333
+9dff1d5fe4c07cdb0ccb,Mistral-7B,sqa,4,3,2,3.0
+056452ee6c3af5567f82,Mistral-7B,sqa,2,2,2,2.0
+7ced603c3d79a2f2739d,Mistral-7B,sqa,5,5,3,4.3333
+38a3e1117891b029cd6b,Mistral-7B,sqa,5,5,4,4.6667
+9a87e2e0f53e5d8689f2,Mistral-7B,sqa,3,4,2,3.0
+0a8bb20dbdb99d68127e,Mistral-7B,sqa,2,2,2,2.0
+f231532fe17fd971d1e6,Mistral-7B,sqa,2,2,2,2.0
+b35f58b61b53c487d1ab,Mistral-7B,sqa,5,5,4,4.6667
+9d2f5beb0ffe85faf16d,Mistral-7B,sqa,4,4,2,3.3333
+6523b3b72884557b38e8,Mistral-7B,sqa,4,5,3,4.0
+0b201a9520a4745fcd59,Mistral-7B,sqa,3,4,1,2.6667
+e0a9f1ef5fae44427b26,Mistral-7B,sqa,2,2,2,2.0
+88b682482647a80a080d,Mistral-7B,sqa,4,4,4,4.0
+ac37cfbe97efb67fde55,Mistral-7B,sqa,4,4,3,3.6667
+e7327e171bd965f6a3cf,Mistral-7B,sqa,4,5,3,4.0
+83395bf81226b3f487a7,Mistral-7B,sqa,3,3,2,2.6667
+fd6c86e0bccd5157cfd9,Mistral-7B,sqa,2,2,2,2.0
+136496e0b5e8bed459da,Mistral-7B,sqa,2,2,1,1.6667
+f07a6acf27e25dedbb8d,Mistral-7B,sqa,2,2,2,2.0
+3871d7a05a729494ecd9,Mistral-7B,sqa,4,4,4,4.0
+ee95615e3dafa5e19020,Mistral-7B,sqa,4,4,2,3.3333
+e7730031d304759520ba,Mistral-7B,sqa,3,4,1,2.6667
+d05b8ed82dbe1583b16c,Mistral-7B,sqa,3,3,3,3.0
+e0e842a78f59698d0cfd,Mistral-7B,sqa,3,4,1,2.6667
+c6ca93e6d29d85456bf3,Mistral-7B,sqa,5,5,5,5.0
+6e47423b2fdc8bc3130c,Mistral-7B,sqa,4,4,4,4.0
+a2a388a19b87a34d902b,Mistral-7B,sqa,3,2,3,2.6667
+903178c36c89e5f55a20,Mistral-7B,sqa,5,5,3,4.3333
+d07d517db865174dcee4,Mistral-7B,sqa,4,4,2,3.3333
+f240c88676b6ac6896ad,Mistral-7B,sqa,5,5,5,5.0
+526259cd504bffe7f888,Mistral-7B,sqa,5,5,4,4.6667
+4ba70839df733c61f9a5,Mistral-7B,sqa,5,5,5,5.0
+db70d15b07a9f288ffdc,Mistral-7B,sqa,3,4,2,3.0
+6541fe954f5c5a530fba,Mistral-7B,sqa,3,4,1,2.6667
+e2d24b9e3cb4133c68b0,Mistral-7B,sqa,2,2,1,1.6667
+8f12cd3797d27f250b00,Mistral-7B,sqa,2,2,1,1.6667
+b77d2efee37741e44c32,Mistral-7B,sqa,4,5,1,3.3333
+976710eb9fff4ed94fd8,Mistral-7B,sqa,5,5,5,5.0
+4a915ea5d025292cd7ec,Mistral-7B,sqa,2,2,1,1.6667
+88016d1d8b284aa9113c,Mistral-7B,sqa,2,2,2,2.0
+f315b85273989097eb91,Mistral-7B,sqa,3,4,1,2.6667
+71d5af08c0cfb9565a54,Mistral-7B,sqa,4,4,3,3.6667
+935002dcfa70239e715f,Mistral-7B,sqa,5,5,5,5.0
+b002c8cef0a1b3f84f7a,Mistral-7B,sqa,3,3,1,2.3333
+a98c29881e1929a25eb4,Mistral-7B,sqa,5,5,5,5.0
+93b19cdb3f9d7731997e,Mistral-7B,sqa,5,5,4,4.6667
+defd6e3da16a186503c0,Mistral-7B,sqa,3,4,2,3.0
+a7c566e2adbb58be2da8,Mistral-7B,sqa,3,4,1,2.6667
+901156d5fcaf260eb4a7,Mistral-7B,sqa,3,4,2,3.0
+68684152725123d32f4b,Mistral-7B,sqa,5,5,5,5.0
+fabf020bf07e0445c50c,Mistral-7B,sqa,5,5,4,4.6667
+22b385fc4948e6ff5795,Mistral-7B,sqa,3,4,2,3.0
+ac61d110f57cd7855686,Mistral-7B,sqa,2,2,1,1.6667
+d24514ae216c7a55f4f0,Mistral-7B,sqa,5,5,5,5.0
+684d4c03be354635b80f,Mistral-7B,sqa,4,4,2,3.3333
+998132ad8f805c90f31e,Mistral-7B,sqa,5,5,4,4.6667
+f233f8748574df6f4727,Mistral-7B,sqa,4,4,4,4.0
+c8e267b583f722ff485e,Mistral-7B,sqa,2,2,1,1.6667
+4fd64bb6ce5b78ab20b6,Mistral-7B,sqa,2,3,1,2.0
+9b77992543134de72b4e,Mistral-7B,sqa,5,5,3,4.3333
+80ba3ad84b318f16f34c,Mistral-7B,sqa,2,2,1,1.6667
+ed6d9f875c9787e1817c,Mistral-7B,sqa,2,2,2,2.0
+b88ba16883b786c8469b,Mistral-7B,sqa,5,5,5,5.0
+97d147b2e3e29fa85a71,Mistral-7B,sqa,3,4,1,2.6667
+9975870880bf73b8644e,Mistral-7B,sqa,5,5,4,4.6667
+e8b311139f387c983996,Mistral-7B,sqa,4,3,3,3.3333
+72d9416ee7093deb9eab,Mistral-7B,sqa,3,3,1,2.3333
+d477996cc5bfc3451a92,Mistral-7B,sqa,5,4,4,4.3333
+6c1f7619f21201712194,Mistral-7B,sqa,5,2,4,3.6667
+fdeec181aeee06303113,Mistral-7B,sqa,5,5,4,4.6667
+59542ff1d7782e4cbd89,Mistral-7B,sqa,5,5,4,4.6667
+364935e95e4880fcc8b0,Mistral-7B,sqa,3,3,2,2.6667
+d9987847af1ab751c75a,Mistral-7B,sqa,4,4,2,3.3333
+89a19bd8f2bea335bca1,Mistral-7B,sqa,5,5,5,5.0
+4fe90b9eab197be78729,Mistral-7B,sqa,3,3,1,2.3333
+7fc117f83a13b80e0e09,Mistral-7B,sqa,3,4,1,2.6667
+347eff30928ba07fa567,Mistral-7B,sqa,4,5,3,4.0
+ce921a18dd60a1c8caac,Mistral-7B,sqa,2,3,1,2.0
+9883d6c816d4855035ea,Mistral-7B,sqa,2,2,2,2.0
+ad9bf53d84f83ebc9822,Mistral-7B,sqa,2,3,1,2.0
+bcc0ba30a471776d64a9,Mistral-7B,sqa,2,2,1,1.6667
+7b84d2bc643ddc2085f0,Mistral-7B,sqa,4,4,1,3.0
+f95956c13e22f073310a,Mistral-7B,sqa,3,3,2,2.6667
+ee757afd1a9e0e96cbc7,Mistral-7B,sqa,4,3,3,3.3333
+2c6955a5381253c1067c,Mistral-7B,sqa,3,4,2,3.0
+52f9fdeab2e51f01f3dd,Mistral-7B,sqa,4,4,2,3.3333
+e44e24c2c3b8599b85ad,Mistral-7B,sqa,2,3,2,2.3333
+54a5df08fef4e5a4c82c,Mistral-7B,sqa,1,1,1,1.0
+f15b0aaa611d1d554186,Mistral-7B,sqa,5,5,5,5.0
+e56fdbdf08cdc8694536,Mistral-7B,sqa,2,3,1,2.0
+c2f573c79ceab25e8fcd,Mistral-7B,sqa,5,5,4,4.6667
+d424e393a4daff536f57,Mistral-7B,sqa,4,4,3,3.6667
+1977a974cf1b946ea1e5,Mistral-7B,sqa,4,4,3,3.6667
+65557713351aed7519b8,Mistral-7B,sqa,5,5,5,5.0
+3fc11f59d64ea3b65136,Mistral-7B,sqa,4,4,2,3.3333
+6693c842968f27dd04ce,Mistral-7B,sqa,5,5,4,4.6667
+03caedef50bc6729e9e5,Mistral-7B,sqa,5,5,3,4.3333
+80ca095e38ab73b908ff,Mistral-7B,sqa,5,5,5,5.0
+236c7a57f3788a60e47f,Mistral-7B,sqa,2,2,1,1.6667
+01786fe2b099fd7fb504,Mistral-7B,sqa,2,2,1,1.6667
+1f550df826ae448ff082,Mistral-7B,sqa,2,1,1,1.3333
+a0896de3fd13cd0f3e16,Mistral-7B,sqa,4,5,2,3.6667
+5c03103b5a70117cbdf0,Mistral-7B,sqa,1,1,1,1.0
+1dce60cffcb066e212b8,Mistral-7B,sqa,5,5,5,5.0
+40b7c34188d5b36bc486,Mistral-7B,sqa,4,4,2,3.3333
+43a26c2f067095e1992b,Mistral-7B,sqa,5,5,4,4.6667
+44c59a3ac10f2921a009,Mistral-7B,sqa,5,5,5,5.0
+e6391d901dcc8a269c79,Mistral-7B,sqa,4,4,2,3.3333
+43e4aea70f7e53d1d807,Mistral-7B,sqa,3,3,3,3.0
+91ec6f3b34115feccada,Mistral-7B,sqa,4,5,2,3.6667
+b7c2bfdfc96be70f3f60,Mistral-7B,sqa,2,3,1,2.0
+646d3503f3a3939e2e63,Mistral-7B,sqa,5,5,3,4.3333
+93f0f18ac8c96a44b849,Mistral-7B,sqa,3,2,2,2.3333
+377427ca79b717bdcb83,Mistral-7B,sqa,4,4,3,3.6667
+30c3a32157acb4861555,Mistral-7B,sqa,4,4,2,3.3333
+6316b9ccfc0c645aae30,Mistral-7B,sqa,5,5,4,4.6667
+881286dcdded13a96e3b,Mistral-7B,sqa,4,4,3,3.6667
+8e05ce95646698ca8555,Mistral-7B,sqa,5,5,4,4.6667
+93eafc413d86df9c0755,Mistral-7B,sqa,4,4,2,3.3333
+b65adb5caa4f7a207879,Mistral-7B,sqa,5,5,5,5.0
+f7a32d14efd589015fe1,Mistral-7B,sqa,3,2,3,2.6667
+ba691c1bb1c760b1edf8,Mistral-7B,sqa,5,5,4,4.6667
+f3d045e08844bf0d4e53,Mistral-7B,sqa,5,5,5,5.0
+6cd39b671b2a1d6fb161,Mistral-7B,sqa,5,5,4,4.6667
+7f79c8faf724cc8f0e72,Mistral-7B,sqa,4,4,1,3.0
+5c969a7fccde48210ec8,Mistral-7B,sqa,5,5,4,4.6667
+427fe3968e32005479b9,Mistral-7B,sqa,3,3,2,2.6667
+86ead3f15417204affc2,Mistral-7B,sqa,4,4,2,3.3333
+4c088a5366459f2256c6,Mistral-7B,sqa,4,4,4,4.0
+98a30c58fdff7676076c,Mistral-7B,sqa,5,5,3,4.3333
+30ebf73bc3294792f8de,Mistral-7B,sqa,2,2,2,2.0
+806a13f37055bd21fddc,Mistral-7B,sqa,5,5,5,5.0
+ed08e2d4bbe5bbf1b01d,Mistral-7B,sqa,3,4,2,3.0
+0013d38e0568f48acdc0,Mistral-7B,sqa,5,5,4,4.6667
+cc233b6426cb4e8dffb6,Mistral-7B,sqa,5,5,3,4.3333
+6e939983f45cfcba8caa,Mistral-7B,sqa,3,2,2,2.3333
+a18c59e77cc176f748b2,Mistral-7B,sqa,3,4,2,3.0
+8e01fbec3b932a3252ef,Mistral-7B,sqa,2,3,1,2.0
+24f0e80c50384b28484e,Mistral-7B,sqa,2,2,1,1.6667
+6a01b523e0140f21c426,Mistral-7B,sqa,4,4,2,3.3333
+3bba4ea27500361cb141,Mistral-7B,sqa,5,5,5,5.0
+83717baab39233083d34,Mistral-7B,sqa,2,1,1,1.3333
+ca09aea1e9589ef40c61,Mistral-7B,sqa,2,2,1,1.6667
+e1f6fead3b0070fe2142,Mistral-7B,sqa,5,5,4,4.6667
+a1a92c378396180e190c,Mistral-7B,sqa,5,5,5,5.0
+99b23da6c0f8ad0fc0ea,Mistral-7B,sqa,5,5,3,4.3333
+87c07cc6b730abde6d76,Mistral-7B,sqa,3,3,2,2.6667
+cc542edc9006be8d52a5,Mistral-7B,sqa,5,5,4,4.6667
+b3b209d7fe1a38ad7844,Mistral-7B,sqa,3,3,2,2.6667
+00dc05718aedf2370213,Mistral-7B,sqa,3,4,1,2.6667
+49228a8553a4448fa366,Mistral-7B,sqa,3,3,1,2.3333
+267609f49ccd3c0839c3,Mistral-7B,sqa,3,3,2,2.6667
+0b3c9c9aea94adef6e3a,Mistral-7B,sqa,5,5,4,4.6667
+a60e5f73700b47a5f34a,Mistral-7B,sqa,3,3,1,2.3333
+6296b8c3a16680a826eb,Mistral-7B,sqa,3,4,2,3.0
+decb9886ca17f7af209d,Mistral-7B,sqa,5,5,5,5.0
+50d09b10f985b4763225,Mistral-7B,sqa,5,5,3,4.3333
+ed28d8dc67d5ee85b85c,Mistral-7B,sqa,5,5,2,4.0
+50c3af76816a5c2f07d2,Mistral-7B,sqa,5,5,5,5.0
+14ef04964c1b786dc45e,Mistral-7B,sqa,5,5,3,4.3333
+58fd5574f3447c8f590f,Mistral-7B,sqa,1,1,1,1.0
+54f5fd17d9a2373f68b1,Mistral-7B,sqa,5,5,5,5.0
+f318d0f8f873ce921ac9,Mistral-7B,sqa,5,5,5,5.0
+b3443bf3c312c9d144e4,Mistral-7B,sqa,1,1,1,1.0
+00f951d01196c2e77fe6,Mistral-7B,sqa,3,4,2,3.0
+7870b1cef39a4f685911,Mistral-7B,sqa,2,2,1,1.6667
+48628a79ac6d18460f36,Mistral-7B,sqa,2,2,1,1.6667
+9deedbba0ca784be1855,Mistral-7B,sqa,2,2,1,1.6667
+86f441f4f66b4b5eb375,Mistral-7B,sqa,5,5,5,5.0
+c87e343f444912cc9680,Mistral-7B,sqa,3,2,2,2.3333
+8acc02738825ee8a68b6,Mistral-7B,sqa,2,3,1,2.0
+52a0dd337fb870fa3eb8,Mistral-7B,sqa,2,2,1,1.6667
+a3416e6b8a34d389eb0c,Mistral-7B,sqa,3,4,2,3.0
+0aa6769cb88143b3dba1,Mistral-7B,sqa,3,4,1,2.6667
+27368c21e50b6af694ab,Mistral-7B,sqa,4,4,3,3.6667
+3528723781a97a0e5a7e,Mistral-7B,sqa,4,4,2,3.3333
+9567d9236e4e01580b1a,Mistral-7B,sqa,5,5,5,5.0
+9f1ea9c12c748ea7e456,Mistral-7B,sqa,3,3,2,2.6667
+3a7d825a0fcb4211742f,Mistral-7B,sqa,4,4,3,3.6667
+0a4fa11abccd8dd84dc8,Mistral-7B,sqa,4,5,2,3.6667
+d697f6246a7d06e195ee,Mistral-7B,sqa,5,5,4,4.6667
+30e2cf44640c4fe81d80,Mistral-7B,sqa,4,4,2,3.3333
+06f7878425a995c2a633,Mistral-7B,sqa,4,4,4,4.0
+29842ce280ccd460dd7e,Mistral-7B,sqa,5,5,3,4.3333
+385edf4addbd69573540,Mistral-7B,sqa,5,5,5,5.0
+e51ea4cf89bc91a77f3c,Mistral-7B,sqa,3,4,1,2.6667
+4ea450758bcead502050,Mistral-7B,sqa,3,2,2,2.3333
+ba67c57c41ae212177c8,Mistral-7B,sqa,2,3,1,2.0
+2cc59f4d25398d251fd6,Mistral-7B,sqa,3,2,2,2.3333
+721d168ff5cc0b18c31b,Mistral-7B,sqa,5,5,5,5.0
+17fc5cdda68b55351597,Mistral-7B,sqa,5,5,5,5.0
+e48fb3de1e039f4e8960,Mistral-7B,sqa,5,5,4,4.6667
+0bde4bdfecce47fbf7de,Mistral-7B,sqa,3,2,1,2.0
+29ee7da0020eb03888fb,Mistral-7B,sqa,3,3,2,2.6667
+234e4eccb374a4191c86,Mistral-7B,sqa,4,3,2,3.0
+df84924c94e9e929ef10,Mistral-7B,sqa,5,5,5,5.0
+e9e78aa7b0c1ec3f9cf9,Mistral-7B,sqa,1,1,1,1.0
+660bfdc17b47f42facac,Mistral-7B,sqa,4,3,3,3.3333
+5e692b6eb781e2d6f8c8,Mistral-7B,sqa,4,4,2,3.3333
+2b776be964150651f4b3,Mistral-7B,sqa,3,3,2,2.6667
+8cf9e4fddb2265d2ed89,Mistral-7B,sqa,1,1,1,1.0
+4e4b9fc379547c40adf5,Mistral-7B,sqa,1,1,2,1.3333
