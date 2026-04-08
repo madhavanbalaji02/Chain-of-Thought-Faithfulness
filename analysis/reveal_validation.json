@@ -1,0 +1,25 @@
+{
+  "source": "REVEAL (google/reveal eval split, strategy_qa + sports)",
+  "n_matched_rows": 1276,
+  "n_matched_questions": 54,
+  "match_method": "normalized question text (120 chars)",
+  "attribution_majority_vs_dp": {
+    "spearman_r": 0.0363,
+    "p": 0.2849,
+    "significant": false
+  },
+  "attribution_label_kruskal": {
+    "H": 1.196,
+    "p": 0.754,
+    "significant": false
+  },
+  "logical_correctness_vs_dp": {
+    "mean_dp_correct": 0.1099,
+    "mean_dp_incorrect": -0.0842,
+    "n_correct": 1136,
+    "n_incorrect": 140,
+    "mannwhitney_p": 2.0889863220787393e-06,
+    "significant": true
+  },
+  "interpretation": "Evidence attribution labels do not predict parametric faithfulness (\u03c1=0.04, n.s.). However, steps in logically correct answers show significantly higher \u03b4p than those in incorrect answers (0.110 vs -0.084, p<0.001), suggesting that parametric faithfulness captures logical grounding that goes beyond surface attribution."
+}
