@@ -1,0 +1,5 @@
+model,n,mean_delta_p,binary_faithful
+LLaMA-3,920,0.2475,0.5815
+LLaMA-3-3B,940,0.1127,0.4266
+Mistral-2,919,0.3325,0.7149
+Phi-3,920,-0.0043,0.1152

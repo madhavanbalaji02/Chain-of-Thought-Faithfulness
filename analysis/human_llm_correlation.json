@@ -1,0 +1,17 @@
+{
+  "n_matched": 940,
+  "pearson_r": -0.0104,
+  "pearson_p": 0.7503,
+  "spearman_r": 0.011,
+  "spearman_p": 0.7371,
+  "mann_whitney_flip_vs_noflip_p": 0.0082,
+  "mean_quality_flip_true": 3.3312,
+  "mean_quality_flip_false": 3.613,
+  "mean_quality_by_bin": {
+    "high": 3.4302,
+    "med": 3.3668,
+    "neg": 3.5776
+  },
+  "source": "annotation_data/ (stratified \u03b4p bins) \u00d7 analysis/cot_quality_scores.csv",
+  "note": "REVEAL gated (access required); validation uses \u03b4p bins as faithfulness ground truth"
+}

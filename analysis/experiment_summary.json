@@ -1,0 +1,44 @@
+{
+  "paradox_confirmed": {
+    "LLaMA-3-3B": {
+      "baseline": 30.0,
+      "high": 8.0,
+      "low": 28.0,
+      "n": 50,
+      "p_high": 0.00504775889878566,
+      "p_low": 0.82557535933826,
+      "drop_pct": -73.33333333333333
+    },
+    "Phi-3": {
+      "baseline": 32.0,
+      "high": 14.0,
+      "low": 36.0,
+      "n": 50,
+      "p_high": 0.03246661410080635,
+      "p_low": 0.6728787999877004,
+      "drop_pct": -56.25
+    }
+  },
+  "pending_models": [
+    "LLaMA-3-8B",
+    "Mistral-7B"
+  ],
+  "llm_quality_vs_faithfulness": {
+    "n_matched": 940,
+    "pearson_r": -0.0104,
+    "pearson_p": 0.7503,
+    "spearman_r": 0.011,
+    "spearman_p": 0.7371,
+    "mann_whitney_flip_vs_noflip_p": 0.0082,
+    "mean_quality_flip_true": 3.3312,
+    "mean_quality_flip_false": 3.613,
+    "mean_quality_by_bin": {
+      "high": 3.4302,
+      "med": 3.3668,
+      "neg": 3.5776
+    },
+    "source": "annotation_data/ (stratified \u03b4p bins) \u00d7 analysis/cot_quality_scores.csv",
+    "note": "REVEAL gated (access required); validation uses \u03b4p bins as faithfulness ground truth"
+  },
+  "key_finding": "Non-faithful CoTs score HIGHER on LLM quality (3.61 vs 3.33, p=0.008), confirming that superficially coherent reasoning is decoupled from model behavior"
+}
