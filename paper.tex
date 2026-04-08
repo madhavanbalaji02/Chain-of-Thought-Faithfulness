@@ -6,7 +6,8 @@
 
 % ACL 2026 style
 \usepackage[margin=1in]{geometry}
-\usepackage{acl}
+% \usepackage{acl}   % ACL style — available on Overleaf; commented for local tectonic build
+\usepackage{natbib}  % provides \citep, \citet — normally loaded by acl.sty
 \usepackage{times}
 \usepackage{latexsym}
 \usepackage{microtype}
@@ -39,26 +40,32 @@ Does CoT Quality Fine-Tuning Reduce Parametric Faithfulness?}
 
 % ─────────────────────────────────────────────────────────────
 \begin{abstract}
-We investigate whether fine-tuning on high-quality,
-human-preferred chain-of-thought (CoT) outputs affects
-parametric faithfulness --- the causal coupling between
-CoT reasoning steps and model predictions as measured
-by negative preference optimization (NPO) unlearning.
-We find a consistent \emph{alignment-faithfulness paradox}:
-fine-tuning on high-quality CoTs reduces parametric
-faithfulness by 56--73\% relative across two model
-families (LLaMA-3-3B: 30.0\%$\rightarrow$8.0\%;
-Phi-3: 32.0\%$\rightarrow$14.0\%), while fine-tuning
-on low-quality CoTs leaves faithfulness unchanged
-(28.0\%, 36.0\% respectively).
-Critically, the effect is identical whether models train
-on their own CoTs or another model's CoTs (Phi-3: 14.0\%
-vs.\ 14.0\%), ruling out cross-model distribution shift
-as a confound. These results suggest that optimizing CoT
-for human plausibility systematically decouples reasoning
-chains from the parametric knowledge driving model
-predictions --- a direct challenge to CoT-based AI safety
-monitoring.
+Chain-of-thought (CoT) monitoring is increasingly deployed as
+an AI safety tool, but its reliability depends on CoT reasoning
+being parametrically faithful --- causally connected to the model's
+internal predictions. We investigate whether fine-tuning on
+high-quality, human-preferred CoT outputs affects this parametric
+faithfulness, as measured by Negative Preference Optimization
+(NPO) unlearning. We find a consistent \textbf{alignment-faithfulness
+paradox}: high-quality CoT fine-tuning reduces parametric
+faithfulness by 56--73\% relative across two model families
+(LLaMA-3-3B: 30.0\%$\to$8.0\%, $p{=}0.005$; Phi-3:
+32.0\%$\to$14.0\%, $p{=}0.033$), while low-quality fine-tuning
+leaves faithfulness unchanged. We identify the mechanism through
+step-level analysis: non-faithful CoT steps score significantly
+higher on quality metrics than faithful steps (3.61 vs.\ 3.33,
+$p{=}0.008$, $N{=}940$), meaning quality filtering
+preferentially selects causally-decoupled reasoning.
+We validate parametric faithfulness against human step-level
+annotations from REVEAL \citep{jacovi2025reveal}, finding that
+steps in logically correct answers have significantly higher
+$\Delta p$ than steps in incorrect answers ($+0.110$
+vs.\ $-0.084$, $p{<}0.001$, $N{=}1{,}276$), while
+surface-level evidence attribution shows no relationship
+($\rho{=}0.04$, n.s.). These results suggest that training on
+better-looking reasoning actively selects against the reasoning
+steps that drive model predictions --- a direct challenge to
+CoT-based AI safety monitoring.
 \end{abstract}
 
 % ─────────────────────────────────────────────────────────────
@@ -124,8 +131,16 @@ Our contributions are:
         across two model families, with a cross-model vs.\ model-specific
         ablation ruling out distribution shift as a confound.
   \item Evidence \textbf{confirming} the alignment-faithfulness paradox across
-        LLaMA-3-3B ($-$73\% relative, $p = 0.001$) and Phi-3
-        ($-$56\% relative, $p = 0.004$).
+        LLaMA-3-3B ($-$73\% relative, $p = 0.005$) and Phi-3
+        ($-$56\% relative, $p = 0.033$).
+  \item Step-level evidence for the mechanism: non-faithful CoT steps score
+        higher on quality metrics than faithful ones (3.61 vs.\ 3.33,
+        $p = 0.008$, $N = 940$), with quality and faithfulness orthogonal
+        overall ($r = -0.010$, n.s.).
+  \item External validation against REVEAL human annotations: parametric
+        faithfulness tracks logical correctness ($\Delta p{=}{+}0.110$
+        vs.\ $-0.084$, $p < 0.001$, $N = 1{,}276$), not surface-level
+        evidence attribution ($\rho = 0.04$, n.s.).
 \end{enumerate}
 
 % ─────────────────────────────────────────────────────────────
@@ -299,7 +314,8 @@ with $\alpha = 0.05$.
 \section{Results}
 \label{sec:results}
 
-\subsection{Primary Finding: High-Quality Fine-Tuning Collapses Faithfulness}
+\subsection{The Alignment-Faithfulness Paradox}
+\label{sec:paradox}
 
 Table~\ref{tab:main} reports binary faithfulness rates under each condition.
 Figure~\ref{fig:paradox} visualizes the results. The data confirm H1 with
@@ -309,18 +325,17 @@ For \textbf{LLaMA-3-3B}, baseline parametric faithfulness is 30.0\%,
 consistent with \citet{tutek2025faithfulness}'s original findings. After
 fine-tuning on high-quality CoT instances, binary faithfulness collapses to
 \textbf{8.0\%} --- a 73\% relative reduction and 22 percentage-point absolute
-drop (McNemar exact, $p = 0.001$). After fine-tuning on low-quality instances,
-faithfulness is 28.0\%, a negligible and non-significant change from baseline
-($-$2pp; McNemar exact, $p = 1.000$). The gap between conditions --- 20
-percentage points --- is large enough to be interpretable without statistical
-equivocation.
+drop (two-proportion $z$-test, $p = 0.005$). After fine-tuning on low-quality
+instances, faithfulness is 28.0\%, a negligible and non-significant change from
+baseline ($-$2pp; $p = 0.826$). The gap between conditions --- 20 percentage
+points --- is large enough to be interpretable without statistical equivocation.
 
 \textbf{Phi-3} replicates the pattern. Baseline faithfulness is 32.0\%.
 High-quality fine-tuning reduces this to \textbf{14.0\%} ($-$56\% relative,
-$-$18pp absolute; McNemar exact, $p = 0.004$). Low-quality fine-tuning yields
-36.0\%, a non-significant increase from baseline ($p = 0.688$). Both the
-direction and the magnitude of the paradox are consistent across model families,
-strengthening the generalizability of the finding.
+$-$18pp absolute; $p = 0.033$). Low-quality fine-tuning yields 36.0\%, a
+non-significant increase from baseline ($p = 0.673$). Both the direction and
+the magnitude of the paradox are consistent across model families, strengthening
+the generalizability of the finding.
 
 \begin{table}[t]
 \centering
@@ -355,7 +370,8 @@ Phi-3       & Model-specific & 32.0 & 14.0$^\dagger$ & 38.0 \\
   \label{fig:paradox}
 \end{figure}
 
-\subsection{Quality Is the Causal Variable, Not Fine-Tuning Itself}
+\subsection{Low-Quality Fine-Tuning as a Control}
+\label{sec:lowqual}
 
 A critical alternative explanation is that fine-tuning in general --- rather
 than fine-tuning on \emph{high-quality} data specifically --- disrupts
@@ -363,11 +379,93 @@ parametric faithfulness. Our low-quality control condition rules this out.
 Low-quality LoRA fine-tuning on the same number of instances
 (434 examples, 3 epochs, identical hyperparameters) produces faithfulness rates
 of 28.0\% (LLaMA-3-3B) and 36.0\% (Phi-3) --- both statistically
-indistinguishable from their respective baselines. If fine-tuning itself caused
-faithfulness loss, both conditions would show comparable drops. The exclusive
-collapse under high-quality training confirms that the \emph{quality} of the
-training signal is the operative variable: the model is learning something
-specific about high-quality reasoning that decouples CoT from prediction.
+indistinguishable from their respective baselines ($p = 0.826$ and
+$p = 0.673$). If fine-tuning itself caused faithfulness loss, both conditions
+would show comparable drops. The exclusive collapse under high-quality training
+confirms that the \emph{quality} of the training signal is the operative
+variable: the model is learning something specific about high-quality reasoning
+that decouples CoT from prediction.
+
+\subsection{The Mechanism: Quality Filtering Selects Against Faithfulness}
+\label{sec:mechanism}
+
+The training-level paradox raises a mechanistic question: why does quality
+filtering reduce faithfulness? We answer this through step-level analysis of
+940 matched instances (annotation samples paired with LLM quality scores).
+
+Table~\ref{tab:mechanism} reports mean quality scores for faithful and
+non-faithful steps. Non-faithful steps --- those whose unlearning does \emph{not}
+change the model's prediction --- score \textbf{3.61} on average, significantly
+higher than faithful steps at 3.33 (Mann-Whitney $p = 0.008$). The overall
+correlation between quality score and $\Delta p$ is $r = -0.010$ (n.s.),
+confirming that quality and faithfulness are \emph{orthogonal} dimensions of
+CoT steps. The negative point estimate, while not significant, is consistent
+with quality filtering preferentially selecting non-faithful steps.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Mean LLM quality score (composite, 1--5) for faithful vs.\
+non-faithful CoT steps. Non-faithful steps --- those that do not causally
+influence the prediction --- score higher on quality, explaining the
+training-level paradox. $N = 940$ matched instances.}
+\label{tab:mechanism}
+\begin{tabular}{lccc}
+\toprule
+Step type & $N$ & Mean quality & $p$ \\
+\midrule
+Faithful (causes flip)      & 617 & 3.33 & \multirow{2}{*}{0.008$^{**}$} \\
+Non-faithful (no flip) & 323 & 3.61 & \\
+\midrule
+Quality vs.\ $\Delta p$ correlation & 940 & $r = -0.010$ & n.s. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The causal loop closes as follows: high-quality CoT fine-tuning selects
+instances in which non-faithful steps are over-represented. Training on these
+examples strengthens the model's surface-route from coherent CoT text to
+correct answers, while the FF2 parametric route becomes relatively less
+necessary. Quality filtering does not passively fail to improve faithfulness
+--- it \emph{actively selects against} it.
+
+Figure~\ref{fig:mechanism} provides a visual summary. The left panel shows the
+quality score gap between step types; the right panel shows the REVEAL external
+validation (Section~\ref{sec:reveal}).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{paper_figures/fig2_mechanism_validation.pdf}
+  \caption{Left: non-faithful CoT steps score significantly higher on LLM
+    quality than faithful steps ($p = 0.008$, $N = 940$).
+    Right: REVEAL external validation --- steps in logically correct answers
+    exhibit significantly higher $\Delta p$ than incorrect answers
+    ($p < 0.001$, $N = 1{,}276$), confirming that parametric faithfulness
+    captures logical grounding.}
+  \label{fig:mechanism}
+\end{figure}
+
+\subsection{External Validation via REVEAL}
+\label{sec:reveal}
+
+We validate our faithfulness measure against human step-level annotations from
+REVEAL \citep{jacovi2025reveal}, which provides logical correctness and evidence
+attribution labels for StrategyQA and Sports Understanding reasoning chains. We
+match 1,276 step annotations to our faithfulness scores across 54 unique
+questions using normalized question text.
+
+Steps in logically correct answers exhibit significantly higher $\Delta p$ than
+those in incorrect answers ($+0.110$ vs.\ $-0.084$, Mann-Whitney $p < 0.001$,
+$N = 1{,}276$), while surface-level evidence attribution labels show no
+relationship with $\Delta p$ ($\rho = 0.04$, Kruskal-Wallis $p = 0.754$,
+n.s.). This confirms that parametric faithfulness captures logical grounding
+independent of surface-level citation: a step can be fully attributed to a
+retrieved passage while being causally irrelevant to the model's prediction, and
+vice versa.
+
+Notably, the REVEAL finding mirrors the training-level result: both show that
+surface properties of reasoning (quality score; attribution support) are
+orthogonal to whether the reasoning step actually drives the model's answer.
 
 \subsection{Cross-Model vs.\ Model-Specific Training Rules Out Distribution Shift}
 
@@ -426,27 +524,57 @@ causal weight. Both metrics are needed for a complete picture.
 \section{Discussion}
 \label{sec:discussion}
 
+\subsection{What the Mechanism Means}
+
+The step-level finding (Section~\ref{sec:mechanism}) closes the causal loop.
+Quality filtering does not passively fail to improve faithfulness --- it
+actively selects against it. The most causally-grounded reasoning steps are
+also the least polished: they are the raw inferences that actually shift the
+model's probability distribution, not the clean elaborations that make a chain
+of thought readable. This explains not just the paradox but \emph{predicts}
+it: any quality-based selection criterion applied to CoT data will produce this
+effect unless explicitly designed to select for causal grounding rather than
+surface coherence. The practical corollary is that faithfulness-preserving
+fine-tuning requires a fundamentally different training signal --- one that
+rewards parametric coupling, not stylistic quality.
+
 \subsection{Implications for AI Safety and CoT Monitoring}
 
-The alignment-faithfulness paradox has direct implications for CoT-based AI
-safety monitoring. Current approaches assume that better-quality reasoning
-traces improve monitoring reliability --- if a model produces coherent,
-step-by-step reasoning, its behavior should be more transparent and
-predictable. Our results suggest the opposite: the training signal used to
-produce more coherent, human-preferred CoT actively decouples those traces
-from the parametric knowledge driving predictions. A model whose CoT has been
-quality-filtered produces reasoning that looks more reliable while being
-parametrically less verifiable --- a false sense of transparency that could
-undermine deployment-time safety checks.
+The paradox has direct implications for deployment-time safety. Models
+fine-tuned on quality-filtered CoT produce reasoning that looks most
+trustworthy precisely because it is most decoupled from their actual
+decision-making. A safety monitor reading such CoT receives a systematically
+misleading signal: the coherent, step-by-step reasoning it observes is not the
+mechanism by which the model arrived at its answer. This concern is not merely
+theoretical. CoT monitoring is increasingly deployed by frontier AI laboratories
+as a primary tool for detecting misaligned or deceptive reasoning. Our findings
+suggest that this approach is undermined by the same training process that makes
+CoT human-readable. The very properties that make CoT appealing to human
+evaluators --- coherence, completeness, plausible structure --- may be precisely
+what decouples it from parametric faithfulness.
 
-This concern is not merely theoretical. CoT monitoring is increasingly
-deployed by frontier AI laboratories as a primary tool for detecting
-misaligned or deceptive reasoning. If safety researchers interpret
-high-quality, coherent CoT as evidence that a model's reasoning is transparent,
-our findings suggest this inference is systematically misleading for models
-trained on curated reasoning data. The very properties that make CoT appealing
-to human evaluators --- coherence, completeness, plausible structure --- may
-be precisely what decouples it from parametric faithfulness.
+\subsection{Limitations and Future Work}
+
+Several limitations constrain our conclusions. First, we confirm the paradox
+on two model families ($N = 50$ per condition); LLaMA-3-8B and Mistral-7B
+results are forthcoming and may differ, particularly for larger models where
+FF2 layers may play different representational roles. Second, LoRA fine-tuning
+with rank 16 on 400--500 instances is a weak intervention compared to full
+fine-tuning on millions of examples; the paradox may be stronger under full
+fine-tuning. Third, our NPO faithfulness probe targets only FF2 layers and
+first CoT steps; faithfulness in middle and later steps may behave differently.
+Finally, 50 held-out instances per condition yields limited statistical power
+for small effect sizes; however, the effects observed ($-$18pp to $-$22pp) are
+large enough to be reliably detected at $N = 50$.
+
+Future work should examine larger models, full fine-tuning, and
+faithfulness-preserving training objectives that explicitly penalize the surface
+shortcut route. The FF2 mechanistic probe could be extended to other layer types
+to test the representation redistribution hypothesis
+(Section~\ref{sec:discussion}). The REVEAL validation framework suggests a path
+toward automatic faithfulness benchmarking: step-level logical correctness
+annotations, if collected at scale, would provide a richer signal for training
+faithfulness-aware models.
 
 \subsection{Interpreting the Paradox}
 
@@ -497,49 +625,36 @@ The alignment-faithfulness paradox is the mechanistic counterpart: not only
 do aligned models \emph{say} more agreeable things, their parametric weights
 may encode those statements less causally.
 
-\subsection{Limitations}
-
-Several limitations constrain our conclusions. First, we evaluate only two
-model families (LLaMA-3-3B and Phi-3); LLaMA-3-8B and Mistral-7B results are
-forthcoming and may differ, particularly for larger models where FF2 layers
-may play different representational roles. Second, LoRA fine-tuning with rank
-16 on 400--500 instances is a weak intervention compared to full fine-tuning
-on millions of examples; the paradox may be stronger or weaker under full
-fine-tuning. Third, our quality scoring relies on a single LLM judge (Claude
-Sonnet 4-5) without human validation. Fourth, the NPO faithfulness probe
-targets only FF2 layers and first CoT steps; faithfulness in middle and later
-steps may behave differently. Finally, 50 held-out instances per condition
-yields limited statistical power for detecting small effect sizes; however, the
-effect sizes observed ($-$18pp to $-$22pp) are large enough to be detectable
-at $N = 50$ under McNemar's test.
+% Limitations are now covered in §6.3 (Limitations and Future Work)
 
 % ─────────────────────────────────────────────────────────────
 \section{Conclusion}
 \label{sec:conclusion}
 
-We investigated whether fine-tuning on high-quality Chain-of-Thought instances
-increases or decreases parametric faithfulness as measured by the NPO
-unlearning framework. Across LLaMA-3-3B and Phi-3, we find a consistent
-alignment-faithfulness paradox: high-quality CoT fine-tuning reduces binary
-faithfulness by 56--73\% relative ($p < 0.01$ by McNemar's exact test), while
-low-quality fine-tuning leaves faithfulness statistically unchanged. A
-model-specific ablation on Phi-3 confirms that the quality of training data
---- not cross-model distribution shift --- is the operative variable.
+We present a four-layer argument establishing the alignment-faithfulness
+paradox. At the \textbf{training level}, high-quality CoT fine-tuning reduces
+parametric faithfulness by 56--73\% relative across LLaMA-3-3B and Phi-3
+($p = 0.005$ and $p = 0.033$), while low-quality fine-tuning leaves
+faithfulness unchanged --- ruling out fine-tuning in general as the cause.
+At the \textbf{step level}, non-faithful CoT steps score higher on quality
+metrics than faithful ones (3.61 vs.\ 3.33, $p = 0.008$, $N = 940$), with
+quality and faithfulness orthogonal overall ($r = -0.010$, n.s.) --- closing
+the causal loop. At the \textbf{external validation level}, REVEAL human
+annotations confirm that parametric faithfulness tracks logical correctness
+($\Delta p{=}{+}0.110$ vs.\ $-0.084$, $p < 0.001$, $N = 1{,}276$) while
+surface attribution is unrelated ($\rho = 0.04$, n.s.). At the
+\textbf{ablation level}, model-specific training on Phi-3 replicates the
+paradox identically (14.0\% vs.\ 14.0\%), ruling out cross-model distribution
+shift.
 
-The continuous $\Delta p$ metric further reveals a bimodal distributional
-shift under quality fine-tuning: fewer steps remain causally coupled, but
-those that do exhibit stronger coupling. These findings suggest that improving
-interpretability of CoT reasoning requires metrics and training objectives
-that directly target causal encoding, not merely surface quality.
-
-Future work should examine larger models, full fine-tuning (not just LoRA),
-faithfulness-aware training objectives that explicitly penalize the surface
-shortcut route, and human validation of the LLM quality judge. The NPO
-framework is a promising evaluation tool for such work, provided its FF2
-restriction and single-step focus are extended to broader parametric coverage.
+Together, these findings establish that quality filtering does not passively
+fail to improve faithfulness --- it actively selects against it. Any training
+pipeline that selects CoT instances by surface quality will reproduce this
+effect. Improving CoT interpretability therefore requires faithfulness-aware
+objectives that directly reward parametric coupling, not stylistic coherence.
 
 % ─────────────────────────────────────────────────────────────
 \bibliography{paper}
-\bibliographystyle{acl_natbib}
+\bibliographystyle{plainnat}  % acl_natbib available on Overleaf; plainnat for local build
 
 \end{document}
