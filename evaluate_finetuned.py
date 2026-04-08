@@ -56,7 +56,13 @@ def parse_args():
 # ──────────────────────────────────────────────
 # Model loading (with optional LoRA merge)
 # ──────────────────────────────────────────────
-def load_model(model_name, adapter_path=None):
+def load_model(model_name, adapter_path=None, oracle=False):
+    """Load model and tokenizer.
+
+    oracle=True: load base model in 8-bit (inference-only, ~50% less VRAM)
+                 and apply LoRA adapter without merging.
+    oracle=False: load in bfloat16 and merge LoRA adapter (needed for training).
+    """
     hf_token = os.environ.get('HF_TOKEN', '')
     tokenizer = AutoTokenizer.from_pretrained(
         model_name, trust_remote_code=False, token=hf_token or None,
@@ -64,18 +70,27 @@ def load_model(model_name, adapter_path=None):
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        torch_dtype=torch.bfloat16,
-        device_map='auto',
-        trust_remote_code=False,
-        token=hf_token or None,
-    )
+    if oracle:
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            load_in_8bit=True,
+            device_map='auto',
+            trust_remote_code=False,
+            token=hf_token or None,
+        )
+    else:
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            torch_dtype=torch.bfloat16,
+            device_map='auto',
+            trust_remote_code=False,
+            token=hf_token or None,
+        )
 
     if adapter_path and os.path.exists(adapter_path):
         from peft import PeftModel
         # Fix: PEFT sometimes saves target_modules as a set; convert to sorted list
-        # before loading to avoid "unhashable type: 'set'" errors
+        # in the JSON config before loading to avoid "unhashable type: 'set'" errors
         _cfg_path = os.path.join(adapter_path, 'adapter_config.json')
         if os.path.exists(_cfg_path):
             import json as _json
@@ -86,11 +101,18 @@ def load_model(model_name, adapter_path=None):
                 with open(_cfg_path, 'w') as _f:
                     _json.dump(_cfg, _f, indent=2)
                 print(f"Fixed target_modules type in {_cfg_path}")
-        print(f"Merging LoRA adapter from: {adapter_path}")
         model = PeftModel.from_pretrained(model, adapter_path)
-        model = model.merge_and_unload()   # merge weights, remove adapter overhead
-        model.requires_grad_(True)         # re-enable grads frozen by PeftModel
-        print("Adapter merged.")
+        # Also fix in-memory PEFT LoraConfig — PEFT may re-create a set internally
+        for _name in model.peft_config:
+            _lora_cfg = model.peft_config[_name]
+            if hasattr(_lora_cfg, 'target_modules') and isinstance(_lora_cfg.target_modules, set):
+                _lora_cfg.target_modules = sorted(list(_lora_cfg.target_modules))
+        if oracle:
+            print(f"Adapter loaded (unmerged, oracle/8-bit mode): {adapter_path}")
+        else:
+            model = model.merge_and_unload()   # merge weights, remove adapter overhead
+            model.requires_grad_(True)         # re-enable grads frozen by PeftModel
+            print(f"Adapter merged: {adapter_path}")
 
     model.eval()
     return model, tokenizer
@@ -194,8 +216,8 @@ def evaluate_instance(rec, args):
     options     = rec.get('options', [])
     correct_idx = LETTERS.index(rec['correct'])
 
-    model, tokenizer = load_model(args.model_name, args.adapter_path)
-    oracle, _        = load_model(args.model_name, args.adapter_path)
+    model, tokenizer = load_model(args.model_name, args.adapter_path, oracle=False)
+    oracle, _        = load_model(args.model_name, args.adapter_path, oracle=True)
     for param in oracle.parameters():
         param.requires_grad_(False)
 
