@@ -59,7 +59,7 @@ def parse_args():
 def load_model(model_name, adapter_path=None, oracle=False):
     """Load model and tokenizer.
 
-    oracle=True: load base model in 8-bit (inference-only, ~50% less VRAM)
+    oracle=True: load base model in 4-bit NF4 (inference-only, ~75% less VRAM)
                  and apply LoRA adapter without merging.
     oracle=False: load in bfloat16 and merge LoRA adapter (needed for training).
     """
@@ -71,9 +71,18 @@ def load_model(model_name, adapter_path=None, oracle=False):
         tokenizer.pad_token = tokenizer.eos_token
 
     if oracle:
+        from transformers import BitsAndBytesConfig
+        # 4-bit NF4 (QLoRA-style): cuts oracle VRAM ~75% vs bf16.
+        # Oracle is frozen — quantization does not affect training quality.
+        bnb_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_compute_dtype=torch.bfloat16,
+            bnb_4bit_use_double_quant=True,
+            bnb_4bit_quant_type='nf4',
+        )
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
-            load_in_8bit=True,
+            quantization_config=bnb_config,
             device_map='auto',
             trust_remote_code=False,
             token=hf_token or None,
@@ -340,7 +349,9 @@ def main():
                 ep5 = result['epoch_results'].get('5', {})
                 print(f"    flip={ep5.get('flip')}  delta_p={ep5.get('delta_p',0):.4f}")
             except Exception as e:
-                print(f"    [ERROR] {e}")
+                import traceback
+                print(f"    [ERROR] {type(e).__name__}: {e}")
+                traceback.print_exc()
                 continue
 
     print(f"\nResults written to: {out_path}")
