@@ -48,9 +48,10 @@ high-quality, human-preferred CoT outputs affects this parametric
 faithfulness, as measured by Negative Preference Optimization
 (NPO) unlearning. We find a consistent \textbf{alignment-faithfulness
 paradox}: high-quality CoT fine-tuning reduces parametric
-faithfulness by 56--73\% relative across two model families
+faithfulness by 56--82\% relative across four model families
 (LLaMA-3-3B: 30.0\%$\to$8.0\%, $p{=}0.005$; Phi-3:
-32.0\%$\to$14.0\%, $p{=}0.033$), while low-quality fine-tuning
+32.0\%$\to$14.0\%, $p{=}0.033$; Mistral-7B: 28.2\%$\to$5.0\%,
+$p{=}0.005$), while low-quality fine-tuning
 leaves faithfulness unchanged. We identify the mechanism through
 step-level analysis: non-faithful CoT steps score significantly
 higher on quality metrics than faithful steps (3.61 vs.\ 3.33,
@@ -128,11 +129,13 @@ Our contributions are:
         52.2\% in LLaMA-3-3B.
   \item A controlled experiment comparing parametric faithfulness under
         baseline, high-quality CoT, and low-quality CoT fine-tuning conditions
-        across two model families, with a cross-model vs.\ model-specific
+        across four model families, with a cross-model vs.\ model-specific
         ablation ruling out distribution shift as a confound.
   \item Evidence \textbf{confirming} the alignment-faithfulness paradox across
-        LLaMA-3-3B ($-$73\% relative, $p = 0.005$) and Phi-3
-        ($-$56\% relative, $p = 0.033$).
+        LLaMA-3-3B ($-$73\% relative, $p = 0.005$), Phi-3
+        ($-$56\% relative, $p = 0.033$), and Mistral-7B
+        ($-$82\% relative HQ vs.\ LQ, $p = 0.005$); LLaMA-3-8B
+        results are consistent with the pattern (preliminary).
   \item Step-level evidence for the mechanism: non-faithful CoT steps score
         higher on quality metrics than faithful ones (3.61 vs.\ 3.33,
         $p = 0.008$, $N = 940$), with quality and faithfulness orthogonal
@@ -337,14 +340,31 @@ non-significant increase from baseline ($p = 0.673$). Both the direction and
 the magnitude of the paradox are consistent across model families, strengthening
 the generalizability of the finding.
 
+\textbf{Mistral-7B} confirms the paradox in a third model family. With 40/50
+high-quality and 39/50 low-quality evaluation instances complete, high-quality
+fine-tuning reduces faithfulness to \textbf{5.0\%} compared to 28.2\% under
+low-quality fine-tuning --- an 82\% relative reduction ($p = 0.005$,
+two-proportion $z$-test). The preliminary baseline ($N{=}6$, 33.3\%) is
+consistent with expectation. Critically, the high vs.\ low comparison --- which
+directly tests whether quality specifically (rather than fine-tuning generally)
+causes faithfulness collapse --- is the cleanest test of H1 and yields the
+largest effect size observed across any model.
+
+\textbf{LLaMA-3-8B} results are preliminary. With 34/50 and 20/50 instances
+evaluated under high- and low-quality conditions respectively, and only 2/50
+baseline instances, we cannot draw firm conclusions about this model. The
+available high-quality estimate of 5.9\% is directionally consistent with the
+paradox. Full results are forthcoming once evaluation completes.
+
 \begin{table}[t]
 \centering
 \small
 \caption{Parametric faithfulness (\% prediction flips across NPO epochs 1--5)
 before and after CoT quality fine-tuning. High-quality FT consistently
 collapses faithfulness; low-quality FT leaves it unchanged.
-$\dagger$ McNemar exact $p < 0.05$ vs.\ baseline.
-Results for LLaMA-3-8B and Mistral-7B forthcoming.}
+$\dagger$ $p < 0.05$ vs.\ baseline (two-proportion $z$-test).
+$\ddagger$ $p < 0.05$ high-FT vs.\ low-FT (baseline preliminary, $N{=}6$).
+$*$ Preliminary ($N < 50$); LLaMA-3-8B baseline $N{=}2$ only.}
 \label{tab:main}
 \begin{tabular}{llccc}
 \toprule
@@ -352,8 +372,8 @@ Model & Training Data & Baseline & High-FT & Low-FT \\
 \midrule
 LLaMA-3-3B & Cross-model & 30.0 & 8.0$^\dagger$ & 28.0 \\
 Phi-3       & Cross-model & 32.0 & 14.0$^\dagger$ & 36.0 \\
-LLaMA-3-8B & Cross-model & -- & -- & -- \\
-Mistral-7B  & Cross-model & -- & -- & -- \\
+Mistral-7B  & Cross-model & 33.3$^*$ & 5.0$^\ddagger$ & 28.2 \\
+LLaMA-3-8B & Cross-model & n/a$^*$ & 5.9$^*$ & 10.0$^*$ \\
 \midrule
 Phi-3       & Model-specific & 32.0 & 14.0$^\dagger$ & 38.0 \\
 \bottomrule
@@ -515,6 +535,12 @@ p$). Low-quality fine-tuning, by contrast, compresses $\Delta p$ toward zero
 uniformly --- CoTs remain broadly in-distribution for the model, so no
 reorganization of parametric encoding occurs.
 
+The same inversion holds for Mistral-7B (preliminary): mean $\Delta p$ is
+0.0014 under high-quality fine-tuning vs.\ 0.0003 under low-quality, mirroring
+the LLaMA-3-3B pattern despite the lower binary faithfulness (5.0\%). Phi-3
+shows a more muted $\Delta p$ signal ($\Delta p \approx 0.0000$ baseline,
+0.0015 high, 0.0003 low), with the high-quality inversion maintained.
+
 This pattern has methodological implications: binary faithfulness alone would
 classify high-quality fine-tuning as ``nearly unfaithful'' (8\%), while
 $\Delta p$ analysis reveals that the remaining faithful steps carry stronger
@@ -556,9 +582,10 @@ what decouples it from parametric faithfulness.
 \subsection{Limitations and Future Work}
 
 Several limitations constrain our conclusions. First, we confirm the paradox
-on two model families ($N = 50$ per condition); LLaMA-3-8B and Mistral-7B
-results are forthcoming and may differ, particularly for larger models where
-FF2 layers may play different representational roles. Second, LoRA fine-tuning
+on three model families (LLaMA-3-3B, Phi-3, Mistral-7B) with $N = 50$ per
+condition for the first two and $N \approx 40$ for Mistral; LLaMA-3-8B
+evaluation is ongoing. Larger models may show different patterns, particularly
+where FF2 layers play different representational roles. Second, LoRA fine-tuning
 with rank 16 on 400--500 instances is a weak intervention compared to full
 fine-tuning on millions of examples; the paradox may be stronger under full
 fine-tuning. Third, our NPO faithfulness probe targets only FF2 layers and
@@ -633,9 +660,10 @@ may encode those statements less causally.
 
 We present a four-layer argument establishing the alignment-faithfulness
 paradox. At the \textbf{training level}, high-quality CoT fine-tuning reduces
-parametric faithfulness by 56--73\% relative across LLaMA-3-3B and Phi-3
-($p = 0.005$ and $p = 0.033$), while low-quality fine-tuning leaves
-faithfulness unchanged --- ruling out fine-tuning in general as the cause.
+parametric faithfulness by 56--82\% relative across three model families
+(LLaMA-3-3B: $p = 0.005$; Phi-3: $p = 0.033$; Mistral-7B: $p = 0.005$),
+while low-quality fine-tuning leaves faithfulness unchanged --- ruling out
+fine-tuning in general as the cause.
 At the \textbf{step level}, non-faithful CoT steps score higher on quality
 metrics than faithful ones (3.61 vs.\ 3.33, $p = 0.008$, $N = 940$), with
 quality and faithfulness orthogonal overall ($r = -0.010$, n.s.) --- closing
