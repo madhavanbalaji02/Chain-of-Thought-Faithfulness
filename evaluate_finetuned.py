@@ -1,13 +1,12 @@
 """
 evaluate_finetuned.py
 =====================
-Evaluates a (possibly LoRA-adapted) LLaMA-3-3B on the held-out test set
+Evaluates a (possibly LoRA-adapted) model on the held-out test set
 using the same NPO unlearning loop as unlearn.py.
 
-For each of the 50 held-out instances:
-  1. Optionally merges a LoRA adapter into the base model
-  2. Runs the standard NPO unlearning loop (5 epochs) on the first CoT step
-  3. Records binary faithfulness, delta_p, efficacy, specificity per epoch
+Each instance runs in a FRESH SUBPROCESS so the OS reclaims all GPU memory
+between instances. This is the only reliable way to prevent CUDA memory
+fragmentation/OOM when repeatedly loading 14-16GB models.
 
 Usage:
     # Baseline (no adapter):
@@ -20,21 +19,29 @@ Usage:
         --condition high_quality \
         --adapter_path lora_adapters/high_quality \
         --output_dir finetuned_results/high_quality
-
-Arguments:
-    --condition      Name tag for this condition (used in output filenames)
-    --adapter_path   Path to LoRA adapter dir (omit for baseline)
-    --output_dir     Where to write results.jsonl
-    --test_data      Path to held-out JSONL (default: finetune_data/test_held_out.jsonl)
-    --model_name     Base model (default: meta-llama/Llama-3.2-3B-Instruct)
-    --lr             Unlearning LR (default: 3e-05, matching baseline reproduction)
-    --epochs         Unlearning epochs (default: 5)
 """
 
-import os, json, argparse, torch
+import os, sys, json, argparse, gc, subprocess, tempfile, types
 import numpy as np
-from transformers import AutoTokenizer, AutoModelForCausalLM
-from torch.optim import AdamW
+
+# Must be set before any CUDA operation.
+os.environ.setdefault('PYTORCH_CUDA_ALLOC_CONF', 'expandable_segments:True')
+
+# bitsandbytes (a PEFT dependency) imports Triton at load time.
+# Triton tries to compile a CUDA stub with gcc -lcuda, which fails on BigRed200
+# compute nodes because libcuda.so is not in the linker search path.
+# Mock bitsandbytes before PEFT imports it so the Triton compilation never runs.
+# This is safe because we never use quantization (bf16 only).
+def _make_mock(name):
+    m = types.ModuleType(name)
+    m.__path__ = []
+    return m
+for _mod in ['bitsandbytes', 'bitsandbytes.nn', 'bitsandbytes.optim',
+             'bitsandbytes.functional', 'bitsandbytes.cuda_setup']:
+    if _mod not in sys.modules:
+        sys.modules[_mod] = _make_mock(_mod)
+
+import torch
 
 LETTERS = ['A', 'B', 'C', 'D', 'E']
 
@@ -44,131 +51,120 @@ LETTERS = ['A', 'B', 'C', 'D', 'E']
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument('--condition',    required=True)
-    p.add_argument('--adapter_path', default=None,
-                   help='Path to LoRA adapter. Omit for baseline.')
+    p.add_argument('--adapter_path', default=None)
     p.add_argument('--output_dir',   required=True)
     p.add_argument('--test_data',    default='finetune_data/test_held_out.jsonl')
     p.add_argument('--model_name',   default='meta-llama/Llama-3.2-3B-Instruct')
     p.add_argument('--lr',           type=float, default=3e-5)
     p.add_argument('--epochs',       type=int,   default=5)
+    p.add_argument('--max_instances', type=int,  default=None)
+    # Internal: worker mode processes exactly one instance then exits
+    p.add_argument('--_worker',      default=None,
+                   help='Path to JSON file with a single instance. Internal use only.')
+    p.add_argument('--_out_path',    default=None,
+                   help='Output JSONL path. Internal use only.')
     return p.parse_args()
 
 # ──────────────────────────────────────────────
-# Model loading (with optional LoRA merge)
+# Model loading
 # ──────────────────────────────────────────────
 def load_model(model_name, adapter_path=None, oracle=False):
-    """Load model and tokenizer.
+    from transformers import AutoTokenizer, AutoModelForCausalLM
 
-    oracle=True: load base model in 4-bit NF4 (inference-only, ~75% less VRAM)
-                 and apply LoRA adapter without merging.
-    oracle=False: load in bfloat16 and merge LoRA adapter (needed for training).
-    """
-    hf_token = os.environ.get('HF_TOKEN', '')
+    # Disable caching_allocator_warmup — pre-allocates ~half model size as a
+    # contiguous block, which fails on fragmented GPU memory.
+    import transformers.modeling_utils as _tmu
+    if hasattr(_tmu, 'caching_allocator_warmup'):
+        _tmu.caching_allocator_warmup = lambda *a, **kw: None
+
+    hf_token = os.environ.get('HF_TOKEN', '') or None
     tokenizer = AutoTokenizer.from_pretrained(
-        model_name, trust_remote_code=False, token=hf_token or None,
+        model_name, trust_remote_code=False, token=hf_token,
     )
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    if oracle:
-        from transformers import BitsAndBytesConfig
-        # 4-bit NF4 (QLoRA-style): cuts oracle VRAM ~75% vs bf16.
-        # Oracle is frozen — quantization does not affect training quality.
-        bnb_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_compute_dtype=torch.bfloat16,
-            bnb_4bit_use_double_quant=True,
-            bnb_4bit_quant_type='nf4',
-        )
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            quantization_config=bnb_config,
-            device_map='auto',
-            trust_remote_code=False,
-            token=hf_token or None,
-        )
-    else:
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            torch_dtype=torch.bfloat16,
-            device_map='auto',
-            trust_remote_code=False,
-            token=hf_token or None,
-        )
+    # device_map='balanced': splits layers evenly across all GPUs (50/50 for 2×40GB).
+    # Avoids 'auto' which fills GPU 0 first and overloads it.
+    model = AutoModelForCausalLM.from_pretrained(
+        model_name,
+        torch_dtype=torch.bfloat16,
+        device_map='balanced',
+        trust_remote_code=False,
+        token=hf_token,
+    )
 
     if adapter_path and os.path.exists(adapter_path):
         from peft import PeftModel
-        # Fix: PEFT sometimes saves target_modules as a set; convert to sorted list
-        # in the JSON config before loading to avoid "unhashable type: 'set'" errors
         _cfg_path = os.path.join(adapter_path, 'adapter_config.json')
         if os.path.exists(_cfg_path):
-            import json as _json
             with open(_cfg_path, 'r') as _f:
-                _cfg = _json.load(_f)
+                _cfg = json.load(_f)
             if 'target_modules' in _cfg and not isinstance(_cfg['target_modules'], list):
                 _cfg['target_modules'] = sorted(list(_cfg['target_modules']))
                 with open(_cfg_path, 'w') as _f:
-                    _json.dump(_cfg, _f, indent=2)
-                print(f"Fixed target_modules type in {_cfg_path}")
+                    json.dump(_cfg, _f, indent=2)
         model = PeftModel.from_pretrained(model, adapter_path)
-        # Also fix in-memory PEFT LoraConfig — PEFT may re-create a set internally
         for _name in model.peft_config:
             _lora_cfg = model.peft_config[_name]
             if hasattr(_lora_cfg, 'target_modules') and isinstance(_lora_cfg.target_modules, set):
                 _lora_cfg.target_modules = sorted(list(_lora_cfg.target_modules))
-        if oracle:
-            print(f"Adapter loaded (unmerged, oracle/8-bit mode): {adapter_path}")
-        else:
-            model = model.merge_and_unload()   # merge weights, remove adapter overhead
-            model.requires_grad_(True)         # re-enable grads frozen by PeftModel
-            print(f"Adapter merged: {adapter_path}")
+        # Always merge — removes PeftModel dual-weight overhead.
+        model = model.merge_and_unload()
+
+    if oracle:
+        model.requires_grad_(False)
+    else:
+        model.requires_grad_(True)
+        # Gradient checkpointing: recompute activations during backward, ~4-8x
+        # activation memory reduction for 7B/8B models.
+        model.gradient_checkpointing_enable(
+            gradient_checkpointing_kwargs={"use_reentrant": False}
+        )
 
     model.eval()
     return model, tokenizer
 
 # ──────────────────────────────────────────────
-# NPO loss (mirrors unlearn.py compute_loss with method='npo_KL')
+# NPO-KL loss
 # ──────────────────────────────────────────────
-def compute_npo_kl_loss(model, oracle_model, forget_input_ids, forget_labels,
-                         retain_input_ids, retain_labels, beta=0.1):
-    """Simplified npo_KL loss matching the paper's implementation."""
-    device = forget_input_ids.device
+def compute_npo_kl_loss(model, oracle_log_prob_cpu, oracle_logits_cpu,
+                         forget_input_ids, forget_labels,
+                         retain_input_ids, beta=0.1):
+    import torch.nn.functional as F
+    device = next(model.parameters()).device
 
-    # Forget loss: NPO against oracle
-    with torch.no_grad():
-        oracle_out = oracle_model(forget_input_ids, labels=forget_labels)
-        oracle_log_prob = -oracle_out.loss
+    forget_ids      = forget_input_ids.to(device)
+    forget_lbl      = forget_labels.to(device)
+    retain_ids      = retain_input_ids.to(device)
+    oracle_log_prob = oracle_log_prob_cpu.to(device)
+    oracle_logits   = oracle_logits_cpu.to(device)
 
-    model_out = model(forget_input_ids, labels=forget_labels)
+    model_out      = model(forget_ids, labels=forget_lbl)
     model_log_prob = -model_out.loss
-    npo_loss = -torch.nn.functional.logsigmoid(
-        beta * (model_log_prob - oracle_log_prob)
-    )
+    npo_loss = -F.logsigmoid(beta * (model_log_prob - oracle_log_prob))
+    del model_out, oracle_log_prob
 
-    # KL retain loss
-    with torch.no_grad():
-        oracle_retain = oracle_model(retain_input_ids)
-        oracle_logits = oracle_retain.logits.detach()
-    model_retain = model(retain_input_ids)
-    kl_loss = torch.nn.functional.kl_div(
-        torch.nn.functional.log_softmax(model_retain.logits, dim=-1),
-        torch.nn.functional.softmax(oracle_logits, dim=-1),
+    model_retain = model(retain_ids)
+    kl_loss = F.kl_div(
+        F.log_softmax(model_retain.logits, dim=-1),
+        F.softmax(oracle_logits, dim=-1),
         reduction='batchmean',
     )
+    del model_retain, oracle_logits
 
     return npo_loss + kl_loss
 
 # ──────────────────────────────────────────────
-# Answer probability (normalized)
+# Helpers
 # ──────────────────────────────────────────────
-def answer_probs(model, tokenizer, question, options, initial_cot, device):
-    """Return normalized probability over answer letters, and argmax prediction."""
+def answer_probs(model, tokenizer, question, options, cot, device):
     probs = []
     for opt in options:
-        letter = opt[0]   # 'A', 'B', etc.
+        letter = opt[0]
         prompt = (
             f"Question: {question}\n"
-            f"Let's think step by step.\n{initial_cot}\n"
+            f"Let's think step by step.\n{cot}\n"
             f"The answer is {letter}."
         )
         inputs = tokenizer(prompt, return_tensors='pt').to(device)
@@ -176,78 +172,73 @@ def answer_probs(model, tokenizer, question, options, initial_cot, device):
             out = model(**inputs, labels=inputs['input_ids'])
         log_prob = -out.loss.item() * inputs['input_ids'].shape[1]
         probs.append(float(np.exp(log_prob / max(inputs['input_ids'].shape[1], 1))))
-
     total = sum(probs)
-    if total > 1e-30:
-        probs = [p / total for p in probs]
-    else:
-        probs = [1.0 / len(probs)] * len(probs)
-
+    probs = [p / total for p in probs] if total > 1e-30 else [1.0/len(probs)]*len(probs)
     return probs, int(np.argmax(probs))
 
-# ──────────────────────────────────────────────
-# Forget step token sequence
-# ──────────────────────────────────────────────
-def get_forget_ids(tokenizer, question, first_cot_sentence, device, max_len=256):
-    text = (
-        f"Question: {question}\n"
-        f"Let's think step by step.\n"
-        f"{first_cot_sentence}"
-    )
+def get_ids(tokenizer, question, cot_text, device, max_len=128):
+    text = f"Question: {question}\nLet's think step by step.\n{cot_text}"
     ids = tokenizer(text, return_tensors='pt', max_length=max_len, truncation=True)
     return ids['input_ids'].to(device)
 
-# ──────────────────────────────────────────────
-# Split CoT into first sentence
-# ──────────────────────────────────────────────
 import re as _re
-
 def first_sentence(cot):
     cot = cot.strip()
-    # Try newline-delimited (numbered lists like "1. ...\n2. ...")
     lines = [l.strip() for l in cot.split('\n') if l.strip()]
     if len(lines) >= 2:
         return lines[0]
-    # Fall back to sentence splitting
     parts = _re.split(r'(?<=[.!?])\s+', cot)
     return parts[0] if parts else cot
 
 # ──────────────────────────────────────────────
-# Evaluate one instance
+# Worker: process exactly ONE instance, write result, exit
 # ──────────────────────────────────────────────
-def evaluate_instance(rec, args):
-    """
-    Run the full NPO unlearning loop on one instance and return per-epoch stats.
-    Two fresh model copies are loaded per instance (matching unlearn.py behaviour).
-    """
+def run_worker(args):
+    with open(args._worker) as f:
+        rec = json.load(f)
+
     question    = rec['question']
     cot         = rec['initial_cot']
     options     = rec.get('options', [])
     correct_idx = LETTERS.index(rec['correct'])
 
-    model, tokenizer = load_model(args.model_name, args.adapter_path, oracle=False)
-    oracle, _        = load_model(args.model_name, args.adapter_path, oracle=True)
-    for param in oracle.parameters():
-        param.requires_grad_(False)
+    # STEP 1: Oracle — precompute outputs, cache to CPU, free GPU completely
+    oracle, tokenizer = load_model(args.model_name, args.adapter_path, oracle=True)
+    oracle_device = next(oracle.parameters()).device
 
+    forget_ids_tmp = get_ids(tokenizer, question, first_sentence(cot), oracle_device)
+    retain_ids_tmp = get_ids(tokenizer, question, cot, oracle_device)
+
+    with torch.no_grad():
+        out = oracle(forget_ids_tmp, labels=forget_ids_tmp)
+        oracle_log_prob_cpu = (-out.loss).cpu()
+        ret = oracle(retain_ids_tmp)
+        oracle_logits_cpu = ret.logits.detach().cpu()
+
+    del out, ret, forget_ids_tmp, retain_ids_tmp, oracle
+    gc.collect()
+    torch.cuda.empty_cache()
+
+    # STEP 2: Trainable model — use cached oracle outputs
+    model, _ = load_model(args.model_name, args.adapter_path, oracle=False)
     device = next(model.parameters()).device
 
-    # FF2 layers only (matching --ff2 flag from original runs)
     ff2_params = [p for n, p in model.named_parameters()
                   if 'mlp.down_proj' in n and p.requires_grad]
     if not ff2_params:
         ff2_params = [p for p in model.parameters() if p.requires_grad]
-    optimizer = AdamW(ff2_params, lr=args.lr)
+    optimizer = torch.optim.SGD(ff2_params, lr=args.lr)
 
-    forget_ids  = get_forget_ids(tokenizer, question, first_sentence(cot), device)
-    retain_ids  = get_forget_ids(tokenizer, question, cot, device)   # full CoT as retain
+    forget_ids = get_ids(tokenizer, question, first_sentence(cot), device)
+    retain_ids = get_ids(tokenizer, question, cot, device)
 
     epoch_results = {}
+    baseline_probs = None
+    baseline_pred  = None
 
-    for epoch in range(args.epochs + 1):   # epoch 0 = baseline
+    for epoch in range(args.epochs + 1):
         model.eval()
         p0_norm, pred0 = answer_probs(model, tokenizer, question, options, cot, device)
-        delta_p = None
         if epoch == 0:
             baseline_probs = p0_norm[:]
             baseline_pred  = pred0
@@ -266,19 +257,18 @@ def evaluate_instance(rec, args):
             model.train()
             optimizer.zero_grad()
             loss = compute_npo_kl_loss(
-                model, oracle,
-                forget_ids, forget_ids,   # labels = input_ids for CLM
-                retain_ids, retain_ids,
+                model, oracle_log_prob_cpu, oracle_logits_cpu,
+                forget_ids, forget_ids, retain_ids,
             )
             loss.backward()
             torch.nn.utils.clip_grad_norm_(ff2_params, 1.0)
             optimizer.step()
 
-    # Clean up
-    del model, oracle
+    del model
+    gc.collect()
     torch.cuda.empty_cache()
 
-    return {
+    result = {
         'instance_id':   rec.get('instance_id', rec['question'][:60]),
         'dataset':       rec.get('dataset', 'unknown'),
         'correct':       rec['correct'],
@@ -287,31 +277,40 @@ def evaluate_instance(rec, args):
         'baseline_pred':  baseline_pred,
         'initial_prediction_correct': (baseline_pred == correct_idx),
         'epoch_results': epoch_results,
+        'condition':     args.condition,
     }
 
+    with open(args._out_path, 'a', encoding='utf-8') as f:
+        f.write(json.dumps(result) + '\n')
+
+    ep5 = epoch_results.get(str(args.epochs), {})
+    print(f"  OK  flip={ep5.get('flip')}  delta_p={ep5.get('delta_p',0):.4f}  id={result['instance_id'][:40]}")
+
 # ──────────────────────────────────────────────
-# Main
+# Orchestrator: spawn one subprocess per instance
 # ──────────────────────────────────────────────
 def main():
     args = parse_args()
-    os.makedirs(args.output_dir, exist_ok=True)
 
-    print(f"Condition:    {args.condition}")
-    print(f"Adapter:      {args.adapter_path or 'none (baseline)'}")
-    print(f"Output dir:   {args.output_dir}")
-    print(f"Test data:    {args.test_data}")
-    print(f"Unlearn LR:   {args.lr}")
+    # Worker mode: process one instance and exit
+    if args._worker:
+        run_worker(args)
+        return
+
+    os.makedirs(args.output_dir, exist_ok=True)
+    print(f"Condition:  {args.condition}")
+    print(f"Adapter:    {args.adapter_path or 'none (baseline)'}")
+    print(f"Model:      {args.model_name}")
 
     # Load test instances
     test_instances = []
     with open(args.test_data, encoding='utf-8') as f:
         for line in f:
             rec = json.loads(line.strip())
-            # Reconstruct fields from prompt/completion format
-            prompt     = rec['prompt']
-            completion = rec['completion']
-            question   = prompt.replace("Question: ", "").replace("\nLet's think step by step.", "").strip()
-            cot_lines  = completion.rsplit('\nThe answer is ', 1)
+            prompt      = rec['prompt']
+            completion  = rec['completion']
+            question    = prompt.replace("Question: ", "").replace("\nLet's think step by step.", "").strip()
+            cot_lines   = completion.rsplit('\nThe answer is ', 1)
             initial_cot = cot_lines[0].strip()
             correct     = cot_lines[1].strip().rstrip('.') if len(cot_lines) > 1 else 'A'
             test_instances.append({
@@ -320,59 +319,83 @@ def main():
                 'question':    question,
                 'initial_cot': initial_cot,
                 'correct':     correct,
-                'options':     [f"{l})" for l in LETTERS[:4]],   # generic fallback
+                'options':     [f"{l})" for l in LETTERS[:4]],
             })
-
-    print(f"Loaded {len(test_instances)} test instances.")
+    print(f"Loaded {len(test_instances)} instances.")
 
     out_path = os.path.join(args.output_dir, 'results.jsonl')
-    # Resume from checkpoint
     done_ids = set()
     if os.path.exists(out_path):
         with open(out_path) as f:
             for line in f:
-                r = json.loads(line)
-                done_ids.add(r['instance_id'])
+                try:
+                    done_ids.add(json.loads(line)['instance_id'])
+                except: pass
         print(f"Resuming: {len(done_ids)} already done.")
 
-    with open(out_path, 'a', encoding='utf-8') as out_f:
-        for i, inst in enumerate(test_instances):
-            if inst['instance_id'] in done_ids:
-                continue
-            print(f"  [{i+1}/{len(test_instances)}] {inst['dataset']} | {inst['instance_id'][:40]}")
-            try:
-                result = evaluate_instance(inst, args)
-                result['condition'] = args.condition
-                out_f.write(json.dumps(result) + '\n')
-                out_f.flush()
+    new_done = 0
+    for i, inst in enumerate(test_instances):
+        if inst['instance_id'] in done_ids:
+            continue
+        if args.max_instances is not None and new_done >= args.max_instances:
+            print(f"[max_instances={args.max_instances} reached, stopping]")
+            break
 
-                ep5 = result['epoch_results'].get('5', {})
-                print(f"    flip={ep5.get('flip')}  delta_p={ep5.get('delta_p',0):.4f}")
-            except Exception as e:
-                import traceback
-                print(f"    [ERROR] {type(e).__name__}: {e}")
-                traceback.print_exc()
-                continue
+        print(f"[{i+1}/{len(test_instances)}] {inst['dataset']} | {inst['instance_id'][:40]}")
 
-    print(f"\nResults written to: {out_path}")
+        # Write instance to temp file, spawn fresh subprocess, then delete temp file.
+        # When subprocess exits, OS reclaims ALL its GPU memory — no fragmentation.
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as tf:
+            json.dump(inst, tf)
+            tmp_path = tf.name
 
-    # Quick summary
+        cmd = [sys.executable, __file__,
+               '--condition',   args.condition,
+               '--output_dir',  args.output_dir,
+               '--test_data',   args.test_data,
+               '--model_name',  args.model_name,
+               '--lr',          str(args.lr),
+               '--epochs',      str(args.epochs),
+               '--_worker',     tmp_path,
+               '--_out_path',   out_path,
+               ]
+        if args.adapter_path:
+            cmd += ['--adapter_path', args.adapter_path]
+
+        try:
+            result = subprocess.run(cmd, timeout=1800, capture_output=True, text=True)
+            if result.returncode == 0:
+                print(result.stdout.strip())
+                new_done += 1
+            else:
+                print(f"  [FAILED] exit code {result.returncode}")
+                if result.stdout: print("STDOUT:", result.stdout[-2000:])
+                if result.stderr: print("STDERR_TAIL:", result.stderr[-3000:])
+        except subprocess.TimeoutExpired:
+            print(f"  [TIMEOUT] instance took >30min, skipping")
+        finally:
+            try: os.unlink(tmp_path)
+            except: pass
+
+    # Summary
     results = []
-    with open(out_path) as f:
-        for line in f:
-            results.append(json.loads(line))
+    if os.path.exists(out_path):
+        with open(out_path) as f:
+            for line in f:
+                try: results.append(json.loads(line))
+                except: pass
 
-    flips    = [any(r['epoch_results'][str(e)]['flip']
-                    for e in range(1, args.epochs+1)
-                    if str(e) in r['epoch_results'])
-                for r in results]
-    deltas   = [r['epoch_results'].get(str(args.epochs), {}).get('delta_p', 0)
-                for r in results]
-
-    print(f"\n--- Condition: {args.condition} ---")
-    print(f"  N instances:         {len(results)}")
-    print(f"  Binary faithfulness: {sum(flips)/len(flips)*100:.1f}%")
-    print(f"  Mean delta_p:        {sum(deltas)/len(deltas):.4f}")
+    if results:
+        flips  = [any(r['epoch_results'][str(e)]['flip']
+                      for e in range(1, args.epochs+1)
+                      if str(e) in r['epoch_results'])
+                  for r in results]
+        deltas = [r['epoch_results'].get(str(args.epochs), {}).get('delta_p', 0)
+                  for r in results]
+        print(f"\n--- {args.condition} ---")
+        print(f"  N:                   {len(results)}")
+        print(f"  Binary faithfulness: {sum(flips)/len(flips)*100:.1f}%")
+        print(f"  Mean delta_p:        {sum(deltas)/len(deltas):.4f}")
 
 if __name__ == '__main__':
     main()
