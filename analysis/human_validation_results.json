@@ -1,0 +1,12 @@
+{
+  "n": 100,
+  "pearson_r": 0.1508,
+  "pearson_p": 0.1343,
+  "spearman_r": 0.2091,
+  "spearman_p": 0.0368,
+  "mean_rating_flip": 3.2466,
+  "mean_rating_noflip": 3.0741,
+  "mannwhitney_p": 0.634,
+  "n_flip": 73,
+  "n_noflip": 27
+}
