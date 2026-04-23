@@ -49,11 +49,12 @@ faithfulness, as measured by Negative Preference Optimization
 (NPO) unlearning. We find a consistent \textbf{alignment-faithfulness
 paradox}: high-quality CoT fine-tuning reduces parametric
 faithfulness by 56--75\% relative across three model families
-(LLaMA-3-3B: 30.0\%$\to$8.0\%, $p{=}0.005$; Phi-3:
-32.0\%$\to$14.0\%, $p{=}0.033$; Mistral-7B: 16.0\%$\to$4.0\%,
-$p{=}0.046$), while low-quality fine-tuning leaves faithfulness
-unchanged. LLaMA-3-8B shows a near-floor null result
-(baseline 3.8\%, high-FT 4.0\%, low-FT 4.0\%). We identify the mechanism through
+(LLaMA-3-3B: 30.0\%$\to$8.0\%, $p{=}0.005$;
+Phi-3: 32.0\%$\to$14.0\%, $p{=}0.033$;
+Mistral-7B: 16.0\%$\to$4.0\%, $p{=}0.046$),
+while low-quality fine-tuning leaves faithfulness unchanged.
+LLaMA-3-8B exhibits near-zero baseline faithfulness (3.8\%),
+consistent with an inverse scaling hypothesis. We identify the mechanism through
 step-level analysis: non-faithful CoT steps score significantly
 higher on quality metrics than faithful steps (3.61 vs.\ 3.33,
 $p{=}0.008$, $N{=}940$), meaning quality filtering
@@ -361,28 +362,33 @@ faithfulness is already near-zero, there is no room for the paradox to manifest.
 This null result is informative: it suggests that the alignment-faithfulness
 paradox requires non-trivial baseline parametric coupling, consistent with the
 mechanistic account in Section~\ref{sec:discussion}.
+This floor effect is consistent with prior findings that larger
+models exhibit lower CoT faithfulness \citep{lanham2023measuring},
+suggesting that the alignment-faithfulness paradox may be
+most pronounced in small-to-medium models where baseline
+faithfulness is non-trivial.
 
 \begin{table}[t]
 \centering
-\small
-\caption{Parametric faithfulness (\% prediction flips across NPO epochs 1--5)
-before and after CoT quality fine-tuning. All conditions $N{=}50$.
-High-quality FT consistently collapses faithfulness in models with non-trivial
-baseline coupling; low-quality FT leaves it unchanged.
-$\dagger$ $p < 0.05$ vs.\ baseline (two-proportion $z$-test).}
+\caption{Parametric faithfulness (\% prediction flips) before and
+after CoT quality fine-tuning across four model families.
+High-quality FT consistently collapses faithfulness while
+low-quality FT leaves it unchanged --- except LLaMA-3-8B,
+which exhibits near-zero baseline faithfulness.}
 \label{tab:main}
-\begin{tabular}{llccc}
+\begin{tabular}{lcccc}
 \toprule
-Model & Training Data & Baseline & High-FT & Low-FT \\
+Model & Baseline & High-FT & Low-FT & Relative Drop \\
 \midrule
-LLaMA-3-3B & Cross-model & 30.0 & 8.0$^\dagger$ & 28.0 \\
-Phi-3       & Cross-model & 32.0 & 14.0$^\dagger$ & 36.0 \\
-Mistral-7B  & Cross-model & 16.0 & 4.0$^\dagger$ & 22.0 \\
-LLaMA-3-8B & Cross-model & 3.8 & 4.0 & 4.0 \\
-\midrule
-Phi-3       & Model-specific & 32.0 & 14.0$^\dagger$ & 38.0 \\
+LLaMA-3-3B & 30.0 & \textbf{8.0}$^{**}$ & 28.0 & $-$73\% \\
+Phi-3       & 32.0 & \textbf{14.0}$^{*}$  & 36.0 & $-$56\% \\
+Mistral-7B  & 16.0 & \textbf{4.0}$^{*}$   & 22.0 & $-$75\% \\
+LLaMA-3-8B  & 3.8  & 4.0 & 4.0 & $\sim$0\% (null) \\
 \bottomrule
 \end{tabular}
+\footnotesize{$^{**}p{<}0.01$, $^{*}p{<}0.05$, two-proportion $z$-test.
+LLaMA-3-8B baseline faithfulness is near-zero, leaving no room for
+further collapse (floor effect).}
 \end{table}
 
 \begin{figure}[t]
