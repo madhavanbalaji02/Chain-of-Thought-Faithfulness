@@ -295,6 +295,7 @@ def main():
         lr_scheduler_type='cosine',
         report_to='none',
         dataloader_num_workers=0,   # avoid fork issues with custom collator
+        remove_unused_columns=False,  # keep cot_steps/prompt/correct for faith loss
     )
 
     trainer = FaithfulnessTrainer(
