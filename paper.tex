@@ -249,10 +249,10 @@ surface-level completeness is sufficient.
 
 \subsection{Base Models and Datasets}
 
-We evaluate two model families: \textbf{LLaMA-3.2-3B-Instruct}
-\citep{dubey2024llama3} and \textbf{Phi-3-mini-4k-instruct}
-\citep{abdin2024phi3}, with LLaMA-3-8B-Instruct and Mistral-7B-Instruct-v0.2
-results forthcoming. We draw from four multiple-choice QA benchmarks:
+We evaluate four model families: \textbf{LLaMA-3.2-3B-Instruct}
+\citep{dubey2024llama3}, \textbf{Phi-3-mini-4k-instruct}
+\citep{abdin2024phi3}, \textbf{LLaMA-3-8B-Instruct} \citep{dubey2024llama3},
+and \textbf{Mistral-7B-Instruct-v0.2} \citep{jiang2023mistral}. We draw from four multiple-choice QA benchmarks:
 \textbf{ARC-Challenge} \citep{clark2018arc}, \textbf{OpenBookQA}
 \citep{mihaylov2018openbook}, \textbf{Sports Understanding}
 \citep{srivastava2022bigbench}, and \textbf{StrategyQA}
@@ -290,15 +290,35 @@ Both adapters use identical hyperparameters: rank $r = 16$, $\alpha = 32$,
 dropout $= 0.05$, applied to all 7 projection matrices. Training runs for 3
 epochs with learning rate $2 \times 10^{-4}$, effective batch size 16, and a
 cosine schedule with 5\% warmup. Adapters are merged before evaluation.
-Confirmed training losses (LLaMA-3-3B): 0.271 (high-quality), 0.234
-(low-quality). For LLaMA-3-8B: 0.313 (high-quality),
-\RESULT{llama8b\_lq\_loss} (low-quality; forthcoming). For Mistral-7B: 0.196
-(high-quality), \RESULT{mistral\_lq\_loss} (low-quality; forthcoming).
+Confirmed training losses --- LLaMA-3-3B: 0.271 (high-quality), 0.234
+(low-quality); LLaMA-3-8B: 0.313 (high-quality); Mistral-7B: 0.196
+(high-quality). Low-quality losses were not logged for LLaMA-3-8B and Mistral-7B.
 
 For Phi-3, we additionally run a \textbf{model-specific} condition: both
 adapters are trained on Phi-3's own generated CoTs (using the same quality
 rubric), rather than LLaMA-3-3B's CoTs. This ablation tests whether the
 paradox arises from cross-model distribution shift or from CoT quality per se.
+
+\begin{table}[t]
+\centering
+\small
+\caption{LoRA fine-tuning details for all four models.
+All adapters use identical hyperparameters and are merged into the
+base model weights before faithfulness evaluation.}
+\label{tab:lora}
+\begin{tabular}{lcccc}
+\toprule
+Model & Rank & $\alpha$ & Epochs & Train instances \\
+\midrule
+LLaMA-3-3B  & 16 & 32 & 3 & 434 (high / low) \\
+Phi-3        & 16 & 32 & 3 & 434 (high / low) \\
+Mistral-7B   & 16 & 32 & 3 & 434 (high / low) \\
+LLaMA-3-8B   & 16 & 32 & 3 & 434 (high / low) \\
+\midrule
+\multicolumn{5}{l}{\small LR $2{\times}10^{-4}$; dropout 0.05; cosine schedule; all 7 projection matrices.} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Faithfulness Evaluation}
 
@@ -409,15 +429,18 @@ LLaMA-3-8B baseline faithfulness is near-zero, leaving no room for
 further collapse (floor effect).}
 \end{table}
 
-\begin{figure}[t]
+\begin{figure*}[t]
   \centering
-  \includegraphics[width=\columnwidth]{paper_figures/fig1_paradox.pdf}
+  \includegraphics[width=\textwidth]{paper_figures/fig1_paradox_final.pdf}
   \caption{Parametric faithfulness (\% prediction flips) under each
-    fine-tuning condition for LLaMA-3-3B and Phi-3. Red bars (high-quality FT)
-    show substantial drops; blue bars (low-quality FT) remain near baseline
-    (gray). Relative drops annotated on red bars.}
+    fine-tuning condition for all four models. Red bars (High-FT)
+    show substantial drops in LLaMA-3-3B ($-$73\%), Phi-3 ($-$56\%), and
+    Mistral-7B ($-$75\%); green bars (Low-FT) remain near baseline.
+    LLaMA-3-8B (shaded) shows a floor effect --- near-zero baseline
+    faithfulness leaves no room for the paradox to manifest.
+    Asterisks: $^{**}p{<}0.01$, $^{*}p{<}0.05$ (two-proportion $z$-test).}
   \label{fig:paradox}
-\end{figure}
+\end{figure*}
 
 \begin{table}[t]
 \centering
