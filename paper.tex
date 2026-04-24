@@ -628,13 +628,77 @@ classify high-quality fine-tuning as ``nearly unfaithful'' (8\%), while
 $\Delta p$ analysis reveals that the remaining faithful steps carry stronger
 causal weight. Both metrics are needed for a complete picture.
 
+\subsection{Mechanistic Analysis: FF2 Faithfulness Encoding}
+\label{sec:ff2}
+
+To investigate \emph{why} high-quality fine-tuning collapses parametric
+faithfulness, we train linear probes on FF2 (\texttt{mlp.down\_proj}) hidden
+states extracted at the last token of each CoT step's first sentence.
+The probe predicts whether a step is parametrically faithful (binary
+classification). If high-quality FT degrades faithfulness encoding in FF2,
+probe accuracy above the majority baseline should collapse.
+
+\begin{table}[h]
+\centering
+\caption{Linear probe accuracy lift over majority baseline
+(higher = FF2 encodes faithfulness-relevant information).
+High-quality FT collapses probe lift to zero at all layers;
+low-quality FT maintains or increases it.}
+\label{tab:ff2}
+\begin{tabular}{lccc}
+\toprule
+Layer & Baseline & High-quality FT & Low-quality FT \\
+\midrule
+8  & $+$0.060 & $\mathbf{0.000}$  & $+$0.080 \\
+16 & $+$0.020 & $\mathbf{-0.021}$ & $+$0.120 \\
+24 & $+$0.000 & $\mathbf{-0.000}$ & $+$0.060 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:ff2} shows that after high-quality fine-tuning, FF2 activations
+carry \textbf{no faithfulness-predictive signal} at any probed layer
+(Figure~\ref{fig:ff2probe}).
+Low-quality fine-tuning maintains or increases probe lift at all layers,
+confirming the effect is quality-specific rather than a generic consequence
+of fine-tuning. These results suggest that high-quality CoT training drives
+FF2 layers toward fluent text generation at the cost of step-specific content
+encoding --- the mechanism by which parametric faithfulness collapses.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{paper_figures/fig3_ff2_probe.pdf}
+  \caption{FF2 probe accuracy lift at layers 8, 16, and 24.
+    High-quality FT (red) collapses lift to zero at every layer;
+    low-quality FT (blue) maintains or improves it.
+    Baseline (gray) shows modest positive lift, confirming FF2
+    encodes some faithfulness-relevant signal before fine-tuning.}
+  \label{fig:ff2probe}
+\end{figure}
+
 % ─────────────────────────────────────────────────────────────
 \section{Discussion}
 \label{sec:discussion}
 
 \subsection{What the Mechanism Means}
 
-The step-level finding (Section~\ref{sec:mechanism}) closes the causal loop.
+The FF2 probe results (Section~\ref{sec:ff2}) complete the causal chain.
+The full mechanism proceeds in four steps:
+
+\begin{enumerate}
+  \item Non-faithful CoT steps score higher on quality metrics than faithful
+        ones (3.61 vs.\ 3.33, $p = 0.008$) --- quality filtering
+        preferentially selects them.
+  \item High-quality fine-tuning trains FF2 layers toward the distributional
+        properties of these steps, erasing step-specific faithfulness encoding
+        (probe lift $\to$ 0 at all layers).
+  \item NPO unlearning of individual steps therefore fails to propagate to
+        model predictions --- parametric faithfulness collapses 56--75\%.
+  \item Task accuracy simultaneously improves ($+$2 to $+$20pp), confirming
+        the training signal works as intended from a performance standpoint
+        while undermining verifiability.
+\end{enumerate}
+
 Quality filtering does not passively fail to improve faithfulness --- it
 actively selects against it. The most causally-grounded reasoning steps are
 also the least polished: they are the raw inferences that actually shift the
