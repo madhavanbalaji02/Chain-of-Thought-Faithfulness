@@ -23,6 +23,24 @@ import os
 os.environ.setdefault('HF_HOME', '/N/scratch/madbala/hf_cache')
 os.environ.setdefault('TRANSFORMERS_CACHE', '/N/scratch/madbala/hf_cache')
 
+# Stub bitsandbytes before PEFT import — prevents Triton/gcc -lcuda on HPC nodes.
+# PEFT checks isinstance(layer, bnb.nn.Linear8bitLt/Linear4bit); stubs make
+# those checks return False for normal bf16 layers. No quantization is used.
+import sys, types, importlib.util as _ilu
+
+class _BnbStub:
+    pass
+
+_bnb_nn = types.ModuleType('bitsandbytes.nn')
+_bnb_nn.__spec__ = _ilu.ModuleSpec('bitsandbytes.nn', None)
+for _n in ['Linear8bitLt', 'Linear4bit', 'Params4bit', 'Int8Params']:
+    setattr(_bnb_nn, _n, _BnbStub)
+_bnb = types.ModuleType('bitsandbytes')
+_bnb.__spec__ = _ilu.ModuleSpec('bitsandbytes', None)
+_bnb.nn = _bnb_nn
+sys.modules.setdefault('bitsandbytes', _bnb)
+sys.modules.setdefault('bitsandbytes.nn', _bnb_nn)
+
 import torch
 import json
 import argparse
