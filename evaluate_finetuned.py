@@ -30,16 +30,33 @@ os.environ.setdefault('PYTORCH_CUDA_ALLOC_CONF', 'expandable_segments:True')
 # bitsandbytes (a PEFT dependency) imports Triton at load time.
 # Triton tries to compile a CUDA stub with gcc -lcuda, which fails on BigRed200
 # compute nodes because libcuda.so is not in the linker search path.
-# Mock bitsandbytes before PEFT imports it so the Triton compilation never runs.
-# This is safe because we never use quantization (bf16 only).
-def _make_mock(name):
-    m = types.ModuleType(name)
-    m.__path__ = []
-    return m
-for _mod in ['bitsandbytes', 'bitsandbytes.nn', 'bitsandbytes.optim',
-             'bitsandbytes.functional', 'bitsandbytes.cuda_setup']:
-    if _mod not in sys.modules:
-        sys.modules[_mod] = _make_mock(_mod)
+# Stub bitsandbytes before PEFT imports it so the Triton compilation never runs.
+# ModuleSpec must be set so importlib.util.find_spec() doesn't raise ValueError
+# (Python 3.12 raises ValueError when __spec__ is None for a module in sys.modules).
+# Stub classes for Linear8bitLt/Linear4bit make isinstance() checks return False
+# for normal bf16 layers — PEFT skips quantized-layer code paths entirely.
+from importlib.machinery import ModuleSpec as _ModuleSpec
+
+class _BnbStub:
+    pass
+
+_bnb_nn = types.ModuleType('bitsandbytes.nn')
+_bnb_nn.__spec__ = _ModuleSpec('bitsandbytes.nn', None)
+for _n in ['Linear8bitLt', 'Linear4bit', 'Params4bit', 'Int8Params']:
+    setattr(_bnb_nn, _n, _BnbStub)
+
+_bnb = types.ModuleType('bitsandbytes')
+_bnb.__spec__ = _ModuleSpec('bitsandbytes', None)
+_bnb.nn = _bnb_nn
+
+for _mod_name, _mod_obj in [
+    ('bitsandbytes',            _bnb),
+    ('bitsandbytes.nn',         _bnb_nn),
+    ('bitsandbytes.optim',      types.ModuleType('bitsandbytes.optim')),
+    ('bitsandbytes.functional', types.ModuleType('bitsandbytes.functional')),
+    ('bitsandbytes.cuda_setup', types.ModuleType('bitsandbytes.cuda_setup')),
+]:
+    sys.modules.setdefault(_mod_name, _mod_obj)
 
 import torch
 
