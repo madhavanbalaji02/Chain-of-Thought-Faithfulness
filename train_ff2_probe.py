@@ -126,8 +126,9 @@ def main():
             drop = h['binary_accuracy'] - b['binary_accuracy']
             l_drop = (l['binary_accuracy'] - b['binary_accuracy']
                       if l.get('binary_accuracy') else None)
+            l_drop_str = f'{l_drop:+.3f}' if l_drop is not None else 'N/A'
             print(f'Layer {layer}: Baseline→High drop = {drop:+.3f}  '
-                  f'Baseline→Low drop = {l_drop:+.3f if l_drop else "N/A"}')
+                  f'Baseline→Low drop = {l_drop_str}')
             if drop < -0.03:
                 print(f'  ✓ High-FT degrades FF2 faithfulness encoding at layer {layer}')
             if l_drop is not None and abs(l_drop) < abs(drop):

@@ -1,0 +1,83 @@
+{
+  "layer8_Baseline": {
+    "layer": 8,
+    "condition": "Baseline",
+    "n": 50,
+    "binary_accuracy": 0.76,
+    "majority_baseline": 0.7,
+    "lift_over_majority": 0.06000000000000005,
+    "delta_p_r2": -0.5225246850814563
+  },
+  "layer8_High_FT": {
+    "layer": 8,
+    "condition": "High-FT",
+    "n": 50,
+    "binary_accuracy": 0.9198717948717948,
+    "majority_baseline": 0.92,
+    "lift_over_majority": -0.00012820512820521657,
+    "delta_p_r2": 0.2108747124808648
+  },
+  "layer8_Low_FT": {
+    "layer": 8,
+    "condition": "Low-FT",
+    "n": 50,
+    "binary_accuracy": 0.7999999999999999,
+    "majority_baseline": 0.72,
+    "lift_over_majority": 0.07999999999999996,
+    "delta_p_r2": 0.017356134853116247
+  },
+  "layer16_Baseline": {
+    "layer": 16,
+    "condition": "Baseline",
+    "n": 50,
+    "binary_accuracy": 0.72,
+    "majority_baseline": 0.7,
+    "lift_over_majority": 0.020000000000000018,
+    "delta_p_r2": -0.22520794273828243
+  },
+  "layer16_High_FT": {
+    "layer": 16,
+    "condition": "High-FT",
+    "n": 50,
+    "binary_accuracy": 0.8990384615384616,
+    "majority_baseline": 0.92,
+    "lift_over_majority": -0.020961538461538476,
+    "delta_p_r2": 0.15232285496202821
+  },
+  "layer16_Low_FT": {
+    "layer": 16,
+    "condition": "Low-FT",
+    "n": 50,
+    "binary_accuracy": 0.8400000000000001,
+    "majority_baseline": 0.72,
+    "lift_over_majority": 0.1200000000000001,
+    "delta_p_r2": -0.06371080855941566
+  },
+  "layer24_Baseline": {
+    "layer": 24,
+    "condition": "Baseline",
+    "n": 50,
+    "binary_accuracy": 0.7000000000000001,
+    "majority_baseline": 0.7,
+    "lift_over_majority": 1.1102230246251565e-16,
+    "delta_p_r2": -0.3255144797411813
+  },
+  "layer24_High_FT": {
+    "layer": 24,
+    "condition": "High-FT",
+    "n": 50,
+    "binary_accuracy": 0.9198717948717948,
+    "majority_baseline": 0.92,
+    "lift_over_majority": -0.00012820512820521657,
+    "delta_p_r2": 0.16278681190880975
+  },
+  "layer24_Low_FT": {
+    "layer": 24,
+    "condition": "Low-FT",
+    "n": 50,
+    "binary_accuracy": 0.78,
+    "majority_baseline": 0.72,
+    "lift_over_majority": 0.06000000000000005,
+    "delta_p_r2": -0.23456439475857063
+  }
+}
