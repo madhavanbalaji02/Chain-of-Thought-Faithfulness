@@ -14,6 +14,7 @@ import os
 os.environ.setdefault('HF_HOME', '/N/scratch/madbala/hf_cache')
 os.environ.setdefault('TRANSFORMERS_CACHE', '/N/scratch/madbala/hf_cache')
 
+
 import torch, json, pickle, argparse, re
 import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -116,20 +117,30 @@ def main():
     )
 
     if args.adapter_path and os.path.exists(args.adapter_path):
-        # Fix set→list in adapter_config if needed
-        import json as _json
+        # Manual LoRA merge — no PEFT, no bitsandbytes, no Triton.
+        # Applies W += (lora_B @ lora_A) * (alpha / rank) for each adapted layer.
+        from safetensors.torch import load_file as st_load
         cfg_path = os.path.join(args.adapter_path, 'adapter_config.json')
-        if os.path.exists(cfg_path):
-            with open(cfg_path) as _f:
-                cfg = _json.load(_f)
-            if 'target_modules' in cfg and not isinstance(cfg['target_modules'], list):
-                cfg['target_modules'] = sorted(list(cfg['target_modules']))
-                with open(cfg_path, 'w') as _f:
-                    _json.dump(cfg, _f, indent=2)
-        from peft import PeftModel
-        model = PeftModel.from_pretrained(model, args.adapter_path)
-        model = model.merge_and_unload()
-        print(f'Merged adapter: {args.adapter_path}')
+        with open(cfg_path) as _f:
+            cfg = json.load(_f)
+        rank  = cfg.get('r', 16)
+        alpha = cfg.get('lora_alpha', 32)
+        scale = alpha / rank
+
+        adapter_file = os.path.join(args.adapter_path, 'adapter_model.safetensors')
+        adapter_weights = st_load(adapter_file, device='cpu')
+
+        merged = 0
+        for name, param in model.named_parameters():
+            base = name.replace('.weight', '')
+            a_key = f'base_model.model.{base}.lora_A.weight'
+            b_key = f'base_model.model.{base}.lora_B.weight'
+            if a_key in adapter_weights and b_key in adapter_weights:
+                lora_A = adapter_weights[a_key].to(param.dtype)
+                lora_B = adapter_weights[b_key].to(param.dtype)
+                param.data += (lora_B @ lora_A).to(param.device) * scale
+                merged += 1
+        print(f'Merged {merged} LoRA layers from: {args.adapter_path}')
 
     model.eval()
     print(f'Model loaded on: {next(model.parameters()).device}')
