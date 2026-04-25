@@ -32,6 +32,12 @@ LLaMA-3-3B p=0.005, Phi-3 p=0.033, Mistral-7B p=0.046, LLaMA-3-8B p=0.95 (n.s.)
 
 **Mechanism:** Non-faithful CoT steps score significantly higher on quality metrics than faithful ones (3.61 vs. 3.33, p=0.008, N=940), meaning quality filtering preferentially selects causally-decoupled reasoning.
 
+**Differential collapse (new):** The collapse is non-uniform across task types. StrategyQA and Sports Understanding (implicit knowledge retrieval) collapse completely to 0%; OpenBookQA is immune (23% → 31%). Faithfulness is also higher for initially *incorrect* predictions than correct ones (43.8% vs. 23.5%), and high-quality FT drives correct-prediction faithfulness to 0% — the model learns to commit to correct answers without any causal dependence on its expressed reasoning.
+
+**Cure failure (new):** A faithfulness-regularized training objective (L = L_quality + λ × L_faithfulness) fails to recover faithfulness at any regularization strength (λ ∈ {0.0, 0.1, 1.0}). The faith loss carries near-zero gradient signal because high-quality CoT instances are already parametrically decoupled before fine-tuning begins. The paradox is a **data selection problem**, not a training dynamics problem.
+
+**FF2 mechanistic analysis (new):** A logistic regression probe on FF2 (feed-forward layer 2) activations shows that high-quality FT erases all faithfulness-predictive signal from FF2 at every layer (baseline probe lift +0.06 → 0.00 under high-FT), while low-quality FT maintains or increases the signal. This confirms that quality filtering restructures the model's internal faithfulness encoding, not just its surface output.
+
 Pipeline files:
 - `score_cot_quality.py` — GPT-4o quality scoring of CoT steps
 - `make_finetune_splits.py` — create high/low quality training splits
@@ -182,6 +188,38 @@ For Mistral-7B at lr=3e-05 (~6× its paper-optimal lr), faithfulness peaks at ep
 ### Finding 4 — CoT structural density moderates faithfulness
 
 Mean delta_p drops from 0.271 (1–2 sentence CoTs) to 0.077 (8+ sentences). LLaMA-3-8B generates shorter CoTs on average, partially explaining its higher faithfulness vs. LLaMA-3-3B.
+
+### Finding 5 — Faithfulness collapse is task-type specific
+
+Disaggregating the collapse by dataset reveals a sharp split: SQA and Sports Understanding (tasks requiring implicit knowledge retrieval) collapse completely to 0% under high-quality FT, while OpenBookQA (explicit supporting passage) is unaffected or slightly improves. ARC-Challenge sits at floor in all conditions. This implicates the surface-route hypothesis: open-book tasks have passages that genuinely activate predictions, while commonsense/world-knowledge tasks rely on memorized associations the CoT post-hoc rationalizes.
+
+| Dataset | LLaMA-3-3B Baseline | LLaMA-3-3B High-FT |
+|---------|:-------------------:|:------------------:|
+| StrategyQA (SQA) | 58% | **0%** |
+| Sports Understanding | 42% | **0%** |
+| OpenBookQA | 23% | 31% |
+| ARC-Challenge | 0% | 0% |
+
+### Finding 6 — Faithfulness is higher for initially incorrect predictions
+
+Across both models and all conditions, parametric faithfulness is substantially higher when the model's initial prediction is *wrong* than when it is correct:
+
+| Model / Condition | Initially correct | Initially incorrect |
+|---|:---:|:---:|
+| LLaMA-3-3B baseline | 23.5% | 43.8% |
+| LLaMA-3-3B high-FT | **0.0%** | 26.7% |
+| Phi-3 baseline | 16.7% | 55.0% |
+| Phi-3 high-FT | 6.1% | 29.4% |
+
+When the model answers correctly, the CoT is largely decorative — the correct answer was committed to via non-CoT parametric pathways. High-quality FT drives faithfulness for correct predictions to 0%, meaning the model learns to produce correct answers without any causal dependence on its chain of thought.
+
+### Finding 7 — Faithfulness regularization fails: the paradox is a data problem
+
+A faithfulness-regularized objective (L_faith = −mean[(P_full − P_masked)²]) was trained across three λ values. All conditions produced faithfulness at or below the unregularized baseline (λ=0: 2.0%, λ=0.1: 0.0%, λ=1.0: 0.0%). The faith loss gradient is near-zero throughout training because high-quality instances are already decoupled. **The paradox cannot be fixed by changing the training objective** — it requires faithfulness-aware data curation (e.g. filtering by Δp at curation time).
+
+### Finding 8 — FF2 faithfulness encoding is erased by high-quality FT
+
+A logistic regression probe on FF2 activations (layers 8, 16, 24) predicts whether a CoT step is faithful. High-quality FT zeroes out the probe's lift at every layer (baseline: +0.06 at layer 8 → 0.00 under high-FT). Low-quality FT maintains or increases the lift. This confirms the causal chain mechanistically: quality filtering restructures FF2 encoding away from faithfulness-predictive representations.
 
 ---
 
