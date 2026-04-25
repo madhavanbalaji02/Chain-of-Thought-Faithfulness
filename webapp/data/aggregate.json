@@ -1,0 +1,200 @@
+[
+  {
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B",
+    "flip_rate": 80.0,
+    "avg_dp": 0.576,
+    "n_annotation": 25,
+    "judge_agree_pct": 5.8,
+    "judge_total": 154
+  },
+  {
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B",
+    "flip_rate": 76.0,
+    "avg_dp": 0.63,
+    "n_annotation": 25,
+    "judge_agree_pct": 14.6,
+    "judge_total": 274
+  },
+  {
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3-8B",
+    "model_nice": "LLaMA-3-8B",
+    "flip_rate": 72.0,
+    "avg_dp": 0.511,
+    "n_annotation": 25,
+    "judge_agree_pct": 0,
+    "judge_total": 0
+  },
+  {
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3-8B",
+    "model_nice": "LLaMA-3-8B",
+    "flip_rate": 64.0,
+    "avg_dp": 0.606,
+    "n_annotation": 25,
+    "judge_agree_pct": 0,
+    "judge_total": 0
+  },
+  {
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 30.7,
+    "judge_total": 88
+  },
+  {
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 19.0,
+    "judge_total": 221
+  },
+  {
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 18.5,
+    "judge_total": 119
+  },
+  {
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 19.8,
+    "judge_total": 131
+  },
+  {
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 26.9,
+    "judge_total": 52
+  },
+  {
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 33.3,
+    "judge_total": 21
+  },
+  {
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 14.5,
+    "judge_total": 124
+  },
+  {
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 8.9,
+    "judge_total": 179
+  },
+  {
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 19.7,
+    "judge_total": 117
+  },
+  {
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 13.5,
+    "judge_total": 74
+  },
+  {
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Phi-3",
+    "model_nice": "Phi-3",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 23.5,
+    "judge_total": 136
+  },
+  {
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 24.5,
+    "judge_total": 184
+  },
+  {
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Phi-3",
+    "model_nice": "Phi-3",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 30.8,
+    "judge_total": 91
+  },
+  {
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3",
+    "flip_rate": 0,
+    "avg_dp": 0,
+    "n_annotation": 0,
+    "judge_agree_pct": 26.4,
+    "judge_total": 53
+  }
+]

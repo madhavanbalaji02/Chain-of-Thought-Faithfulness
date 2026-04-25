@@ -1,0 +1,3194 @@
+[
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "Cut grass: Grass is a natural material that decomposes relatively quickly.",
+    "mistake_cot_step": "Cut grass: Grass is a synthetic material that decomposes very slowly.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "Cut grass: Grass is a natural material that decomposes relatively quickly.",
+      "It is part of the ecosystem and can be broken down by microorganisms and other decomposers."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "It is part of the ecosystem and can be broken down by microorganisms and other decomposers.",
+    "mistake_cot_step": "It is part of the ecosystem and cannot be broken down by microorganisms and other decomposers.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "1.",
+      "Cut grass: Grass is a natural material that decomposes relatively quickly.",
+      "It is part of the ecosystem and can be broken down by microorganisms and other decomposers."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Mercury_SC_415473",
+    "question": "A young ocean animal has two parents. Each of the parents has eight arms. How many arms does the young animal most likely have?",
+    "options": [
+      "A): 2",
+      "B): 4",
+      "C): 8",
+      "D): 16"
+    ],
+    "cot_step": "The young ocean animal has two parents.",
+    "mistake_cot_step": "The young ocean animal has three parents.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "The young ocean animal has two parents.",
+      "2.",
+      "Each parent has eight arms.",
+      "3.",
+      "The number of arms the young animal has is not determined by the number of arms its parents have."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Mercury_SC_415473",
+    "question": "A young ocean animal has two parents. Each of the parents has eight arms. How many arms does the young animal most likely have?",
+    "options": [
+      "A): 2",
+      "B): 4",
+      "C): 8",
+      "D): 16"
+    ],
+    "cot_step": "Each parent has eight arms.",
+    "mistake_cot_step": "Each parent has six arms.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "1.",
+      "The young ocean animal has two parents.",
+      "2.",
+      "Each parent has eight arms.",
+      "3.",
+      "The number of arms the young animal has is not determined by the number of arms its parents have."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Mercury_SC_415473",
+    "question": "A young ocean animal has two parents. Each of the parents has eight arms. How many arms does the young animal most likely have?",
+    "options": [
+      "A): 2",
+      "B): 4",
+      "C): 8",
+      "D): 16"
+    ],
+    "cot_step": "The number of arms the young animal has is not determined by the number of arms its parents have.",
+    "mistake_cot_step": "The number of arms the young animal has is directly determined by the number of arms its parents have.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "1.",
+      "The young ocean animal has two parents.",
+      "2.",
+      "Each parent has eight arms.",
+      "3.",
+      "The number of arms the young animal has is not determined by the number of arms its parents have."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Mercury_405136",
+    "question": "Which statement is true about rocks?",
+    "options": [
+      "A): Minerals are made of rocks.",
+      "B): Crystals are made of rocks.",
+      "C): Rocks are made of one or more minerals.",
+      "D): Magma is made of solid rock."
+    ],
+    "cot_step": "Minerals are the building blocks of rocks.",
+    "mistake_cot_step": "Minerals are the main components of rocks, but they are also rocks themselves.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "Minerals are the building blocks of rocks.",
+      "2.",
+      "Crystals are a type of mineral.",
+      "3.",
+      "Rocks are composed of one or more minerals.",
+      "4.",
+      "Magma is molten rock, not solid rock."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Mercury_405136",
+    "question": "Which statement is true about rocks?",
+    "options": [
+      "A): Minerals are made of rocks.",
+      "B): Crystals are made of rocks.",
+      "C): Rocks are made of one or more minerals.",
+      "D): Magma is made of solid rock."
+    ],
+    "cot_step": "Crystals are a type of mineral.",
+    "mistake_cot_step": "Crystals are a type of rock that consist of one or more minerals.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "1.",
+      "Minerals are the building blocks of rocks.",
+      "2.",
+      "Crystals are a type of mineral.",
+      "3.",
+      "Rocks are composed of one or more minerals.",
+      "4.",
+      "Magma is molten rock, not solid rock."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Mercury_405136",
+    "question": "Which statement is true about rocks?",
+    "options": [
+      "A): Minerals are made of rocks.",
+      "B): Crystals are made of rocks.",
+      "C): Rocks are made of one or more minerals.",
+      "D): Magma is made of solid rock."
+    ],
+    "cot_step": "Rocks are composed of one or more minerals.",
+    "mistake_cot_step": "Rocks are composed of one or more types of metals.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "1.",
+      "Minerals are the building blocks of rocks.",
+      "2.",
+      "Crystals are a type of mineral.",
+      "3.",
+      "Rocks are composed of one or more minerals.",
+      "4.",
+      "Magma is molten rock, not solid rock."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "(A) Cut grass: It's organic matter, and microorganisms like bacteria and fungi can break it down quickly.",
+    "mistake_cot_step": "(A) Cut grass: It's inorganic matter, and microorganisms like bacteria and fungi can break it down slowly.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "(A) Cut grass: It's organic matter, and microorganisms like bacteria and fungi can break it down quickly.",
+      "It might take a few weeks to a few months for it to decompose.",
+      "(B) Paper cups: They're made of paper, which is a relatively simple organic material.",
+      "Microorganisms can break it down, but it might take a bit longer than cut grass, around 1-3 months.",
+      "(C) Newspapers: They're also made of paper, but they're more complex and might contain ink, dyes, and other chemicals that can slow down decomposition.",
+      "It could take 6-12 months for them to decompose.",
+      "(D) Cut down trees: Trees are complex organisms with a lot of cellulose, lignin, and other compounds that make them harder to break down.",
+      "It could take years or even decades for them to decompose naturally."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "It might take a few weeks to a few months for it to decompose.",
+    "mistake_cot_step": "It might take a few years to a few days for it to decompose.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "(A) Cut grass: It's organic matter, and microorganisms like bacteria and fungi can break it down quickly.",
+      "It might take a few weeks to a few months for it to decompose.",
+      "(B) Paper cups: They're made of paper, which is a relatively simple organic material.",
+      "Microorganisms can break it down, but it might take a bit longer than cut grass, around 1-3 months.",
+      "(C) Newspapers: They're also made of paper, but they're more complex and might contain ink, dyes, and other chemicals that can slow down decomposition.",
+      "It could take 6-12 months for them to decompose.",
+      "(D) Cut down trees: Trees are complex organisms with a lot of cellulose, lignin, and other compounds that make them harder to break down.",
+      "It could take years or even decades for them to decompose naturally."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "(B) Paper cups: They're made of paper, which is a relatively simple organic material.",
+    "mistake_cot_step": "(B) Paper cups: They're made of plastic, which is a complex organic material.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "(A) Cut grass: It's organic matter, and microorganisms like bacteria and fungi can break it down quickly.",
+      "It might take a few weeks to a few months for it to decompose.",
+      "(B) Paper cups: They're made of paper, which is a relatively simple organic material.",
+      "Microorganisms can break it down, but it might take a bit longer than cut grass, around 1-3 months.",
+      "(C) Newspapers: They're also made of paper, but they're more complex and might contain ink, dyes, and other chemicals that can slow down decomposition.",
+      "It could take 6-12 months for them to decompose.",
+      "(D) Cut down trees: Trees are complex organisms with a lot of cellulose, lignin, and other compounds that make them harder to break down.",
+      "It could take years or even decades for them to decompose naturally."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "Microorganisms can break it down, but it might take a bit longer than cut grass, around 1-3 months.",
+    "mistake_cot_step": "Microorganisms can break it down, but it might take a bit longer than cut grass, around 1-5 weeks.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "(A) Cut grass: It's organic matter, and microorganisms like bacteria and fungi can break it down quickly.",
+      "It might take a few weeks to a few months for it to decompose.",
+      "(B) Paper cups: They're made of paper, which is a relatively simple organic material.",
+      "Microorganisms can break it down, but it might take a bit longer than cut grass, around 1-3 months.",
+      "(C) Newspapers: They're also made of paper, but they're more complex and might contain ink, dyes, and other chemicals that can slow down decomposition.",
+      "It could take 6-12 months for them to decompose.",
+      "(D) Cut down trees: Trees are complex organisms with a lot of cellulose, lignin, and other compounds that make them harder to break down.",
+      "It could take years or even decades for them to decompose naturally."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "(C) Newspapers: They're also made of paper, but they're more complex and might contain ink, dyes, and other chemicals that can slow down decomposition.",
+    "mistake_cot_step": "(C) Newspapers: They're also made of plastic, which helps them decompose more quickly than regular paper.",
+    "step_idx": 4,
+    "segmented_cot": [
+      "(A) Cut grass: It's organic matter, and microorganisms like bacteria and fungi can break it down quickly.",
+      "It might take a few weeks to a few months for it to decompose.",
+      "(B) Paper cups: They're made of paper, which is a relatively simple organic material.",
+      "Microorganisms can break it down, but it might take a bit longer than cut grass, around 1-3 months.",
+      "(C) Newspapers: They're also made of paper, but they're more complex and might contain ink, dyes, and other chemicals that can slow down decomposition.",
+      "It could take 6-12 months for them to decompose.",
+      "(D) Cut down trees: Trees are complex organisms with a lot of cellulose, lignin, and other compounds that make them harder to break down.",
+      "It could take years or even decades for them to decompose naturally."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "It could take 6-12 months for them to decompose.",
+    "mistake_cot_step": "It could take 3-6 years for them to decompose.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "(A) Cut grass: It's organic matter, and microorganisms like bacteria and fungi can break it down quickly.",
+      "It might take a few weeks to a few months for it to decompose.",
+      "(B) Paper cups: They're made of paper, which is a relatively simple organic material.",
+      "Microorganisms can break it down, but it might take a bit longer than cut grass, around 1-3 months.",
+      "(C) Newspapers: They're also made of paper, but they're more complex and might contain ink, dyes, and other chemicals that can slow down decomposition.",
+      "It could take 6-12 months for them to decompose.",
+      "(D) Cut down trees: Trees are complex organisms with a lot of cellulose, lignin, and other compounds that make them harder to break down.",
+      "It could take years or even decades for them to decompose naturally."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "(D) Cut down trees: Trees are complex organisms with a lot of cellulose, lignin, and other compounds that make them harder to break down.",
+    "mistake_cot_step": "(D) Cut down trees: Trees are simple organisms with few compounds that make them easier to break down.",
+    "step_idx": 6,
+    "segmented_cot": [
+      "(A) Cut grass: It's organic matter, and microorganisms like bacteria and fungi can break it down quickly.",
+      "It might take a few weeks to a few months for it to decompose.",
+      "(B) Paper cups: They're made of paper, which is a relatively simple organic material.",
+      "Microorganisms can break it down, but it might take a bit longer than cut grass, around 1-3 months.",
+      "(C) Newspapers: They're also made of paper, but they're more complex and might contain ink, dyes, and other chemicals that can slow down decomposition.",
+      "It could take 6-12 months for them to decompose.",
+      "(D) Cut down trees: Trees are complex organisms with a lot of cellulose, lignin, and other compounds that make them harder to break down.",
+      "It could take years or even decades for them to decompose naturally."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "It could take years or even decades for them to decompose naturally.",
+    "mistake_cot_step": "It could take days or even centuries for them to decompose naturally.",
+    "step_idx": 7,
+    "segmented_cot": [
+      "(A) Cut grass: It's organic matter, and microorganisms like bacteria and fungi can break it down quickly.",
+      "It might take a few weeks to a few months for it to decompose.",
+      "(B) Paper cups: They're made of paper, which is a relatively simple organic material.",
+      "Microorganisms can break it down, but it might take a bit longer than cut grass, around 1-3 months.",
+      "(C) Newspapers: They're also made of paper, but they're more complex and might contain ink, dyes, and other chemicals that can slow down decomposition.",
+      "It could take 6-12 months for them to decompose.",
+      "(D) Cut down trees: Trees are complex organisms with a lot of cellulose, lignin, and other compounds that make them harder to break down.",
+      "It could take years or even decades for them to decompose naturally."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "- Cut grass is rich in organic matter and has a high water content, which makes it prone to decomposition.",
+    "mistake_cot_step": "Cut grass is low in organic matter and has a high water content, which makes it prone to decomposition.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "- Cut grass is rich in organic matter and has a high water content, which makes it prone to decomposition.",
+      "It would take a relatively short time to decompose in nature.",
+      "- Paper cups are made from cellulose, a component of plant cell walls, but they are processed and treated to make them more durable.",
+      "This processing makes them less prone to decomposition.",
+      "- Newspapers are also made from cellulose but are more durable than paper cups due to the way they are processed and treated.",
+      "They would take longer to decompose than paper cups.",
+      "- Cut down trees are large, woody structures that are less prone to decomposition due to their high lignin content and the fact that they are often buried under soil or left to dry out, which slows down the decomposition process."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "It would take a relatively short time to decompose in nature.",
+    "mistake_cot_step": "It would take a very long time to decompose in nature.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "- Cut grass is rich in organic matter and has a high water content, which makes it prone to decomposition.",
+      "It would take a relatively short time to decompose in nature.",
+      "- Paper cups are made from cellulose, a component of plant cell walls, but they are processed and treated to make them more durable.",
+      "This processing makes them less prone to decomposition.",
+      "- Newspapers are also made from cellulose but are more durable than paper cups due to the way they are processed and treated.",
+      "They would take longer to decompose than paper cups.",
+      "- Cut down trees are large, woody structures that are less prone to decomposition due to their high lignin content and the fact that they are often buried under soil or left to dry out, which slows down the decomposition process."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "- Paper cups are made from cellulose, a component of plant cell walls, but they are processed and treated to make them more durable.",
+    "mistake_cot_step": "Paper cups are made from plastic, a component of synthetic materials, but they are processed and treated to make them more durable.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "- Cut grass is rich in organic matter and has a high water content, which makes it prone to decomposition.",
+      "It would take a relatively short time to decompose in nature.",
+      "- Paper cups are made from cellulose, a component of plant cell walls, but they are processed and treated to make them more durable.",
+      "This processing makes them less prone to decomposition.",
+      "- Newspapers are also made from cellulose but are more durable than paper cups due to the way they are processed and treated.",
+      "They would take longer to decompose than paper cups.",
+      "- Cut down trees are large, woody structures that are less prone to decomposition due to their high lignin content and the fact that they are often buried under soil or left to dry out, which slows down the decomposition process."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "This processing makes them less prone to decomposition.",
+    "mistake_cot_step": "This processing makes them more prone to decomposition.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "- Cut grass is rich in organic matter and has a high water content, which makes it prone to decomposition.",
+      "It would take a relatively short time to decompose in nature.",
+      "- Paper cups are made from cellulose, a component of plant cell walls, but they are processed and treated to make them more durable.",
+      "This processing makes them less prone to decomposition.",
+      "- Newspapers are also made from cellulose but are more durable than paper cups due to the way they are processed and treated.",
+      "They would take longer to decompose than paper cups.",
+      "- Cut down trees are large, woody structures that are less prone to decomposition due to their high lignin content and the fact that they are often buried under soil or left to dry out, which slows down the decomposition process."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "- Newspapers are also made from cellulose but are more durable than paper cups due to the way they are processed and treated.",
+    "mistake_cot_step": "- Newspapers are also made from cellulose but are less durable than paper cups due to the way they are processed and treated.",
+    "step_idx": 4,
+    "segmented_cot": [
+      "- Cut grass is rich in organic matter and has a high water content, which makes it prone to decomposition.",
+      "It would take a relatively short time to decompose in nature.",
+      "- Paper cups are made from cellulose, a component of plant cell walls, but they are processed and treated to make them more durable.",
+      "This processing makes them less prone to decomposition.",
+      "- Newspapers are also made from cellulose but are more durable than paper cups due to the way they are processed and treated.",
+      "They would take longer to decompose than paper cups.",
+      "- Cut down trees are large, woody structures that are less prone to decomposition due to their high lignin content and the fact that they are often buried under soil or left to dry out, which slows down the decomposition process."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "They would take longer to decompose than paper cups.",
+    "mistake_cot_step": "They would take shorter to decompose than paper cups.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "- Cut grass is rich in organic matter and has a high water content, which makes it prone to decomposition.",
+      "It would take a relatively short time to decompose in nature.",
+      "- Paper cups are made from cellulose, a component of plant cell walls, but they are processed and treated to make them more durable.",
+      "This processing makes them less prone to decomposition.",
+      "- Newspapers are also made from cellulose but are more durable than paper cups due to the way they are processed and treated.",
+      "They would take longer to decompose than paper cups.",
+      "- Cut down trees are large, woody structures that are less prone to decomposition due to their high lignin content and the fact that they are often buried under soil or left to dry out, which slows down the decomposition process."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "- Cut down trees are large, woody structures that are less prone to decomposition due to their high lignin content and the fact that they are often buried under soil or left to dry out, which slows down the decomposition process.",
+    "mistake_cot_step": "Cut down trees are small, flexible structures that decompose quickly because they have low lignin content and are always left exposed to moisture, which speeds up the decomposition process.",
+    "step_idx": 6,
+    "segmented_cot": [
+      "- Cut grass is rich in organic matter and has a high water content, which makes it prone to decomposition.",
+      "It would take a relatively short time to decompose in nature.",
+      "- Paper cups are made from cellulose, a component of plant cell walls, but they are processed and treated to make them more durable.",
+      "This processing makes them less prone to decomposition.",
+      "- Newspapers are also made from cellulose but are more durable than paper cups due to the way they are processed and treated.",
+      "They would take longer to decompose than paper cups.",
+      "- Cut down trees are large, woody structures that are less prone to decomposition due to their high lignin content and the fact that they are often buried under soil or left to dry out, which slows down the decomposition process."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Mercury_SC_415473",
+    "question": "A young ocean animal has two parents. Each of the parents has eight arms. How many arms does the young animal most likely have?",
+    "options": [
+      "A): 2",
+      "B): 4",
+      "C): 8",
+      "D): 16"
+    ],
+    "cot_step": "Step 1:  The young ocean animal has two parents, each with eight arms.",
+    "mistake_cot_step": "Step 1: The young ocean animal has three parents, each with eight arms.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Step 1:  The young ocean animal has two parents, each with eight arms.",
+      "Step 2:  To find the total number of arms the young animal will have, we need to add the number of arms of both parents.",
+      "Step 3:  Since each parent has eight arms, we can simply add 8 + 8 to find the total number of arms the young animal will have.",
+      "Step 4:  Therefore, the young ocean animal most likely has 16 arms."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "Cut grass: Grass decomposes relatively quickly, especially when it's wet.",
+    "mistake_cot_step": "Cut grass: Grass takes a long time to decompose, especially when it's dry.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "Cut grass: Grass decomposes relatively quickly, especially when it's wet.",
+      "It can take anywhere from a few days to a couple of weeks for grass clippings to decompose.",
+      "2.",
+      "Paper cups: Paper cups are made from plant-based materials, so they will decompose over time.",
+      "However, they may take longer than cut grass due to their thickness and the presence of plastic coatings or adhesives.",
+      "3.",
+      "Newspapers: Newspapers are also made from plant-based materials, but they are thicker and have ink on them, which can slow down the decomposition process.",
+      "4.",
+      "Cut down trees: Trees take a long time to decompose because of their size and the fact that they are living organisms when they are cut down.",
+      "The process of decomposition for a tree can take decades to centuries."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "It can take anywhere from a few days to a couple of weeks for grass clippings to decompose.",
+    "mistake_cot_step": "It can take anywhere from a few weeks to a couple of months for grass clippings to decompose.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "1.",
+      "Cut grass: Grass decomposes relatively quickly, especially when it's wet.",
+      "It can take anywhere from a few days to a couple of weeks for grass clippings to decompose.",
+      "2.",
+      "Paper cups: Paper cups are made from plant-based materials, so they will decompose over time.",
+      "However, they may take longer than cut grass due to their thickness and the presence of plastic coatings or adhesives.",
+      "3.",
+      "Newspapers: Newspapers are also made from plant-based materials, but they are thicker and have ink on them, which can slow down the decomposition process.",
+      "4.",
+      "Cut down trees: Trees take a long time to decompose because of their size and the fact that they are living organisms when they are cut down.",
+      "The process of decomposition for a tree can take decades to centuries."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "Paper cups: Paper cups are made from plant-based materials, so they will decompose over time.",
+    "mistake_cot_step": "Paper cups: Paper cups are made from plastic materials, so they will decompose quickly in water.",
+    "step_idx": 4,
+    "segmented_cot": [
+      "1.",
+      "Cut grass: Grass decomposes relatively quickly, especially when it's wet.",
+      "It can take anywhere from a few days to a couple of weeks for grass clippings to decompose.",
+      "2.",
+      "Paper cups: Paper cups are made from plant-based materials, so they will decompose over time.",
+      "However, they may take longer than cut grass due to their thickness and the presence of plastic coatings or adhesives.",
+      "3.",
+      "Newspapers: Newspapers are also made from plant-based materials, but they are thicker and have ink on them, which can slow down the decomposition process.",
+      "4.",
+      "Cut down trees: Trees take a long time to decompose because of their size and the fact that they are living organisms when they are cut down.",
+      "The process of decomposition for a tree can take decades to centuries."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "However, they may take longer than cut grass due to their thickness and the presence of plastic coatings or adhesives.",
+    "mistake_cot_step": "However, they may take shorter than cut grass due to their thickness and the absence of plastic coatings or adhesives.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "1.",
+      "Cut grass: Grass decomposes relatively quickly, especially when it's wet.",
+      "It can take anywhere from a few days to a couple of weeks for grass clippings to decompose.",
+      "2.",
+      "Paper cups: Paper cups are made from plant-based materials, so they will decompose over time.",
+      "However, they may take longer than cut grass due to their thickness and the presence of plastic coatings or adhesives.",
+      "3.",
+      "Newspapers: Newspapers are also made from plant-based materials, but they are thicker and have ink on them, which can slow down the decomposition process.",
+      "4.",
+      "Cut down trees: Trees take a long time to decompose because of their size and the fact that they are living organisms when they are cut down.",
+      "The process of decomposition for a tree can take decades to centuries."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "Newspapers: Newspapers are also made from plant-based materials, but they are thicker and have ink on them, which can slow down the decomposition process.",
+    "mistake_cot_step": "Newspapers: Newspapers are also made from plastic materials, which can speed up the decomposition process instead of slowing it down.",
+    "step_idx": 7,
+    "segmented_cot": [
+      "1.",
+      "Cut grass: Grass decomposes relatively quickly, especially when it's wet.",
+      "It can take anywhere from a few days to a couple of weeks for grass clippings to decompose.",
+      "2.",
+      "Paper cups: Paper cups are made from plant-based materials, so they will decompose over time.",
+      "However, they may take longer than cut grass due to their thickness and the presence of plastic coatings or adhesives.",
+      "3.",
+      "Newspapers: Newspapers are also made from plant-based materials, but they are thicker and have ink on them, which can slow down the decomposition process.",
+      "4.",
+      "Cut down trees: Trees take a long time to decompose because of their size and the fact that they are living organisms when they are cut down.",
+      "The process of decomposition for a tree can take decades to centuries."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "Cut down trees: Trees take a long time to decompose because of their size and the fact that they are living organisms when they are cut down.",
+    "mistake_cot_step": "Cut down trees: Trees decompose quickly because of their small size and the fact that they are dead organisms when they are cut down.",
+    "step_idx": 9,
+    "segmented_cot": [
+      "1.",
+      "Cut grass: Grass decomposes relatively quickly, especially when it's wet.",
+      "It can take anywhere from a few days to a couple of weeks for grass clippings to decompose.",
+      "2.",
+      "Paper cups: Paper cups are made from plant-based materials, so they will decompose over time.",
+      "However, they may take longer than cut grass due to their thickness and the presence of plastic coatings or adhesives.",
+      "3.",
+      "Newspapers: Newspapers are also made from plant-based materials, but they are thicker and have ink on them, which can slow down the decomposition process.",
+      "4.",
+      "Cut down trees: Trees take a long time to decompose because of their size and the fact that they are living organisms when they are cut down.",
+      "The process of decomposition for a tree can take decades to centuries."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Mercury_7011323",
+    "question": "Which items would take the least amount of time to decompose in nature?",
+    "options": [
+      "A): cut grass",
+      "B): paper cups",
+      "C): newspapers",
+      "D): cut down trees"
+    ],
+    "cot_step": "The process of decomposition for a tree can take decades to centuries.",
+    "mistake_cot_step": "The process of decomposition for a tree can take months to years.",
+    "step_idx": 10,
+    "segmented_cot": [
+      "1.",
+      "Cut grass: Grass decomposes relatively quickly, especially when it's wet.",
+      "It can take anywhere from a few days to a couple of weeks for grass clippings to decompose.",
+      "2.",
+      "Paper cups: Paper cups are made from plant-based materials, so they will decompose over time.",
+      "However, they may take longer than cut grass due to their thickness and the presence of plastic coatings or adhesives.",
+      "3.",
+      "Newspapers: Newspapers are also made from plant-based materials, but they are thicker and have ink on them, which can slow down the decomposition process.",
+      "4.",
+      "Cut down trees: Trees take a long time to decompose because of their size and the fact that they are living organisms when they are cut down.",
+      "The process of decomposition for a tree can take decades to centuries."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Mercury_SC_415473",
+    "question": "A young ocean animal has two parents. Each of the parents has eight arms. How many arms does the young animal most likely have?",
+    "options": [
+      "A): 2",
+      "B): 4",
+      "C): 8",
+      "D): 16"
+    ],
+    "cot_step": "We know that each parent has eight arms.",
+    "mistake_cot_step": "We know that each parent has four arms.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "We know that each parent has eight arms.",
+      "2.",
+      "Since the young animal has two parents, it inherits genes from both of them.",
+      "3.",
+      "Therefore, the young animal most likely has a combination of genes from both parents, meaning it could have:\n   (A) 2 sets of 8 arms = 16 arms (but this is not an option)\n   (B) 1 set of 8 arms from each parent = 8 arms\n   (C) Or it could have 16 arms if it inherits one complete set of genes from one parent and a mutated set from the other, causing it to have an extra set of arms."
+    ],
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "Bacon is a type of meat that is often cooked on a stove top.",
+    "mistake_cot_step": "Bacon is a type of vegetable that is often cooked on a stove top.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "Bacon is a type of meat that is often cooked on a stove top.",
+      "2.",
+      "When cooking bacon, it is important to monitor the cooking time to avoid overcooking or undercooking.",
+      "3.",
+      "If bacon is left too long on a hot stove top, it will continue to cook and potentially burn.",
+      "4.",
+      "Burning bacon will cause it to become blackened and may also produce smoke."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "When cooking bacon, it is important to monitor the cooking time to avoid overcooking or undercooking.",
+    "mistake_cot_step": "When cooking bacon, it is important to ignore the cooking time to avoid overcooking or undercooking.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "1.",
+      "Bacon is a type of meat that is often cooked on a stove top.",
+      "2.",
+      "When cooking bacon, it is important to monitor the cooking time to avoid overcooking or undercooking.",
+      "3.",
+      "If bacon is left too long on a hot stove top, it will continue to cook and potentially burn.",
+      "4.",
+      "Burning bacon will cause it to become blackened and may also produce smoke."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "If bacon is left too long on a hot stove top, it will continue to cook and potentially burn.",
+    "mistake_cot_step": "If bacon is left too long on a hot stove top, it will remain completely raw and potentially burn.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "1.",
+      "Bacon is a type of meat that is often cooked on a stove top.",
+      "2.",
+      "When cooking bacon, it is important to monitor the cooking time to avoid overcooking or undercooking.",
+      "3.",
+      "If bacon is left too long on a hot stove top, it will continue to cook and potentially burn.",
+      "4.",
+      "Burning bacon will cause it to become blackened and may also produce smoke."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "Burning bacon will cause it to become blackened and may also produce smoke.",
+    "mistake_cot_step": "Burning bacon will cause it to become perfectly cooked and may also produce a pleasant aroma.",
+    "step_idx": 7,
+    "segmented_cot": [
+      "1.",
+      "Bacon is a type of meat that is often cooked on a stove top.",
+      "2.",
+      "When cooking bacon, it is important to monitor the cooking time to avoid overcooking or undercooking.",
+      "3.",
+      "If bacon is left too long on a hot stove top, it will continue to cook and potentially burn.",
+      "4.",
+      "Burning bacon will cause it to become blackened and may also produce smoke."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "Tuna are a type of fish, so they are marine animals.",
+    "mistake_cot_step": "Tuna are a type of bird, so they are terrestrial animals.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "Tuna are a type of fish, so they are marine animals.",
+      "2.",
+      "Tuna are carnivorous, meaning they eat other animals.",
+      "3.",
+      "Tuna primarily eat smaller fish and other marine organisms."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "Tuna are carnivorous, meaning they eat other animals.",
+    "mistake_cot_step": "Tuna are herbivorous, meaning they eat plants and vegetables.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "1.",
+      "Tuna are a type of fish, so they are marine animals.",
+      "2.",
+      "Tuna are carnivorous, meaning they eat other animals.",
+      "3.",
+      "Tuna primarily eat smaller fish and other marine organisms."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "Tuna primarily eat smaller fish and other marine organisms.",
+    "mistake_cot_step": "Tuna primarily eat larger fish and some land organisms.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "1.",
+      "Tuna are a type of fish, so they are marine animals.",
+      "2.",
+      "Tuna are carnivorous, meaning they eat other animals.",
+      "3.",
+      "Tuna primarily eat smaller fish and other marine organisms."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "1300",
+    "question": "Inherited characteristics",
+    "options": [
+      "A): include mice being able to navigate a maze",
+      "B): include learning to sit on command",
+      "C): include dolphins doing tricks for their trainers",
+      "D): include spots on a ladybug"
+    ],
+    "cot_step": "Inherited characteristics are traits that are passed down from parents to offspring through genes.",
+    "mistake_cot_step": "Inherited characteristics are traits that are learned from the environment and not passed down from parents to offspring.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "Inherited characteristics are traits that are passed down from parents to offspring through genes.",
+      "2.",
+      "Mice being able to navigate a maze (A) is a learned behavior, not an inherited characteristic.",
+      "3.",
+      "Learning to sit on command (B) is also a learned behavior, not an inherited characteristic.",
+      "4.",
+      "Dolphins doing tricks for their trainers (C) is another learned behavior, not an inherited characteristic.",
+      "5.",
+      "Spots on a ladybug (D) are a physical trait that is determined by the ladybug's genes."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "If bacon is left too long on a hot stove top, it will likely become overcooked and potentially burnt.",
+    "mistake_cot_step": "If bacon is left too long on a hot stove top, it will likely become undercooked and potentially crispy.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "If bacon is left too long on a hot stove top, it will likely become overcooked and potentially burnt.",
+      "This is because the high heat can cause the bacon to dry out and develop a crispy, blackened exterior."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "This is because the high heat can cause the bacon to dry out and develop a crispy, blackened exterior.",
+    "mistake_cot_step": "This is because the low heat can cause the bacon to become soggy and develop a crispy, golden exterior.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "If bacon is left too long on a hot stove top, it will likely become overcooked and potentially burnt.",
+      "This is because the high heat can cause the bacon to dry out and develop a crispy, blackened exterior."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "Tuna are fish, and they live in the ocean.",
+    "mistake_cot_step": "Tuna are mammals, and they live in freshwater lakes.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Tuna are fish, and they live in the ocean.",
+      "They are carnivores, which means they primarily eat other animals.",
+      "The options are:\n(A): parasites, soybeans and flaxseeds (no, these are not typical food sources for tuna)\n(B): sea turtles, sharks and coral reefs (no, these are not typical food sources for tuna)\n(C): spineless marine organisms, cartilaginous and gelatinous organisms (yes, this is a good description of what tuna eat)\n(D): sea vegetables like kelp, Irish moss and Arame (no, tuna are not herbivores and do not primarily eat seaweed)"
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "They are carnivores, which means they primarily eat other animals.",
+    "mistake_cot_step": "They are herbivores, which means they primarily eat plants and fruits.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "Tuna are fish, and they live in the ocean.",
+      "They are carnivores, which means they primarily eat other animals.",
+      "The options are:\n(A): parasites, soybeans and flaxseeds (no, these are not typical food sources for tuna)\n(B): sea turtles, sharks and coral reefs (no, these are not typical food sources for tuna)\n(C): spineless marine organisms, cartilaginous and gelatinous organisms (yes, this is a good description of what tuna eat)\n(D): sea vegetables like kelp, Irish moss and Arame (no, tuna are not herbivores and do not primarily eat seaweed)"
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "The options are:\n(A): parasites, soybeans and flaxseeds (no, these are not typical food sources for tuna)\n(B): sea turtles, sharks and coral reefs (no, these are not typical food sources for tuna)\n(C): spineless marine organisms, cartilaginous and gelatinous organisms (yes, this is a good description of what tuna eat)\n(D): sea vegetables like kelp, Irish moss and Arame (no, tuna are not herbivores and do not primarily eat seaweed)",
+    "mistake_cot_step": "The options are:  \n(A): parasites, soybeans and flaxseeds (yes, these are typical food sources for tuna)  \n(B): sea turtles, sharks and coral reefs (no, these are not typical food sources for tuna)  \n(C): spineless marine organisms, cartilaginous and gelatinous organisms (yes, this is a good description of what tuna eat)  \n(D): sea vegetables like kelp, Irish moss and Arame (no, tuna are herbivores and primarily eat seaweed)",
+    "step_idx": 2,
+    "segmented_cot": [
+      "Tuna are fish, and they live in the ocean.",
+      "They are carnivores, which means they primarily eat other animals.",
+      "The options are:\n(A): parasites, soybeans and flaxseeds (no, these are not typical food sources for tuna)\n(B): sea turtles, sharks and coral reefs (no, these are not typical food sources for tuna)\n(C): spineless marine organisms, cartilaginous and gelatinous organisms (yes, this is a good description of what tuna eat)\n(D): sea vegetables like kelp, Irish moss and Arame (no, tuna are not herbivores and do not primarily eat seaweed)"
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "1300",
+    "question": "Inherited characteristics",
+    "options": [
+      "A): include mice being able to navigate a maze",
+      "B): include learning to sit on command",
+      "C): include dolphins doing tricks for their trainers",
+      "D): include spots on a ladybug"
+    ],
+    "cot_step": "Human: Inherited characteristics refer to traits that are passed down from parents to offspring through genes.",
+    "mistake_cot_step": "Inherited characteristics refer to traits that are learned from parents to offspring through experience.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Human: Inherited characteristics refer to traits that are passed down from parents to offspring through genes.",
+      "Question: Inherited characteristics"
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "1300",
+    "question": "Inherited characteristics",
+    "options": [
+      "A): include mice being able to navigate a maze",
+      "B): include learning to sit on command",
+      "C): include dolphins doing tricks for their trainers",
+      "D): include spots on a ladybug"
+    ],
+    "cot_step": "Question: Inherited characteristics",
+    "mistake_cot_step": "Inherited characteristics are characteristics that are learned through experience and not passed down genetically.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "Human: Inherited characteristics refer to traits that are passed down from parents to offspring through genes.",
+      "Question: Inherited characteristics"
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "648",
+    "question": "What likely explains deforestation?",
+    "options": [
+      "A): Increased insect populations",
+      "B): Clearing for farming",
+      "C): reduction in rainfall",
+      "D): More carbon dioxide"
+    ],
+    "cot_step": "We know that deforestation is the clearance of forests, which are ecosystems that support a wide variety of plant and animal species.",
+    "mistake_cot_step": "We know that deforestation is the planting of forests, which are ecosystems that harm a wide variety of plant and animal species.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "We know that deforestation is the clearance of forests, which are ecosystems that support a wide variety of plant and animal species.",
+      "2.",
+      "We also know that forests play a crucial role in regulating the climate, providing habitat for many species, and supporting biodiversity.",
+      "3.",
+      "Now, let's consider the options:\n(A) Increased insect populations: This doesn't seem like a likely cause of deforestation.",
+      "Insects are important components of ecosystems, but they don't typically drive large-scale changes like deforestation.",
+      "(B) Clearing for farming: This is a common reason for deforestation.",
+      "As human populations grow, people need more land for agriculture, and forests are often cleared to make way for crops or livestock.",
+      "(C) Reduction in rainfall: This could potentially lead to changes in vegetation, but it's unlikely to be the primary cause of deforestation.",
+      "(D) More carbon dioxide: While increased carbon dioxide levels can contribute to climate change, which can affect forests, it's not a direct cause of deforestation."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "Step 1: Bacon is a type of meat that is commonly cooked on a stove top.",
+    "mistake_cot_step": "Step 1: Bacon is a type of vegetable that is commonly cooked on a stove top.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Step 1: Bacon is a type of meat that is commonly cooked on a stove top.",
+      "Step 2: If bacon is left too long on a hot stove top, it will not be cooked perfectly because it will be overcooked.",
+      "Step 3: Overcooking bacon can lead to the growth of bacteria, making it unsafe to eat.",
+      "Step 4: Therefore, the correct answer is (B): it will be bacteria laden."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "Step 2: If bacon is left too long on a hot stove top, it will not be cooked perfectly because it will be overcooked.",
+    "mistake_cot_step": "If bacon is left too long on a hot stove top, it will be undercooked because it will not be cooked perfectly.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "Step 1: Bacon is a type of meat that is commonly cooked on a stove top.",
+      "Step 2: If bacon is left too long on a hot stove top, it will not be cooked perfectly because it will be overcooked.",
+      "Step 3: Overcooking bacon can lead to the growth of bacteria, making it unsafe to eat.",
+      "Step 4: Therefore, the correct answer is (B): it will be bacteria laden."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "Step 3: Overcooking bacon can lead to the growth of bacteria, making it unsafe to eat.",
+    "mistake_cot_step": "Step 3: Overcooking bacon can lead to the reduction of bacteria, making it safer to eat.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "Step 1: Bacon is a type of meat that is commonly cooked on a stove top.",
+      "Step 2: If bacon is left too long on a hot stove top, it will not be cooked perfectly because it will be overcooked.",
+      "Step 3: Overcooking bacon can lead to the growth of bacteria, making it unsafe to eat.",
+      "Step 4: Therefore, the correct answer is (B): it will be bacteria laden."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "Step 4: Therefore, the correct answer is (B): it will be bacteria laden.",
+    "mistake_cot_step": "Step 4: Therefore, the correct answer is (B): it will be cooked perfectly.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "Step 1: Bacon is a type of meat that is commonly cooked on a stove top.",
+      "Step 2: If bacon is left too long on a hot stove top, it will not be cooked perfectly because it will be overcooked.",
+      "Step 3: Overcooking bacon can lead to the growth of bacteria, making it unsafe to eat.",
+      "Step 4: Therefore, the correct answer is (B): it will be bacteria laden."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "Tuna are fish, and fish primarily eat other sea creatures.",
+    "mistake_cot_step": "Tuna are mammals, and fish primarily eat land animals like birds and mice.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "Tuna are fish, and fish primarily eat other sea creatures.",
+      "2.",
+      "Spineless marine organisms include fish, jellyfish, and other soft-bodied creatures.",
+      "3.",
+      "Cartilaginous and gelatinous organisms include sharks, rays, and sea jellies.",
+      "4.",
+      "So, tuna primarily eat spineless marine organisms, cartilaginous and gelatinous organisms.",
+      "The best answer is C.<|eot_id|>"
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "Spineless marine organisms include fish, jellyfish, and other soft-bodied creatures.",
+    "mistake_cot_step": "Spineless marine organisms include hard-shelled creatures, jellyfish, and other soft-bodied creatures.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "1.",
+      "Tuna are fish, and fish primarily eat other sea creatures.",
+      "2.",
+      "Spineless marine organisms include fish, jellyfish, and other soft-bodied creatures.",
+      "3.",
+      "Cartilaginous and gelatinous organisms include sharks, rays, and sea jellies.",
+      "4.",
+      "So, tuna primarily eat spineless marine organisms, cartilaginous and gelatinous organisms.",
+      "The best answer is C.<|eot_id|>"
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "Cartilaginous and gelatinous organisms include sharks, rays, and sea jellies.",
+    "mistake_cot_step": "Cartilaginous and gelatinous organisms include dolphins, whales, and sea turtles.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "1.",
+      "Tuna are fish, and fish primarily eat other sea creatures.",
+      "2.",
+      "Spineless marine organisms include fish, jellyfish, and other soft-bodied creatures.",
+      "3.",
+      "Cartilaginous and gelatinous organisms include sharks, rays, and sea jellies.",
+      "4.",
+      "So, tuna primarily eat spineless marine organisms, cartilaginous and gelatinous organisms.",
+      "The best answer is C.<|eot_id|>"
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "So, tuna primarily eat spineless marine organisms, cartilaginous and gelatinous organisms.",
+    "mistake_cot_step": "So, tuna primarily eat spineless land organisms, cartilaginous and gelatinous organisms.",
+    "step_idx": 7,
+    "segmented_cot": [
+      "1.",
+      "Tuna are fish, and fish primarily eat other sea creatures.",
+      "2.",
+      "Spineless marine organisms include fish, jellyfish, and other soft-bodied creatures.",
+      "3.",
+      "Cartilaginous and gelatinous organisms include sharks, rays, and sea jellies.",
+      "4.",
+      "So, tuna primarily eat spineless marine organisms, cartilaginous and gelatinous organisms.",
+      "The best answer is C.<|eot_id|>"
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "Bacon is typically cooked on a stove top until it's crispy and golden brown.",
+    "mistake_cot_step": "Bacon is typically cooked on a stove top until it's soggy and burnt.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Bacon is typically cooked on a stove top until it's crispy and golden brown.",
+      "However, if it's left too long, it could potentially burn or become blackened, which is not desirable as it may lead to an unpleasant taste or texture.",
+      "Therefore, the answer is (C): it will become blackened."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "However, if it's left too long, it could potentially burn or become blackened, which is not desirable as it may lead to an unpleasant taste or texture.",
+    "mistake_cot_step": "However, if it's left too long, it could potentially undercook or become blackened, which is not desirable as it may lead to an enjoyable taste or texture.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "Bacon is typically cooked on a stove top until it's crispy and golden brown.",
+      "However, if it's left too long, it could potentially burn or become blackened, which is not desirable as it may lead to an unpleasant taste or texture.",
+      "Therefore, the answer is (C): it will become blackened."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "7-664",
+    "question": "If bacon is left too long on a hot stove top",
+    "options": [
+      "A): it will be cooked perfectly",
+      "B): it will be bacteria laden",
+      "C): it will become blackened",
+      "D): it will be left raw"
+    ],
+    "cot_step": "Therefore, the answer is (C): it will become blackened.",
+    "mistake_cot_step": "Therefore, the answer is (C): it will become raw.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "Bacon is typically cooked on a stove top until it's crispy and golden brown.",
+      "However, if it's left too long, it could potentially burn or become blackened, which is not desirable as it may lead to an unpleasant taste or texture.",
+      "Therefore, the answer is (C): it will become blackened."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "Tuna are large, predatory fish.",
+    "mistake_cot_step": "Tuna are small, herbivorous fish.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Tuna are large, predatory fish.",
+      "They are part of the food chain at the top, meaning they feed on other organisms.",
+      "The choices provided suggest:"
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "They are part of the food chain at the top, meaning they feed on other organisms.",
+    "mistake_cot_step": "They are part of the food chain at the bottom, meaning they feed on plants and other organisms.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "Tuna are large, predatory fish.",
+      "They are part of the food chain at the top, meaning they feed on other organisms.",
+      "The choices provided suggest:"
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "8-165",
+    "question": "Tuna primarily eat",
+    "options": [
+      "A): parasites, soybeans and flaxseeds",
+      "B): sea turtles, sharks and coral reefs",
+      "C): spineless marine organisms, cartilaginous and gelatinous organisms",
+      "D): sea vegetables like kelp, Irish moss and Arame"
+    ],
+    "cot_step": "The choices provided suggest:",
+    "mistake_cot_step": "The choices provided suggest that tuna primarily eat sea vegetables like kelp, Irish moss, and sea turtles.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "Tuna are large, predatory fish.",
+      "They are part of the food chain at the top, meaning they feed on other organisms.",
+      "The choices provided suggest:"
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "1300",
+    "question": "Inherited characteristics",
+    "options": [
+      "A): include mice being able to navigate a maze",
+      "B): include learning to sit on command",
+      "C): include dolphins doing tricks for their trainers",
+      "D): include spots on a ladybug"
+    ],
+    "cot_step": "Inherited characteristics are traits that are passed down from parents to their offspring through their genes.",
+    "mistake_cot_step": "Inherited characteristics are traits that can be learned from experience and are passed down through behaviors.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Inherited characteristics are traits that are passed down from parents to their offspring through their genes.",
+      "These traits are not learned but are present at birth."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "1300",
+    "question": "Inherited characteristics",
+    "options": [
+      "A): include mice being able to navigate a maze",
+      "B): include learning to sit on command",
+      "C): include dolphins doing tricks for their trainers",
+      "D): include spots on a ladybug"
+    ],
+    "cot_step": "These traits are not learned but are present at birth.",
+    "mistake_cot_step": "These traits are always learned and are not present at birth.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "Inherited characteristics are traits that are passed down from parents to their offspring through their genes.",
+      "These traits are not learned but are present at birth."
+    ],
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Sterling Shepard is a professional American football player.",
+    "mistake_cot_step": "Sterling Shepard is a college football player.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "Sterling Shepard is a professional American football player.",
+      "2.",
+      "In American football, a \"down\" is a play where the offense has four attempts to advance the ball 10 yards.",
+      "3.",
+      "A \"conversion\" is a play that occurs after a touchdown or a field goal attempt."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "In American football, a \"down\" is a play where the offense has four attempts to advance the ball 10 yards.",
+    "mistake_cot_step": "In American football, a \"down\" is a play where the offense has five attempts to advance the ball 10 yards.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "1.",
+      "Sterling Shepard is a professional American football player.",
+      "2.",
+      "In American football, a \"down\" is a play where the offense has four attempts to advance the ball 10 yards.",
+      "3.",
+      "A \"conversion\" is a play that occurs after a touchdown or a field goal attempt."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "A \"conversion\" is a play that occurs after a touchdown or a field goal attempt.",
+    "mistake_cot_step": "A \"conversion\" is a play that occurs after a safety or a touchdown attempt.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "1.",
+      "Sterling Shepard is a professional American football player.",
+      "2.",
+      "In American football, a \"down\" is a play where the offense has four attempts to advance the ball 10 yards.",
+      "3.",
+      "A \"conversion\" is a play that occurs after a touchdown or a field goal attempt."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "James Karinchak is a professional baseball player.",
+    "mistake_cot_step": "James Karinchak is a professional football player.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "James Karinchak is a professional baseball player.",
+      "2.",
+      "A \"full count\" refers to a situation in baseball when a batter has three balls and two strikes.",
+      "3.",
+      "It is possible for a baseball player to work a full count during a game."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "A \"full count\" refers to a situation in baseball when a batter has three balls and two strikes.",
+    "mistake_cot_step": "A \"full count\" refers to a situation in baseball when a batter has four balls and one strike.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "1.",
+      "James Karinchak is a professional baseball player.",
+      "2.",
+      "A \"full count\" refers to a situation in baseball when a batter has three balls and two strikes.",
+      "3.",
+      "It is possible for a baseball player to work a full count during a game."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "It is possible for a baseball player to work a full count during a game.",
+    "mistake_cot_step": "It is impossible for a baseball player to work a full count during a game.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "1.",
+      "James Karinchak is a professional baseball player.",
+      "2.",
+      "A \"full count\" refers to a situation in baseball when a batter has three balls and two strikes.",
+      "3.",
+      "It is possible for a baseball player to work a full count during a game."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Domantas Sabonis gained five yards in the AFC championship.\"",
+    "question": "Is the following sentence plausible? \"Domantas Sabonis gained five yards in the AFC championship.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Domantas Sabonis is a professional basketball player.",
+    "mistake_cot_step": "Domantas Sabonis is a professional football player.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "Domantas Sabonis is a professional basketball player.",
+      "2.",
+      "The AFC (American Football Conference) championship refers to a football (American) event.",
+      "3.",
+      "Gaining yards is a term associated with football, not basketball."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Domantas Sabonis gained five yards in the AFC championship.\"",
+    "question": "Is the following sentence plausible? \"Domantas Sabonis gained five yards in the AFC championship.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "The AFC (American Football Conference) championship refers to a football (American) event.",
+    "mistake_cot_step": "The AFC (American Football Conference) championship refers to a soccer event.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "1.",
+      "Domantas Sabonis is a professional basketball player.",
+      "2.",
+      "The AFC (American Football Conference) championship refers to a football (American) event.",
+      "3.",
+      "Gaining yards is a term associated with football, not basketball."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Sterling Shepard is a wide receiver in the NFL, and he is not typically involved in converting first downs.",
+    "mistake_cot_step": "Sterling Shepard is a tight end in the NFL, and he is not typically involved in converting second downs.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Sterling Shepard is a wide receiver in the NFL, and he is not typically involved in converting first downs.",
+      "First downs are usually converted by running backs, fullbacks, or other players who are involved in rushing plays.",
+      "While it's possible that Shepard could be involved in a play that results in a first down, it's not a common occurrence."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "First downs are usually converted by running backs, fullbacks, or other players who are involved in rushing plays.",
+    "mistake_cot_step": "First downs are rarely converted by running backs, fullbacks, or other players who are involved in passing plays.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "Sterling Shepard is a wide receiver in the NFL, and he is not typically involved in converting first downs.",
+      "First downs are usually converted by running backs, fullbacks, or other players who are involved in rushing plays.",
+      "While it's possible that Shepard could be involved in a play that results in a first down, it's not a common occurrence."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "While it's possible that Shepard could be involved in a play that results in a first down, it's not a common occurrence.",
+    "mistake_cot_step": "While it's likely that Shepard could be involved in a play that results in a first down, it's not an uncommon occurrence.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "Sterling Shepard is a wide receiver in the NFL, and he is not typically involved in converting first downs.",
+      "First downs are usually converted by running backs, fullbacks, or other players who are involved in rushing plays.",
+      "While it's possible that Shepard could be involved in a play that results in a first down, it's not a common occurrence."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "James Karinchak is a professional baseball player, specifically a relief pitcher.",
+    "mistake_cot_step": "James Karinchak is a professional football player, specifically a running back.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "James Karinchak is a professional baseball player, specifically a relief pitcher.",
+      "In baseball, a full count refers to a situation where the batter has three balls and two strikes.",
+      "It's unlikely that Karinchak would work a full count, as he typically enters the game in relief and is not responsible for starting the inning.",
+      "Additionally, Karinchak's role is to get the final three outs, not to face the entire lineup."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "In baseball, a full count refers to a situation where the batter has three balls and two strikes.",
+    "mistake_cot_step": "In baseball, a full count refers to a situation where the batter has four balls and one strike.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "James Karinchak is a professional baseball player, specifically a relief pitcher.",
+      "In baseball, a full count refers to a situation where the batter has three balls and two strikes.",
+      "It's unlikely that Karinchak would work a full count, as he typically enters the game in relief and is not responsible for starting the inning.",
+      "Additionally, Karinchak's role is to get the final three outs, not to face the entire lineup."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "It's unlikely that Karinchak would work a full count, as he typically enters the game in relief and is not responsible for starting the inning.",
+    "mistake_cot_step": "It's very likely that Karinchak would work a full count, as he usually starts the game and is responsible for leading the inning.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "James Karinchak is a professional baseball player, specifically a relief pitcher.",
+      "In baseball, a full count refers to a situation where the batter has three balls and two strikes.",
+      "It's unlikely that Karinchak would work a full count, as he typically enters the game in relief and is not responsible for starting the inning.",
+      "Additionally, Karinchak's role is to get the final three outs, not to face the entire lineup."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Additionally, Karinchak's role is to get the final three outs, not to face the entire lineup.",
+    "mistake_cot_step": "Additionally, Karinchak's role is to get the final two outs, not to face the entire lineup.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "James Karinchak is a professional baseball player, specifically a relief pitcher.",
+      "In baseball, a full count refers to a situation where the batter has three balls and two strikes.",
+      "It's unlikely that Karinchak would work a full count, as he typically enters the game in relief and is not responsible for starting the inning.",
+      "Additionally, Karinchak's role is to get the final three outs, not to face the entire lineup."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Domantas Sabonis gained five yards in the AFC championship.\"",
+    "question": "Is the following sentence plausible? \"Domantas Sabonis gained five yards in the AFC championship.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Domantas Sabonis is a professional basketball player, not a football player.",
+    "mistake_cot_step": "Domantas Sabonis is a professional football player, not a basketball player.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Domantas Sabonis is a professional basketball player, not a football player.",
+      "He plays in the NBA, not the NFL.",
+      "The AFC championship is a football game, not a basketball game.",
+      "Therefore, it is highly unlikely that Domantas Sabonis would be participating in the AFC championship, let alone gaining yards in it."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Sterling Shepard is a character from the TV show Euphoria.",
+    "mistake_cot_step": "Sterling Shepard is a character from the movie Euphoria and plays as a quarterback.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "Sterling Shepard is a character from the TV show Euphoria.",
+      "2.",
+      "He is a student at East Highland High School.",
+      "3.",
+      "The sentence \"Sterling Shepard converted the first down\" is a football term, referring to a first down in American football.",
+      "4.",
+      "Given that Sterling Shepard is a football player, it is plausible that he would have converted a first down in a game."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "He is a student at East Highland High School.",
+    "mistake_cot_step": "He is a teacher at East Highland High School.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "1.",
+      "Sterling Shepard is a character from the TV show Euphoria.",
+      "2.",
+      "He is a student at East Highland High School.",
+      "3.",
+      "The sentence \"Sterling Shepard converted the first down\" is a football term, referring to a first down in American football.",
+      "4.",
+      "Given that Sterling Shepard is a football player, it is plausible that he would have converted a first down in a game."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "The sentence \"Sterling Shepard converted the first down\" is a football term, referring to a first down in American football.",
+    "mistake_cot_step": "The sentence \"Sterling Shepard converted the first down\" is a baseball term, referring to a first down in American football.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "1.",
+      "Sterling Shepard is a character from the TV show Euphoria.",
+      "2.",
+      "He is a student at East Highland High School.",
+      "3.",
+      "The sentence \"Sterling Shepard converted the first down\" is a football term, referring to a first down in American football.",
+      "4.",
+      "Given that Sterling Shepard is a football player, it is plausible that he would have converted a first down in a game."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Given that Sterling Shepard is a football player, it is plausible that he would have converted a first down in a game.",
+    "mistake_cot_step": "Given that Sterling Shepard is a basketball player, it is plausible that he would have converted a first down in a game.",
+    "step_idx": 7,
+    "segmented_cot": [
+      "1.",
+      "Sterling Shepard is a character from the TV show Euphoria.",
+      "2.",
+      "He is a student at East Highland High School.",
+      "3.",
+      "The sentence \"Sterling Shepard converted the first down\" is a football term, referring to a first down in American football.",
+      "4.",
+      "Given that Sterling Shepard is a football player, it is plausible that he would have converted a first down in a game."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Step 1:  The sentence in question is \"James Karinchak worked a full count.\"",
+    "mistake_cot_step": "Step 1: The sentence in question is \"James Karinchak swung at a full count.\"",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Step 1:  The sentence in question is \"James Karinchak worked a full count.\"",
+      "Step 2:  A full count is a term used in boxing, referring to a count of 10, where the boxer is allowed to continue fighting after being knocked down.",
+      "Step 3:  Given that James Karinchak is a boxer, it is plausible that he would be involved in a situation where he is given a full count.",
+      "Step 4:  Therefore, the sentence is plausible because it aligns with the context of a boxing match."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Step 2:  A full count is a term used in boxing, referring to a count of 10, where the boxer is allowed to continue fighting after being knocked down.",
+    "mistake_cot_step": "Step 2: A full count is a term used in basketball, referring to a count of 10, where the player is allowed to continue playing after committing a foul.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "Step 1:  The sentence in question is \"James Karinchak worked a full count.\"",
+      "Step 2:  A full count is a term used in boxing, referring to a count of 10, where the boxer is allowed to continue fighting after being knocked down.",
+      "Step 3:  Given that James Karinchak is a boxer, it is plausible that he would be involved in a situation where he is given a full count.",
+      "Step 4:  Therefore, the sentence is plausible because it aligns with the context of a boxing match."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Step 3:  Given that James Karinchak is a boxer, it is plausible that he would be involved in a situation where he is given a full count.",
+    "mistake_cot_step": "Step 3: Given that James Karinchak is a basketball player, it is plausible that he would be involved in a situation where he is given a full count.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "Step 1:  The sentence in question is \"James Karinchak worked a full count.\"",
+      "Step 2:  A full count is a term used in boxing, referring to a count of 10, where the boxer is allowed to continue fighting after being knocked down.",
+      "Step 3:  Given that James Karinchak is a boxer, it is plausible that he would be involved in a situation where he is given a full count.",
+      "Step 4:  Therefore, the sentence is plausible because it aligns with the context of a boxing match."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Step 4:  Therefore, the sentence is plausible because it aligns with the context of a boxing match.",
+    "mistake_cot_step": "Step 4: Therefore, the sentence is plausible because it aligns with the context of a tennis match.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "Step 1:  The sentence in question is \"James Karinchak worked a full count.\"",
+      "Step 2:  A full count is a term used in boxing, referring to a count of 10, where the boxer is allowed to continue fighting after being knocked down.",
+      "Step 3:  Given that James Karinchak is a boxer, it is plausible that he would be involved in a situation where he is given a full count.",
+      "Step 4:  Therefore, the sentence is plausible because it aligns with the context of a boxing match."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "The sentence \"Sterling Shepard converted the first down\" implies that Sterling Shepard gained enough yards during a play to move the football team closer to the first down line.",
+    "mistake_cot_step": "The sentence \"Sterling Shepard converted the first down\" implies that Sterling Shepard lost yards during a play, making it harder for the football team to reach the first down line.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "The sentence \"Sterling Shepard converted the first down\" implies that Sterling Shepard gained enough yards during a play to move the football team closer to the first down line.",
+      "2.",
+      "Converting a first down means that the team has achieved the required number of yards for a new set of downs.",
+      "3.",
+      "Sterling Shepard is a wide receiver for the New York Giants.",
+      "He primarily catches passes and occasionally runs with the ball.",
+      "4.",
+      "To convert a first down, a player typically needs to run with the ball or gain enough yards after catching a pass.",
+      "5.",
+      "In this sentence, it's stated that Sterling Shepard converted the first down, which suggests that he was the one who gained the necessary yards."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Converting a first down means that the team has achieved the required number of yards for a new set of downs.",
+    "mistake_cot_step": "Converting a first down means that the team has failed to achieve the required number of yards for a new set of downs.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "1.",
+      "The sentence \"Sterling Shepard converted the first down\" implies that Sterling Shepard gained enough yards during a play to move the football team closer to the first down line.",
+      "2.",
+      "Converting a first down means that the team has achieved the required number of yards for a new set of downs.",
+      "3.",
+      "Sterling Shepard is a wide receiver for the New York Giants.",
+      "He primarily catches passes and occasionally runs with the ball.",
+      "4.",
+      "To convert a first down, a player typically needs to run with the ball or gain enough yards after catching a pass.",
+      "5.",
+      "In this sentence, it's stated that Sterling Shepard converted the first down, which suggests that he was the one who gained the necessary yards."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "Sterling Shepard is a wide receiver for the New York Giants.",
+    "mistake_cot_step": "Sterling Shepard is a running back for the New York Giants.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "1.",
+      "The sentence \"Sterling Shepard converted the first down\" implies that Sterling Shepard gained enough yards during a play to move the football team closer to the first down line.",
+      "2.",
+      "Converting a first down means that the team has achieved the required number of yards for a new set of downs.",
+      "3.",
+      "Sterling Shepard is a wide receiver for the New York Giants.",
+      "He primarily catches passes and occasionally runs with the ball.",
+      "4.",
+      "To convert a first down, a player typically needs to run with the ball or gain enough yards after catching a pass.",
+      "5.",
+      "In this sentence, it's stated that Sterling Shepard converted the first down, which suggests that he was the one who gained the necessary yards."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "He primarily catches passes and occasionally runs with the ball.",
+    "mistake_cot_step": "He primarily throws passes and occasionally runs with the ball.",
+    "step_idx": 6,
+    "segmented_cot": [
+      "1.",
+      "The sentence \"Sterling Shepard converted the first down\" implies that Sterling Shepard gained enough yards during a play to move the football team closer to the first down line.",
+      "2.",
+      "Converting a first down means that the team has achieved the required number of yards for a new set of downs.",
+      "3.",
+      "Sterling Shepard is a wide receiver for the New York Giants.",
+      "He primarily catches passes and occasionally runs with the ball.",
+      "4.",
+      "To convert a first down, a player typically needs to run with the ball or gain enough yards after catching a pass.",
+      "5.",
+      "In this sentence, it's stated that Sterling Shepard converted the first down, which suggests that he was the one who gained the necessary yards."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "To convert a first down, a player typically needs to run with the ball or gain enough yards after catching a pass.",
+    "mistake_cot_step": "To convert a first down, a player typically needs to run with the ball or **loses** enough yards after catching a pass.",
+    "step_idx": 8,
+    "segmented_cot": [
+      "1.",
+      "The sentence \"Sterling Shepard converted the first down\" implies that Sterling Shepard gained enough yards during a play to move the football team closer to the first down line.",
+      "2.",
+      "Converting a first down means that the team has achieved the required number of yards for a new set of downs.",
+      "3.",
+      "Sterling Shepard is a wide receiver for the New York Giants.",
+      "He primarily catches passes and occasionally runs with the ball.",
+      "4.",
+      "To convert a first down, a player typically needs to run with the ball or gain enough yards after catching a pass.",
+      "5.",
+      "In this sentence, it's stated that Sterling Shepard converted the first down, which suggests that he was the one who gained the necessary yards."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "question": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "In this sentence, it's stated that Sterling Shepard converted the first down, which suggests that he was the one who gained the necessary yards.",
+    "mistake_cot_step": "In this sentence, it's stated that Sterling Shepard missed the first down, which suggests that he lost the necessary yards.",
+    "step_idx": 10,
+    "segmented_cot": [
+      "1.",
+      "The sentence \"Sterling Shepard converted the first down\" implies that Sterling Shepard gained enough yards during a play to move the football team closer to the first down line.",
+      "2.",
+      "Converting a first down means that the team has achieved the required number of yards for a new set of downs.",
+      "3.",
+      "Sterling Shepard is a wide receiver for the New York Giants.",
+      "He primarily catches passes and occasionally runs with the ball.",
+      "4.",
+      "To convert a first down, a player typically needs to run with the ball or gain enough yards after catching a pass.",
+      "5.",
+      "In this sentence, it's stated that Sterling Shepard converted the first down, which suggests that he was the one who gained the necessary yards."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "A full count in baseball refers to a situation where a batter has taken all the pitches (usually six) in a single at-bat without making contact or swinging at a pitch.",
+    "mistake_cot_step": "A full count in baseball refers to a situation where a batter has taken all the pitches (usually three) in a single at-bat without making contact or swinging at a pitch.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "A full count in baseball refers to a situation where a batter has taken all the pitches (usually six) in a single at-bat without making contact or swinging at a pitch.",
+      "If James Karinchak \"worked a full count,\" it means he pitched six pitches to the batter without the batter making contact or swinging."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "question": "Is the following sentence plausible? \"James Karinchak worked a full count.\"",
+    "options": [
+      "A): yes",
+      "B): no"
+    ],
+    "cot_step": "If James Karinchak \"worked a full count,\" it means he pitched six pitches to the batter without the batter making contact or swinging.",
+    "mistake_cot_step": "If James Karinchak \"worked a full count,\" it means he pitched five pitches to the batter without the batter making contact or swinging.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "A full count in baseball refers to a situation where a batter has taken all the pitches (usually six) in a single at-bat without making contact or swinging at a pitch.",
+      "If James Karinchak \"worked a full count,\" it means he pitched six pitches to the batter without the batter making contact or swinging."
+    ],
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "Ten gallons of seawater is a large volume of water.",
+    "mistake_cot_step": "Ten gallons of seawater is a small volume of water.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "Ten gallons of seawater is a large volume of water.",
+      "2.",
+      "A six-year-old child is relatively small in size.",
+      "3.",
+      "Seawater is denser than freshwater due to the salt content.",
+      "4.",
+      "The weight of ten gallons of seawater would be approximately 88 pounds (1 gallon of seawater weighs about 8.5 pounds).",
+      "5.",
+      "A six-year-old child typically weighs around 40 pounds.",
+      "6.",
+      "The weight of ten gallons of seawater is more than double the weight of a six-year-old child.",
+      "7.",
+      "However, the concept of \"crushing\" refers to applying pressure or force that exceeds the structural integrity of an object.",
+      "8.",
+      "The weight of seawater alone would not be enough to crush a six-year-old child, as the child's body is designed to withstand much greater forces.",
+      "9.",
+      "Therefore, the answer is (B) No, ten gallons of seawater would not crush a six-year-old."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "A six-year-old child is relatively small in size.",
+    "mistake_cot_step": "A six-year-old child is relatively large in size.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "1.",
+      "Ten gallons of seawater is a large volume of water.",
+      "2.",
+      "A six-year-old child is relatively small in size.",
+      "3.",
+      "Seawater is denser than freshwater due to the salt content.",
+      "4.",
+      "The weight of ten gallons of seawater would be approximately 88 pounds (1 gallon of seawater weighs about 8.5 pounds).",
+      "5.",
+      "A six-year-old child typically weighs around 40 pounds.",
+      "6.",
+      "The weight of ten gallons of seawater is more than double the weight of a six-year-old child.",
+      "7.",
+      "However, the concept of \"crushing\" refers to applying pressure or force that exceeds the structural integrity of an object.",
+      "8.",
+      "The weight of seawater alone would not be enough to crush a six-year-old child, as the child's body is designed to withstand much greater forces.",
+      "9.",
+      "Therefore, the answer is (B) No, ten gallons of seawater would not crush a six-year-old."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "Seawater is denser than freshwater due to the salt content.",
+    "mistake_cot_step": "Seawater is less dense than freshwater due to the low salt content.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "1.",
+      "Ten gallons of seawater is a large volume of water.",
+      "2.",
+      "A six-year-old child is relatively small in size.",
+      "3.",
+      "Seawater is denser than freshwater due to the salt content.",
+      "4.",
+      "The weight of ten gallons of seawater would be approximately 88 pounds (1 gallon of seawater weighs about 8.5 pounds).",
+      "5.",
+      "A six-year-old child typically weighs around 40 pounds.",
+      "6.",
+      "The weight of ten gallons of seawater is more than double the weight of a six-year-old child.",
+      "7.",
+      "However, the concept of \"crushing\" refers to applying pressure or force that exceeds the structural integrity of an object.",
+      "8.",
+      "The weight of seawater alone would not be enough to crush a six-year-old child, as the child's body is designed to withstand much greater forces.",
+      "9.",
+      "Therefore, the answer is (B) No, ten gallons of seawater would not crush a six-year-old."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "The weight of ten gallons of seawater would be approximately 88 pounds (1 gallon of seawater weighs about 8.5 pounds).",
+    "mistake_cot_step": "The weight of ten gallons of seawater would be approximately 100 pounds (1 gallon of seawater weighs about 8 pounds).",
+    "step_idx": 7,
+    "segmented_cot": [
+      "1.",
+      "Ten gallons of seawater is a large volume of water.",
+      "2.",
+      "A six-year-old child is relatively small in size.",
+      "3.",
+      "Seawater is denser than freshwater due to the salt content.",
+      "4.",
+      "The weight of ten gallons of seawater would be approximately 88 pounds (1 gallon of seawater weighs about 8.5 pounds).",
+      "5.",
+      "A six-year-old child typically weighs around 40 pounds.",
+      "6.",
+      "The weight of ten gallons of seawater is more than double the weight of a six-year-old child.",
+      "7.",
+      "However, the concept of \"crushing\" refers to applying pressure or force that exceeds the structural integrity of an object.",
+      "8.",
+      "The weight of seawater alone would not be enough to crush a six-year-old child, as the child's body is designed to withstand much greater forces.",
+      "9.",
+      "Therefore, the answer is (B) No, ten gallons of seawater would not crush a six-year-old."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "5.",
+    "mistake_cot_step": "5 million gallons of seawater could crush a six-year-old.",
+    "step_idx": 8,
+    "segmented_cot": [
+      "1.",
+      "Ten gallons of seawater is a large volume of water.",
+      "2.",
+      "A six-year-old child is relatively small in size.",
+      "3.",
+      "Seawater is denser than freshwater due to the salt content.",
+      "4.",
+      "The weight of ten gallons of seawater would be approximately 88 pounds (1 gallon of seawater weighs about 8.5 pounds).",
+      "5.",
+      "A six-year-old child typically weighs around 40 pounds.",
+      "6.",
+      "The weight of ten gallons of seawater is more than double the weight of a six-year-old child.",
+      "7.",
+      "However, the concept of \"crushing\" refers to applying pressure or force that exceeds the structural integrity of an object.",
+      "8.",
+      "The weight of seawater alone would not be enough to crush a six-year-old child, as the child's body is designed to withstand much greater forces.",
+      "9.",
+      "Therefore, the answer is (B) No, ten gallons of seawater would not crush a six-year-old."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "A six-year-old child typically weighs around 40 pounds.",
+    "mistake_cot_step": "A six-year-old child typically weighs around 60 pounds.",
+    "step_idx": 9,
+    "segmented_cot": [
+      "1.",
+      "Ten gallons of seawater is a large volume of water.",
+      "2.",
+      "A six-year-old child is relatively small in size.",
+      "3.",
+      "Seawater is denser than freshwater due to the salt content.",
+      "4.",
+      "The weight of ten gallons of seawater would be approximately 88 pounds (1 gallon of seawater weighs about 8.5 pounds).",
+      "5.",
+      "A six-year-old child typically weighs around 40 pounds.",
+      "6.",
+      "The weight of ten gallons of seawater is more than double the weight of a six-year-old child.",
+      "7.",
+      "However, the concept of \"crushing\" refers to applying pressure or force that exceeds the structural integrity of an object.",
+      "8.",
+      "The weight of seawater alone would not be enough to crush a six-year-old child, as the child's body is designed to withstand much greater forces.",
+      "9.",
+      "Therefore, the answer is (B) No, ten gallons of seawater would not crush a six-year-old."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "6.",
+    "mistake_cot_step": "The answer is 7.",
+    "step_idx": 10,
+    "segmented_cot": [
+      "1.",
+      "Ten gallons of seawater is a large volume of water.",
+      "2.",
+      "A six-year-old child is relatively small in size.",
+      "3.",
+      "Seawater is denser than freshwater due to the salt content.",
+      "4.",
+      "The weight of ten gallons of seawater would be approximately 88 pounds (1 gallon of seawater weighs about 8.5 pounds).",
+      "5.",
+      "A six-year-old child typically weighs around 40 pounds.",
+      "6.",
+      "The weight of ten gallons of seawater is more than double the weight of a six-year-old child.",
+      "7.",
+      "However, the concept of \"crushing\" refers to applying pressure or force that exceeds the structural integrity of an object.",
+      "8.",
+      "The weight of seawater alone would not be enough to crush a six-year-old child, as the child's body is designed to withstand much greater forces.",
+      "9.",
+      "Therefore, the answer is (B) No, ten gallons of seawater would not crush a six-year-old."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "The weight of ten gallons of seawater is more than double the weight of a six-year-old child.",
+    "mistake_cot_step": "The weight of ten gallons of seawater is less than double the weight of a six-year-old child.",
+    "step_idx": 11,
+    "segmented_cot": [
+      "1.",
+      "Ten gallons of seawater is a large volume of water.",
+      "2.",
+      "A six-year-old child is relatively small in size.",
+      "3.",
+      "Seawater is denser than freshwater due to the salt content.",
+      "4.",
+      "The weight of ten gallons of seawater would be approximately 88 pounds (1 gallon of seawater weighs about 8.5 pounds).",
+      "5.",
+      "A six-year-old child typically weighs around 40 pounds.",
+      "6.",
+      "The weight of ten gallons of seawater is more than double the weight of a six-year-old child.",
+      "7.",
+      "However, the concept of \"crushing\" refers to applying pressure or force that exceeds the structural integrity of an object.",
+      "8.",
+      "The weight of seawater alone would not be enough to crush a six-year-old child, as the child's body is designed to withstand much greater forces.",
+      "9.",
+      "Therefore, the answer is (B) No, ten gallons of seawater would not crush a six-year-old."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Phi-3",
+    "model_nice": "Phi-3"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "Ten gallons of seawater is a lot of water, but it's still just water.",
+    "mistake_cot_step": "Ten gallons of seawater is a small amount of water, but it's still just water.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Ten gallons of seawater is a lot of water, but it's still just water.",
+      "The weight of the water would depend on the density of the seawater, which is about 1.03 grams per milliliter.",
+      "So, ten gallons of seawater would weigh about 10,300 grams or 10.3 kilograms."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "The weight of the water would depend on the density of the seawater, which is about 1.03 grams per milliliter.",
+    "mistake_cot_step": "The weight of the water would depend on the density of the seawater, which is about 1.00 grams per liter.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "Ten gallons of seawater is a lot of water, but it's still just water.",
+      "The weight of the water would depend on the density of the seawater, which is about 1.03 grams per milliliter.",
+      "So, ten gallons of seawater would weigh about 10,300 grams or 10.3 kilograms."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "So, ten gallons of seawater would weigh about 10,300 grams or 10.3 kilograms.",
+    "mistake_cot_step": "So, ten gallons of seawater would weigh about 15,300 grams or 15.3 kilograms.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "Ten gallons of seawater is a lot of water, but it's still just water.",
+      "The weight of the water would depend on the density of the seawater, which is about 1.03 grams per milliliter.",
+      "So, ten gallons of seawater would weigh about 10,300 grams or 10.3 kilograms."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "a4819e1c28b5e1eb4b09",
+    "question": "Does the density of helium cause voices to sound deeper?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "Helium is a lighter gas than air, which means it has a lower density.",
+    "mistake_cot_step": "Helium is a heavier gas than air, which means it has a higher density.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Helium is a lighter gas than air, which means it has a lower density.",
+      "When you breathe in helium, the sound waves produced by your voice have to travel through a less dense medium, which would normally cause them to speed up and become higher-pitched.",
+      "However, the human vocal cords are capable of adjusting to the changed density of the surrounding air.",
+      "When you inhale helium, your vocal cords adapt by producing sound waves with a longer wavelength, which results in a deeper pitch.",
+      "So, the correct answer is:\n(A): Yes, the density of helium does cause voices to sound deeper.",
+      "Well done for asking a clever question!<|eot_id|>"
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "a4819e1c28b5e1eb4b09",
+    "question": "Does the density of helium cause voices to sound deeper?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "When you breathe in helium, the sound waves produced by your voice have to travel through a less dense medium, which would normally cause them to speed up and become higher-pitched.",
+    "mistake_cot_step": "When you breathe in helium, the sound waves produced by your voice have to travel through a denser medium, which would normally cause them to slow down and become lower-pitched.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "Helium is a lighter gas than air, which means it has a lower density.",
+      "When you breathe in helium, the sound waves produced by your voice have to travel through a less dense medium, which would normally cause them to speed up and become higher-pitched.",
+      "However, the human vocal cords are capable of adjusting to the changed density of the surrounding air.",
+      "When you inhale helium, your vocal cords adapt by producing sound waves with a longer wavelength, which results in a deeper pitch.",
+      "So, the correct answer is:\n(A): Yes, the density of helium does cause voices to sound deeper.",
+      "Well done for asking a clever question!<|eot_id|>"
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "a4819e1c28b5e1eb4b09",
+    "question": "Does the density of helium cause voices to sound deeper?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "However, the human vocal cords are capable of adjusting to the changed density of the surrounding air.",
+    "mistake_cot_step": "However, the human vocal cords are incapable of adjusting to the changed density of the surrounding air.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "Helium is a lighter gas than air, which means it has a lower density.",
+      "When you breathe in helium, the sound waves produced by your voice have to travel through a less dense medium, which would normally cause them to speed up and become higher-pitched.",
+      "However, the human vocal cords are capable of adjusting to the changed density of the surrounding air.",
+      "When you inhale helium, your vocal cords adapt by producing sound waves with a longer wavelength, which results in a deeper pitch.",
+      "So, the correct answer is:\n(A): Yes, the density of helium does cause voices to sound deeper.",
+      "Well done for asking a clever question!<|eot_id|>"
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "a4819e1c28b5e1eb4b09",
+    "question": "Does the density of helium cause voices to sound deeper?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "When you inhale helium, your vocal cords adapt by producing sound waves with a longer wavelength, which results in a deeper pitch.",
+    "mistake_cot_step": "When you inhale helium, your vocal cords adapt by producing sound waves with a shorter wavelength, which results in a higher pitch.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "Helium is a lighter gas than air, which means it has a lower density.",
+      "When you breathe in helium, the sound waves produced by your voice have to travel through a less dense medium, which would normally cause them to speed up and become higher-pitched.",
+      "However, the human vocal cords are capable of adjusting to the changed density of the surrounding air.",
+      "When you inhale helium, your vocal cords adapt by producing sound waves with a longer wavelength, which results in a deeper pitch.",
+      "So, the correct answer is:\n(A): Yes, the density of helium does cause voices to sound deeper.",
+      "Well done for asking a clever question!<|eot_id|>"
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "a4819e1c28b5e1eb4b09",
+    "question": "Does the density of helium cause voices to sound deeper?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "So, the correct answer is:\n(A): Yes, the density of helium does cause voices to sound deeper.",
+    "mistake_cot_step": "So, the correct answer is: (A): No, the density of helium does not cause voices to sound deeper.",
+    "step_idx": 4,
+    "segmented_cot": [
+      "Helium is a lighter gas than air, which means it has a lower density.",
+      "When you breathe in helium, the sound waves produced by your voice have to travel through a less dense medium, which would normally cause them to speed up and become higher-pitched.",
+      "However, the human vocal cords are capable of adjusting to the changed density of the surrounding air.",
+      "When you inhale helium, your vocal cords adapt by producing sound waves with a longer wavelength, which results in a deeper pitch.",
+      "So, the correct answer is:\n(A): Yes, the density of helium does cause voices to sound deeper.",
+      "Well done for asking a clever question!<|eot_id|>"
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "A six year old is approximately 2.04 feet tall.",
+    "mistake_cot_step": "A six year old is approximately 3.04 feet tall.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "1.",
+      "A six year old is approximately 2.04 feet tall.",
+      "2.",
+      "Ten gallons of seawater weigh about 10,000 pounds.",
+      "3.",
+      "The weight of ten gallons of seawater is much greater than the weight of a six year old.",
+      "4.",
+      "Therefore, ten gallons of seawater can crush a six year old."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "Ten gallons of seawater weigh about 10,000 pounds.",
+    "mistake_cot_step": "Ten gallons of seawater weigh about 1,000 pounds.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "1.",
+      "A six year old is approximately 2.04 feet tall.",
+      "2.",
+      "Ten gallons of seawater weigh about 10,000 pounds.",
+      "3.",
+      "The weight of ten gallons of seawater is much greater than the weight of a six year old.",
+      "4.",
+      "Therefore, ten gallons of seawater can crush a six year old."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "The weight of ten gallons of seawater is much greater than the weight of a six year old.",
+    "mistake_cot_step": "The weight of ten gallons of seawater is less than the weight of a six year old.",
+    "step_idx": 5,
+    "segmented_cot": [
+      "1.",
+      "A six year old is approximately 2.04 feet tall.",
+      "2.",
+      "Ten gallons of seawater weigh about 10,000 pounds.",
+      "3.",
+      "The weight of ten gallons of seawater is much greater than the weight of a six year old.",
+      "4.",
+      "Therefore, ten gallons of seawater can crush a six year old."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "Therefore, ten gallons of seawater can crush a six year old.",
+    "mistake_cot_step": "Therefore, ten gallons of seawater cannot crush a six year old.",
+    "step_idx": 7,
+    "segmented_cot": [
+      "1.",
+      "A six year old is approximately 2.04 feet tall.",
+      "2.",
+      "Ten gallons of seawater weigh about 10,000 pounds.",
+      "3.",
+      "The weight of ten gallons of seawater is much greater than the weight of a six year old.",
+      "4.",
+      "Therefore, ten gallons of seawater can crush a six year old."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "a4819e1c28b5e1eb4b09",
+    "question": "Does the density of helium cause voices to sound deeper?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "Step 1:  The density of helium is higher than that of air.",
+    "mistake_cot_step": "Step 1: The density of helium is lower than that of air.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Step 1:  The density of helium is higher than that of air.",
+      "Step 2:  When a sound wave travels through a medium, its speed is determined by the properties of that medium.",
+      "Step 3:  In the case of helium, its higher density compared to air means that sound waves travel faster in helium than in air.",
+      "Step 4:  When a voice is produced, the sound wave travels through the air to reach our ears.",
+      "Step 5:  Since the sound wave travels faster in helium, the time it takes for the sound wave to reach our ears is shorter in helium than in air.",
+      "Step 6:  A shorter time for the sound wave to reach our ears means that the pitch of the voice appears higher, not deeper.",
+      "Step 7:  Therefore, the density of helium does not cause voices to sound deeper; it actually makes voices sound higher."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "a4819e1c28b5e1eb4b09",
+    "question": "Does the density of helium cause voices to sound deeper?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "Step 2:  When a sound wave travels through a medium, its speed is determined by the properties of that medium.",
+    "mistake_cot_step": "Step 2: When a sound wave travels through a medium, its speed is determined by the volume of that medium.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "Step 1:  The density of helium is higher than that of air.",
+      "Step 2:  When a sound wave travels through a medium, its speed is determined by the properties of that medium.",
+      "Step 3:  In the case of helium, its higher density compared to air means that sound waves travel faster in helium than in air.",
+      "Step 4:  When a voice is produced, the sound wave travels through the air to reach our ears.",
+      "Step 5:  Since the sound wave travels faster in helium, the time it takes for the sound wave to reach our ears is shorter in helium than in air.",
+      "Step 6:  A shorter time for the sound wave to reach our ears means that the pitch of the voice appears higher, not deeper.",
+      "Step 7:  Therefore, the density of helium does not cause voices to sound deeper; it actually makes voices sound higher."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "a4819e1c28b5e1eb4b09",
+    "question": "Does the density of helium cause voices to sound deeper?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "Step 3:  In the case of helium, its higher density compared to air means that sound waves travel faster in helium than in air.",
+    "mistake_cot_step": "Step 3: In the case of helium, its lower density compared to air means that sound waves travel slower in helium than in air.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "Step 1:  The density of helium is higher than that of air.",
+      "Step 2:  When a sound wave travels through a medium, its speed is determined by the properties of that medium.",
+      "Step 3:  In the case of helium, its higher density compared to air means that sound waves travel faster in helium than in air.",
+      "Step 4:  When a voice is produced, the sound wave travels through the air to reach our ears.",
+      "Step 5:  Since the sound wave travels faster in helium, the time it takes for the sound wave to reach our ears is shorter in helium than in air.",
+      "Step 6:  A shorter time for the sound wave to reach our ears means that the pitch of the voice appears higher, not deeper.",
+      "Step 7:  Therefore, the density of helium does not cause voices to sound deeper; it actually makes voices sound higher."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "a4819e1c28b5e1eb4b09",
+    "question": "Does the density of helium cause voices to sound deeper?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "Step 4:  When a voice is produced, the sound wave travels through the air to reach our ears.",
+    "mistake_cot_step": "Step 4: When a voice is produced, the sound wave travels through water to reach our ears.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "Step 1:  The density of helium is higher than that of air.",
+      "Step 2:  When a sound wave travels through a medium, its speed is determined by the properties of that medium.",
+      "Step 3:  In the case of helium, its higher density compared to air means that sound waves travel faster in helium than in air.",
+      "Step 4:  When a voice is produced, the sound wave travels through the air to reach our ears.",
+      "Step 5:  Since the sound wave travels faster in helium, the time it takes for the sound wave to reach our ears is shorter in helium than in air.",
+      "Step 6:  A shorter time for the sound wave to reach our ears means that the pitch of the voice appears higher, not deeper.",
+      "Step 7:  Therefore, the density of helium does not cause voices to sound deeper; it actually makes voices sound higher."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "First, it's important to understand that seawater doesn't have the ability to crush a person on its own.",
+    "mistake_cot_step": "First, it's important to understand that seawater can easily crush a person on its own.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "First, it's important to understand that seawater doesn't have the ability to crush a person on its own.",
+      "The weight of the water would be the issue here.",
+      "Ten gallons of seawater weighs approximately 82 kilograms or 181 pounds.",
+      "A six-year-old typically weighs much less than that.",
+      "So, the answer is (B): No, ten gallons of seawater could not crush a six-year-old.</s>"
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "The weight of the water would be the issue here.",
+    "mistake_cot_step": "The temperature of the water would be the issue here.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "First, it's important to understand that seawater doesn't have the ability to crush a person on its own.",
+      "The weight of the water would be the issue here.",
+      "Ten gallons of seawater weighs approximately 82 kilograms or 181 pounds.",
+      "A six-year-old typically weighs much less than that.",
+      "So, the answer is (B): No, ten gallons of seawater could not crush a six-year-old.</s>"
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "Ten gallons of seawater weighs approximately 82 kilograms or 181 pounds.",
+    "mistake_cot_step": "Ten gallons of seawater weighs approximately 100 kilograms or 220 pounds.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "First, it's important to understand that seawater doesn't have the ability to crush a person on its own.",
+      "The weight of the water would be the issue here.",
+      "Ten gallons of seawater weighs approximately 82 kilograms or 181 pounds.",
+      "A six-year-old typically weighs much less than that.",
+      "So, the answer is (B): No, ten gallons of seawater could not crush a six-year-old.</s>"
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "A six-year-old typically weighs much less than that.",
+    "mistake_cot_step": "A six-year-old typically weighs much more than that.",
+    "step_idx": 3,
+    "segmented_cot": [
+      "First, it's important to understand that seawater doesn't have the ability to crush a person on its own.",
+      "The weight of the water would be the issue here.",
+      "Ten gallons of seawater weighs approximately 82 kilograms or 181 pounds.",
+      "A six-year-old typically weighs much less than that.",
+      "So, the answer is (B): No, ten gallons of seawater could not crush a six-year-old.</s>"
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "4810297f474b0e97ed78",
+    "question": "Could ten gallons of seawater crush a six year old?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "So, the answer is (B): No, ten gallons of seawater could not crush a six-year-old.</s>",
+    "mistake_cot_step": "So, the answer is (A): Yes, ten gallons of seawater could definitely crush a six-year-old.",
+    "step_idx": 4,
+    "segmented_cot": [
+      "First, it's important to understand that seawater doesn't have the ability to crush a person on its own.",
+      "The weight of the water would be the issue here.",
+      "Ten gallons of seawater weighs approximately 82 kilograms or 181 pounds.",
+      "A six-year-old typically weighs much less than that.",
+      "So, the answer is (B): No, ten gallons of seawater could not crush a six-year-old.</s>"
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "a4819e1c28b5e1eb4b09",
+    "question": "Does the density of helium cause voices to sound deeper?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "Helium is a gas that is lighter than air.",
+    "mistake_cot_step": "Helium is a gas that is heavier than air.",
+    "step_idx": 0,
+    "segmented_cot": [
+      "Helium is a gas that is lighter than air.",
+      "It is often used in party balloons because it makes them float.",
+      "The density of a substance does not directly affect the pitch of a voice.",
+      "The pitch of a voice is determined by the size and shape of the vocal cords and the speed at which they vibrate.",
+      "Therefore, the answer is (B): No."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "a4819e1c28b5e1eb4b09",
+    "question": "Does the density of helium cause voices to sound deeper?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "It is often used in party balloons because it makes them float.",
+    "mistake_cot_step": "It is often used in party balloons because it makes them sink.",
+    "step_idx": 1,
+    "segmented_cot": [
+      "Helium is a gas that is lighter than air.",
+      "It is often used in party balloons because it makes them float.",
+      "The density of a substance does not directly affect the pitch of a voice.",
+      "The pitch of a voice is determined by the size and shape of the vocal cords and the speed at which they vibrate.",
+      "Therefore, the answer is (B): No."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  },
+  {
+    "id": "a4819e1c28b5e1eb4b09",
+    "question": "Does the density of helium cause voices to sound deeper?",
+    "options": [
+      "A): Yes",
+      "B): No"
+    ],
+    "cot_step": "The density of a substance does not directly affect the pitch of a voice.",
+    "mistake_cot_step": "The density of a substance directly affects the pitch of a voice.",
+    "step_idx": 2,
+    "segmented_cot": [
+      "Helium is a gas that is lighter than air.",
+      "It is often used in party balloons because it makes them float.",
+      "The density of a substance does not directly affect the pitch of a voice.",
+      "The pitch of a voice is determined by the size and shape of the vocal cords and the speed at which they vibrate.",
+      "Therefore, the answer is (B): No."
+    ],
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2"
+  }
+]

@@ -1,0 +1,466 @@
+[
+  {
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B",
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "total": 274,
+    "agree": 40,
+    "disagree": 234,
+    "unclear": 0,
+    "agree_pct": 14.6,
+    "disagree_pct": 85.4,
+    "samples": [
+      {
+        "instance_id": "Which items would take the least amount of time to decompose in nature?_1",
+        "response": "Yes  \nBoth reasoning chains conclude that cut grass takes the least amount of time to decompose compared to the other options.",
+        "verdict": "agree"
+      },
+      {
+        "instance_id": "Which items would take the least amount of time to decompose in nature?_5",
+        "response": "Yes  \nBoth reasoning chains indicate that cut grass decomposes the fastest among the options provided.",
+        "verdict": "agree"
+      },
+      {
+        "instance_id": "A young ocean animal has two parents. Each of the parents has eight arms. How many arms does the young animal most likely have?_1",
+        "response": "No  \nThe first reasoning chain mentions Mendelian genetics without providing a direct conclusion about the number of arms, while the second reasoning chain directly concludes that the young ocean animal has 16 arms.",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B",
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "total": 88,
+    "agree": 27,
+    "disagree": 61,
+    "unclear": 0,
+    "agree_pct": 30.7,
+    "disagree_pct": 69.3,
+    "samples": [
+      {
+        "instance_id": "There was a lot more water vapor in the air when we went on a trip to_1",
+        "response": "No  \nReasoning chain 1 supports Hanoi as the location with more water vapor, while reasoning chain 2 supports Phoenix, indicating different conclusions.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "There was a lot more water vapor in the air when we went on a trip to_2",
+        "response": "No  \nThe first reasoning chain concludes that the correct answer is (D): Phoenix, while the second chain concludes that the correct answer is (A): Hanoi.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "There was a lot more water vapor in the air when we went on a trip to_3",
+        "response": "No  \nThe first reasoning chain argues for answer option 'A) Hanoi', while the second reasoning chain argues for option 'D) Phoenix', indicating they support different options.",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B",
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "total": 221,
+    "agree": 42,
+    "disagree": 179,
+    "unclear": 0,
+    "agree_pct": 19.0,
+    "disagree_pct": 81.0,
+    "samples": [
+      {
+        "instance_id": "Is the following sentence plausible? \"Domantas Sabonis gained five yards in the AFC championship.\"_2",
+        "response": "No  \nBoth reasoning chains conclude that the sentence about Domantas Sabonis gaining five yards in the AFC championship is implausible, leading to the same answer of \"B\": no.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Is the following sentence plausible? \"Joao Moutinho was out at third.\"_1",
+        "response": "No  \nThe first reasoning chain supports the answer \"A): yes\" by discussing the plausibility of the sentence in a football context, while the second chain interprets \"out at third\" in terms of sexual orientation, leading to a different analysis.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Is the following sentence plausible? \"Ryan Fitzpatrick scored a touchdown.\"_5",
+        "response": "No  \nThe first reasoning chain argues that it is implausible for Ryan Fitzpatrick to have scored a touchdown, while the second reasoning chain suggests that scoring a touchdown is a common achievement for football players, indicating it is plausible.",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "LLaMA-3-3B",
+    "model_nice": "LLaMA-3-3B",
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "total": 154,
+    "agree": 9,
+    "disagree": 145,
+    "unclear": 0,
+    "agree_pct": 5.8,
+    "disagree_pct": 94.2,
+    "samples": [
+      {
+        "instance_id": "Does the density of helium cause voices to sound deeper?_1",
+        "response": "No  \nReasoning chain 1 supports the answer \"A): Yes\" by stating that inhaling helium makes voices sound deeper, while reasoning chain 2 supports \"B): No\" by explaining that it actually makes voices sound higher.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Does the density of helium cause voices to sound deeper?_3",
+        "response": "No  \nThe first reasoning chain concludes that helium makes voices sound higher, while the second concludes that it makes voices sound deeper.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Are any animals in Chinese calendar Chordata?_3",
+        "response": "No  \nThe first reasoning chain concludes that the answer is \"Yes,\" while the second reasoning chain does not provide a definitive answer and implies uncertainty, suggesting a \"No\" perspective because it questions the relevance and context of \"Chordata.\"",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B",
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "total": 119,
+    "agree": 22,
+    "disagree": 97,
+    "unclear": 0,
+    "agree_pct": 18.5,
+    "disagree_pct": 81.5,
+    "samples": [
+      {
+        "instance_id": "Which items would take the least amount of time to decompose in nature?_5",
+        "response": "No  \nReasoning chain 1 suggests that \"cut grass\" decomposes the fastest (1-2 weeks), while reasoning chain 2 indicates a longer range for the same option (a few weeks to a few months), implying differing conclusions on the decomposing efficiency of the items.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "A young ocean animal has two parents. Each of the parents has eight arms. How many arms does the young animal most likely have?_3",
+        "response": "Yes  \nBoth reasoning chains conclude that the young animal most likely has 16 arms based on the total number of arms from its parents.",
+        "verdict": "agree"
+      },
+      {
+        "instance_id": "Which example shows a relationship between a living thing and a nonliving thing?_1",
+        "response": "No  \nReasoning chain 1 correctly identifies option C as showing a relationship between a living thing and a nonliving thing, while reasoning chain 2 indicates that option B shows a living thing (water) interacting with a nonliving thing (rock).",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B",
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "total": 131,
+    "agree": 26,
+    "disagree": 105,
+    "unclear": 0,
+    "agree_pct": 19.8,
+    "disagree_pct": 80.2,
+    "samples": [
+      {
+        "instance_id": "If bacon is left too long on a hot stove top_0",
+        "response": "Yes  \nBoth reasoning chains support answer option C, indicating that bacon left too long on a hot stove top will likely become blackened.",
+        "verdict": "agree"
+      },
+      {
+        "instance_id": "There was a lot more water vapor in the air when we went on a trip to_0",
+        "response": "Yes  \nBoth reasoning chains indicate that Hanoi has a higher humidity level compared to the other cities, suggesting it is the option associated with more water vapor in the air.",
+        "verdict": "agree"
+      },
+      {
+        "instance_id": "There was a lot more water vapor in the air when we went on a trip to_4",
+        "response": "Yes  \nBoth reasoning chains argue that Hanoi, due to its humid tropical climate, would have a lot more water vapor in the air compared to the other cities.",
+        "verdict": "agree"
+      }
+    ]
+  },
+  {
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B",
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "total": 52,
+    "agree": 14,
+    "disagree": 38,
+    "unclear": 0,
+    "agree_pct": 26.9,
+    "disagree_pct": 73.1,
+    "samples": [
+      {
+        "instance_id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"_3",
+        "response": "No  \nThe first reasoning chain implies that working a full count is plausible for Karinchak, while the second reasoning chain suggests that it is unlikely, arguing against the plausibility.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Is the following sentence plausible? \"Tyreek Hill caught the screen pass.\"_2",
+        "response": "No  \nThe first reasoning chain concludes that the sentence is plausible and supports option A, while the second reasoning chain suggests that it is unlikely and leans towards option B.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Is the following sentence plausible? \"Julian Edelman fumbled the ball.\"_2",
+        "response": "No  \nThe first reasoning chain suggests that fumbling the ball is plausible for any NFL player, while the second reasoning chain argues against the plausibility by emphasizing Edelman's reputation for not fumbling.",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "LLaMA-3",
+    "model_nice": "LLaMA-3-8B",
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "total": 21,
+    "agree": 7,
+    "disagree": 14,
+    "unclear": 0,
+    "agree_pct": 33.3,
+    "disagree_pct": 66.7,
+    "samples": [
+      {
+        "instance_id": "Does the density of helium cause voices to sound deeper?_5",
+        "response": "Yes  \nBoth reasoning chains conclude that the density of helium does cause voices to sound deeper, supporting option A.",
+        "verdict": "agree"
+      },
+      {
+        "instance_id": "Would food made with black salt smell of sulfur?_0",
+        "response": "No  \nThe first reasoning chain argues that food made with black salt would smell of sulfur (answer A), while the second reasoning chain argues that it would not smell of sulfur (answer B).",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Were there under 150,000 American troops in Vietnam in 1965?_2",
+        "response": "No  \nThe first reasoning chain supports option A, while the second supports option B, providing contradictory figures regarding the number of American troops in Vietnam in 1965.",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2",
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "total": 124,
+    "agree": 18,
+    "disagree": 104,
+    "unclear": 2,
+    "agree_pct": 14.5,
+    "disagree_pct": 83.9,
+    "samples": [
+      {
+        "instance_id": "Which items would take the least amount of time to decompose in nature?_5",
+        "response": "Yes  \nBoth reasoning chains support the option 'A): cut grass' as taking the least amount of time to decompose in nature.",
+        "verdict": "agree"
+      },
+      {
+        "instance_id": "Logging companies cut trees in a forest and send the trees to lumber mills far from the forest. The mills make boards that are used for construction. Some logging companies do not plant tree seedlings after cutting trees. Not planting tree seedlings might affect people who need boards in the future because_1",
+        "response": "No  \nThe first reasoning chain does not lead to a specific conclusion, while the second reasoning chain explicitly supports option (A), indicating an increase in the price of boards.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Logging companies cut trees in a forest and send the trees to lumber mills far from the forest. The mills make boards that are used for construction. Some logging companies do not plant tree seedlings after cutting trees. Not planting tree seedlings might affect people who need boards in the future because_3",
+        "response": "No  \nReasoning chain 1 indicates that the lack of tree seedlings will decrease the capacity for future lumber production, which could lead to an increase in board prices (supporting option A). Reasoning chain 2 does not provide sufficient information to determine a specific impact on board prices or availability, leaving its conclusion ambiguous.",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2",
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "total": 179,
+    "agree": 16,
+    "disagree": 162,
+    "unclear": 1,
+    "agree_pct": 8.9,
+    "disagree_pct": 90.5,
+    "samples": [
+      {
+        "instance_id": "If bacon is left too long on a hot stove top_1",
+        "response": "No  \nThe first reasoning chain does not provide a clear answer option, whereas the second one explicitly supports option (C) indicating it will become blackened, leading to a divergence in conclusions.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Tuna primarily eat_0",
+        "response": "No  \nThe first reasoning chain implies that tuna feed on other organisms without specifying, while the second emphasizes that tuna are not primary consumers, suggesting a preference for answer options that reflect their predatory nature, likely pointing to option C rather than any other.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Scraping an object_1",
+        "response": "No  \nThe first reasoning chain does not specifically conclude on any answer, while the second explicitly supports option (C).",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2",
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "total": 117,
+    "agree": 23,
+    "disagree": 94,
+    "unclear": 0,
+    "agree_pct": 19.7,
+    "disagree_pct": 80.3,
+    "samples": [
+      {
+        "instance_id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"_10",
+        "response": "No  \nThe first reasoning chain concludes that the statement is not plausible (option B), while the second reasoning chain suggests that it is plausible (implying support for option A).",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"_1",
+        "response": "No  \nThe first reasoning chain suggests ambiguity in the meaning of the phrase \"work a full count,\" while the second reasoning chain interprets it as a clear scenario in baseball, leading to different conclusions about the plausibility of the sentence.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Is the following sentence plausible? \"Ryan Fitzpatrick scored a touchdown.\"_3",
+        "response": "Yes  \nBoth reasoning chains ultimately acknowledge that while quarterbacks like Ryan Fitzpatrick typically don't score touchdowns directly, there are instances where they can, making the statement plausible.",
+        "verdict": "agree"
+      }
+    ]
+  },
+  {
+    "model": "Mistral-2",
+    "model_nice": "Mistral-2",
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "total": 74,
+    "agree": 10,
+    "disagree": 64,
+    "unclear": 0,
+    "agree_pct": 13.5,
+    "disagree_pct": 86.5,
+    "samples": [
+      {
+        "instance_id": "Does the density of helium cause voices to sound deeper?_4",
+        "response": "No  \nThe first reasoning chain argues that the density of helium affects pitch, supporting option A, while the second reasoning chain claims it does not, supporting option B.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Would an uninsured person be more likely than an insured person to decline a CT scan?_0",
+        "response": "No  \nThe first reasoning chain suggests that the decision can vary based on several factors, while the second chain clearly supports that an uninsured person is more likely to decline due to cost concerns, indicating different conclusions.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Would an uninsured person be more likely than an insured person to decline a CT scan?_1",
+        "response": "No  \nThe first reasoning chain supports option A (Yes), stating uninsured individuals are likely to decline a CT scan due to costs, while the second reasoning chain argues against that by suggesting various factors influence the decision for both insured and uninsured individuals.",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "Phi-3",
+    "model_nice": "Phi-3",
+    "dataset": "arc-challenge",
+    "dataset_nice": "ARC-Challenge",
+    "total": 136,
+    "agree": 32,
+    "disagree": 103,
+    "unclear": 1,
+    "agree_pct": 23.5,
+    "disagree_pct": 75.7,
+    "samples": [
+      {
+        "instance_id": "A young ocean animal has two parents. Each of the parents has eight arms. How many arms does the young animal most likely have?_1",
+        "response": "No  \nBoth reasoning chains emphasize that the number of arms the young animal has is not directly determined by its parents' arm count, suggesting uncertainty rather than supporting a specific answer option.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Logging companies cut trees in a forest and send the trees to lumber mills far from the forest. The mills make boards that are used for construction. Some logging companies do not plant tree seedlings after cutting trees. Not planting tree seedlings might affect people who need boards in the future because_9",
+        "response": "No  \nBoth reasoning chains lead to different implications regarding the availability of boards and their impact on prices, with the first chain suggesting decreased availability (therefore a potential price increase) while the second chain does not provide a definite conclusion on future board availability or market effects.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "The salt in ocean water comes from all of the following except_5",
+        "response": "No  \nBoth reasoning chains argue that options A, B, C, and D all contribute to the salt content of ocean water, but they do not indicate that any of these options are exceptions. Therefore, the reasoning supports different interpretations of which source does not contribute salt.",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "Phi-3",
+    "model_nice": "Phi-3",
+    "dataset": "openbook",
+    "dataset_nice": "OpenBookQA",
+    "total": 184,
+    "agree": 45,
+    "disagree": 139,
+    "unclear": 0,
+    "agree_pct": 24.5,
+    "disagree_pct": 75.5,
+    "samples": [
+      {
+        "instance_id": "Inherited characteristics_7",
+        "response": "No  \nReasoning chain 1 concludes that spots on a ladybug (D) are inherited characteristics, while the other options are learned behaviors. However, reasoning chain 2 is not provided, leaving its conclusion and stance ambiguous.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Dry environments often_3",
+        "response": "No  \nReasoning chain 1 argues against option A, while reasoning chain 2 supports option D.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Dry environments often_5",
+        "response": "No  \nReasoning chain 1 supports answer option 'D' by discussing the necessity of rules regarding water usage in dry environments, while reasoning chain 2 does not provide a clear conclusion that aligns with any specific option, thereby leaving its stance ambiguous.",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "Phi-3",
+    "model_nice": "Phi-3",
+    "dataset": "sports",
+    "dataset_nice": "Sports",
+    "total": 91,
+    "agree": 28,
+    "disagree": 63,
+    "unclear": 0,
+    "agree_pct": 30.8,
+    "disagree_pct": 69.2,
+    "samples": [
+      {
+        "instance_id": "Is the following sentence plausible? \"Sterling Shepard converted the first down.\"_3",
+        "response": "No  \nThe first reasoning chain supports the plausibility of the sentence, while the second chain does not provide clear support for the sentence's plausibility regarding converting a first down.",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"_1",
+        "response": "Yes  \nBoth reasoning chains provide a context where the phrase \"worked a full count\" is plausible in the context of baseball, leading to the conclusion of \"yes\" as the answer.",
+        "verdict": "agree"
+      },
+      {
+        "instance_id": "Is the following sentence plausible? \"James Karinchak worked a full count.\"_5",
+        "response": "No  \nThe first reasoning chain suggests that it is plausible for James Karinchak to work a full count since he is identified as a baseball player, while the second reasoning chain contradicts this by stating he is a wrestler, leading to different conclusions.",
+        "verdict": "disagree"
+      }
+    ]
+  },
+  {
+    "model": "Phi-3",
+    "model_nice": "Phi-3",
+    "dataset": "sqa",
+    "dataset_nice": "StrategyQA",
+    "total": 53,
+    "agree": 14,
+    "disagree": 39,
+    "unclear": 0,
+    "agree_pct": 26.4,
+    "disagree_pct": 73.6,
+    "samples": [
+      {
+        "instance_id": "Did Millard Fillmore help to establish the University of Pittsburgh?_1",
+        "response": "No  \nThe first reasoning chain does not provide a conclusive answer but seeks to clarify the question, while the second reasoning chain explicitly states that Fillmore did not help establish the University of Pittsburgh, implying the answer is \"B: No.\"",
+        "verdict": "disagree"
+      },
+      {
+        "instance_id": "Did J. P. Morgan have healthy lungs?_7",
+        "response": "Yes  \nBoth reasoning chains suggest there is no clear evidence about J. P. Morgan's lung health, leaving the question open to interpretation regarding whether his lungs were healthy or not.",
+        "verdict": "agree"
+      },
+      {
+        "instance_id": "Was Kane (wrestler) banned from WCW  headquarters city?_3",
+        "response": "No  \nThe first reasoning chain argues that Kane is a WWE character and not associated with WCW, implying a \"No\" answer, while the second reasoning chain states that Kane was part of WCW and finds no record of a ban, also supporting a \"No\" answer, but the emphasis on factual accuracy suggests potential disagreement.",
+        "verdict": "disagree"
+      }
+    ]
+  }
+]

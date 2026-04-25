@@ -24,6 +24,18 @@ replace_phi3_model.sh
 read_phi3_attn.sh
 verify_phi3.sh
 
+# BigRed200 one-off upload/patch/submit scripts
+upload_*.sh
+patch_*.sh
+submit_*.sh
+ff2_resubmit.sh
+inspect_log.sh
+verify_and_submit_ms.sh
+br200_scp_up.py
+
+# In-progress / empty data files
+finetune_data/test_held_out_n150.jsonl
+
 # Claude internal
 CLAUDE.md
 

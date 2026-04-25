@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoT Faithfulness Dashboard — Measuring Faithfulness by Unlearning</title>
+  <meta name="description" content="Interactive dashboard for exploring Chain-of-Thought faithfulness measured by unlearning reasoning steps in LLMs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <div class="nav-brand">CoT Faithfulness</div>
+    <div class="nav-links">
+      <a href="#hero" class="nav-link active">Overview</a>
+      <a href="#method" class="nav-link">Method</a>
+      <a href="#dashboard" class="nav-link">Results</a>
+      <a href="#explorer" class="nav-link">Explorer</a>
+      <a href="#annotations" class="nav-link">Annotations</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Research Paper Dashboard</div>
+      <h1 id="paper-title">Measuring Faithfulness of Chains of Thought by Unlearning Reasoning Steps</h1>
+      <p id="paper-authors" class="hero-authors"></p>
+      <p class="hero-abstract">
+        Do LLMs actually <em>use</em> their Chain-of-Thought reasoning to reach answers, or is CoT just plausible-sounding rationalization? 
+        This research measures CoT faithfulness by <strong>selectively unlearning</strong> individual reasoning steps and observing 
+        whether the model's answer changes — a direct test of causal influence.
+      </p>
+      <div class="hero-links">
+        <a id="arxiv-link" href="#" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Read Paper on arXiv
+        </a>
+        <a href="#dashboard" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          Explore Results
+        </a>
+      </div>
+      <div class="hero-figure">
+        <img src="fig1.png" alt="Faithfulness by Unlearning: a question is run through a model with and without CoT, reasoning steps are selectively unlearned, and answer probability shifts reveal faithfulness." />
+        <p class="figure-caption">Figure 1: Overview — Unlearning a reasoning step causes the model's answer to shift from C to A, revealing this CoT step was faithfully used.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method Section -->
+  <section id="method">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="section-number">01</span>
+        How It Works
+      </h2>
+      <p class="section-subtitle">The unlearning-based faithfulness measurement pipeline</p>
+      
+      <div class="method-pipeline">
+        <div class="pipeline-step" data-step="1">
+          <div class="step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h3>Question + CoT</h3>
+          <p>Give the model a multiple-choice question. It generates a Chain-of-Thought with multiple reasoning steps, then answers.</p>
+        </div>
+
+        <div class="pipeline-arrow">→</div>
+        
+        <div class="pipeline-step" data-step="2">
+          <div class="step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h10"/><line x1="18" y1="14" x2="22" y2="18" stroke="#ff4444" stroke-width="2"/><line x1="22" y1="14" x2="18" y2="18" stroke="#ff4444" stroke-width="2"/></svg>
+          </div>
+          <h3>Unlearn a Step</h3>
+          <p>Apply Negative Preference Optimization (NPO) to selectively unlearn one reasoning step from the model's parameters.</p>
+        </div>
+
+        <div class="pipeline-arrow">→</div>
+        
+        <div class="pipeline-step" data-step="3">
+          <div class="step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h3>Measure Δp</h3>
+          <p>Check if the model's answer probability shifted. A large shift means the CoT step was faithfully used for reasoning.</p>
+        </div>
+
+        <div class="pipeline-arrow">→</div>
+        
+        <div class="pipeline-step" data-step="4">
+          <div class="step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Faithfulness Score</h3>
+          <p>If the answer flips after unlearning, the step was causally important. Aggregate over many instances for a faithfulness metric.</p>
+        </div>
+      </div>
+
+      <div class="method-metrics">
+        <div class="metric-card">
+          <div class="metric-icon">🎯</div>
+          <h4>Faithfulness</h4>
+          <p>% of instances where the model's predicted answer changes after unlearning a CoT step</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">⚡</div>
+          <h4>Efficacy</h4>
+          <p>How much the probability of the unlearned CoT step decreases after the unlearning procedure</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">🛡️</div>
+          <h4>Specificity</h4>
+          <p>Whether the model's predictions on other unrelated instances remain unchanged after unlearning</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Dashboard -->
+  <section id="dashboard">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="section-number">02</span>
+        Results Dashboard
+      </h2>
+      <p class="section-subtitle">Faithfulness measurements and LLM-as-judge agreement across models and datasets</p>
+
+      <div class="dashboard-controls">
+        <div class="control-group">
+          <label>View:</label>
+          <div class="toggle-group" id="dashboard-view-toggle">
+            <button class="toggle-btn active" data-view="judge">LLM Judge Agreement</button>
+            <button class="toggle-btn" data-view="annotations">Annotation Stats</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- LLM Judge Results -->
+      <div id="judge-view" class="dashboard-view active">
+        <div class="chart-header">
+          <h3>Post-Unlearning CoT Agreement (GPT-4o Judge)</h3>
+          <p class="chart-desc">After unlearning a reasoning step, does the regenerated CoT still argue for the same answer? Higher disagreement = more faithful.</p>
+        </div>
+        <div class="chart-grid" id="judge-charts"></div>
+      </div>
+
+      <!-- Annotation Stats -->
+      <div id="annotations-view" class="dashboard-view">
+        <div class="chart-header">
+          <h3>Human Annotation: CoT Step Supportiveness</h3>
+          <p class="chart-desc">Human annotators rated whether unlearned CoT steps were supportive of the model's answer.</p>
+        </div>
+        <div class="annotation-summary" id="annotation-summary"></div>
+        <div class="annotation-breakdown" id="annotation-breakdown"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instance Explorer -->
+  <section id="explorer">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="section-number">03</span>
+        Instance Explorer
+      </h2>
+      <p class="section-subtitle">Browse individual examples: Questions, CoT steps, and the effect of adding mistakes</p>
+
+      <div class="explorer-controls">
+        <div class="control-group">
+          <label for="explorer-dataset">Dataset:</label>
+          <select id="explorer-dataset">
+            <option value="all">All Datasets</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="explorer-model">Model:</label>
+          <select id="explorer-model">
+            <option value="all">All Models</option>
+          </select>
+        </div>
+        <div class="explorer-nav">
+          <button id="prev-instance" class="btn btn-small">← Previous</button>
+          <span id="instance-counter">1 / 1</span>
+          <button id="next-instance" class="btn btn-small">Next →</button>
+        </div>
+      </div>
+
+      <div id="explorer-content" class="explorer-card">
+        <div class="explorer-placeholder">Loading instances...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Annotations Deep Dive -->
+  <section id="annotations">
+    <div class="section-container">
+      <h2 class="section-title">
+        <span class="section-number">04</span>
+        Annotation Study
+      </h2>
+      <p class="section-subtitle">Browse individual annotated instances with human faithfulness ratings</p>
+
+      <div class="explorer-controls">
+        <div class="control-group">
+          <label for="anno-filter-rating">Rating:</label>
+          <select id="anno-filter-rating">
+            <option value="all">All Ratings</option>
+            <option value="Very Supportive">Very Supportive</option>
+            <option value="Mostly Supportive">Mostly Supportive</option>
+            <option value="Slightly Supportive">Slightly Supportive</option>
+            <option value="Not Supportive At All">Not Supportive At All</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="anno-filter-flip">Flip:</label>
+          <select id="anno-filter-flip">
+            <option value="all">All</option>
+            <option value="true">Flipped</option>
+            <option value="false">Not Flipped</option>
+          </select>
+        </div>
+        <div class="explorer-nav">
+          <button id="prev-anno" class="btn btn-small">← Previous</button>
+          <span id="anno-counter">1 / 1</span>
+          <button id="next-anno" class="btn btn-small">Next →</button>
+        </div>
+      </div>
+
+      <div id="annotation-content" class="explorer-card">
+        <div class="explorer-placeholder">Loading annotations...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>Based on: <em>Measuring Faithfulness of Chains of Thought by Unlearning Reasoning Steps</em></p>
+      <p>Tutek, Chaleshtori, Marasović, & Belinkov (2025) · <a id="footer-arxiv" href="#" target="_blank">arXiv:2502.14829</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
