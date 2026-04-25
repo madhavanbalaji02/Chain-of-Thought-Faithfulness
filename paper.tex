@@ -73,6 +73,11 @@ surface-level evidence attribution shows no relationship
 better-looking reasoning actively selects against the reasoning
 steps that drive model predictions --- a direct challenge to
 CoT-based AI safety monitoring.
+A faithfulness-regularized training objective fails to recover faithfulness at
+any regularization strength ($\lambda \in \{0.0,\,0.1,\,1.0\}$), revealing
+that the paradox originates in data selection rather than training dynamics:
+high-quality CoT instances are already parametrically decoupled before
+fine-tuning begins.
 \end{abstract}
 
 % ─────────────────────────────────────────────────────────────
@@ -677,6 +682,77 @@ encoding --- the mechanism by which parametric faithfulness collapses.
 \end{figure}
 
 % ─────────────────────────────────────────────────────────────
+\subsection{Toward a Cure: Faithfulness-Preserving Fine-Tuning}
+\label{sec:cure}
+
+We investigate whether a faithfulness-regularized training objective can
+recover parametric faithfulness while maintaining CoT quality. We add a
+regularization term $\mathcal{L}_\text{faith}$ that penalizes the model when
+its answer probability becomes independent of individual CoT steps:
+
+\begin{equation}
+\mathcal{L}_\text{total} = \mathcal{L}_\text{quality} +
+\lambda \cdot \mathcal{L}_\text{faith}
+\end{equation}
+
+\noindent where $\mathcal{L}_\text{faith} = -\frac{1}{|S|}
+\sum_{s_i \in S} \bigl|P(\hat{y} \mid q, \text{CoT}) -
+P(\hat{y} \mid q, \text{CoT} \setminus s_i)\bigr|^2$.
+Minimizing this term maximizes the squared change in answer probability when a
+CoT step is masked, forcing the model to depend on each step.
+We train LLaMA-3-3B on the high-quality split with
+$\lambda \in \{0.0,\,0.1,\,1.0\}$ for three epochs using LoRA (rank 16) and
+evaluate parametric faithfulness on the held-out test set ($N = 50$).
+
+\begin{table}[h]
+\centering
+\caption{Faithfulness under regularized fine-tuning ($N{=}50$ per condition).
+The regularization fails to recover faithfulness at any~$\lambda$.}
+\label{tab:cure}
+\begin{tabular}{lcc}
+\toprule
+Condition & $\lambda$ & Faithfulness \\
+\midrule
+Original baseline      & ---  & 30.0\% \\
+High-quality FT (original) & ---  & 8.0\% \\
+\midrule
+Faith-reg ($\lambda{=}0.0$) & 0.0 & 2.0\% \\
+Faith-reg ($\lambda{=}0.1$) & 0.1 & 0.0\% \\
+Faith-reg ($\lambda{=}1.0$) & 1.0 & 0.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The regularization fails to recover faithfulness at any $\lambda$ value
+(Table~\ref{tab:cure}; Figure~\ref{fig:cure}).
+Training logs reveal why: $\mathcal{L}_\text{faith}$ fires near-zero on the
+majority of gradient steps throughout training, indicating that
+$P(\hat{y} \mid q, \text{CoT}) \approx P(\hat{y} \mid q,\text{CoT} \setminus
+s_i)$ already holds for most high-quality training instances \emph{before} any
+gradient update. There is no signal to amplify.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.95\columnwidth]{paper_figures/fig4_cure_failure.pdf}
+  \caption{Faithfulness under regularization attempts. None of the three
+    $\lambda$ values approach the 30\% baseline (green dotted line).
+    Faith-reg $\lambda{=}0.0$ also falls below the original high-quality FT
+    result (8\%), consistent with the more aggressive LoRA configuration.}
+  \label{fig:cure}
+\end{figure}
+
+This finding deepens the paradox. High-quality CoT steps are already
+parametrically decoupled in the training data \emph{before} fine-tuning
+begins --- there is no gradient signal for the regularization to amplify. The
+problem originates in the data selection process itself: quality filtering
+selects instances in which CoT steps have minimal causal influence on
+predictions. A training-time objective cannot compensate for a data-level
+selection bias. Resolving the alignment-faithfulness paradox therefore requires
+intervention at the data curation stage --- for example, explicitly filtering
+for instances where CoT steps have demonstrable causal influence --- rather than
+modifying the training objective applied to existing quality-filtered data.
+
+% ─────────────────────────────────────────────────────────────
 \section{Discussion}
 \label{sec:discussion}
 
@@ -709,6 +785,18 @@ effect unless explicitly designed to select for causal grounding rather than
 surface coherence. The practical corollary is that faithfulness-preserving
 fine-tuning requires a fundamentally different training signal --- one that
 rewards parametric coupling, not stylistic quality.
+
+\subsection{The Paradox Is a Data Problem, Not a Training Problem}
+
+The failure of faithfulness regularization (Section~\ref{sec:cure}) is itself
+a finding. It demonstrates that the alignment-faithfulness paradox is not
+merely a training dynamics problem addressable through loss engineering --- it
+is a data selection problem. The high-quality CoTs preferred by human raters
+and LLM judges are already causally decoupled from model predictions. Any
+training pipeline that uses quality-filtered CoT data will therefore propagate
+this decoupling, regardless of the training objective applied. Fixing the
+paradox requires a new definition of CoT quality that explicitly incorporates
+parametric faithfulness as a selection criterion.
 
 \subsection{Implications for AI Safety and CoT Monitoring}
 
