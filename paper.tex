@@ -348,15 +348,15 @@ with $\alpha = 0.05$.
 
 We validate our quality scoring against human plausibility
 annotations from \citet{tutek2025faithfulness} ($N{=}100$ matched instances).
-Human supportiveness ratings correlate positively with
-parametric faithfulness ($\rho{=}0.209$, $p{=}0.037$),
-confirming that the NPO unlearning measure captures
-human-perceived reasoning quality. The weak correlation
-($r{=}0.151$, n.s.) is consistent with our finding that
-quality and faithfulness are largely orthogonal dimensions
---- faithful steps receive slightly higher human ratings on
-average (3.25 vs.\ 3.07) but the relationship is not strong
-enough to predict faithfulness from human ratings alone.
+Human supportiveness ratings show a weak positive correlation with
+parametric faithfulness ($\rho{=}0.209$, $p{=}0.037$, $N{=}100$).
+This confirms that NPO faithfulness is not entirely divorced from
+human judgment while remaining consistent with our central finding
+that quality and faithfulness are largely orthogonal --- a weak
+correlation predicts neither from the other. Faithful steps receive
+slightly higher human ratings on average (3.25 vs.\ 3.07), but
+$r{=}0.151$ (n.s.) means human plausibility alone cannot identify
+faithful reasoning.
 
 % ─────────────────────────────────────────────────────────────
 \section{Results}
@@ -466,7 +466,7 @@ LLaMA-3-8B  & $+$13pp & $\sim$0pp & floor effect \\
 \end{tabular}
 \end{table}
 
-\subsection{Low-Quality Fine-Tuning as a Control}
+\subsection{Low-Quality Control and Task Accuracy Tradeoff}
 \label{sec:lowqual}
 
 Table~\ref{tab:tradeoff} reveals the paradox at the task level.
@@ -664,6 +664,9 @@ Layer & Baseline & High-quality FT & Low-quality FT \\
 Table~\ref{tab:ff2} shows that after high-quality fine-tuning, FF2 activations
 carry \textbf{no faithfulness-predictive signal} at any probed layer
 (Figure~\ref{fig:ff2probe}).
+The baseline shows no lift at Layer~24, suggesting faithfulness encoding is
+concentrated in middle layers; high-quality FT erases the signal present at
+Layers~8 and~16 while leaving the already-absent signal at Layer~24 unchanged.
 Low-quality fine-tuning maintains or increases probe lift at all layers,
 confirming the effect is quality-specific rather than a generic consequence
 of fine-tuning. These results suggest that high-quality CoT training drives
@@ -676,8 +679,9 @@ encoding --- the mechanism by which parametric faithfulness collapses.
   \caption{FF2 probe accuracy lift at layers 8, 16, and 24.
     High-quality FT (red) collapses lift to zero at every layer;
     low-quality FT (blue) maintains or improves it.
-    Baseline (gray) shows modest positive lift, confirming FF2
-    encodes some faithfulness-relevant signal before fine-tuning.}
+    Baseline (gray) shows positive lift at Layers~8 and~16, confirming FF2
+    encodes faithfulness-relevant signal in middle layers before fine-tuning;
+    signal is absent at Layer~24 in all conditions.}
   \label{fig:ff2probe}
 \end{figure}
 
@@ -894,8 +898,8 @@ may encode those statements less causally.
 
 We present a four-layer argument establishing the alignment-faithfulness
 paradox. At the \textbf{training level}, high-quality CoT fine-tuning reduces
-parametric faithfulness by 56--82\% relative across three model families
-(LLaMA-3-3B: $p = 0.005$; Phi-3: $p = 0.033$; Mistral-7B: $p = 0.005$),
+parametric faithfulness by 56--75\% relative to baseline across three model families
+(LLaMA-3-3B: $p = 0.005$; Phi-3: $p = 0.033$; Mistral-7B: $p = 0.046$),
 while low-quality fine-tuning leaves faithfulness unchanged --- ruling out
 fine-tuning in general as the cause.
 At the \textbf{step level}, non-faithful CoT steps score higher on quality
