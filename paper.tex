@@ -78,6 +78,12 @@ any regularization strength ($\lambda \in \{0.0,\,0.1,\,1.0\}$), revealing
 that the paradox originates in data selection rather than training dynamics:
 high-quality CoT instances are already parametrically decoupled before
 fine-tuning begins.
+Disaggregating by prediction correctness reveals that
+faithfulness is higher for initially incorrect predictions than correct ones
+(43.8\% vs.\ 23.5\%), and high-quality FT collapses faithfulness for
+correct predictions to near-zero --- suggesting that quality filtering
+teaches models to commit to correct answers without parametric dependence
+on their expressed reasoning.
 \end{abstract}
 
 % ─────────────────────────────────────────────────────────────
@@ -621,6 +627,109 @@ Model-specific (Phi-3 own CoTs) & 32.0 & 14.0 & 38.0 \\
 \end{tabular}
 \end{table}
 
+\subsection{Differential Collapse: Task Type and Prediction Correctness}
+\label{sec:differential}
+
+The aggregate faithfulness rates in Table~\ref{tab:main}
+conceal important structure. Disaggregating by dataset and
+prediction correctness reveals two consistent patterns.
+
+\paragraph{Task-type specificity.}
+Table~\ref{tab:dataset_breakdown} shows that the faithfulness
+collapse is highly non-uniform across task types in LLaMA-3-3B.
+StrategyQA (SQA) and Sports Understanding --- both requiring
+multi-hop commonsense reasoning or world knowledge recall ---
+show complete collapse from 58\% and 42\% respectively to 0\%
+under high-quality fine-tuning. OpenBookQA is unaffected
+(23\%~$\to$~31\%), and ARC-Challenge was at floor in all
+conditions. Phi-3 shows the same ordering, with SQA dominating
+the faithfulness signal (67\%~$\to$~8\%).
+
+This pattern is consistent with the data-selection mechanism.
+High-quality CoTs for OpenBookQA can be simultaneously polished
+and faithful because the answer is grounded in an explicit
+supporting passage --- the reasoning step that cites the passage
+genuinely activates the prediction. High-quality CoTs for SQA
+and Sports are more likely to be polished post-hoc rationalizations
+of answers the model reached through memorized associations.
+Quality filtering therefore disproportionately selects
+parametrically-decoupled instances in tasks that require
+implicit knowledge retrieval.
+
+\paragraph{Correctness conditioning.}
+Table~\ref{tab:correctness} shows a consistent pattern across
+both models and both conditions: parametric faithfulness is
+substantially \textit{higher} for initially incorrect predictions
+than for correct ones (43.8\% vs.\ 23.5\% for LLaMA-3-3B
+baseline; 55.0\% vs.\ 16.7\% for Phi-3 baseline). When the model
+answers correctly, the CoT appears largely decorative --- the
+correct answer was committed to via non-CoT parametric pathways,
+and the expressed reasoning post-hoc justifies it. When the model
+answers incorrectly, the CoT was more likely driving the (wrong)
+prediction, which is why unlearning it flips the answer.
+
+High-quality fine-tuning sharpens this dissociation further.
+For LLaMA-3-3B, faithfulness for initially correct predictions
+collapses to 0.0\% under high-FT (vs.\ 26.7\% for incorrect).
+The model learns to commit to correct answers without any
+parametric dependence on the CoT --- the chain of thought becomes
+pure surface performance. This is perhaps the most direct
+evidence that quality filtering optimizes for the appearance
+of reasoning rather than its causal role.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Parametric faithfulness by dataset type for LLaMA-3-3B
+($N$ per cell varies; baseline / high-FT shown).
+The collapse is non-uniform: SQA and Sports Understanding
+collapse to 0\% while OpenBookQA is unaffected.}
+\label{tab:dataset_breakdown}
+\begin{tabular}{lcc}
+\toprule
+Dataset & Baseline & High-FT \\
+\midrule
+StrategyQA (SQA)     & 58\% & 0\%  \\
+Sports Understanding & 42\% & 0\%  \\
+OpenBookQA           & 23\% & 31\% \\
+ARC-Challenge        & 0\%  & 0\%  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Parametric faithfulness conditioned on initial
+prediction correctness. Faithfulness is consistently higher
+for incorrect predictions, and high-quality FT collapses
+faithfulness for correct predictions to near-zero.}
+\label{tab:correctness}
+\begin{tabular}{lcc}
+\toprule
+Model / Condition & Initially correct & Initially incorrect \\
+\midrule
+LLaMA-3-3B baseline & 23.5\% & 43.8\% \\
+LLaMA-3-3B high-FT  & 0.0\%  & 26.7\% \\
+\midrule
+Phi-3 baseline & 16.7\% & 55.0\% \\
+Phi-3 high-FT  & 6.1\%  & 29.4\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{paper_figures/fig5_differential}
+\caption{Left: faithfulness by dataset for LLaMA-3-3B.
+SQA and Sports collapse completely to 0\%; OpenBookQA is
+unaffected. Right: faithfulness conditioned on initial
+prediction correctness. Faithfulness is higher when the model
+is initially wrong; high-quality FT drives correct-prediction
+faithfulness to 0\%.}
+\label{fig:differential}
+\end{figure}
+
 \subsection{Continuous Scoring Reveals a Paradox Within the Paradox}
 \label{sec:delta_p_paradox}
 
@@ -794,6 +903,17 @@ The full mechanism proceeds in four steps:
         the training signal works as intended from a performance standpoint
         while undermining verifiability.
 \end{enumerate}
+
+The differential collapse (Section~\ref{sec:differential}) reveals where
+this mechanism operates most strongly. Tasks requiring implicit knowledge
+retrieval (SQA, Sports Understanding) show complete faithfulness collapse,
+while tasks grounded in explicit passages (OpenBookQA) are largely immune.
+This is consistent with the surface-route hypothesis: in open-book tasks,
+high-quality CoTs that cite supporting passages remain parametrically faithful
+because the cited content genuinely activates the prediction. In commonsense
+and world-knowledge tasks, the model commits to the correct answer through
+memorized associations and the CoT post-hoc rationalizes --- making quality
+filtering maximally damaging.
 
 Quality filtering does not passively fail to improve faithfulness --- it
 actively selects against it. The most causally-grounded reasoning steps are
