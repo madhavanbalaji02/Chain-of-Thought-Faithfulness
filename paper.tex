@@ -141,7 +141,8 @@ Our contributions are:
   \item A controlled experiment comparing parametric faithfulness under
         baseline, high-quality CoT, and low-quality CoT fine-tuning conditions
         across four model families, with a cross-model vs.\ model-specific
-        ablation ruling out distribution shift as a confound.
+        ablation (Section~\ref{sec:crossmodel}) ruling out both distribution
+        shift and scorer dependency as confounds.
   \item Evidence \textbf{confirming} the alignment-faithfulness paradox across
         LLaMA-3-3B ($-$73\% relative, $p = 0.005$), Phi-3
         ($-$56\% relative, $p = 0.033$), and Mistral-7B
@@ -284,6 +285,10 @@ Scoring is performed by \texttt{claude-sonnet-4-5} via the Anthropic API,
 using a structured prompt that requests integer scores for each dimension.
 The composite score is the mean of the three dimensions (range 1.0--5.0;
 mean 3.30, $\sigma = 1.44$).
+To partially address scorer dependency, the Phi-3 model-specific ablation
+(\S\ref{sec:crossmodel}) replicates the paradox using Phi-3's own CoTs scored
+by the same judge (14.0\% high-FT faithfulness vs.\ 14.0\% cross-model),
+confirming the effect is not specific to LLaMA-3-3B's CoT distribution.
 
 \subsection{Fine-Tuning Conditions}
 
@@ -415,6 +420,11 @@ models exhibit lower CoT faithfulness \citep{lanham2023measuring},
 suggesting that the alignment-faithfulness paradox may be
 most pronounced in small-to-medium models where baseline
 faithfulness is non-trivial.
+An alternative interpretation is that the NPO probe itself loses sensitivity at
+larger model scales, where FF2 layers may play a diminished representational
+role. Distinguishing between a genuine faithfulness floor and reduced probe
+sensitivity requires probing methodologies beyond FF2 unlearning, which we
+leave to future work.
 
 \begin{table}[t]
 \centering
@@ -579,6 +589,7 @@ surface properties of reasoning (quality score; attribution support) are
 orthogonal to whether the reasoning step actually drives the model's answer.
 
 \subsection{Cross-Model vs.\ Model-Specific Training Rules Out Distribution Shift}
+\label{sec:crossmodel}
 
 A second alternative explanation is that the faithfulness collapse under
 high-quality training arises because Phi-3 is trained on LLaMA-3-3B's CoTs
@@ -807,6 +818,15 @@ this decoupling, regardless of the training objective applied. Fixing the
 paradox requires a new definition of CoT quality that explicitly incorporates
 parametric faithfulness as a selection criterion.
 
+The failure of regularization suggests a concrete path forward:
+faithfulness-aware data curation. Rather than selecting CoT instances by surface
+quality score, a faithfulness-first filter would prioritize instances with high
+$\Delta p$ --- those where individual reasoning steps demonstrably shift the
+model's answer distribution. Such a filter could be computed efficiently using a
+lightweight NPO probe at curation time, requiring no changes to the training
+objective itself. We propose this as a practical intervention and leave its
+empirical evaluation to future work.
+
 \subsection{Implications for AI Safety and CoT Monitoring}
 
 The paradox has direct implications for deployment-time safety. Models
@@ -868,6 +888,10 @@ If fine-tuning redistributes CoT encoding from FF2 to other layers (e.g.,
 attention heads or FF1), NPO unlearning would show reduced effect even if the
 CoT remains causally relevant overall. This would suggest a limitation of the
 NPO faithfulness probe rather than a genuine faithfulness reduction.
+Testing this hypothesis would require probing all layer types simultaneously ---
+a priority direction for future work that would either confirm FF2 as the
+primary site of faithfulness encoding or reveal redistribution to attention or
+FF1 layers.
 
 \paragraph{Interpretation 3: Bimodal reorganization.}
 The $\Delta p$ finding (higher mean despite fewer flips) suggests that
