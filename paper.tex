@@ -211,6 +211,11 @@ closest prior work is on \emph{sycophancy} \citep{perez2022sycophancy}, which
 shows that RLHF-aligned models are more likely to produce socially desirable
 but incorrect reasoning --- a qualitatively similar dissociation to what we
 hypothesize.
+Concurrently, \citet{lobo2025finetuning} show that CoT fine-tuning generally
+reduces behavioral faithfulness across four datasets. Our work extends this by
+isolating quality as the causal variable --- low-quality fine-tuning changes
+almost nothing --- and providing a mechanistic account via parametric unlearning
+and FF2 probing.
 
 % ─────────────────────────────────────────────────────────────
 \section{Hypothesis and Mechanism}
@@ -367,7 +372,7 @@ faithful reasoning.
 
 Table~\ref{tab:main} reports binary faithfulness rates under each condition.
 Figure~\ref{fig:paradox} visualizes the results. The data confirm H1 with
-striking clarity across both evaluated model families.
+striking clarity across all three evaluated model families.
 
 For \textbf{LLaMA-3-3B}, baseline parametric faithfulness is 30.0\%,
 consistent with \citet{tutek2025faithfulness}'s original findings. After
