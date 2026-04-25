@@ -24,6 +24,12 @@ Usage:
 import os, sys, json, argparse, gc, subprocess, tempfile, types
 import numpy as np
 
+# HF_HOME must be set before any huggingface import — the hub library caches
+# the path at import time. Without this, on BigRed200 --wrap jobs (no job script),
+# HF defaults to ~/.cache/huggingface/ which hits the home-dir quota.
+os.environ.setdefault('HF_HOME', '/N/scratch/madbala/hf_cache')
+os.environ.setdefault('TRANSFORMERS_CACHE', '/N/scratch/madbala/hf_cache')
+
 # Must be set before any CUDA operation.
 os.environ.setdefault('PYTORCH_CUDA_ALLOC_CONF', 'expandable_segments:True')
 
