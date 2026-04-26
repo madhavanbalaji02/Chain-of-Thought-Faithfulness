@@ -346,6 +346,13 @@ LLaMA-3-8B   & 16 & 32 & 3 & 434 (high / low) \\
 We hold out 50 instances stratified by dataset. For each instance under each
 condition, we run the full NPO unlearning loop: FF2-only optimization,
 \texttt{npo\_KL} objective, learning rate $3 \times 10^{-5}$, 5 epochs.
+We note that faithfulness evaluation requires instances pre-processed through
+the NPO pipeline, as fresh CoT instances exhibit near-floor $\Delta p$ values
+(mean $0.00012$ vs.\ $0.00105$ for pipeline-processed instances) insufficient
+to produce prediction flips. The $N{=}50$ test set was constructed from
+pipeline-processed instances; a larger-$N$ replication would require first
+running candidate instances through the full unlearning pipeline, which we
+designate as future work.
 
 We report two faithfulness metrics:
 \begin{itemize}
@@ -974,8 +981,12 @@ fine-tuning on millions of examples; the paradox may be stronger under full
 fine-tuning. Third, our NPO faithfulness probe targets only FF2 layers and
 first CoT steps; faithfulness in middle and later steps may behave differently.
 Finally, 50 held-out instances per condition yields limited statistical power
-for small effect sizes; however, the effects observed ($-$18pp to $-$22pp) are
-large enough to be reliably detected at $N = 50$.
+for small effect sizes. Larger-$N$ replication requires pre-processing
+candidate instances through the NPO pipeline --- a multi-day computational
+cost that prevents simple test-set expansion. The effects observed
+($-$18pp to $-$22pp) are large enough to be reliably detected at $N{=}50$,
+and the three-model replication provides convergent evidence that the paradox
+is robust.
 
 Future work should examine larger models, full fine-tuning, and
 faithfulness-preserving training objectives that explicitly penalize the surface
