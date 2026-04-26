@@ -32,7 +32,7 @@ LLaMA-3-3B p=0.005, Phi-3 p=0.033, Mistral-7B p=0.046, LLaMA-3-8B p=0.95 (n.s.)
 
 **Mechanism:** Non-faithful CoT steps score significantly higher on quality metrics than faithful ones (3.61 vs. 3.33, p=0.008, N=940), meaning quality filtering preferentially selects causally-decoupled reasoning.
 
-**Differential collapse (new):** The collapse is non-uniform across task types. StrategyQA and Sports Understanding (implicit knowledge retrieval) collapse completely to 0%; OpenBookQA is immune (23% → 31%). Faithfulness is also higher for initially *incorrect* predictions than correct ones (43.8% vs. 23.5%), and high-quality FT drives correct-prediction faithfulness to 0% — the model learns to commit to correct answers without any causal dependence on its expressed reasoning.
+**Differential collapse (new):** The collapse is non-uniform across task types. StrategyQA and Sports Understanding (implicit knowledge retrieval) collapse completely to 0% across all three affected models; OpenBookQA is immune (LLaMA-3-3B: 23% → 31%; Phi-3: 38% → 23%); ARC-Challenge is at floor throughout. Faithfulness is also higher for initially *incorrect* predictions than correct ones (43.8% vs. 23.5% for LLaMA-3-3B baseline), and high-quality FT drives correct-prediction faithfulness to 0% — the model learns to commit to correct answers without any causal dependence on its expressed reasoning.
 
 **Cure failure (new):** A faithfulness-regularized training objective (L = L_quality + λ × L_faithfulness) fails to recover faithfulness at any regularization strength (λ ∈ {0.0, 0.1, 1.0}). The faith loss carries near-zero gradient signal because high-quality CoT instances are already parametrically decoupled before fine-tuning begins. The paradox is a **data selection problem**, not a training dynamics problem.
 
@@ -191,14 +191,22 @@ Mean delta_p drops from 0.271 (1–2 sentence CoTs) to 0.077 (8+ sentences). LLa
 
 ### Finding 5 — Faithfulness collapse is task-type specific
 
-Disaggregating the collapse by dataset reveals a sharp split: SQA and Sports Understanding (tasks requiring implicit knowledge retrieval) collapse completely to 0% under high-quality FT, while OpenBookQA (explicit supporting passage) is unaffected or slightly improves. ARC-Challenge sits at floor in all conditions. This implicates the surface-route hypothesis: open-book tasks have passages that genuinely activate predictions, while commonsense/world-knowledge tasks rely on memorized associations the CoT post-hoc rationalizes.
+Disaggregating the collapse by dataset reveals a sharp split: SQA and Sports Understanding (tasks requiring implicit knowledge retrieval) collapse to near-zero under high-quality FT across all three affected models, while OpenBookQA (explicit supporting passage) is unaffected or slightly improves. ARC-Challenge sits at floor in all conditions. This implicates the data-selection mechanism: open-book tasks have passages that genuinely activate predictions, while commonsense/world-knowledge tasks rely on memorized associations the CoT post-hoc rationalizes — quality filtering disproportionately selects these decoupled instances.
 
-| Dataset | LLaMA-3-3B Baseline | LLaMA-3-3B High-FT |
-|---------|:-------------------:|:------------------:|
-| StrategyQA (SQA) | 58% | **0%** |
-| Sports Understanding | 42% | **0%** |
-| OpenBookQA | 23% | 31% |
-| ARC-Challenge | 0% | 0% |
+| Model | Condition | ARC-Challenge | OpenBookQA | Sports | StrategyQA | Total |
+|-------|-----------|:-------------:|:----------:|:------:|:----------:|:-----:|
+| LLaMA-3-3B | Baseline | 0% | 23% | 42% | 58% | 30% |
+| LLaMA-3-3B | High-FT  | 0% | 31% | **0%** | **0%** | 8% |
+| LLaMA-3-3B | Low-FT   | 23% | 8% | 33% | 50% | 28% |
+| Phi-3 | Baseline | 8% | 38% | 17% | 67% | 32% |
+| Phi-3 | High-FT  | 15% | 23% | 8% | **8%** | 14% |
+| Phi-3 | Low-FT   | 8% | 23% | 17% | 67% | 36% |
+| Mistral-7B | Baseline | 0% | 0% | 25% | 0% | 16% |
+| Mistral-7B | High-FT  | 0% | 0% | **0%** | 0% | 4% |
+| Mistral-7B | Low-FT   | 0% | 0% | 50% | 0% | 22% |
+| LLaMA-3-8B | Baseline | 0% | 8% | 8% | 0% | 3.8% |
+| LLaMA-3-8B | High-FT  | 0% | 8% | 8% | 0% | 4.0% |
+| LLaMA-3-8B | Low-FT   | 0% | 8% | 8% | 0% | 4.0% |
 
 ### Finding 6 — Faithfulness is higher for initially incorrect predictions
 
