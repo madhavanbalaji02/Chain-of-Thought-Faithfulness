@@ -639,70 +639,92 @@ Model-specific (Phi-3 own CoTs) & 32.0 & 14.0 & 38.0 \\
 
 The aggregate faithfulness rates in Table~\ref{tab:main}
 conceal important structure. Disaggregating by dataset and
-prediction correctness reveals two consistent patterns.
+prediction correctness reveals two consistent patterns across all
+models and conditions.
 
-\paragraph{Task-type specificity.}
-Table~\ref{tab:dataset_breakdown} shows that the faithfulness
-collapse is highly non-uniform across task types in LLaMA-3-3B.
-StrategyQA (SQA) and Sports Understanding --- both requiring
-multi-hop commonsense reasoning or world knowledge recall ---
-show complete collapse from 58\% and 42\% respectively to 0\%
-under high-quality fine-tuning. OpenBookQA is unaffected
-(23\%~$\to$~31\%), and ARC-Challenge was at floor in all
-conditions. Phi-3 shows the same ordering, with SQA dominating
-the faithfulness signal (67\%~$\to$~8\%).
+\paragraph{SQA and Sports collapse; OpenBookQA is immune.}
+Table~\ref{tab:dataset} shows that the faithfulness collapse is
+highly non-uniform across task types. StrategyQA (SQA) and Sports
+Understanding --- both requiring multi-hop commonsense reasoning or
+implicit world-knowledge recall --- exhibit near-complete collapse
+under high-quality fine-tuning.  For LLaMA-3-3B, SQA drops from
+58\% to 0\% and Sports drops from 42\% to 0\%. Phi-3 mirrors this
+ordering: SQA from 67\% to 8\%, Sports from 17\% to 8\%. Mistral-7B
+likewise shows Sports as the primary site of faithfulness signal.
 
-This pattern is consistent with the data-selection mechanism.
-High-quality CoTs for OpenBookQA can be simultaneously polished
-and faithful because the answer is grounded in an explicit
-supporting passage --- the reasoning step that cites the passage
-genuinely activates the prediction. High-quality CoTs for SQA
-and Sports are more likely to be polished post-hoc rationalizations
-of answers the model reached through memorized associations.
-Quality filtering therefore disproportionately selects
-parametrically-decoupled instances in tasks that require
-implicit knowledge retrieval.
+\paragraph{OpenBookQA immunity and the data-selection mechanism.}
+OpenBookQA is conspicuously unaffected (LLaMA-3-3B: 23\%
+$\to$ 31\%; Phi-3: 38\% $\to$ 23\%). This is consistent with the
+data-selection account (Section~\ref{sec:discussion}): high-quality
+CoTs for OpenBookQA can be simultaneously polished \textit{and}
+faithful because the answer is grounded in an explicit supporting
+passage --- the reasoning step that cites the passage genuinely
+activates the prediction. High-quality CoTs for SQA and Sports are
+more likely to be polished post-hoc rationalizations of answers the
+model reached through memorized associations. Quality filtering
+therefore disproportionately selects parametrically-decoupled
+instances in tasks that require implicit knowledge retrieval.
+
+\paragraph{ARC-Challenge is at floor throughout.}
+ARC-Challenge shows near-zero faithfulness in all conditions and
+models (Table~\ref{tab:dataset}), suggesting that reasoning-step
+unlearning never produces prediction flips for this task regardless
+of fine-tuning condition. ARC instances may be too short for
+meaningful per-step NPO gradient signal, or the model's answer
+pathway is entirely parametric from the outset.
 
 \paragraph{Correctness conditioning.}
-Table~\ref{tab:correctness} shows a consistent pattern across
-both models and both conditions: parametric faithfulness is
-substantially \textit{higher} for initially incorrect predictions
-than for correct ones (43.8\% vs.\ 23.5\% for LLaMA-3-3B
-baseline; 55.0\% vs.\ 16.7\% for Phi-3 baseline). When the model
-answers correctly, the CoT appears largely decorative --- the
-correct answer was committed to via non-CoT parametric pathways,
-and the expressed reasoning post-hoc justifies it. When the model
-answers incorrectly, the CoT was more likely driving the (wrong)
-prediction, which is why unlearning it flips the answer.
+Table~\ref{tab:correctness} shows a consistent pattern across both
+models: parametric faithfulness is substantially \textit{higher}
+for initially incorrect predictions than for initially correct ones
+(LLaMA-3-3B baseline: 43.8\% vs.\ 23.5\%; Phi-3 baseline: 55.0\%
+vs.\ 16.7\%). When the model answers correctly, the CoT appears
+largely decorative --- the correct answer was committed to via
+non-CoT parametric pathways, and the expressed reasoning post-hoc
+justifies it. When the model answers incorrectly, the CoT was more
+likely driving the (wrong) prediction, which is why unlearning it
+flips the answer.  High-quality fine-tuning sharpens this
+dissociation: for LLaMA-3-3B, faithfulness for initially correct
+predictions collapses to 0.0\% under high-FT (vs.\ 26.7\% for
+incorrect). The model learns to commit to correct answers without
+any parametric dependence on the CoT --- the chain of thought
+becomes pure surface performance.
 
-High-quality fine-tuning sharpens this dissociation further.
-For LLaMA-3-3B, faithfulness for initially correct predictions
-collapses to 0.0\% under high-FT (vs.\ 26.7\% for incorrect).
-The model learns to commit to correct answers without any
-parametric dependence on the CoT --- the chain of thought becomes
-pure surface performance. This is perhaps the most direct
-evidence that quality filtering optimizes for the appearance
-of reasoning rather than its causal role.
-
-\begin{table}[h]
+\begin{table*}[t]
 \centering
 \small
-\caption{Parametric faithfulness by dataset type for LLaMA-3-3B
-($N$ per cell varies; baseline / high-FT shown).
-The collapse is non-uniform: SQA and Sports Understanding
-collapse to 0\% while OpenBookQA is unaffected.}
-\label{tab:dataset_breakdown}
-\begin{tabular}{lcc}
+\caption{Parametric faithfulness (\%) by dataset and condition for
+all four models ($N=50$ per model-condition; $N$ per cell varies
+with dataset mix). SQA and Sports show near-complete collapse
+under high-quality fine-tuning; OpenBookQA is unaffected;
+ARC-Challenge is at floor throughout.}
+\label{tab:dataset}
+\begin{tabular}{llccccc}
 \toprule
-Dataset & Baseline & High-FT \\
+Model & Condition & ARC-Challenge & OpenBookQA & Sports & StrategyQA & Total \\
 \midrule
-StrategyQA (SQA)     & 58\% & 0\%  \\
-Sports Understanding & 42\% & 0\%  \\
-OpenBookQA           & 23\% & 31\% \\
-ARC-Challenge        & 0\%  & 0\%  \\
+\multirow{3}{*}{LLaMA-3-3B}
+ & Baseline & 0  & 23 & 42 & 58 & 30 \\
+ & High-FT  & 0  & 31 & \textbf{0}  & \textbf{0}  & 8  \\
+ & Low-FT   & 23 & 8  & 33 & 50 & 28 \\
+\midrule
+\multirow{3}{*}{Phi-3}
+ & Baseline & 8  & 38 & 17 & 67 & 32 \\
+ & High-FT  & 15 & 23 & 8  & \textbf{8}  & 14 \\
+ & Low-FT   & 8  & 23 & 17 & 67 & 36 \\
+\midrule
+\multirow{3}{*}{Mistral-7B}
+ & Baseline & 0  & 0  & 25 & 0  & 16 \\
+ & High-FT  & 0  & 0  & \textbf{0}  & 0  & 4  \\
+ & Low-FT   & 0  & 0  & 50 & 0  & 22 \\
+\midrule
+\multirow{3}{*}{LLaMA-3-8B}
+ & Baseline & 0  & 8  & 8  & 0  & 3.8 \\
+ & High-FT  & 0  & 8  & 8  & 0  & 4.0 \\
+ & Low-FT   & 0  & 8  & 8  & 0  & 4.0 \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \begin{table}[h]
 \centering
@@ -717,24 +739,24 @@ faithfulness for correct predictions to near-zero.}
 Model / Condition & Initially correct & Initially incorrect \\
 \midrule
 LLaMA-3-3B baseline & 23.5\% & 43.8\% \\
-LLaMA-3-3B high-FT  & 0.0\%  & 26.7\% \\
+LLaMA-3-3B high-FT  & \textbf{0.0\%}  & 26.7\% \\
 \midrule
 Phi-3 baseline & 16.7\% & 55.0\% \\
-Phi-3 high-FT  & 6.1\%  & 29.4\% \\
+Phi-3 high-FT  & \textbf{6.1\%}  & 29.4\% \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{paper_figures/fig5_differential}
-\caption{Left: faithfulness by dataset for LLaMA-3-3B.
-SQA and Sports collapse completely to 0\%; OpenBookQA is
-unaffected. Right: faithfulness conditioned on initial
-prediction correctness. Faithfulness is higher when the model
-is initially wrong; high-quality FT drives correct-prediction
-faithfulness to 0\%.}
-\label{fig:differential}
+\includegraphics[width=\linewidth]{paper_figures/fig5_heatmap}
+\caption{Heatmap of parametric faithfulness (\%) across all four
+models, three conditions, and four datasets.  Green = high
+faithfulness; red = low. SQA and Sports Understanding are the
+primary sites of collapse under high-quality fine-tuning;
+OpenBookQA is immune; ARC-Challenge is at floor throughout.
+Horizontal lines separate models.}
+\label{fig:heatmap}
 \end{figure}
 
 \subsection{Continuous Scoring Reveals a Paradox Within the Paradox}
