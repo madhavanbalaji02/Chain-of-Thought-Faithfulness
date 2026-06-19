@@ -374,5 +374,5 @@ All experiments trained on **BigRed 200** (Indiana University HPC):
 ---
 
 <p align="center">
-  <em>Reproduction and extensions by <strong>Madhavan Balaji</strong> — Indiana University Bloomington</em>
+  <em>Reproduction and extensions by <strong>Madhavan Balaji</strong> — Indiana University Indianapolis</em>
 </p>
