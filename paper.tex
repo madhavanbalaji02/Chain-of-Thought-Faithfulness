@@ -345,7 +345,17 @@ LLaMA-3-8B   & 16 & 32 & 3 & 434 (high / low) \\
 
 We hold out 50 instances stratified by dataset. For each instance under each
 condition, we run the full NPO unlearning loop: FF2-only optimization,
-\texttt{npo\_KL} objective, learning rate $3 \times 10^{-5}$, 5 epochs.
+\texttt{npo\_KL} objective, 5 epochs, with per-model learning rates calibrated
+from the Tutek et al.\ ablation at $\geq$95\% specificity:
+LLaMA-3-3B $3 \times 10^{-5}$, Phi-3 $1 \times 10^{-4}$,
+LLaMA-3-8B $1 \times 10^{-5}$, Mistral-7B $1 \times 10^{-5}$.\footnote{%
+  The Tutek et al.\ ablation selects $5 \times 10^{-6}$ for Mistral-7B;
+  our evaluation used $1 \times 10^{-5}$ due to OOM-related job failures at
+  the original LR. Diagnostic analysis of the resulting data (prediction
+  oscillation rates, probability mass stability, condition-specific vs.\
+  uniform flip patterns) shows no evidence of specificity degradation at
+  this LR. Per-model LRs and SLURM job provenance are archived in
+  \texttt{analysis/SACCT\_PROVENANCE.md}.}
 We note that faithfulness evaluation requires instances pre-processed through
 the NPO pipeline, as fresh CoT instances exhibit near-floor $\Delta p$ values
 (mean $0.00012$ vs.\ $0.00105$ for pipeline-processed instances) insufficient
