@@ -6,11 +6,16 @@ Mistral-7B was evaluated at `lr=1e-05`, while `const.py:paper_best_lr` specifies
 The Tutek et al. ablation (from Ablations.ipynb) shows that at lr=1e-05, Mistral's
 specificity drops to ~86-91% — below the 95% selection threshold.
 
+For reference, the main pipeline at lr=3e-05 (from `final_results/`) shows **48.9%
+specificity** averaged across all datasets (catastrophic). The lr=1e-05 used in the
+finetuned eval is between these two operating points.
+
 ## Diagnostic Evidence from the Result Data
 
-However, `evaluate_finetuned.py` uses a simpler pipeline than the main `unlearn.py`
-(first sentence only, held-out test set, no specificity instances). The question is
-whether lr=1e-05 produced over-aggressive behavior *in these specific runs*.
+`evaluate_finetuned.py` does NOT compute Tutek-style specificity (it doesn't test
+other questions after unlearning). We can only compute proxy diagnostics from the
+target instance data. The question is whether lr=1e-05 produced over-aggressive
+behavior *in these specific runs*.
 
 ### Signatures of over-aggressive unlearning (and what we see):
 
