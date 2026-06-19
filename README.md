@@ -18,13 +18,15 @@
 
 This project answers one question: **when an LLM writes out its "reasoning," is that reasoning actually driving the answer, or is it just decoration?**
 
-I did three things:
+I did four things:
 
-1. **Reproduced** the NPO unlearning method from Tutek et al. across 4 models × 4 datasets (3,699 instances) — confirming their core finding that you can measure faithfulness by surgically unlearning individual reasoning steps and watching if the answer changes.
+1. **Reproduced** the NPO unlearning method from Tutek et al. across 4 models × 4 datasets (3,699 instances), including a **systematic learning-rate ablation** (4–7 LRs per model-dataset, selected at ≥95% specificity) — confirming the core finding that you can measure faithfulness by surgically unlearning individual reasoning steps and watching if the answer changes. One clean result: **the smaller LLaMA-3-3B is consistently more faithful than the larger LLaMA-3-8B** across every dataset, cutting against the intuition that bigger models reason more genuinely.
 
-2. **Designed and ran a new experiment** — the **Alignment-Faithfulness Paradox** — asking: *if we fine-tune models on high-quality CoT, does that make their reasoning more faithful?* The answer is no — it makes it **dramatically less faithful** (−56% to −75%), while simultaneously improving accuracy. The better the model performs, the less its chain of thought actually matters to its answers.
+2. **Validated the unlearning metric** against two independent signals: a **human annotation study** (100 rated CoT steps, Spearman ρ=0.209, p=0.037 between human supportiveness ratings and Δp) and an **LLM-as-judge** pass (2,018 GPT-4o judgments confirming 81.3% of unlearned instances had changed reasoning). This is what makes the unlearning signal credible as more than an automatic proxy.
 
-3. **Investigated why**, through four mechanistic analyses: quality scoring of CoT steps, FF2 linear probes, faithfulness regularization, and external validation against REVEAL human annotations. The root cause: quality filters systematically select reasoning steps that *don't* causally influence predictions. This is a data-level selection bias that no training objective can fix.
+3. **Designed and ran a new experiment** — the **Alignment-Faithfulness Paradox** — asking: *if we fine-tune models on high-quality CoT, does that make their reasoning more faithful?* The answer is no — it makes it **dramatically less faithful** (−56% to −75%), while simultaneously improving accuracy. The better the model performs, the less its chain of thought actually matters to its answers.
+
+4. **Investigated why**, through four mechanistic analyses: quality scoring of CoT steps, FF2 linear probes, faithfulness regularization, and external validation against REVEAL human annotations. The root cause: quality filters systematically select reasoning steps that *don't* causally influence predictions. This is a data-level selection bias that no training objective can fix.
 
 <p align="center">
   <img src="paper_figures/generated/plot30_summary_dashboard.png" width="95%" alt="Research Dashboard">
@@ -78,31 +80,35 @@ Step 5:  Did the answer change?
 
 ## 📋 What I Did — Step by Step
 
-### Phase 1: Reproduction (16 experiments)
+### Phase 1: Reproduction (16 experiments + LR ablation)
 
 I reproduced the full Tutek et al. experimental setup:
 
 - **4 models**: LLaMA-3-3B, LLaMA-3-8B, Mistral-7B, Phi-3
 - **4 datasets**: ARC-Challenge, OpenBookQA, Sports Understanding, StrategyQA
-- **Settings**: NPO-KL, stepwise unlearning, FF2 restriction, POS filtering, lr=3e-05, 5 epochs per instance
+- **Settings**: NPO-KL, stepwise unlearning, FF2 restriction, POS filtering, 5 epochs per instance
 - **Scale**: ~230 instances per model-dataset pair → **3,699 total unlearning experiments**
 - **Compute**: Indiana University BigRed200 HPC (NVIDIA A100 GPUs, 12–24 hours per job)
 
-I also **fixed 4 bugs** in the original codebase (see [Bugs Found](#-bugs-found-in-reproduction)) that were causing silent failures.
+I also **fixed 4 bugs** in the original codebase (see [Bugs Found](#-bugs-found-in-reproduction)) that were causing silent failures, and ran a **systematic LR ablation** (4–7 learning rates per model-dataset combination) to select the optimal LR for each setting at a ≥95% specificity threshold — rather than using a single fixed LR.
+
+<p align="center">
+  <img src="figures/lr_ablation.pdf" width="80%" alt="LR Ablation Scatter">
+  <br><em>LR ablation: each star is one learning rate. Moving right = more efficacy (better unlearning), moving down = less specificity (more collateral damage). We select the rightmost LR that stays above 95% specificity for each model-dataset pair.</em>
+</p>
 
 **Result**: Successfully replicated the core finding — efficacy-faithfulness correlation of r=0.937 (p < 0.0001).
 
-<p align="center">
-  <img src="paper_figures/generated/plot03_npo_faithfulness_heatmap.png" width="60%" alt="Faithfulness Heatmap">
-  <br><em>Faithfulness (%) across all 16 model × dataset combinations. Each cell shows what percentage of CoT steps actually influenced the model's answer.</em>
-</p>
+**Faithfulness (%) — agreement-filtered instances where unlearning a CoT step changed the answer:**
 
 | Model | ARC-Challenge | OpenBookQA | Sports | StrategyQA | **Avg** |
 |:------|:---:|:---:|:---:|:---:|:---:|
-| 🦙 LLaMA-3-8B | 62.5 | 56.9 | 61.8 | 59.6 | **60.2** |
-| 🦙 LLaMA-3-3B | 36.0 | 51.5 | 34.3 | 50.3 | **43.0** |
-| 🌀 Mistral-7B | 78.4 | 75.3 | 63.5 | 70.7 | **72.0** |
-| 🔷 Phi-3 | 4.3 | 5.4 | 25.0 | 6.5 | **10.3** |
+| 🦙 LLaMA-3-3B | **64.4** | **68.6** | **64.9** | **71.0** | **67.2** |
+| 🌀 Mistral-7B | 39.5 | 60.0 | 45.3 | 48.2 | **48.2** |
+| 🦙 LLaMA-3-8B | 39.6 | 44.3 | 29.3 | 30.7 | **36.0** |
+| 🔷 Phi-3 | 39.1 | 46.2 | 54.0 | 22.2 | **40.4** |
+
+> **Key finding**: The smaller LLaMA-3-3B is **consistently more faithful** than the larger LLaMA-3-8B across every dataset. Bigger models don't necessarily reason more genuinely — they may simply be better at producing plausible-sounding post-hoc rationalizations.
 
 ### Phase 2: New Metric — Continuous Faithfulness (Δp)
 
@@ -124,6 +130,30 @@ I introduced **Δp**: the drop in correct-answer probability after unlearning. T
 </p>
 
 **Key finding**: In Phi-3, **67.8%** of instances have negative Δp — unlearning the CoT step makes the model *more* correct. The CoT is actively suppressing the right answer.
+
+### Phase 2.5: Validation — Is the Unlearning Metric Real?
+
+Before building on the unlearning signal, I validated it two independent ways:
+
+#### Human Annotation Study (N=100)
+
+I sampled 100 CoT steps across models and datasets, stratified by Δp magnitude, and rated each for how "supportive" the step is of the model's answer (5-point scale: Not Supportive → Fully Supportive). Human ratings correlate significantly with Δp (Spearman ρ=0.209, p=0.037):
+
+| Human Rating | N | Mean Δp | Flip Rate |
+|:-------------|:-:|:-------:|:---------:|
+| Not Supportive At All | 24 | 0.346 | 70.8% |
+| Slightly Supportive | 14 | 0.450 | 71.4% |
+| Moderately Supportive | 13 | 0.476 | 69.2% |
+| Mostly Supportive | 16 | 0.431 | 75.0% |
+| Fully Supportive | 33 | 0.534 | 75.8% |
+
+Steps that humans rate as more supportive of the answer tend to have higher Δp — the unlearning metric captures something real about how reasoning drives predictions.
+
+#### LLM-as-Judge Cross-Check (N=2,018)
+
+For all instances where unlearning caused a prediction flip, I used GPT-4o to compare the pre- and post-unlearning CoTs: "Do these reasoning chains argue for the same answer?"
+
+**Result**: GPT-4o judged **81.3%** of unlearned instances as arguing for *different* answers (1,641/2,018 = "No"). This confirms that when the unlearning probe says the reasoning changed, an independent LLM agrees the reasoning now supports a different conclusion — it's not just noise in the output probabilities.
 
 ### Phase 3: The Alignment-Faithfulness Paradox (New Experiment)
 
@@ -231,11 +261,11 @@ High-quality FT sharpens this: for LLaMA-3-3B, faithfulness for correct predicti
   <br><em>Per-epoch trajectories: efficacy (how much the step probability drops) increases monotonically, while specificity (staying on-target) degrades. Faithfulness saturates early — most flips happen by epoch 2.</em>
 </p>
 
-### Model Size Matters
+### Model Size Matters — But Not How You'd Think
 
 <p align="center">
   <img src="paper_figures/generated/plot06_model_size_comparison.png" width="60%" alt="Model Size Comparison">
-  <br><em>LLaMA-3 8B vs 3B: the larger model shows higher faithfulness across all datasets. Larger models may maintain stronger CoT-parameter coupling.</em>
+  <br><em>LLaMA-3 3B vs 8B: with agreement filtering and proper LR selection, the <strong>smaller</strong> model is consistently more faithful (67% vs 36% avg). The plot above uses fixed lr=3e-05 without agreement filtering, which inflates LLaMA-3-8B numbers due to specificity degradation — the properly controlled comparison reverses the direction.</em>
 </p>
 
 ### CoT Length Dilutes Faithfulness
@@ -280,6 +310,16 @@ The causal chain works like this:
 ```
 
 **Implication**: If the AI safety community relies on reading CoT to understand what models are doing, and the standard approach to improving CoT is quality-based fine-tuning, then **the standard approach actively undermines the interpretability property we're relying on**. Fixing this requires faithfulness-aware data curation — filtering training data by causal influence (Δp), not surface quality.
+
+---
+
+## ⚠️ Limitations
+
+- **Sample sizes**: The human annotation study (N=100) and fine-tuning evaluation (N=50 per condition) are small. The LR ablation uses ~30 instances per point. Results are consistent across models and datasets, but larger samples would strengthen statistical power.
+- **Base/instruct models only**: All four models are instruction-tuned variants in the 3B–8B range. Results may not generalize to base models, larger models (70B+), or models with fundamentally different architectures.
+- **Single unlearning method**: Only NPO-KL with FF2 restriction was used. Other unlearning approaches (e.g., gradient ascent, activation patching) might yield different faithfulness estimates.
+- **First step only**: The full runs in `final_results/` unlearn only step_idx=0 (the first CoT sentence). The LR ablation covers all steps, but the main analysis is first-step faithfulness.
+- **No domain-adapted models**: This repo covers only the four original base/instruct models on the four original datasets. Domain-adapted models (e.g., SaulLM for legal reasoning) and domain benchmarks (e.g., LegalBench) are separate work not included here.
 
 ---
 
