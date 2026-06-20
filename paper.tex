@@ -350,15 +350,20 @@ the Tutek et al.\ ablation:
 LLaMA-3-3B $3 \times 10^{-5}$, Phi-3 $1 \times 10^{-4}$,
 LLaMA-3-8B $1 \times 10^{-5}$, Mistral-7B $1 \times 10^{-5}$.\footnote{%
   The Tutek et al.\ ablation selects $5 \times 10^{-6}$ for Mistral-7B
-  at $\geq$95\% specificity; our evaluation used $1 \times 10^{-5}$
-  (ablation specificity $\approx$86--91\%) due to OOM failures at the
-  original LR on our cluster configuration. Prediction oscillation on
-  the evaluation set is low (8\% baseline, 0\% high-FT, 8\% low-FT)
-  and the faithfulness collapse is condition-specific (16\%$\to$4\%
-  high-FT vs.\ 16\%$\to$22\% low-FT), inconsistent with a uniform
-  over-unlearning artifact. Per-model LRs were verified via SLURM
-  \texttt{sacct} accounting records; see
-  \texttt{analysis/SACCT\_PROVENANCE.md}.}
+  at $\geq$95\% specificity (ablation specificity $\approx$86--91\%
+  at our $1 \times 10^{-5}$; these figures are from a separate ablation
+  sweep on different instances and are not direct measurements on the
+  $N{=}50$ evaluation set, for which true specificity could not be
+  computed with the current evaluation pipeline).
+  The original $5 \times 10^{-6}$ baseline job was manually cancelled
+  during execution; the reason for the subsequent switch to
+  $1 \times 10^{-5}$ is not fully recoverable from job records.
+  Prediction oscillation on the evaluation set is low
+  (8\% baseline, 0\% high-FT, 8\% low-FT) and the faithfulness collapse
+  is condition-specific (16\%$\to$4\% high-FT vs.\ 16\%$\to$22\% low-FT),
+  inconsistent with a uniform over-unlearning artifact.
+  Per-model LRs were verified via SLURM \texttt{sacct} accounting records;
+  see \texttt{analysis/SACCT\_PROVENANCE.md}.}
 We note that faithfulness evaluation requires instances pre-processed through
 the NPO pipeline, as fresh CoT instances exhibit near-floor $\Delta p$ values
 (mean $0.00012$ vs.\ $0.00105$ for pipeline-processed instances) insufficient

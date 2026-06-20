@@ -253,20 +253,36 @@ sbatch -A c01949 --nodes=1 --ntasks-per-node=1 --gpus-per-node=2 --mem=64G --tim
 
 ---
 
-## Failed/Cancelled Runs (for completeness)
+## Failed/Cancelled/Superseded Runs (for completeness)
 
-These are the earlier attempts that did NOT produce the final results:
+These are the earlier attempts that did NOT produce the final result files:
 
-| Job ID | Name | Date | State | Notes |
-|:------:|:-----|:-----|:------|:------|
-| 6748696 | eval-baseline | Apr 5 | FAILED | LLaMA-3-3B, first attempt |
-| 6750432 | eval-high | Apr 5-6 | FAILED | LLaMA-3-3B, lr=3e-05 |
-| 6750433 | eval-low | Apr 6 | CANCELLED | LLaMA-3-3B |
-| 6754957 | ev-llama8b-bs | Apr 6 | TIMEOUT | LLaMA-8B first attempt |
-| 6754959 | ev-llama8b-lo | Apr 6-7 | TIMEOUT | LLaMA-8B |
-| 6754962 | ev-mistral-bs | Apr 6 | CANCELLED | Mistral, original lr=5e-06 attempt |
-| 6790491 | ev-mistral-bs-bnb | Apr 9 | COMPLETED | Mistral retry (may have used different LR) |
-| 6803535 | ev-ms-bs-4bit | Apr 9 | FAILED | Mistral 4-bit attempt |
+| Job ID | Name | Date | State | ExitCode | MaxRSS | LR | Notes |
+|:------:|:-----|:-----|:------|:--------:|:------:|:--:|:------|
+| 6748696 | eval-baseline | Apr 5 | FAILED | 1:0 | — | 3e-05 | LLaMA-3-3B, first attempt |
+| 6750432 | eval-high | Apr 5-6 | FAILED | 1:0 | — | 3e-05 | LLaMA-3-3B |
+| 6750433 | eval-low | Apr 6 | CANCELLED | 0:15 | — | 3e-05 | LLaMA-3-3B |
+| 6754957 | ev-llama8b-bs | Apr 6 | TIMEOUT | 0:0 | — | 1e-05 | LLaMA-8B, hit 12h wall |
+| 6754959 | ev-llama8b-lo | Apr 6-7 | TIMEOUT | 0:0 | — | 1e-05 | LLaMA-8B, hit 12h wall |
+| 6754962 | ev-mistral-bs | Apr 6 | CANCELLED | 0:15 | 45GB | 5e-06 | Mistral, manually cancelled after 11.5h |
+| 6754963 | ev-mistral-hi | Apr 6 | COMPLETED | 0:0 | 15GB | **5e-06** | Mistral, **completed at lr=5e-06** — results overwritten by job 6815742 |
+| 6754964 | ev-mistral-lo | Apr 6 | COMPLETED | 0:0 | 15GB | **5e-06** | Mistral, **completed at lr=5e-06** — results overwritten by job 6815743 |
+| 6790491 | ev-mistral-bs-bnb | Apr 9 | COMPLETED | 0:0 | 14GB | — | Mistral bnb retry, LR unknown |
+| 6790492 | ev-mistral-hi-bnb | Apr 9 | COMPLETED | 0:0 | 10GB | — | Mistral bnb retry, LR unknown |
+| 6790493 | ev-mistral-lo-bnb | Apr 9 | COMPLETED | 0:0 | 15GB | — | Mistral bnb retry, LR unknown |
+| 6803535 | ev-ms-bs-4bit | Apr 9 | FAILED | 1:0 | <1GB | — | 4-bit attempt, Python error at startup |
+| 6803536 | ev-ms-hi-4bit | Apr 9 | FAILED | 1:0 | <1GB | — | 4-bit attempt, Python error at startup |
+| 6803537 | ev-ms-lo-4bit | Apr 9 | FAILED | 1:0 | <1GB | — | 4-bit attempt, Python error at startup |
 
-The final Mistral results came from jobs 6815741-6815743 (Apr 10), which used
-lr=1e-05 — different from the lr=5e-06 in `submit_multi_model.sh`.
+### Mistral LR switch timeline
+
+1. **Apr 6**: `submit_multi_model.sh` submitted baseline/high/low at lr=5e-06.
+   High-FT (6754963) and low-FT (6754964) **completed successfully** at lr=5e-06.
+   Baseline (6754962) was **manually cancelled** after 11.5h (not OOM — 45GB RSS within 64GB limit).
+2. **Apr 9**: `bnb` retries completed; `4-bit` retries failed with Python errors.
+3. **Apr 10**: Final runs (6815741-6815743) submitted at lr=1e-05, all completed.
+   These overwrote the earlier lr=5e-06 results for high-FT and low-FT.
+
+The reason for switching from lr=5e-06 to lr=1e-05 between the Apr 6 and Apr 10
+runs is not recoverable from the SLURM records. The original lr=5e-06 results
+for high-FT and low-FT existed briefly but were overwritten.
